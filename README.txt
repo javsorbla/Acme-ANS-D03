@@ -16,5 +16,6 @@ This includes flight scheduling, booking management, crew management, incident r
 Link to the general planning dashboard in GitHub:
 https://github.com/users/javsorbla/projects/3
 
-
+Link to the individual planning dashboard in GitHub:
+Javier Castilla Rodríguez: https://github.com/users/javsorbla/projects/3/views/1?filterQuery=javcasrod1
  

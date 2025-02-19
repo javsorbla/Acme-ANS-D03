@@ -18,6 +18,8 @@ https://github.com/users/javsorbla/projects/3
 
 Link to the individual planning dashboard in GitHub:
 Javier Castilla Rodríguez: https://github.com/users/javsorbla/projects/3/views/1?filterQuery=javcasrod1
+Alejandro de los Reyes Pérez: https://github.com/users/javsorbla/projects/3/views/1?filterQuery=alereyper
 Javier Gutiérrez Pastor: https://github.com/users/javsorbla/projects/3/views/1?filterQuery=Javiergutpas
 Javier Soria Blanco: https://github.com/users/javsorbla/projects/3/views/1?filterQuery=javsorbla
+
  

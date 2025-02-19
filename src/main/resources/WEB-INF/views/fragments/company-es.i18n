@@ -10,10 +10,12 @@
 
 master.company.title = La empresa
 master.company.text = \
-	Acme ANS, S.A. es una empresa ficticia que ofrece un proyecto starter para los \
-	estudiantes de la asignatura Diseño y Pruebas de la titulación de \
-	Ingeniería del Software en la Universidad de Seville. 
-master.company.name = Acme, Inc.
-master.company.address = 01 Acme Drive, Wondercity, Wonderland
+	(Acme ANS, Inc., por abreviatura) es una empresa ficticia especializada en ayudar a los aeropuertos a gestionar \
+	sus recursos y coordinar sus operaciones mediante el desarrollo de soluciones de software. \
+	El objetivo de este proyecto es desarrollar un Sistema de Información Web (WIS) para ayudar a los aeropuertos en la gestión logística de vuelos chárter. \
+	Esto incluye la programación de vuelos, la gestión de reservas, la administración de tripulaciones, el reporte y resolución de incidentes, \
+	así como el mantenimiento de aeronaves.
+master.company.name = Acme AirNav Solutions, Inc.
+master.company.address = 01 Acme ANS Drive, Wondercity, Wonderland
 master.company.phone = +1 000 111 222
-master.company.email = contact@acme.com
+master.company.email = contact@acmeairnavsolutions.com

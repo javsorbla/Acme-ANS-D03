@@ -19,11 +19,11 @@
 <acme:menu-bar>
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.anonymous.MWK4397" action="http://www.reddit.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.alereyper" action="http://www.google.es/"/>
-            <acme:menu-suboption code="master.menu.anonymous.javcasrod1" action="http://www.reddit.com/"/>
             <acme:menu-suboption code="master.menu.anonymous.nundelesc" action="https://www.informatica.us.es/"/>
             <acme:menu-suboption code="master.menu.anonymous.javgutpas" action="https://www.youtube.com/"/>
-            <acme:menu-suboption code="master.menu.anonymous.javsorbla" action="http://www.github.com/"/>
+            <acme:menu-suboption code="master.menu.anonymous.HGD6373" action="http://www.github.com/"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">

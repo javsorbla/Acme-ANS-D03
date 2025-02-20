@@ -14,13 +14,13 @@ The goal of this project is to develop a WIS to assist airports in managing logi
 This includes flight scheduling, booking management, crew management, incident reporting and resolution, as well as aircraft maintenance.
 
 Link to the general planning dashboard in GitHub:
-https://github.com/users/javsorbla/projects/3
+https://github.com/users/javsorbla/projects/3/views/1
 
 Link to the individual planning dashboard in GitHub:
-Javier Castilla Rodríguez: https://github.com/users/javsorbla/projects/3/views/1?filterQuery=javcasrod1
-Alejandro de los Reyes Pérez: https://github.com/users/javsorbla/projects/3/views/1?filterQuery=alereyper
-Nuno José del Pino Escalante: https://github.com/users/javsorbla/projects/3/views/1?filterQuery=Nuno1610
-Javier Gutiérrez Pastor: https://github.com/users/javsorbla/projects/3/views/1?filterQuery=Javiergutpas
-Javier Soria Blanco: https://github.com/users/javsorbla/projects/3/views/1?filterQuery=javsorbla
+Javier Castilla Rodríguez: https://github.com/users/javsorbla/projects/3/views/4
+Alejandro de los Reyes Pérez: https://github.com/users/javsorbla/projects/3/views/5
+Nuno José del Pino Escalante: https://github.com/users/javsorbla/projects/3/views/6
+Javier Gutiérrez Pastor: https://github.com/users/javsorbla/projects/3/views/3
+Javier Soria Blanco: https://github.com/users/javsorbla/projects/3/views/2
 
  

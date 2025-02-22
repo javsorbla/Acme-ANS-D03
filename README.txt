@@ -23,4 +23,3 @@ Nuno José del Pino Escalante: https://github.com/users/javsorbla/projects/3/vie
 Javier Gutiérrez Pastor: https://github.com/users/javsorbla/projects/3/views/3
 Javier Soria Blanco: https://github.com/users/javsorbla/projects/3/views/2
 
- 

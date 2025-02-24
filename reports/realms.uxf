@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>150</x>
+      <y>190</y>
+      <w>580</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+AirpotManager
+--
++ identifier: String {Mandatory, ValidString(pattern="^[A-Z]{2-3}\d{6}$"), Column(unique=true)}
++ airlineExperience: int {Mandatory, ValidNumber(min=0), Automapped}
++ dateOfBirth: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
++ picture: String {Optional, ValidUrl, Automapped}
+bg=pink
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

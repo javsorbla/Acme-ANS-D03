@@ -47,7 +47,7 @@ bg=LIGHT_GRAY</panel_attributes>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 LegStatus
 --
-+ ON TIME
++ ON_TIME
 + DELAYED
 + CANCELLED
 + LANDED

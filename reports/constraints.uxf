@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>280</x>
+      <x>90</x>
       <y>100</y>
       <w>190</w>
       <h>90</h>
@@ -20,7 +20,7 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>500</x>
+      <x>310</x>
       <y>100</y>
       <w>190</w>
       <h>90</h>
@@ -36,7 +36,7 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>740</x>
+      <x>550</x>
       <y>90</y>
       <w>300</w>
       <h>110</h>
@@ -53,7 +53,7 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>280</x>
+      <x>90</x>
       <y>230</y>
       <w>250</w>
       <h>90</h>
@@ -63,6 +63,38 @@ ValidFlightNumber
 --
 + NotBlank
 + Pattern(regexp="^[A-Z]{3}\\d{4}$")
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>90</x>
+      <y>360</y>
+      <w>300</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidPhone
+--
++ number must match pattern "^\+?\d{6,15}$"
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>360</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidSeverityLevel
+--
++ NotNull
++ Min(0)
++ Max(10)
 bg=RED</panel_attributes>
     <additional_attributes/>
   </element>

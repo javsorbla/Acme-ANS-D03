@@ -10,7 +10,7 @@
       <h>120</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
-AirpotManager
+AirlineManager
 --
 + identifier: String {Mandatory, ValidString(pattern="^[A-Z]{2-3}\d{6}$"), Column(unique=true)}
 + airlineExperience: int {Mandatory, ValidNumber(min=0), Automapped}

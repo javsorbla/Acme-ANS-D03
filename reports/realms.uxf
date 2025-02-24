@@ -21,4 +21,26 @@ bg=pink
 </panel_attributes>
     <additional_attributes/>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>150</x>
+      <y>360</y>
+      <w>580</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+FlightCrewMember
+--
++ employeeCode: String {Mandatory, ValidString, Column(unique=true)}
++ phoneNumber: String {Mandatory, ValidPhone, Automapped}
++ languageSkills: String {Mandatory, ValidLongText, Automapped}
++ availabilityStatus: AvailabilityStatus{Mandatory, Valid, Automapped}
++ airline: Airline {Mandatory, Valid, Automapped}
++ salary: Money {Mandatory, ValidMoney, Automapped}
++ experienceYears: Integer {Optional, Valid, Automapped}
+bg=pink
+</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>

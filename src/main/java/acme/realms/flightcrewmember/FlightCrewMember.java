@@ -12,10 +12,10 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
+import acme.entities.aircraft.Aircraft;
 import acme.entities.airline.Airline;
-import acme.validation.ValidLongText;
-import acme.validation.ValidPhone;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -31,17 +31,17 @@ public class FlightCrewMember extends AbstractRole {
 	// Mandatory Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString
+	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
 	@Column(unique = true)
 	private String				employeeCode;
 
 	@Mandatory
-	@ValidPhone
+	@ValidString(pattern = "^\\+?\\d{6,15}$")
 	@Automapped
 	private String				phoneNumber;
 
 	@Mandatory
-	@ValidLongText
+	@ValidString(max = 255)
 	@Automapped
 	private String				languageSkills;
 
@@ -51,6 +51,11 @@ public class FlightCrewMember extends AbstractRole {
 	private AvailabilityStatus	availabilityStatus;
 
 	@Mandatory
+	@Valid
+	@Automapped // por confirmar si necesita relacion o no
+	private Airline				airline; // a lo mejor se pasa como un string
+
+	@Mandatory
 	@ValidMoney
 	@Automapped
 	private Money				salary;
@@ -58,7 +63,7 @@ public class FlightCrewMember extends AbstractRole {
 	// @Optional Attributes -------------------------------------------------------------
 
 	@Optional
-	@Valid
+	@ValidNumber(fraction = 0)
 	@Automapped
 	private Integer				experienceYears;
 
@@ -68,7 +73,6 @@ public class FlightCrewMember extends AbstractRole {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	@Automapped
-	private Airline				airline;
+	private Aircraft			aircraft;
 
 }

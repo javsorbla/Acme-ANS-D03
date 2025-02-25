@@ -585,4 +585,140 @@ m2=*
 </panel_attributes>
     <additional_attributes>1320.0;20.0;10.0;20.0</additional_attributes>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1025</x>
+      <y>765</y>
+      <w>75</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Customer
+bg=pink
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>860</y>
+      <w>290</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Booking
+--
++ locator code: String {Mandatory, ValidLocator, Automapped}
++ phone number: String {Mandatory, ValidPhone, Automapped}
++ purchase moment: Date {Mandatory, ValidMoment(past=true),Temporal(TIMESTAMP)}
++ travel class: TravelClass {Mandatory, Valid, Automapped}
++ price: Money {Mandatory, ValidMoney, Automapped}
++ last nibble: String {Optional, ValidCreditCard, Automapped}
+
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>865</y>
+      <w>255</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Passenger
+--
++ full name: String {Mandatory, ValidLongText, Automapped}
++ email: String {Mandatory, ValidEmail, Automapped}
++ passport number: String {Mandatory, ValidPassport, Automapped}
++ date of birth: Date {Mandatory, ValidMomen(past=true), Temporal(TIMESTAMP)}
++ special needs: String {Optional,ValidString}
+
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1260</x>
+      <y>755</y>
+      <w>95</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Purchase
+--
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1095</x>
+      <y>770</y>
+      <w>175</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>&lt; made by 
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;330.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1300</x>
+      <y>685</y>
+      <w>35</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>buy ^
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1055</x>
+      <y>785</y>
+      <w>50</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>made by ^
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>800</x>
+      <y>890</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Registered in &gt;
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>240.0;20.0;10.0;20.0</additional_attributes>
+  </element>
 </diagram>

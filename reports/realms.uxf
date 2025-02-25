@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>10</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>150</x>
-      <y>190</y>
-      <w>580</w>
-      <h>120</h>
+      <x>301</x>
+      <y>280</y>
+      <w>406</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 AirlineManager
@@ -24,10 +24,10 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>150</x>
-      <y>360</y>
-      <w>580</w>
-      <h>170</h>
+      <x>301</x>
+      <y>399</y>
+      <w>406</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 FlightCrewMember
@@ -39,6 +39,29 @@ FlightCrewMember
 + airline: Airline {Mandatory, Valid, Automapped}
 + salary: Money {Mandatory, ValidMoney, Automapped}
 + experienceYears: Integer {Optional, Valid, Automapped}
+bg=pink
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>301</x>
+      <y>133</y>
+      <w>406</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Customer
+--
++ identifier: String {Mandatory, ValidString, Column(unique=true)}
++ phone number: String {Mandatory, ValidPhone, Automapped}
++ physical address: String {Mandatory, ValidLongText, Automapped}
++ city: String {Mandatory, ValidString, Automapped}
++ country: String {Mandatory,ValidString, Automapped}
++ earned points: Integer {Optional, ValidPoint, Automapped}
+
+
 bg=pink
 </panel_attributes>
     <additional_attributes/>

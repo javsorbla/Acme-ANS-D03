@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
+  <help_text>&lt;&lt;Entity&gt;&gt;
+FlightAssignment
+--
++ duty: Duty {Mandatory, Valid, Automapped}
++ moment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
++ currentStatus: CurrentStatus {Mandatory, Valid, Automapped}
++ remarks: String {Optional, ValidLongText, Automapped}
++ publish: boolean {Mandatory, Valid, Automapped}
+bg=green
+</help_text>
   <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>301</x>
+      <x>161</x>
       <y>280</y>
       <w>406</w>
       <h>84</h>
@@ -24,7 +34,7 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>301</x>
+      <x>161</x>
       <y>399</y>
       <w>406</w>
       <h>119</h>
@@ -46,7 +56,7 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>301</x>
+      <x>161</x>
       <y>133</y>
       <w>406</w>
       <h>119</h>
@@ -62,6 +72,27 @@ Customer
 + earned points: Integer {Optional, ValidPoint, Automapped}
 
 
+bg=pink
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>161</x>
+      <y>553</y>
+      <w>406</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Technician
+--
++ licenseNumber: String {Mandatory, ValidString, Column(unique=true)}
++ phoneNumber: String {Mandatory, ValidString, Automapped}
++ specialisation: String {Mandatory, ValidString, Automapped}
++ anualHealthTest: boolean {Mandatory, Automapped}
++ experienceYears: Integer {Optional, ValidNumber, Automapped}
++ certifications: String {Optional, ValidString, Automapped}
 bg=pink
 </panel_attributes>
     <additional_attributes/>

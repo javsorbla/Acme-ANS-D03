@@ -97,4 +97,26 @@ bg=pink
 </panel_attributes>
     <additional_attributes/>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>133</y>
+      <w>455</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+AssistanceAgent
+--
++ employeeCode: String {Mandatory, ValidString(pattern = "^[A-Z]{2-3}\d{6}$"), Column(unique = true)}
++ spokenLanguages: String {Mandatory, ValidString(max = 255), Automapped}
++ airline: Airline {Mandatory, Valid, Automapped}
++ startDate: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
++ bio: String {Optional, ValidString(max = 255), Automapped}
++ salary: Money {Optional, ValidMoney, Automapped}
++ photoUrl: String {Optional, ValidUrl, Automapped}
+bg=pink
+</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>

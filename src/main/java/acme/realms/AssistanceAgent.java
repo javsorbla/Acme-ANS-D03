@@ -70,7 +70,7 @@ public class AssistanceAgent extends AbstractRole {
 	//LA RELACION PUEDE NO SER ASI
 	@Mandatory
 	@Valid
-	//@OneToOne
+	//@ManyToOne
 	private Airline				airline;
 
 }

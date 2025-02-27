@@ -25,8 +25,6 @@ public class Airline extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	// Derived attributes -----------------------------------------------------
-
 	@Mandatory
 	@ValidString(max = 50)
 	@Automapped
@@ -61,6 +59,8 @@ public class Airline extends AbstractEntity {
 	@ValidString(pattern = "^\\+?\\d{6,15}$")
 	@Automapped
 	private String				contactPhone;
+
+	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 

@@ -52,8 +52,4 @@ public class AirlineManager extends AbstractRole {
 
 	// Relationships -----------------------------------------------------
 
-	// @Mandatory
-	// @Valid
-	// @ManyToOne(optional = false)?
-	// Airline airline	
 }

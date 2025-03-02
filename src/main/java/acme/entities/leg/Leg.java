@@ -1,5 +1,5 @@
 
-package acme.entities.flight.leg;
+package acme.entities.leg;
 
 import java.util.Date;
 
@@ -30,7 +30,7 @@ public class Leg extends AbstractEntity {
 	// Attributes -------------------------------------------------------
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{3}\\d{4}$") //Alternativa: Crear ValidFlightNumber
+	@ValidString(pattern = "^[A-Z]{3}\\d{4}$")
 	@Column(unique = true)
 	private String				flightNumber;
 
@@ -54,30 +54,18 @@ public class Leg extends AbstractEntity {
 	@Automapped
 	private LegStatus			status;
 
-	@Mandatory
+	//@Mandatory
 	//@Valid
-	@Automapped
-	private boolean				publish;
+	//@Automapped
+	//private boolean				publish;
 
-	//Derived attributes
+	//Derived attributes-------------------------------------------------
 
 	// Relationships -----------------------------------------------------
 
 	// @Mandatory
 	// @Valid
 	// @ManyToOne(optional = false)
-	// Airport departureAirport
-
-	// @Mandatory
-	// @Valid
-	// @ManyToOne(optional = false)
-	// @JoinColumn(name = "departure_airport_id", nullable = false)
-	// Airport arrivalAirport
-
-	// @Mandatory
-	// @Valid
-	// @ManyToOne(optional = false)
-	// @JoinColumn(name = "arrival_airport_id", nullable = false)
 	// Aircraft deployedAircraft
 
 }

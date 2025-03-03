@@ -14,6 +14,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
+import acme.entities.ActivityLog;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.airline.Airline;
 import lombok.Getter;
@@ -73,6 +74,11 @@ public class FlightCrewMember extends AbstractRole {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Aircraft			aircraft;
+	private Aircraft			flightCrewMemberAircraft;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private ActivityLog			flightCrewMemberActivityLog;
 
 }

@@ -14,8 +14,8 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>161</x>
-      <y>280</y>
+      <x>217</x>
+      <y>259</y>
       <w>406</w>
       <h>84</h>
     </coordinates>
@@ -34,21 +34,21 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>161</x>
-      <y>399</y>
-      <w>406</w>
+      <x>217</x>
+      <y>378</y>
+      <w>448</w>
       <h>119</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 FlightCrewMember
 --
-+ employeeCode: String {Mandatory, ValidString, Column(unique=true)}
-+ phoneNumber: String {Mandatory, ValidPhone, Automapped}
-+ languageSkills: String {Mandatory, ValidLongText, Automapped}
++ employeeCode: String {Mandatory, ValidString(pattern="^[A-Z]{2-3}\d{6}$"), Column(unique=true)}
++ phoneNumber: String {Mandatory, ValidString(pattern="^\+?\d{6,15}$"), Automapped}
++ languageSkills: String {Mandatory, ValidString(max=255), Automapped}
 + availabilityStatus: AvailabilityStatus{Mandatory, Valid, Automapped}
 + airline: Airline {Mandatory, Valid, Automapped}
 + salary: Money {Mandatory, ValidMoney, Automapped}
-+ experienceYears: Integer {Optional, Valid, Automapped}
++ experienceYears: Integer {Optional, ValidNumber, Automapped}
 bg=pink
 </panel_attributes>
     <additional_attributes/>
@@ -56,8 +56,8 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>161</x>
-      <y>133</y>
+      <x>217</x>
+      <y>112</y>
       <w>406</w>
       <h>119</h>
     </coordinates>
@@ -79,8 +79,8 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>161</x>
-      <y>553</y>
+      <x>217</x>
+      <y>532</y>
       <w>406</w>
       <h>119</h>
     </coordinates>
@@ -93,28 +93,6 @@ Technician
 + anualHealthTest: boolean {Mandatory, Automapped}
 + experienceYears: Integer {Optional, ValidNumber, Automapped}
 + certifications: String {Optional, ValidString, Automapped}
-bg=pink
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>616</x>
-      <y>133</y>
-      <w>455</w>
-      <h>119</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Role&gt;&gt;
-AssistanceAgent
---
-+ employeeCode: String {Mandatory, ValidString(pattern = "^[A-Z]{2-3}\d{6}$"), Column(unique = true)}
-+ spokenLanguages: String {Mandatory, ValidString(max = 255), Automapped}
-+ airline: Airline {Mandatory, Valid, Automapped}
-+ startDate: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
-+ bio: String {Optional, ValidString(max = 255), Automapped}
-+ salary: Money {Optional, ValidMoney, Automapped}
-+ photoUrl: String {Optional, ValidUrl, Automapped}
 bg=pink
 </panel_attributes>
     <additional_attributes/>

@@ -325,7 +325,7 @@ m2=*
       <x>1422</x>
       <y>720</y>
       <w>318</w>
-      <h>120</h>
+      <h>132</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Flight
@@ -335,6 +335,7 @@ Flight
 + cost: Money {Mandatory, ValidMoney(min=0.00,max=1000000.00), Automapped}
 + description: String {Optional, ValidString, Automapped}
 + layoversNumber: int {Mandatory, ValidNumber(min=0), Automapped} 
++ publish: boolean {Mandatory, Valid, Automapped}
 --
 + getScheduledDeparture(): Date
 + getScheduledArrival(): Date
@@ -361,6 +362,7 @@ Leg
 + arrival: Date {Mandatory, ValidMoment, Temporal(TIMESTAMP)}
 + duration: int {Mandatory, ValidNumber(min=1,max=1000), Automapped}
 + status: LegStatus {Mandatory, Valid, Automapped}
++ publish: boolean {Mandatory, Valid, Automapped}
 
 bg=green
 
@@ -611,9 +613,9 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>1560</x>
-      <y>834</y>
+      <y>846</y>
       <w>42</w>
-      <h>108</h>
+      <h>96</h>
     </coordinates>
     <panel_attributes>buys ^
 lt=&lt;-x
@@ -621,7 +623,7 @@ m1=1
 m2=*
 
 </panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>

@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>410</x>
+      <x>430</x>
       <y>190</y>
       <w>160</w>
       <h>100</h>
@@ -29,17 +29,17 @@ bg=LIGHT_GRAY</panel_attributes>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 ClaimType
 --
-+ FLIGHT ISSUES
-+ LUGGAGE ISSUES
-+ SECURITY INCIDENT
-+ OTHER ISSUES
++ FLIGHT_ISSUES
++ LUGGAGE_ISSUES
++ SECURITY_INCIDENT
++ OTHER_ISSUES
 bg=LIGHT_GRAY</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>200</x>
+      <x>240</x>
       <y>190</y>
       <w>160</w>
       <h>110</h>
@@ -74,7 +74,7 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>200</x>
+      <x>240</x>
       <y>360</y>
       <w>160</w>
       <h>110</h>
@@ -83,15 +83,15 @@ bg=LIGHT_GRAY</panel_attributes>
 AvailabilityStatus
 --
 + AVAILABLE
-+ ON VACATION
-+ ON LEAVE
++ ON_VACATION
++ ON_LEAVE
 bg=LIGHT_GRAY</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>410</x>
+      <x>430</x>
       <y>360</y>
       <w>160</w>
       <h>110</h>
@@ -101,8 +101,24 @@ Duty
 --
 + PILOT
 + COPILOT
-+ LEAD ATTENDANT
-+ CABIN ATTENDANT
++ LEAD_ATTENDANT
++ CABIN_ATTENDANT
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>830</x>
+      <y>190</y>
+      <w>180</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+TravelClass
+--
++ ECONOMY
++ BUSINESS
 bg=LIGHT_GRAY</panel_attributes>
     <additional_attributes/>
   </element>

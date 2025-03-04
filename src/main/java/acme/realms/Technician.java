@@ -5,11 +5,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import acme.client.components.basis.AbstractRole;
-import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import lombok.Getter;
 import lombok.Setter;
@@ -53,18 +51,8 @@ public class Technician extends AbstractRole {
 	@Automapped
 	private String				certifications;
 
-	@Optional
-	@ValidMoney
-	@Automapped
-	private Money				salary;
-
 	// Derived attributes -------------------------------------------------------------
 
 	// Relationships ------------------------------------------------------------------
-
-	//@Mandatory
-	//@Valid
-	//@ManyToOne
-	//private Task				task;
 
 }

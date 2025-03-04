@@ -14,9 +14,9 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>217</x>
-      <y>259</y>
-      <w>406</w>
+      <x>294</x>
+      <y>245</y>
+      <w>420</w>
       <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
@@ -34,8 +34,8 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>217</x>
-      <y>378</y>
+      <x>294</x>
+      <y>364</y>
       <w>448</w>
       <h>119</h>
     </coordinates>
@@ -56,8 +56,8 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>217</x>
-      <y>112</y>
+      <x>294</x>
+      <y>98</y>
       <w>406</w>
       <h>119</h>
     </coordinates>
@@ -79,8 +79,8 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>217</x>
-      <y>532</y>
+      <x>294</x>
+      <y>518</y>
       <w>406</w>
       <h>119</h>
     </coordinates>

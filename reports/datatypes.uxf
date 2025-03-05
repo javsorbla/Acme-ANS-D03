@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>171</x>
-      <y>207</y>
+      <x>351</x>
+      <y>135</y>
       <w>144</w>
       <h>90</h>
     </coordinates>
@@ -21,8 +21,8 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>342</x>
-      <y>207</y>
+      <x>522</x>
+      <y>135</y>
       <w>162</w>
       <h>99</h>
     </coordinates>
@@ -39,8 +39,8 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>207</y>
+      <x>180</x>
+      <y>135</y>
       <w>144</w>
       <h>99</h>
     </coordinates>
@@ -57,8 +57,8 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>342</x>
-      <y>360</y>
+      <x>522</x>
+      <y>288</y>
       <w>144</w>
       <h>99</h>
     </coordinates>
@@ -74,8 +74,8 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>360</y>
+      <x>180</x>
+      <y>288</y>
       <w>144</w>
       <h>99</h>
     </coordinates>
@@ -91,8 +91,8 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>171</x>
-      <y>360</y>
+      <x>351</x>
+      <y>288</y>
       <w>144</w>
       <h>99</h>
     </coordinates>
@@ -109,8 +109,8 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>531</x>
-      <y>207</y>
+      <x>711</x>
+      <y>135</y>
       <w>162</w>
       <h>99</h>
     </coordinates>
@@ -125,8 +125,8 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>513</x>
-      <y>360</y>
+      <x>693</x>
+      <y>288</y>
       <w>162</w>
       <h>99</h>
     </coordinates>
@@ -142,8 +142,8 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>486</y>
+      <x>180</x>
+      <y>414</y>
       <w>162</w>
       <h>99</h>
     </coordinates>
@@ -154,6 +154,24 @@ TaskType
 + INSPECTION
 + REPAIR
 + SYSTEM_CHECK
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>396</x>
+      <y>414</y>
+      <w>162</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+OperationalScope
+--
++ INTERNATIONAL
++ DOMESTIC
++ REGIONAL
+
 bg=LIGHT_GRAY</panel_attributes>
     <additional_attributes/>
   </element>

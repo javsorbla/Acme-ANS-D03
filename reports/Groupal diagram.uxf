@@ -318,13 +318,13 @@ Flight
 + selfTransfer: boolean {Mandatory, Valid, Automapped}
 + cost: Money {Mandatory, ValidMoney(min=0.00,max=1000000.00), Automapped}
 + description: String {Optional, ValidString, Automapped}
-+ layoversNumber: int {Mandatory, ValidNumber(min=0), Automapped} 
 + publish: boolean {Mandatory, Valid, Automapped}
 --
 + getScheduledDeparture(): Date
 + getScheduledArrival(): Date
 + getOrigin(): String
 + getDestination(): String
++ getNumberOfLayovers(): Integer
 bg=green
 
 </panel_attributes>

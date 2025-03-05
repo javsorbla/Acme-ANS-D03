@@ -49,7 +49,7 @@ public class Leg extends AbstractEntity {
 	@Mandatory
 	@ValidNumber(min = 1, max = 1000)
 	@Automapped
-	private int					duration; // In hours
+	private int					duration; // In hours //Derived? //Time between departure and arrival equals this duration?
 
 	@Mandatory
 	@Valid

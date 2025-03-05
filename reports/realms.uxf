@@ -14,8 +14,8 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>80</x>
-      <y>210</y>
+      <x>190</x>
+      <y>350</y>
       <w>600</w>
       <h>120</h>
     </coordinates>
@@ -34,8 +34,8 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>80</x>
-      <y>380</y>
+      <x>190</x>
+      <y>520</y>
       <w>640</w>
       <h>170</h>
     </coordinates>
@@ -56,31 +56,8 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>80</x>
-      <y>0</y>
-      <w>580</w>
-      <h>170</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Role&gt;&gt;
-Customer
---
-+ identifier: String {Mandatory, ValidString, Column(unique=true)}
-+ phone number: String {Mandatory, ValidPhone, Automapped}
-+ physical address: String {Mandatory, ValidLongText, Automapped}
-+ city: String {Mandatory, ValidString, Automapped}
-+ country: String {Mandatory,ValidString, Automapped}
-+ earned points: Integer {Optional, ValidPoint, Automapped}
-
-
-bg=pink
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>80</x>
-      <y>600</y>
+      <x>190</x>
+      <y>740</y>
       <w>580</w>
       <h>170</h>
     </coordinates>
@@ -93,6 +70,29 @@ Technician
 + anualHealthTest: boolean {Mandatory, Automapped}
 + experienceYears: Integer {Optional, ValidNumber, Automapped}
 + certifications: String {Optional, ValidString, Automapped}
+bg=pink
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>190</x>
+      <y>120</y>
+      <w>620</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Customer
+--
++ identifier: String {Mandatory, ValidString(pattern="^[A-Z]{2-3}\d{6}$"), Column(unique=true)}
++ phoneNumber: String {Mandatory, ValidString(pattern="^\+?\d{6,15}$", Automapped}
++ physicalAddress: String {Mandatory, ValidString(min=1,max=255), Automapped}
++ city: String {Mandatory, ValidString(min=1,max=50), Automapped}
++ country: String {Mandatory,ValidString(min=1,max=50), Automapped}
++ earnedPoints: Integer {Optional,ValidNumber(min=0,max=500000,fraction=0), Automapped}
+
+
 bg=pink
 </panel_attributes>
     <additional_attributes/>

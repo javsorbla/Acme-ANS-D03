@@ -58,7 +58,7 @@ public class Review extends AbstractEntity {
 	private double				score;
 
 	@Optional
-	@Valid
+	//@Valid
 	@Automapped
 	private boolean				recommended;
 

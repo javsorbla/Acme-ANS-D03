@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -15,6 +16,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
+import acme.entities.aircraft.Aircraft;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -37,7 +39,7 @@ public class Leg extends AbstractEntity {
 	@Mandatory
 	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				departure;
+	private Date				departure; //Should check if departure is before arrival?
 
 	@Mandatory
 	@ValidMoment
@@ -45,9 +47,9 @@ public class Leg extends AbstractEntity {
 	private Date				arrival;
 
 	@Mandatory
-	@ValidNumber(min = 0)
+	@ValidNumber(min = 1, max = 1000)
 	@Automapped
-	private double				duration; // In hours
+	private int					duration; // In hours
 
 	@Mandatory
 	@Valid
@@ -63,9 +65,19 @@ public class Leg extends AbstractEntity {
 
 	// Relationships -----------------------------------------------------
 
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	Aircraft					deployedAircraft;
+
 	// @Mandatory
 	// @Valid
 	// @ManyToOne(optional = false)
-	// Aircraft deployedAircraft
+	// Airport departureAirport
+
+	// @Mandatory
+	// @Valid
+	// @ManyToOne(optional = false)
+	// Airport arrivalAirport
 
 }

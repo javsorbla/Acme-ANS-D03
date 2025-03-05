@@ -38,7 +38,7 @@ public class TrackingLog extends AbstractEntity {
 	private double				resolutionPercentage;
 
 	@Mandatory
-	@Valid
+	//@Valid
 	@Automapped
 	private boolean				indicator;
 

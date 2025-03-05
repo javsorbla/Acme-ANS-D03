@@ -43,12 +43,12 @@ public class Claim extends AbstractEntity {
 	private ClaimType			type;
 
 	@Mandatory
-	@Valid
+	//@Valid
 	@Automapped
 	private boolean				indicator;
 
 	@Mandatory
-	@Valid
+	//@Valid
 	@Automapped
 	private boolean				draftMode;
 	// Derived attributes -----------------------------------------------------

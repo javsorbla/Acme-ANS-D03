@@ -126,22 +126,6 @@ bg=green
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1134</x>
-      <y>384</y>
-      <w>78</w>
-      <h>174</h>
-    </coordinates>
-    <panel_attributes>Component of ^
-lt=&lt;-x
-m1=1
-m2=  *
-
-</panel_attributes>
-    <additional_attributes>10.0;270.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
       <x>18</x>

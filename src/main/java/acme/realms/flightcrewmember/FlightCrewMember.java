@@ -14,7 +14,6 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.entities.ActivityLog;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.airline.Airline;
 import lombok.Getter;
@@ -38,11 +37,11 @@ public class FlightCrewMember extends AbstractRole {
 
 	@Mandatory
 	@ValidString(pattern = "^\\+?\\d{6,15}$")
-	@Automapped
+	@Automapped // puede ser Column(unique=true)
 	private String				phoneNumber;
 
 	@Mandatory
-	@ValidString(max = 255)
+	@ValidString // no hace falta max = 255 porque es el por defecto
 	@Automapped
 	private String				languageSkills;
 
@@ -57,14 +56,14 @@ public class FlightCrewMember extends AbstractRole {
 	private Airline				airline; // a lo mejor se pasa como un string
 
 	@Mandatory
-	@ValidMoney
+	@ValidMoney(min = 0.00, max = 1000000.00)
 	@Automapped
 	private Money				salary;
 
-	// @Optional Attributes -------------------------------------------------------------
+	// Optional Attributes -------------------------------------------------------------
 
 	@Optional
-	@ValidNumber(fraction = 0)
+	@ValidNumber(min = 0, max = 120, fraction = 0) // fraction puede que no haga falta?
 	@Automapped
 	private Integer				experienceYears;
 
@@ -75,10 +74,5 @@ public class FlightCrewMember extends AbstractRole {
 	@Valid
 	@ManyToOne(optional = false)
 	private Aircraft			flightCrewMemberAircraft;
-
-	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private ActivityLog			flightCrewMemberActivityLog;
 
 }

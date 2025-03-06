@@ -39,7 +39,7 @@ public class Leg extends AbstractEntity {
 	@Mandatory
 	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				departure; //Should check if departure is before arrival?
+	private Date				departure; //Should check if departure is before arrival
 
 	@Mandatory
 	@ValidMoment
@@ -49,7 +49,7 @@ public class Leg extends AbstractEntity {
 	@Mandatory
 	@ValidNumber(min = 1, max = 1000)
 	@Automapped
-	private int					duration; // In hours //Derived? //Time between departure and arrival equals this duration?
+	private int					duration; // In hours //Derived? -> Time between departure and arrival equals this duration
 
 	@Mandatory
 	@Valid
@@ -59,7 +59,7 @@ public class Leg extends AbstractEntity {
 	//@Mandatory
 	//@Valid
 	//@Automapped
-	//private boolean				publish; // Attribute needed for future developments
+	//private boolean				publish; // Attribute needed for future deliverables
 
 	//Derived attributes-------------------------------------------------
 

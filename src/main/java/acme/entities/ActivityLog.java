@@ -3,18 +3,16 @@ package acme.entities;
 
 import java.util.Date;
 
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.entities.leg.Leg;
+// import acme.entities.leg.Leg;
+import acme.constraints.ValidRegistrationMoment;
 
 public class ActivityLog extends AbstractEntity {
 
@@ -25,7 +23,7 @@ public class ActivityLog extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidMoment(past = true)
+	@ValidRegistrationMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				registrationMoment;
 
@@ -35,20 +33,25 @@ public class ActivityLog extends AbstractEntity {
 	private String				incidentType;
 
 	@Mandatory
-	@ValidString(max = 255)
+	@ValidString // no hace falta max=255 porque es por defecto
 	@Automapped
 	private String				description;
 
 	@Mandatory
-	@ValidNumber(min = 0, max = 10)
+	@ValidNumber(min = 0, max = 10, fraction = 0) // fraction=0 para que no tenga decimales
 	@Automapped
 	private Integer				severityLevel;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-	@Mandatory
-	@Valid
-	@ManyToOne
-	private Leg					activityLogLeg;
+	//@Mandatory
+	//@Valid
+	//@ManyToOne(optional = false)
+	//private FlightAssignment activityLogAssignment;
+
+	//@Mandatory
+	//@Valid
+	//@OneToOne(optional = false)
+	//private Leg					activityLogLeg;
 }

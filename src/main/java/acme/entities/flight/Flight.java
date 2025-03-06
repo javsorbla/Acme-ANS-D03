@@ -18,7 +18,7 @@ public class Flight extends AbstractEntity {
 	// Attributes -------------------------------------------------------
 
 	@Mandatory
-	@ValidString(max = 50) // valor mínimo?
+	@ValidString(min = 1, max = 50)
 	@Automapped // unico?
 	String						tag;
 
@@ -28,7 +28,7 @@ public class Flight extends AbstractEntity {
 	boolean						selfTransfer;
 
 	@Mandatory
-	@ValidMoney(min = 0.00, max = 1000000.00)
+	@ValidMoney //By default -> (min = 0.00, max = 1000000.00)
 	@Automapped
 	Money						cost;
 
@@ -46,4 +46,8 @@ public class Flight extends AbstractEntity {
 
 	// Relationships -----------------------------------------------------
 
+	//@Mandatory
+	//@Valid
+	//@ManyToOne(optional = false)
+	//AirlineManager manager;
 }

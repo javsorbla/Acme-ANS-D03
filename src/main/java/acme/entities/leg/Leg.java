@@ -68,16 +68,16 @@ public class Leg extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	Aircraft					deployedAircraft;
+	private Aircraft			deployedAircraft;
 
 	// @Mandatory
 	// @Valid
 	// @ManyToOne(optional = false)
-	// Airport departureAirport
+	// private Airport departureAirport
 
 	// @Mandatory
 	// @Valid
 	// @ManyToOne(optional = false)
-	// Airport arrivalAirport
+	// private Airport arrivalAirport
 
 }

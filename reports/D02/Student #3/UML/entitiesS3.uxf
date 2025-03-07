@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>64</x>
+      <y>384</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Airline
+
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>352</x>
+      <y>616</y>
+      <w>112</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Aircraft
+
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>96</x>
+      <y>416</y>
+      <w>272</w>
+      <h>256</h>
+    </coordinates>
+    <panel_attributes>&lt; Owned by
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>30.0;10.0;30.0;280.0;320.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>352</x>
+      <y>384</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+FlightCrewMember
+bg=pink
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>416</y>
+      <w>80</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>works for v
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;250.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>344</y>
+      <w>584</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+FlightAssignment
+--
++ duty: Duty {Mandatory, Valid, Automapped}
++ moment: Date {Mandatory, ValidMoment(min="2000/01/01  00:00:00",past=true), Temporal(TIMESTAMP)}
++ currentStatus: CurrentStatus {Mandatory, Valid, Automapped}
++ remarks: String {Optional, ValidString, Automapped}
++ publish: boolean {Mandatory, Valid, Automapped}
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>464</x>
+      <y>392</y>
+      <w>232</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt; belongs to
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;270.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>912</x>
+      <y>616</y>
+      <w>112</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Leg
+
+bg=green
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>144</y>
+      <w>472</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+ActivityLog
+--
++ registrationMoment: Date {Mandatory, ValidRegistrationMoment(past=true), Temporal(TIMESTAMP)}
++ incidentType: String {Mandatory, ValidString(max=50), Automapped}
++ description: String {Mandatory, ValidString, Automapped}
++ severityLevel: Integer {Mandatory, ValidNumber(min=0,max=10), Automapped}
+
+bg=green
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>960</x>
+      <y>232</y>
+      <w>88</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>belongs to v
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>960</x>
+      <y>448</y>
+      <w>112</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>associated with v
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;210.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>176</x>
+      <y>392</y>
+      <w>192</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt; works for
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;220.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>456</x>
+      <y>624</y>
+      <w>472</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt; deploys
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;570.0;20.0</additional_attributes>
+  </element>
+</diagram>

@@ -41,12 +41,12 @@ public class Airport extends AbstractEntity {
 	OperationalScope			operationalScope;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(max = 50) // min=1 porque es mandatory?
 	@Automapped
 	String						city;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(max = 50) // min=1 porque es mandatory?
 	@Automapped
 	String						country;
 
@@ -56,7 +56,7 @@ public class Airport extends AbstractEntity {
 	String						website;
 
 	@Optional
-	@ValidEmail
+	@ValidEmail // min=0 por ser opcional, por defecto es 1
 	@Column(unique = true)
 	String						email;
 

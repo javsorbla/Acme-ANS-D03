@@ -16,12 +16,14 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidManager;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@ValidManager
 public class AirlineManager extends AbstractRole {
 
 	// Serialisation version --------------------------------------------
@@ -31,12 +33,12 @@ public class AirlineManager extends AbstractRole {
 	// Attributes -------------------------------------------------------
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
+	@ValidString(min = 8, pattern = "^[A-Z]{2-3}\\d{6}$")
 	@Column(unique = true)
 	private String				identifier;
 
 	@Mandatory
-	@ValidNumber(min = 0, max = 120)
+	@ValidNumber(min = 0, max = 120, fraction = 0) //fraction=0 necessary?
 	@Automapped
 	private int					yearsOfExperience;
 
@@ -51,5 +53,10 @@ public class AirlineManager extends AbstractRole {
 	private String				picture;
 
 	// Relationships -----------------------------------------------------
+
+	//@Valid
+	//@Mandatory
+	//@ManyToOne(optional = false)
+	//private Airline airline;
 
 }

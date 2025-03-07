@@ -31,17 +31,17 @@ public class FlightCrewMember extends AbstractRole {
 	// Mandatory Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
+	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$") // min y max ya vienen en el pattern?
 	@Column(unique = true)
 	private String				employeeCode;
 
 	@Mandatory
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
+	@ValidString(pattern = "^\\+?\\d{6,15}$") // min y max ya vienen en el pattern?
 	@Automapped // puede ser Column(unique=true)
 	private String				phoneNumber;
 
 	@Mandatory
-	@ValidString // no hace falta max = 255 porque es el por defecto
+	@ValidString(min = 1) // min=1 porque no puede estar vacio, no hace falta max = 255 porque es el por defecto
 	@Automapped
 	private String				languageSkills;
 
@@ -49,11 +49,6 @@ public class FlightCrewMember extends AbstractRole {
 	@Valid
 	@Automapped
 	private AvailabilityStatus	availabilityStatus;
-
-	@Mandatory
-	@Valid
-	@Automapped // por confirmar si necesita relacion o no
-	private Airline				airline; // a lo mejor se pasa como un string
 
 	@Mandatory
 	@ValidMoney(min = 0.00, max = 1000000.00)
@@ -70,6 +65,11 @@ public class FlightCrewMember extends AbstractRole {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false) // segun el foro es una relacion
+	private Airline				airline;
+
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)

@@ -1,4 +1,0 @@
-#validation-es.i18n
-
-acme.validation.activitylog.message = Registro de actividades incorrecto
-acme.validation.activitylog.registrationmoment.message = Momento de registro incorrecto

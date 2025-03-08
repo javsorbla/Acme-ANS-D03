@@ -1,4 +1,0 @@
-#validation-en.i18n
-
-acme.validation.activitylog.message = Invalid activity log
-acme.validation.activitylog.registrationmoment.message = Invalid registration moment

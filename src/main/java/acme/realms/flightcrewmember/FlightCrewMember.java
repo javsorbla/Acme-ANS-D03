@@ -68,7 +68,7 @@ public class FlightCrewMember extends AbstractRole {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false) // segun el foro es una relacion
-	private Airline				airline;
+	private Airline				flightCrewMemberAirline;
 
 	@Mandatory
 	@Valid

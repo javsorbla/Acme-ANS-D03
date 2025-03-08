@@ -28,24 +28,24 @@ public class Aircraft extends AbstractEntity {
 	// Mandatory Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(max = 50) // min=1 porque es obligatorio?
 	@Automapped
 	private String				model;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(max = 50) // min=1 porque es obligatorio?
 	@Column(unique = true)
 	private String				registrationNumber;
 
 	@Mandatory
-	@ValidNumber
+	@ValidNumber // debe ser min=1, fraction=0
 	@Automapped
 	private Integer				capacity;
 
 	@Mandatory
-	@ValidNumber(min = 2000, max = 50000)
+	@ValidNumber(min = 2000, max = 50000) // fraction=0?
 	@Automapped
-	private double				cargoWeight;
+	private double				cargoWeight; // es integer
 
 	@Mandatory
 	@Valid
@@ -55,7 +55,7 @@ public class Aircraft extends AbstractEntity {
 	// @Optional Attributes -------------------------------------------------------------
 
 	@Optional
-	@ValidString(max = 255)
+	@ValidString(max = 255) // sobra max=255
 	@Automapped
 	private String				details;
 
@@ -64,6 +64,6 @@ public class Aircraft extends AbstractEntity {
 	// Relationships ----------------------------------------------------------
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Airline				airline;
 }

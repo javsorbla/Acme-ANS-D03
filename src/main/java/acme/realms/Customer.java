@@ -1,26 +1,24 @@
 
-package acme.entities.claims;
+package acme.realms;
 
-import java.util.Date;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.validation.Valid;
 
-import acme.client.components.basis.AbstractEntity;
+import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.ValidEmail;
-import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.realms.AssistanceAgent;
+import acme.constraints.ValidCustomer;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Claim extends AbstractEntity {
+@ValidCustomer
+public class Customer extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
 
@@ -29,41 +27,37 @@ public class Claim extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidMoment(past = true)
-	@Automapped
-	private Date				registrationMoment;
+	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
+	@Column(unique = true)
+	private String				identifier;
 
 	@Mandatory
-	@ValidEmail
+	@ValidString(pattern = "^\\+?\\d{6,15}$")
 	@Automapped
-	private String				passengerEmail;
+	private String				phoneNumber;
 
 	@Mandatory
-	@ValidString(max = 255)
+	@ValidString(min = 1, max = 255)
 	@Automapped
-	private String				description;
+	private String				physicalAddress;
 
 	@Mandatory
-	@Valid
+	@ValidString(min = 1, max = 50)
 	@Automapped
-	private ClaimType			type;
+	private String				city;
 
 	@Mandatory
-	@Valid
+	@ValidString(min = 1, max = 50)
 	@Automapped
-	private boolean				indicator;
+	private String				country;
 
-	@Mandatory
-	@Valid
+	@Optional
+	@ValidNumber(min = 0, max = 500000)
 	@Automapped
-	private boolean				draftMode;
+	private Integer				earnedPoints;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-
-	@Mandatory
-	@Valid
-	@ManyToOne
-	private AssistanceAgent		assistanceAgent;
 
 }

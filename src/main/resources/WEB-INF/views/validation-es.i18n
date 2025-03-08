@@ -3,5 +3,7 @@
 acme.validation.leg.message = Tramo inválido
 acme.validation.leg.departure.message = Fecha de salida inválida
 acme.validation.leg.arrival.message = Fecha de llegada inválida
+acme.validation.activitylog.message = Registro de actividades inválido
+acme.validation.activitylog.registrationmoment.message = Momento de registro inválido
 acme.validation.airlinemanager.identifier.message = Identificador incorrecto
 acme.validation.customer.identifier.message = Identificador incorrecto

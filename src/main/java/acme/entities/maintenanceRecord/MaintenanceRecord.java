@@ -1,10 +1,10 @@
 
-package acme.entities.airline;
+package acme.entities.maintenanceRecord;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -13,61 +13,56 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.client.components.validation.ValidUrl;
+import acme.entities.aircraft.Aircraft;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Airline extends AbstractEntity {
-
+public class MaintenanceRecord extends AbstractEntity {
 	// Serialisation version --------------------------------------------------
 
-	private static final long	serialVersionUID	= 1L;
+	private static final long		serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(max = 50) // min=1 al ser obligatorio?
-	@Automapped
-	private String				name;
-
-	@Mandatory
-	@ValidString(pattern = "^[A-Z]{3}$")
-	@Column(unique = true)
-	private String				iataCode;
-
-	@Mandatory
-	@ValidUrl // min=1 porque es mandatory
-	@Automapped
-	private String				webSite;
+	@ValidMoment
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date					moment;
 
 	@Mandatory
 	@Valid
 	@Automapped
-	private AirlineType			type;
+	private MaintenanceRecordStatus	status;
 
 	@Mandatory
-	@ValidMoment(past = true)
+	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				foundationMoment;
+	private Date					nextInspectionDate;
+
+	@Mandatory
+	@ValidNumber(min = 0)
+	@Automapped
+	private Integer					estimatedCost;
+
+	// @Optional Attributes -------------------------------------------------------------
 
 	@Optional
-	@ValidEmail // min=0 al ser optional
+	@ValidString(max = 255)
 	@Automapped
-	private String				email;
-
-	@Optional
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
-	@Automapped
-	private String				contactPhone;
+	private String					notes;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 
+	@Mandatory
+	@Valid
+	@ManyToOne
+	private Aircraft				aircraft;
 }

@@ -1,8 +1,7 @@
 
-package acme.entities.trackingLogs;
+package acme.entities.aircraft;
 
-import java.util.Date;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
@@ -11,56 +10,60 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.entities.claims.Claim;
+import acme.entities.airline.Airline;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class TrackingLog extends AbstractEntity {
+public class Aircraft extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
+	// Mandatory Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidMoment(past = true)
+	@ValidString(max = 50) // min=1 porque es obligatorio?
 	@Automapped
-	private Date				lastUpdateMoment;
+	private String				model;
 
 	@Mandatory
-	@ValidString(max = 50)
-	@Automapped
-	private String				step;
+	@ValidString(max = 50) // min=1 porque es obligatorio?
+	@Column(unique = true)
+	private String				registrationNumber;
 
 	@Mandatory
-	@ValidNumber(min = 0, max = 100)	//seguro?
+	@ValidNumber // debe ser min=1, fraction=0
 	@Automapped
-	private double				resolutionPercentage;
+	private Integer				capacity;
+
+	@Mandatory
+	@ValidNumber(min = 2000, max = 50000) // fraction=0?
+	@Automapped
+	private double				cargoWeight; // es integer
 
 	@Mandatory
 	@Valid
 	@Automapped
-	private boolean				indicator;
+	private AircraftStatus		status;
 
-	@Optional 			//Seguro?
-	@ValidString(max = 255)
+	// @Optional Attributes -------------------------------------------------------------
+
+	@Optional
+	@ValidString(max = 255) // sobra max=255
 	@Automapped
-	private String				resolution;
+	private String				details;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-
 	@Mandatory
 	@Valid
-	@ManyToOne
-	private Claim				claim;
-
+	@ManyToOne(optional = false)
+	private Airline				airline;
 }

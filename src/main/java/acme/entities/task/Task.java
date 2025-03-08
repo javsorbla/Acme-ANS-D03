@@ -1,7 +1,5 @@
 
-package acme.entities.claims;
-
-import java.util.Date;
+package acme.entities.task;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -10,18 +8,17 @@ import javax.validation.Valid;
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.ValidEmail;
-import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.realms.AssistanceAgent;
+import acme.entities.maintenanceRecord.MaintenanceRecord;
+import acme.realms.Technician;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Claim extends AbstractEntity {
-
+public class Task extends AbstractEntity {
 	// Serialisation version --------------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
@@ -29,34 +26,23 @@ public class Claim extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidMoment(past = true)
 	@Automapped
-	private Date				registrationMoment;
-
-	@Mandatory
-	@ValidEmail
-	@Automapped
-	private String				passengerEmail;
+	private TaskType			type;
 
 	@Mandatory
 	@ValidString(max = 255)
-	@Automapped
 	private String				description;
 
 	@Mandatory
-	@Valid
+	@ValidNumber(min = 0, max = 10)
 	@Automapped
-	private ClaimType			type;
+	private Integer				priority;
 
 	@Mandatory
-	@Valid
+	@ValidNumber(min = 0.)
 	@Automapped
-	private boolean				indicator;
+	private Double				estimatedDuration;
 
-	@Mandatory
-	@Valid
-	@Automapped
-	private boolean				draftMode;
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
@@ -64,6 +50,10 @@ public class Claim extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne
-	private AssistanceAgent		assistanceAgent;
+	private Technician			technician;
 
+	@Mandatory
+	@Valid
+	@ManyToOne
+	private MaintenanceRecord	maintenanceRecord;
 }

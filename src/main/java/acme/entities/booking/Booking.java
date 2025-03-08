@@ -55,10 +55,10 @@ public class Booking extends AbstractEntity {
 	@Automapped
 	private String				lastNibble;
 
-	@Mandatory
-	@Valid
-	@Automapped
-	private Boolean				publish;
+	//	@Mandatory
+	//	@Valid
+	//	@Automapped
+	//	private Boolean				publish; // Attribute needed for future deliverables
 
 	//Derived attributes-------------------------------------------------
 
@@ -66,7 +66,7 @@ public class Booking extends AbstractEntity {
 
 	//	@Mandatory
 	//	@Valid
-	//	@ManyToOne
-	//	private Flight flightId;
+	//	@ManyToOne(optional = false)
+	//	private Flight				flightId;
 
 }

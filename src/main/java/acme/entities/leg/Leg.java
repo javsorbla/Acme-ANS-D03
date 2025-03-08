@@ -59,7 +59,7 @@ public class Leg extends AbstractEntity {
 	//@Mandatory
 	//@Valid
 	//@Automapped
-	//private boolean				publish; // Attribute needed for future developments
+	//private boolean				publish; // Attribute needed for future deliverables
 
 	//Derived attributes-------------------------------------------------
 

@@ -12,11 +12,12 @@ import javax.validation.ReportAsSingleViolation;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = CustomerValidator.class)
+@Constraint(validatedBy = ManagerValidator.class)
 @ReportAsSingleViolation
 public @interface ValidCustomer {
 
-	String message() default "{acme.validation.airlinemanager.identifier.message}";
+	String message() default "{acme.validation.customer.identifier.message}";
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
+
 }

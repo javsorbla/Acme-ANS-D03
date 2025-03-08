@@ -39,7 +39,7 @@ public class CustomerValidator extends AbstractValidator<ValidCustomer, Customer
 			char surnameFirstLetter = identity.getSurname().charAt(0);
 			String initials = "" + nameFirstLetter + surnameFirstLetter;
 			// Solution without using the framework helper
-			//containsInitials = manager.getIdentifier().charAt(0) == nameFirstLetter && manager.getIdentifier().charAt(1) == surnameFirstLetter;
+			//containsInitials = customer.getIdentifier().charAt(0) == nameFirstLetter && customer.getIdentifier().charAt(1) == surnameFirstLetter;
 			containsInitials = StringHelper.startsWith(customer.getIdentifier(), initials, false); //Checks if identifier starts with the 2 initials
 			super.state(context, containsInitials, "identifier", "acme.validation.customer.identifier.message");
 		}

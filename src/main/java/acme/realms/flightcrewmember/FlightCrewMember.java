@@ -22,6 +22,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+
 public class FlightCrewMember extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
@@ -31,7 +32,7 @@ public class FlightCrewMember extends AbstractRole {
 	// Mandatory Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$") // min y max ya vienen en el pattern?
+	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$") // min y max ya vienen en el pattern?
 	@Column(unique = true)
 	private String				employeeCode;
 
@@ -73,6 +74,6 @@ public class FlightCrewMember extends AbstractRole {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Aircraft			flightCrewMemberAircraft;
+	private Aircraft			flightCrewMemberAircraft; // sobra?
 
 }

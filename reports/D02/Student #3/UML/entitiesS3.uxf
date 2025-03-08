@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>8</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>64</x>
-      <y>384</y>
-      <w>120</w>
-      <h>40</h>
+      <x>210</x>
+      <y>360</y>
+      <w>90</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Airline
@@ -19,10 +19,10 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>352</x>
-      <y>616</y>
-      <w>112</w>
-      <h>40</h>
+      <x>426</x>
+      <y>534</y>
+      <w>84</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Aircraft
@@ -34,10 +34,10 @@ bg=green
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>96</x>
-      <y>416</y>
-      <w>272</w>
-      <h>256</h>
+      <x>234</x>
+      <y>384</y>
+      <w>204</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>&lt; Owned by
 lt=&lt;-x
@@ -50,10 +50,10 @@ m2=*
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>352</x>
-      <y>384</y>
-      <w>120</w>
-      <h>40</h>
+      <x>426</x>
+      <y>360</y>
+      <w>90</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 FlightCrewMember
@@ -64,10 +64,10 @@ bg=pink
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>400</x>
-      <y>416</y>
-      <w>80</w>
-      <h>216</h>
+      <x>462</x>
+      <y>384</y>
+      <w>60</w>
+      <h>162</h>
     </coordinates>
     <panel_attributes>works for v
 lt=&lt;-x
@@ -80,10 +80,10 @@ m2=*
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>680</x>
-      <y>344</y>
-      <w>584</w>
-      <h>112</h>
+      <x>672</x>
+      <y>330</y>
+      <w>438</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 FlightAssignment
@@ -91,7 +91,7 @@ FlightAssignment
 + duty: Duty {Mandatory, Valid, Automapped}
 + moment: Date {Mandatory, ValidMoment(min="2000/01/01  00:00:00",past=true), Temporal(TIMESTAMP)}
 + currentStatus: CurrentStatus {Mandatory, Valid, Automapped}
-+ remarks: String {Optional, ValidString, Automapped}
++ remarks: String {Optional, ValidString(min=0), Automapped}
 + publish: boolean {Mandatory, Valid, Automapped}
 bg=green
 </panel_attributes>
@@ -100,10 +100,10 @@ bg=green
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>464</x>
-      <y>392</y>
-      <w>232</w>
-      <h>48</h>
+      <x>510</x>
+      <y>366</y>
+      <w>174</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>&lt; belongs to
 lt=&lt;-x
@@ -116,10 +116,10 @@ m2=*
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>912</x>
-      <y>616</y>
-      <w>112</w>
-      <h>40</h>
+      <x>846</x>
+      <y>534</y>
+      <w>84</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Leg
@@ -132,18 +132,19 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>736</x>
-      <y>144</y>
-      <w>472</w>
-      <h>96</h>
+      <x>714</x>
+      <y>174</y>
+      <w>354</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 ActivityLog
 --
-+ registrationMoment: Date {Mandatory, ValidRegistrationMoment(past=true), Temporal(TIMESTAMP)}
-+ incidentType: String {Mandatory, ValidString(max=50), Automapped}
-+ description: String {Mandatory, ValidString, Automapped}
++ registrationMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
++ incidentType: String {Mandatory, ValidString(min=1,max=50), Automapped}
++ description: String {Mandatory, ValidString(min=1), Automapped}
 + severityLevel: Integer {Mandatory, ValidNumber(min=0,max=10), Automapped}
++ publish: boolean {Mandatory, Valid, Automapped}
 
 bg=green
 
@@ -153,10 +154,10 @@ bg=green
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>960</x>
-      <y>232</y>
-      <w>88</w>
-      <h>128</h>
+      <x>882</x>
+      <y>246</y>
+      <w>66</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>belongs to v
 lt=&lt;-x
@@ -169,10 +170,10 @@ m2=*
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>960</x>
-      <y>448</y>
-      <w>112</w>
-      <h>184</h>
+      <x>882</x>
+      <y>408</y>
+      <w>84</w>
+      <h>138</h>
     </coordinates>
     <panel_attributes>associated with v
 lt=&lt;-x
@@ -185,10 +186,10 @@ m2=*
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>176</x>
-      <y>392</y>
-      <w>192</w>
-      <h>48</h>
+      <x>294</x>
+      <y>366</y>
+      <w>144</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>&lt; works for
 lt=&lt;-x
@@ -201,10 +202,10 @@ m2=*
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>456</x>
-      <y>624</y>
-      <w>472</w>
-      <h>48</h>
+      <x>504</x>
+      <y>540</y>
+      <w>354</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>&lt; deploys
 lt=&lt;-x

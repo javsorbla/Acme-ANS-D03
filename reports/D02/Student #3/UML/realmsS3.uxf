@@ -22,11 +22,10 @@ bg=green
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 FlightCrewMember
 --
-+ employeeCode: String {Mandatory, ValidString(pattern="^[A-Z]{2-3}\d{6}$"), Column(unique=true)}
++ employeeCode: String {Mandatory, ValidString(pattern="^[A-Z]{2,3}\d{6}$"), Column(unique=true)}
 + phoneNumber: String {Mandatory, ValidString(pattern="^\+?\d{6,15}$"), Automapped}
-+ languageSkills: String {Mandatory, ValidString, Automapped}
++ languageSkills: String {Mandatory, ValidString(min=1), Automapped}
 + availabilityStatus: AvailabilityStatus{Mandatory, Valid, Automapped}
-+ airline: Airline {Mandatory, Valid, Automapped}
 + salary: Money {Mandatory, ValidMoney(min=0.00,max=1000000.00, Automapped}
 + experienceYears: Integer {Optional, ValidNumber(min=0,max=120,fraction=0), Automapped}
 bg=pink

@@ -39,7 +39,7 @@ public class FlightCrewMemberValidator extends AbstractValidator<ValidFlightCrew
 			char surnameFirstLetter = identity.getSurname().charAt(0);
 			String initials = "" + nameFirstLetter + surnameFirstLetter;
 			// Solution without using the framework helper
-			//containsInitials = manager.getIdentifier().charAt(0) == nameFirstLetter && manager.getIdentifier().charAt(1) == surnameFirstLetter;
+			//containsInitials = flightCrewMember.getEmployeeCode().charAt(0) == nameFirstLetter && flightCrewMember.getEmployeeCode().charAt(1) == surnameFirstLetter;
 			containsInitials = StringHelper.startsWith(flightCrewMember.getEmployeeCode(), initials, false); //Checks if identifier starts with the 2 initials
 			super.state(context, containsInitials, "identifier", "acme.validation.flightcrewmember.identifier.message");
 		}

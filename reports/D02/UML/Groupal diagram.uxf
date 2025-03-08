@@ -128,118 +128,6 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>21</x>
-      <y>399</y>
-      <w>406</w>
-      <h>119</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-AssistanceAgent
---
-+ employerCode: String {Mandatory, ValidString, Column(unique = true)}
-+ spokenLanguages: String {Mandatory, ValidString, Automapped}
-+ airline: Airline {Mandatory, Valid, Automapped}
-+ startDate: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
-+ bio: String {Optional, ValidString, Automapped}
-+ salary: Money {Optional, ValidMoney, Automapped}
-+ photoUrl: String {Optional, ValidUrl, Automapped}
-bg=green
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>0</x>
-      <y>595</y>
-      <w>546</w>
-      <h>112</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Claim
---
-+ registrationMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
-+ passengerEmail: String {Mandatory, ValidEmail, Automapped}
-+ description: String {Mandatory, ValidString, Automapped}
-+ claimType: ClaimType {Mandatory,Valid, Automapped}
-+ accepted: boolean {Mandatory, Valid, Automapped}
-+ publish: boolean {Mandatory, Valid, Automapped}
-bg=green
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>49</x>
-      <y>798</y>
-      <w>406</w>
-      <h>98</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-TrackingLog
---
-+ lastUpdateMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
-+ step: String {Mandatory, ValidString, Automapped}
-+ resolutionPercentage: Score {Mandatory, ValidScore, Automapped}
-+ claimAccepted: boolean {Mandatory, Valid, Automapped}
-+ resolutionDetails: String {Mandatory, ValidString, Automapped}
-+ publish: boolean {Mandatory, Valid, Automapped}
-bg=green
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>420</x>
-      <y>448</y>
-      <w>210</w>
-      <h>42</h>
-    </coordinates>
-    <panel_attributes>works in &gt;
-lt=&lt;-x
-m1=1
-m2=1
-
-</panel_attributes>
-    <additional_attributes>280.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>238</x>
-      <y>511</y>
-      <w>77</w>
-      <h>98</h>
-    </coordinates>
-    <panel_attributes>created by ^
-lt=&lt;-x
-m1=1
-m2=*
-
-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>238</x>
-      <y>700</y>
-      <w>77</w>
-      <h>112</h>
-    </coordinates>
-    <panel_attributes>register of ^
-lt=&lt;-x
-m1=1
-m2=*
-
-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
       <x>1351</x>
       <y>203</y>
       <w>105</w>
@@ -760,5 +648,109 @@ m2=*
 
 </panel_attributes>
     <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>308</x>
+      <y>441</y>
+      <w>322</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>works in &gt;
+lt=&lt;-x
+m1=1
+m2=1
+
+</panel_attributes>
+    <additional_attributes>440.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>595</y>
+      <w>546</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Claim
+--
++ registrationMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
++ passengerEmail: String {Mandatory, ValidEmail, Automapped}
++ description: String {Mandatory, ValidString(max = 255), Automapped}
++ type: ClaimType {Mandatory,Valid, Automapped}
++ accepted: boolean {Mandatory, Valid, Automapped}
++ draftMode: boolean {Mandatory, Valid, Automapped}
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>70</x>
+      <y>798</y>
+      <w>406</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+TrackingLog
+--
++ lastUpdateMoment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
++ step: String {Mandatory, ValidString(max = 50), Automapped}
++ resolutionPercentage: Score {Mandatory, ValidScore, Automapped}
++ indicator: boolean {Mandatory, Valid, Automapped}
++ resolutionDetails: String {Mandatory, ValidString(max = 255), Automapped}
++ draftMode: boolean {Mandatory, Valid, Automapped}
+bg=green
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>259</x>
+      <y>469</y>
+      <w>77</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>created by ^
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>259</x>
+      <y>700</y>
+      <w>77</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>register of ^
+lt=&lt;-x
+m1=1
+m2=*
+
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>434</y>
+      <w>105</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+AssistanceAgent
+bg=pink
+</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

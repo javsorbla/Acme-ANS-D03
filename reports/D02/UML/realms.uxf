@@ -14,8 +14,8 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>190</x>
-      <y>350</y>
+      <x>0</x>
+      <y>230</y>
       <w>600</w>
       <h>120</h>
     </coordinates>
@@ -34,8 +34,8 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>190</x>
-      <y>520</y>
+      <x>0</x>
+      <y>400</y>
       <w>640</w>
       <h>170</h>
     </coordinates>
@@ -56,8 +56,8 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>190</x>
-      <y>740</y>
+      <x>680</x>
+      <y>200</y>
       <w>580</w>
       <h>170</h>
     </coordinates>
@@ -77,8 +77,8 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>190</x>
-      <y>120</y>
+      <x>0</x>
+      <y>0</y>
       <w>620</w>
       <h>170</h>
     </coordinates>
@@ -93,6 +93,28 @@ Customer
 + earnedPoints: Integer {Optional,ValidNumber(min=0,max=500000,fraction=0), Automapped}
 
 
+bg=pink
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>0</y>
+      <w>650</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+AssistanceAgent
+--
++ employeeCode: String {Mandatory, ValidString(pattern = "^[A-Z]{2-3}\d{6}$"), Column(unique = true)}
++ spokenLanguages: String {Mandatory, ValidString(max = 255), Automapped}
++ airline: Airline {Mandatory, Valid, Automapped}
++ startDate: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
++ bio: String {Optional, ValidString(max = 255), Automapped}
++ salary: Money {Optional, ValidMoney, Automapped}
++ photoUrl: String {Optional, ValidUrl, Automapped}
 bg=pink
 </panel_attributes>
     <additional_attributes/>

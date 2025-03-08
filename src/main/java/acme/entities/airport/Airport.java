@@ -26,44 +26,44 @@ public class Airport extends AbstractEntity {
 	// Attributes -------------------------------------------------------
 
 	@Mandatory
-	@ValidString(max = 50) // min a 0 por default, se pone uno distinto?
-	@Automapped // Debe ser unico?
-	String						name;
+	@ValidString(min = 1, max = 50) // min a 0 por default, se pone uno distinto?
+	@Automapped
+	private String				name;
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{3}$")
+	@ValidString(pattern = "^[A-Z]{3}$") //Should check min?
 	@Column(unique = true)
-	String						iataCode;
+	private String				iataCode;
 
 	@Mandatory
 	@Valid
 	@Automapped
-	OperationalScope			operationalScope;
+	private OperationalScope	operationalScope;
 
 	@Mandatory
 	@ValidString(max = 50) // min=1 porque es mandatory?
 	@Automapped
-	String						city;
+	private String				city;
 
 	@Mandatory
 	@ValidString(max = 50) // min=1 porque es mandatory?
 	@Automapped
-	String						country;
+	private String				country;
 
 	@Optional
 	@ValidUrl
 	@Column(unique = true) // De verdad tiene que ser unico?
-	String						website;
+	private String				website;
 
 	@Optional
 	@ValidEmail // min=0 por ser opcional, por defecto es 1
 	@Column(unique = true)
-	String						email;
+	private String				email;
 
 	@Optional
 	@ValidString(pattern = "^\\+?\\d{6,15}$")
 	@Column(unique = true)
-	String						contactPhone;
+	private String				contactPhone;
 
 	//Runways?
 

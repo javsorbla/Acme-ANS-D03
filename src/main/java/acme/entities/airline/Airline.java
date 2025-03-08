@@ -32,7 +32,7 @@ public class Airline extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(max = 50) // min=1 al ser obligatorio?
+	@ValidString(min = 1, max = 50) // min=1 al ser obligatorio?
 	@Automapped
 	private String				name;
 

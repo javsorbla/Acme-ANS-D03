@@ -16,6 +16,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
+import acme.constraints.ValidLeg;
 import acme.entities.aircraft.Aircraft;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,6 +24,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidLeg
 public class Leg extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------
@@ -32,24 +34,24 @@ public class Leg extends AbstractEntity {
 	// Attributes -------------------------------------------------------
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{3}\\d{4}$")
+	@ValidString(pattern = "^[A-Z]{3}\\d{4}$") //Should check if it contains the IATA code?
 	@Column(unique = true)
 	private String				flightNumber;
 
 	@Mandatory
 	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				departure; //Should check if departure is before arrival?
+	private Date				departure; //Should check if departure is before arrival
 
 	@Mandatory
 	@ValidMoment
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.TIMESTAMP) //After departure
 	private Date				arrival;
 
 	@Mandatory
 	@ValidNumber(min = 1, max = 1000)
 	@Automapped
-	private int					duration; // In hours
+	private int					duration; // In hours //Derived? -> Time between departure and arrival equals this duration
 
 	@Mandatory
 	@Valid
@@ -59,7 +61,7 @@ public class Leg extends AbstractEntity {
 	//@Mandatory
 	//@Valid
 	//@Automapped
-	//private boolean				publish; // Attribute needed for future developments
+	//private boolean				publish; // Attribute needed for future deliverables
 
 	//Derived attributes-------------------------------------------------
 
@@ -68,16 +70,16 @@ public class Leg extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	Aircraft					deployedAircraft;
+	private Aircraft			deployedAircraft;
 
 	// @Mandatory
 	// @Valid
 	// @ManyToOne(optional = false)
-	// Airport departureAirport
+	// private Airport departureAirport
 
 	// @Mandatory
 	// @Valid
 	// @ManyToOne(optional = false)
-	// Airport arrivalAirport
+	// private Airport arrivalAirport
 
 }

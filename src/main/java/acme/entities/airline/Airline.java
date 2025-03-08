@@ -32,7 +32,7 @@ public class Airline extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(min = 1, max = 50)
+	@ValidString(min = 1, max = 50) // min=1 al ser obligatorio?
 	@Automapped
 	private String				name;
 
@@ -42,7 +42,7 @@ public class Airline extends AbstractEntity {
 	private String				iataCode;
 
 	@Mandatory
-	@ValidUrl
+	@ValidUrl // min=1 porque es mandatory
 	@Automapped
 	private String				webSite;
 
@@ -57,7 +57,7 @@ public class Airline extends AbstractEntity {
 	private Date				foundationMoment;
 
 	@Optional
-	@ValidEmail
+	@ValidEmail // min=0 al ser optional
 	@Automapped
 	private String				email;
 

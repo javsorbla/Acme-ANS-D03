@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -70,7 +71,7 @@ public class AssistanceAgent extends AbstractRole {
 	//LA RELACION PUEDE NO SER ASI
 	@Mandatory
 	@Valid
-	//@ManyToOne
+	@ManyToOne(optional = false)
 	private Airline				airline;
 
 }

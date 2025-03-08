@@ -1,19 +1,29 @@
 
-package acme.entities;
+package acme.entities.activitylog;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-// import acme.entities.leg.Leg;
-import acme.constraints.ValidRegistrationMoment;
+import acme.constraints.ValidActivityLog;
+import acme.entities.flightassignment.FlightAssignment;
+import lombok.Getter;
+import lombok.Setter;
 
+@Entity
+@Getter
+@Setter
+@ValidActivityLog
 public class ActivityLog extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
@@ -23,17 +33,17 @@ public class ActivityLog extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidRegistrationMoment
+	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				registrationMoment;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50) // min=1 porque es obligatorio
 	@Automapped
 	private String				incidentType;
 
 	@Mandatory
-	@ValidString // no hace falta max=255 porque es por defecto
+	@ValidString(min = 1) // min=1 porque es obligatorio, no hace falta max=255 porque es por defecto
 	@Automapped
 	private String				description;
 
@@ -42,16 +52,16 @@ public class ActivityLog extends AbstractEntity {
 	@Automapped
 	private Integer				severityLevel;
 
+	@Mandatory
+	@Valid
+	@Automapped
+	private Boolean				publish;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-	//@Mandatory
-	//@Valid
-	//@ManyToOne(optional = false)
-	//private FlightAssignment activityLogAssignment;
-
-	//@Mandatory
-	//@Valid
-	//@OneToOne(optional = false)
-	//private Leg					activityLogLeg;
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private FlightAssignment	activityLogAssignment;
 }

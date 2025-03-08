@@ -1,4 +1,7 @@
 #validation-en.i18n
 
+acme.validation.leg.message = Invalid leg
+acme.validation.leg.departure.message = Invalid departure date
+acme.validation.leg.arrival.message = Invalid arrival date
 acme.validation.airlinemanager.identifier.message = Invalid identifier
 acme.validation.customer.identifier.message = Invalid identifier

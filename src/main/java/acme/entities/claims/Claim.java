@@ -54,7 +54,7 @@ public class Claim extends AbstractEntity {
 	private boolean				indicator;
 
 	@Mandatory
-	@Valid
+	//@Valid by default
 	@Automapped
 	private boolean				draftMode;
 	// Derived attributes -----------------------------------------------------

@@ -31,7 +31,7 @@ public class Review extends AbstractEntity {
 	// Mandatory Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(max = 50) // min = 1 porque es obligatorio?
 	@Automapped
 	private String				name;
 
@@ -41,12 +41,12 @@ public class Review extends AbstractEntity {
 	private Date				moment;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(max = 50) // min=1 porque es obligatorio?
 	@Automapped
 	private String				subject;
 
 	@Mandatory
-	@ValidString(max = 255)
+	@ValidString(max = 255)  // max=255 no hace falta
 	@Automapped
 	private String				text;
 
@@ -55,12 +55,12 @@ public class Review extends AbstractEntity {
 	@Optional
 	@ValidNumber(min = 0, max = 10)
 	@Automapped
-	private double				score;
+	private double				score; //double o Double?
 
 	@Optional
-	//@Valid
+	//@Valid  no funciona con boolean
 	@Automapped
-	private boolean				recommended;
+	private boolean				recommended; //boolean o Boolean?
 
 	// Derived attributes -----------------------------------------------------
 
@@ -69,15 +69,15 @@ public class Review extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne
-	private Airline				airline;
+	private Airline				airline; // sobra?
 
 	//	@Mandatory
 	//	@Valid
 	//	@ManyToOne
-	//	private Service				service;
+	//	private Service				service; sobra?
 
 	//	@Mandatory
 	//	@Valid
 	//	@ManyToOne
-	//	private Airport				airport;
+	//	private Airport				airport; sobra?
 }

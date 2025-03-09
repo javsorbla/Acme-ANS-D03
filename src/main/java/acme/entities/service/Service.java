@@ -1,15 +1,15 @@
 
-package acme.entities.airport;
+package acme.entities.service;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidEmail;
+import acme.client.components.validation.ValidNumber;
+import acme.client.components.validation.ValidScore;
 import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
@@ -18,7 +18,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Airport extends AbstractEntity {
+public class Service extends AbstractEntity {
 	// Serialisation version --------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
@@ -26,46 +26,29 @@ public class Airport extends AbstractEntity {
 	// Attributes -------------------------------------------------------
 
 	@Mandatory
-	@ValidString(max = 50) // min a 0 por default, se pone uno distinto?
-	@Automapped // Debe ser unico?
-	String						name;
-
-	@Mandatory
-	@ValidString(pattern = "^[A-Z]{3}$")
-	@Column(unique = true)
-	String						iataCode;
-
-	@Mandatory
-	@Valid
+	@ValidString(min = 1, max = 50)
 	@Automapped
-	OperationalScope			operationalScope;
+	private String				name;
 
 	@Mandatory
-	@ValidString(max = 50) // min=1 porque es mandatory?
-	@Automapped
-	String						city;
-
-	@Mandatory
-	@ValidString(max = 50) // min=1 porque es mandatory?
-	@Automapped
-	String						country;
-
-	@Optional
 	@ValidUrl
-	@Column(unique = true) // De verdad tiene que ser unico?
-	String						website;
+	@Automapped
+	private String				pictureUrl;
+
+	@Mandatory
+	@ValidNumber(min = 1, max = 100, integer = 3, fraction = 2)
+	@Automapped
+	private Double				averageDwellTime;
 
 	@Optional
-	@ValidEmail // min=0 por ser opcional, por defecto es 1
+	@ValidString(pattern = "^[A-Z]{4}-[0-9]{2}$")
 	@Column(unique = true)
-	String						email;
+	private String				promoCode;
 
 	@Optional
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
-	@Column(unique = true)
-	String						contactPhone;
-
-	//Runways?
+	@ValidScore
+	@Automapped
+	private Double				discountAmount;
 
 	//Derived attributes-------------------------------------------------
 

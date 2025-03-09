@@ -15,7 +15,6 @@ import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.constraints.ValidFlightCrewMember;
-import acme.entities.aircraft.Aircraft;
 import acme.entities.airline.Airline;
 import lombok.Getter;
 import lombok.Setter;
@@ -72,10 +71,5 @@ public class FlightCrewMember extends AbstractRole {
 	@Valid
 	@ManyToOne(optional = false) // segun el foro es una relacion
 	private Airline				flightCrewMemberAirline;
-
-	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private Aircraft			flightCrewMemberAircraft; // sobra?
 
 }

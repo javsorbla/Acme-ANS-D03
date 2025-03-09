@@ -111,7 +111,7 @@ public class Flight extends AbstractEntity {
 		repository = SpringHelper.getBean(FlightRepository.class);
 		legs = repository.getNumberOfLegs(this.getId());
 
-		return legs - 1; //Should never have 0 legs so that it has - 1 layovers
+		return legs == null ? 0 : legs - 1; //Should never have 0 legs so that it has - 1 layovers
 		//return legs != null && legs == 0 ? legs : legs - 1; //Doesnt make sense to have -1 layovers if flight has no legs yet
 	}
 

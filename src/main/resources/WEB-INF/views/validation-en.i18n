@@ -8,3 +8,4 @@ acme.validation.activitylog.registrationmoment.message = Invalid registration mo
 acme.validation.airlinemanager.identifier.message = Invalid identifier
 acme.validation.customer.identifier.message = Invalid identifier
 acme.validation.flightcrewmember.identifier.message = Invalid identifier
+acme.validation.technician.identifier.message = Invalid identifier

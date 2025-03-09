@@ -8,3 +8,4 @@ acme.validation.activitylog.registrationmoment.message = Momento de registro inv
 acme.validation.airlinemanager.identifier.message = Identificador incorrecto
 acme.validation.customer.identifier.message = Identificador incorrecto
 acme.validation.flightcrewmember.identifier.message = Identificador incorrecto
+acme.validation.technician.identifier.message = Identificador incorrecto

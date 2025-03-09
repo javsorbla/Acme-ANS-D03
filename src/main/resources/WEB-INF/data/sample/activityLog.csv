@@ -1,0 +1,2 @@
+key,registrationMoment,incidentType,description,severityLevel,publish,key:activityLogAssignment
+log-01,2022/06/02 05:35,"Combustible","Al acabar el viaje quedó poco combustible en el avión",7,true,assignment-01

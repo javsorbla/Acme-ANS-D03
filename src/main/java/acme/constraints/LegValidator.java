@@ -34,7 +34,7 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 			super.state(context, departureIsFuture, "departure", "acme.validation.leg.departure.message");
 
 			boolean arrivalIsAfterDeparture;
-			//Using delta = 1 min and considering duration is a derived attribute
+			//Using delta = 1 minute and considering duration is a derived attribute
 			//Solution using framework, but is using ChronoUnit correct?
 			//Date minMoment = MomentHelper.deltaFromMoment(leg.getDeparture(), 1, ChronoUnit.MINUTES);
 			Date minMoment = new Date(leg.getDeparture().getTime() + 1 * 60 * 1000); //this works? uses long

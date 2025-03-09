@@ -8,6 +8,7 @@ import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import lombok.Getter;
 import lombok.Setter;
@@ -43,6 +44,7 @@ public class Technician extends AbstractRole {
 	private boolean				anualHealthTest;
 
 	@Mandatory
+	@ValidNumber(min = 0)
 	@Automapped
 	private Integer				experienceYears;
 

@@ -14,7 +14,7 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
+      <x>0</x>
       <y>304</y>
       <w>480</w>
       <h>96</h>
@@ -34,19 +34,19 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>784</x>
+      <x>544</x>
       <y>280</y>
-      <w>464</w>
+      <w>520</w>
       <h>136</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Technician
 --
-+ licenseNumber: String {Mandatory, ValidString, Column(unique=true)}
-+ phoneNumber: String {Mandatory, ValidString, Automapped}
-+ specialisation: String {Mandatory, ValidString, Automapped}
++ licenseNumber: String {Mandatory, ValidString(pattern="^[A-Z]{2,3}\d{6}$"), Column(unique=true)}
++ phoneNumber: String {Mandatory, ValidString(pattern="^\+?\d{6,15}$"), Automapped}
++ specialisation: String {Mandatory, ValidString(max=50), Automapped}
 + anualHealthTest: boolean {Mandatory, Automapped}
-+ experienceYears: Integer {Optional, ValidNumber, Automapped}
++ experienceYears: Integer {Optional, ValidNumber(min=0), Automapped}
 + certifications: String {Optional, ValidString, Automapped}
 bg=pink
 </panel_attributes>
@@ -55,7 +55,7 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
+      <x>0</x>
       <y>120</y>
       <w>496</w>
       <h>136</h>
@@ -78,7 +78,7 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>784</x>
+      <x>544</x>
       <y>120</y>
       <w>520</w>
       <h>136</h>
@@ -100,7 +100,7 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
+      <x>0</x>
       <y>440</y>
       <w>512</w>
       <h>128</h>

@@ -4,6 +4,7 @@ package acme.entities.airline;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -16,7 +17,12 @@ import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
+import lombok.Getter;
+import lombok.Setter;
 
+@Entity
+@Getter
+@Setter
 public class Airline extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
@@ -26,7 +32,7 @@ public class Airline extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50) // min=1 al ser obligatorio?
 	@Automapped
 	private String				name;
 
@@ -36,7 +42,7 @@ public class Airline extends AbstractEntity {
 	private String				iataCode;
 
 	@Mandatory
-	@ValidUrl
+	@ValidUrl // min=1 porque es mandatory
 	@Automapped
 	private String				webSite;
 
@@ -51,7 +57,7 @@ public class Airline extends AbstractEntity {
 	private Date				foundationMoment;
 
 	@Optional
-	@ValidEmail
+	@ValidEmail // min=0 al ser optional
 	@Automapped
 	private String				email;
 

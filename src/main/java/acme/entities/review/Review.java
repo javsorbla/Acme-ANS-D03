@@ -1,5 +1,5 @@
 
-package acme.entities.maintenanceRecord;
+package acme.entities.review;
 
 import java.util.Date;
 
@@ -16,46 +16,51 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.entities.aircraft.Aircraft;
+import acme.entities.airline.Airline;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class MaintenanceRecord extends AbstractEntity {
+public class Review extends AbstractEntity {
 	// Serialisation version --------------------------------------------------
 
-	private static final long		serialVersionUID	= 1L;
+	private static final long	serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
-
-	@Mandatory
-	@ValidMoment
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date					moment;
+	// Mandatory Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@Valid
+	@ValidString(max = 50) // min = 1 porque es obligatorio?
 	@Automapped
-	private MaintenanceRecordStatus	status;
+	private String				name;
 
 	@Mandatory
-	@ValidMoment
+	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date					nextInspectionDate;
+	private Date				moment;
 
 	@Mandatory
-	@ValidNumber(min = 0)
+	@ValidString(max = 50) // min=1 porque es obligatorio?
 	@Automapped
-	private Integer					estimatedCost;
+	private String				subject;
+
+	@Mandatory
+	@ValidString(max = 255)  // max=255 no hace falta
+	@Automapped
+	private String				text;
 
 	// @Optional Attributes -------------------------------------------------------------
 
 	@Optional
-	@ValidString(max = 255)
+	@ValidNumber(min = 0, max = 10)
 	@Automapped
-	private String					notes;
+	private double				score; //double o Double?
+
+	@Optional
+	//@Valid  no funciona con boolean
+	@Automapped
+	private boolean				recommended; //boolean o Boolean?
 
 	// Derived attributes -----------------------------------------------------
 
@@ -64,5 +69,15 @@ public class MaintenanceRecord extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne
-	private Aircraft				aircraft;
+	private Airline				airline; // sobra?
+
+	//	@Mandatory
+	//	@Valid
+	//	@ManyToOne
+	//	private Service				service; sobra?
+
+	//	@Mandatory
+	//	@Valid
+	//	@ManyToOne
+	//	private Airport				airport; sobra?
 }

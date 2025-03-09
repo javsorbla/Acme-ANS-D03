@@ -33,7 +33,7 @@ public class AirlineManager extends AbstractRole {
 	// Attributes -------------------------------------------------------
 
 	@Mandatory
-	@ValidString(min = 8, pattern = "^[A-Z]{2-3}\\d{6}$")
+	@ValidString(min = 8, pattern = "^[A-Z]{2,3}\\d{6}$")
 	@Column(unique = true)
 	private String				identifier;
 

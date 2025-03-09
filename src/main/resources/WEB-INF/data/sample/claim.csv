@@ -1,0 +1,2 @@
+key,registrationMoment,passengerEmail,description,type,indicator,draftMode,key:assistanceAgent
+claim-01,2000/04/04 00:00,joel@acme.com,Viaje ruidoso,LUGGAGE_ISSUES,false,true,agent-01

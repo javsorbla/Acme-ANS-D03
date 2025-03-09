@@ -9,3 +9,4 @@ acme.validation.airlinemanager.identifier.message = Invalid identifier
 acme.validation.customer.identifier.message = Invalid identifier
 acme.validation.flightcrewmember.identifier.message = Invalid identifier
 acme.validation.technician.identifier.message = Invalid identifier
+acme.validation.assistanceagent.identifier.message = Inalid employee code

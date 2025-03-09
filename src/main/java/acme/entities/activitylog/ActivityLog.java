@@ -1,26 +1,30 @@
 
-package acme.entities.claims;
+package acme.entities.activitylog;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.realms.AssistanceAgent;
+import acme.constraints.ValidActivityLog;
+import acme.entities.flightassignment.FlightAssignment;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Claim extends AbstractEntity {
+@ValidActivityLog
+public class ActivityLog extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -30,40 +34,34 @@ public class Claim extends AbstractEntity {
 
 	@Mandatory
 	@ValidMoment(past = true)
-	@Automapped
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				registrationMoment;
 
 	@Mandatory
-	@ValidEmail
+	@ValidString(min = 1, max = 50) // min=1 porque es obligatorio
 	@Automapped
-	private String				passengerEmail;
+	private String				incidentType;
 
 	@Mandatory
-	@ValidString(max = 255)
+	@ValidString(min = 1) // min=1 porque es obligatorio, no hace falta max=255 porque es por defecto
 	@Automapped
 	private String				description;
 
 	@Mandatory
-	@Valid
+	@ValidNumber(min = 0, max = 10, fraction = 0) // fraction=0 para que no tenga decimales
 	@Automapped
-	private ClaimType			type;
+	private Integer				severityLevel;
 
 	@Mandatory
 	@Valid
 	@Automapped
-	private boolean				indicator;
+	private Boolean				publish;
 
-	@Mandatory
-	//@Valid by default
-	@Automapped
-	private boolean				draftMode;
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-
 	@Mandatory
 	@Valid
-	@ManyToOne
-	private AssistanceAgent		assistanceAgent;
-
+	@ManyToOne(optional = false)
+	private FlightAssignment	activityLogAssignment;
 }

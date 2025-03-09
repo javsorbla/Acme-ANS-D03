@@ -334,7 +334,7 @@ m1=1
 m2=  *
 
 </panel_attributes>
-    <additional_attributes>320.0;380.0;320.0;210.0;10.0;210.0;10.0;10.0</additional_attributes>
+    <additional_attributes>160.0;380.0;160.0;210.0;10.0;210.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -369,7 +369,7 @@ MaintenanceRecord
 + moment: Date {Mandatory, ValidMoment, Temporal(TIMESTAMP)}
 + status: MaintenanceRecordStatus {Mandatory, Valid, Automapped}
 + nextInspectionDate: Date {Mandatory, ValidMoment, Temporal(TIMESTAMP)}
-+ estimatedCost: Integer {Mandatory, ValidNumber(min=0), Automapped}
++ estimatedCost: Integer {Mandatory, ValidNumber(min=0, max=100000), Automapped}
 + notes: String {Optional, ValidString(max = 255), Automapped}
 bg=green
 </panel_attributes>
@@ -404,7 +404,7 @@ m1=*
 m2=1
 
 </panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;220.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>

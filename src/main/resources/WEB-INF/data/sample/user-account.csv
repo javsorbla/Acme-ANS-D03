@@ -16,4 +16,6 @@ user-account-member-02,true,"UserIdentity{name: 'Juan', surname: 'García', emai
 user-account-member-03,true,"UserIdentity{name: 'Pedro', surname: 'Carrasco', email: 'pedrocarrasco@acme.com'}",member3,member3
 user-account-member-04,true,"UserIdentity{name: 'Alberto', surname: 'Seco', email: 'albertoseco@acme.com'}",member4,member4
 user-account-member-05,true,"UserIdentity{name: 'Michael', surname: 'Torres', email: 'michaeltorres@acme.com'}",member,member
-
+user-account-manager-01,true,"UserIdentity{name: 'Manuel', surname: 'Guerra', email: 'manuelguerra@acme.com'}",manager1,manager1
+user-account-manager-02,true,"UserIdentity{name: 'Guillermo', surname: 'Puerta', email: 'guillepuerta@acme.com'}",manager2,manager2
+user-account-manager-03,true,"UserIdentity{name: 'Juan Alberto', surname: 'Serrano', email: 'jalbertoserrano@acme.com'}",manager3,manager3

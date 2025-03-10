@@ -3,6 +3,7 @@ package acme.entities.claims;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
@@ -12,8 +13,14 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
+import acme.entities.flight.Flight;
 import acme.realms.AssistanceAgent;
+import lombok.Getter;
+import lombok.Setter;
 
+@Entity
+@Getter
+@Setter
 public class Claim extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
@@ -43,12 +50,12 @@ public class Claim extends AbstractEntity {
 	private ClaimType			type;
 
 	@Mandatory
-	//@Valid
+	@Valid
 	@Automapped
 	private boolean				indicator;
 
 	@Mandatory
-	//@Valid
+	//@Valid by default
 	@Automapped
 	private boolean				draftMode;
 	// Derived attributes -----------------------------------------------------
@@ -59,5 +66,10 @@ public class Claim extends AbstractEntity {
 	@Valid
 	@ManyToOne
 	private AssistanceAgent		assistanceAgent;
+
+	@Mandatory
+	@Valid
+	@ManyToOne
+	private Flight				flight;
 
 }

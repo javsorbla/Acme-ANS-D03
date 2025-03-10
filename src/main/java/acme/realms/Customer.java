@@ -1,27 +1,24 @@
 
-package acme.entities.trackingLogs;
+package acme.realms;
 
-import java.util.Date;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.validation.Valid;
 
-import acme.client.components.basis.AbstractEntity;
+import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.entities.claims.Claim;
+import acme.constraints.ValidCustomer;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class TrackingLog extends AbstractEntity {
+@ValidCustomer
+public class Customer extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
 
@@ -30,37 +27,37 @@ public class TrackingLog extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidMoment(past = true)
-	@Automapped
-	private Date				lastUpdateMoment;
+	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$")
+	@Column(unique = true)
+	private String				identifier;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(pattern = "^\\+?\\d{6,15}$")
 	@Automapped
-	private String				step;
+	private String				phoneNumber;
 
 	@Mandatory
-	@ValidNumber(min = 0, max = 100)	//seguro?
+	@ValidString(min = 1, max = 255)
 	@Automapped
-	private double				resolutionPercentage;
+	private String				physicalAddress;
 
 	@Mandatory
-	@Valid
+	@ValidString(min = 1, max = 50)
 	@Automapped
-	private TrackingLogStatus	status;
+	private String				city;
+
+	@Mandatory
+	@ValidString(min = 1, max = 50)
+	@Automapped
+	private String				country;
 
 	@Optional
-	@ValidString(min = 0, max = 255)
+	@ValidNumber(min = 0, max = 500000)
 	@Automapped
-	private String				resolution;
+	private Integer				earnedPoints;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-
-	@Mandatory
-	@Valid
-	@ManyToOne
-	private Claim				claim;
 
 }

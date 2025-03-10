@@ -1,0 +1,2 @@
+key,fullName,email,passportNumber,dateOfBirth,specialNeeds,publish
+passenger-01,"Diego Customer",diegocustomer@acme.com,ABC12345,1999/02/01 00:00,"No tengo ninguna necesidad especial",true

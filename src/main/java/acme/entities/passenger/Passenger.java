@@ -1,8 +1,11 @@
 
-package acme.entities.airport;
+package acme.entities.passenger;
 
-import javax.persistence.Column;
+import java.util.Date;
+
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -10,15 +13,15 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidEmail;
+import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
-import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-public class Airport extends AbstractEntity {
+public class Passenger extends AbstractEntity {
 	// Serialisation version --------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
@@ -26,46 +29,34 @@ public class Airport extends AbstractEntity {
 	// Attributes -------------------------------------------------------
 
 	@Mandatory
-	@ValidString(min = 1, max = 50) // min a 0 por default, se pone uno distinto?
+	@ValidString(min = 1, max = 255)
 	@Automapped
-	private String				name;
+	private String				fullName;
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{3}$") //Should check min?
-	@Column(unique = true)
-	private String				iataCode;
+	@ValidEmail
+	@Automapped
+	private String				email;
+
+	@Mandatory
+	@ValidString(pattern = "^[A-Z0-9]{6,9}$")
+	@Automapped
+	private String				passportNumber;
+
+	@Mandatory
+	@ValidMoment(past = true)
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				dateOfBirth;
+
+	@Optional
+	@ValidString(min = 0, max = 50)
+	@Automapped
+	private String				specialNeeds;
 
 	@Mandatory
 	@Valid
 	@Automapped
-	private OperationalScope	operationalScope;
-
-	@Mandatory
-	@ValidString(max = 50) // min=1 porque es mandatory?
-	@Automapped
-	private String				city;
-
-	@Mandatory
-	@ValidString(max = 50) // min=1 porque es mandatory?
-	@Automapped
-	private String				country;
-
-	@Optional
-	@ValidUrl
-	@Automapped // unico?
-	private String				website;
-
-	@Optional
-	@ValidEmail
-	@Automapped // unico?
-	private String				email;
-
-	@Optional
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
-	@Automapped // unico?
-	private String				contactPhone;
-
-	//Runways?
+	private Boolean				publish; // Attribute needed for future deliverables
 
 	//Derived attributes-------------------------------------------------
 

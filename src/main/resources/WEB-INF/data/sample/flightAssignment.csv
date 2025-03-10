@@ -1,5 +1,5 @@
 key,duty,lastUpdateMoment,currentStatus,remarks,publish,key:flightAssignmentCrewMember,key:flightAssignmentLeg
-assignment-01,PILOT,2022/06/02 00:30,CONFIRMED,"",true,member-01,leg-01
+assignment-01,PILOT,2022/09/03 00:30,CONFIRMED,"",true,member-01,leg-01
 assignment-02,COPILOT,2021/01/05 08:45,CONFIRMED,"",true,member-02,leg-02
 assignment-03,LEAD_ATTENDANT,2022/07/25 16:30:00,PENDING,"",true,member-03,leg-03
 assignment-04,CABIN_ATTENDANT,2020/04/26 17:15,CANCELLED,"",true,member-04,leg-04

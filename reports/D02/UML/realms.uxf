@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <help_text>&lt;&lt;Entity&gt;&gt;
+FlightAssignment
+--
++ duty: Duty {Mandatory, Valid, Automapped}
++ moment: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
++ currentStatus: CurrentStatus {Mandatory, Valid, Automapped}
++ remarks: String {Optional, ValidLongText, Automapped}
++ publish: boolean {Mandatory, Valid, Automapped}
+bg=green
+</help_text>
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>184</x>
+      <y>216</y>
+      <w>528</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+AirlineManager
+--
++ identifier: String {Mandatory, ValidString(min=8,pattern="^[A-Z]{2-3}\d{6}$"), Column(unique=true)}
++ yearsOfExperience: int {Mandatory, ValidNumber(min=0,max=120,integer=3,fraction=0), Automapped}
++ dateOfBirth: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
++ picture: String {Optional, ValidUrl, Automapped}
+bg=pink
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>216</y>
+      <w>464</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Technician
+--
++ licenseNumber: String {Mandatory, ValidString(pattern="^[A-Z]{2,3}\d{6}$"), Column(unique=true)}
++ phoneNumber: String {Mandatory, ValidString(pattern="^\+?\d{6,15}$"), Automapped}
++ specialisation: String {Mandatory, ValidString(max=50), Automapped}
++ anualHealthTest: boolean {Mandatory, Automapped}
++ experienceYears: Integer {Optional, ValidNumber(min=0), Automapped}
++ certifications: String {Optional, ValidString, Automapped}
+bg=pink
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>192</x>
+      <y>56</y>
+      <w>496</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Customer
+--
++ identifier: String {Mandatory, ValidString(pattern="^[A-Z]{2-3}\d{6}$"), Column(unique=true)}
++ phoneNumber: String {Mandatory, ValidString(pattern="^\+?\d{6,15}$", Automapped}
++ physicalAddress: String {Mandatory, ValidString(min=1,max=255), Automapped}
++ city: String {Mandatory, ValidString(min=1,max=50), Automapped}
++ country: String {Mandatory,ValidString(min=1,max=50), Automapped}
++ earnedPoints: Integer {Optional,ValidNumber(min=0,max=500000,fraction=0), Automapped}
+
+
+bg=pink
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>56</y>
+      <w>520</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+AssistanceAgent
+--
++ employeeCode: String {Mandatory, ValidString(pattern = "^[A-Z]{2-3}\d{6}$"), Column(unique = true)}
++ spokenLanguages: String {Mandatory, ValidString(max = 255), Automapped}
++ airline: Airline {Mandatory, Valid, Automapped}
++ startDate: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
++ bio: String {Optional, ValidString(max = 255), Automapped}
++ salary: Money {Optional, ValidMoney, Automapped}
++ photoUrl: String {Optional, ValidUrl, Automapped}
+bg=pink
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>192</x>
+      <y>376</y>
+      <w>512</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+FlightCrewMember
+--
++ employeeCode: String {Mandatory, ValidString(pattern="^[A-Z]{2,3}\d{6}$"), Column(unique=true)}
++ phoneNumber: String {Mandatory, ValidString(pattern="^\+?\d{6,15}$"), Automapped}
++ languageSkills: String {Mandatory, ValidString(min=1), Automapped}
++ availabilityStatus: AvailabilityStatus{Mandatory, Valid, Automapped}
++ salary: Money {Mandatory, ValidMoney(min=0.00,max=1000000.00, Automapped}
++ experienceYears: Integer {Optional, ValidNumber(min=0,max=120,fraction=0), Automapped}
+bg=pink
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

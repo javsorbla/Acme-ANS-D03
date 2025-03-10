@@ -1,27 +1,30 @@
 
-package acme.entities.trackingLogs;
+package acme.entities.activitylog;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.entities.claims.Claim;
+import acme.constraints.ValidActivityLog;
+import acme.entities.flightassignment.FlightAssignment;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class TrackingLog extends AbstractEntity {
+@ValidActivityLog
+public class ActivityLog extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -31,36 +34,34 @@ public class TrackingLog extends AbstractEntity {
 
 	@Mandatory
 	@ValidMoment(past = true)
-	@Automapped
-	private Date				lastUpdateMoment;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				registrationMoment;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50) // min=1 porque es obligatorio
 	@Automapped
-	private String				step;
+	private String				incidentType;
 
 	@Mandatory
-	@ValidNumber(min = 0, max = 100)	//seguro?
+	@ValidString(min = 1) // min=1 porque es obligatorio, no hace falta max=255 porque es por defecto
 	@Automapped
-	private double				resolutionPercentage;
+	private String				description;
+
+	@Mandatory
+	@ValidNumber(min = 0, max = 10, fraction = 0) // fraction=0 para que no tenga decimales
+	@Automapped
+	private Integer				severityLevel;
 
 	@Mandatory
 	@Valid
 	@Automapped
-	private TrackingLogStatus	status;
-
-	@Optional
-	@ValidString(min = 0, max = 255)
-	@Automapped
-	private String				resolution;
+	private Boolean				publish;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-
 	@Mandatory
 	@Valid
-	@ManyToOne
-	private Claim				claim;
-
+	@ManyToOne(optional = false)
+	private FlightAssignment	activityLogAssignment;
 }

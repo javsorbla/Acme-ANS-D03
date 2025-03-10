@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -18,6 +19,7 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidAgent;
 import acme.entities.airline.Airline;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,6 +27,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidAgent
 public class AssistanceAgent extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
@@ -34,7 +37,7 @@ public class AssistanceAgent extends AbstractRole {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
+	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$")
 	@Column(unique = true)
 	private String				employeeCode;
 
@@ -70,7 +73,7 @@ public class AssistanceAgent extends AbstractRole {
 	//LA RELACION PUEDE NO SER ASI
 	@Mandatory
 	@Valid
-	//@ManyToOne
+	@ManyToOne(optional = false)
 	private Airline				airline;
 
 }

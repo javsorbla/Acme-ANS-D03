@@ -1,2 +1,97 @@
 key,registrationMoment,incidentType,description,severityLevel,publish,key:activityLogAssignment
-log-01,2022/06/02 05:35,"Combustible","Al acabar el viaje quedó poco combustible en el avión",7,true,assignment-01
+log-01,2022/06/02 00:25,"Despresurización de la cabina","La presión de la cabina disminuyó de manera repentina.",10,true,assignment-01
+log-02,2021/01/05 08:40,"Fallo de un motor","Uno de los motores del avión dejó de funcionar.",9,true,assignment-02
+log-03,2022/07/25 16:25,"Turbulencia severa","Una turbulencia causó sacudidas violentas en el avión.",6,true,assignment-03
+log-04,2022/06/02 05:35,"Error de comunicación con el control aéreo","El piloto no pudo comunicarse correctamente con el control aéreo.",7,true,assignment-04
+
+# restricciones registrationMoment
+# valor medio
+log-05,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum",0,true,assignment-01
+# vacío
+log-06,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum",0,true,assignment-01
+# valor mínimo - delta
+log-07,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum",0,true,assignment-01
+# valor mínimo
+log-08,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum",0,true,assignment-01
+# valor mínimo + delta
+log-09,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum",0,true,assignment-01
+# valor máximo - delta
+log-10,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum",0,true,assignment-01
+# valor máximo
+log-11,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum",0,true,assignment-01
+# valor máximo + delta
+log-12,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum",0,true,assignment-01
+
+# restricciones incidentType
+# valor medio
+log-13,2022/06/02 05:35,"Lorem ipsum dolor sit amet.","Lorem ipsum",0,true,assignment-01
+# vacío
+log-14,2022/06/02 05:35,"","Lorem ipsum",0,true,assignment-01
+# valor mínimo - delta
+log-15,2022/06/02 05:35,"","Lorem ipsum",0,true,assignment-01
+# valor mínimo 
+log-16,2022/06/02 05:35,"L","Lorem ipsum",0,true,assignment-01
+# valor mínimo + delta
+log-17,2022/06/02 05:35,"Lor","Lorem ipsum",0,true,assignment-01
+# valor máximo - delta
+log-18,2022/06/02 05:35,"Lorem ipsum dolor sit amet consectetur elit","Lorem ipsum",0,true,assignment-01
+# valor máximo
+log-19,2022/06/02 05:35,"Lorem ipsum dolor sit amet. Consectetur elit seds.","Lorem ipsum",0,true,assignment-01
+# valor máximo + delta
+log-20,2022/06/02 05:35,"Lorem ipsum dolor sit amet. Consectetur elit sed do.","Lorem ipsum",0,true,assignment-01
+# caracteres no latinos
+log-21,2022/06/02 05:35,"โลเร็ม อิปซัม","Lorem ipsum",0,true,assignment-01
+log-22,2022/06/02 05:35,"لوريم إيبسوم","Lorem ipsum",0,true,assignment-01
+log-23,2022/06/02 05:35,"洛伦·伊普森","Lorem ipsum",0,true,assignment-01
+# inyecciones
+log-24,2022/06/02 05:35,"<marquee>Hacked</marquee>","Lorem ipsum",0,true,assignment-01
+log-25,2022/06/02 05:35,"<script>alert(‘Hacked!’);</script>","Lorem ipsum",0,true,assignment-01
+log-26,2022/06/02 05:35,"'' or 'A' = 'A ","Lorem ipsum",0,true,assignment-01
+
+# restricciones description
+# valor medio
+log-27,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum dolor sit amet. Consectetur elit sed do. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi.",0,true,assignment-01
+# vacío
+log-28,2022/06/02 05:35,"Lorem ipsum","",0,true,assignment-01
+# valor mínimo - delta
+log-29,2022/06/02 05:35,"Lorem ipsum","",0,true,assignment-01
+# valor mínimo 
+log-30,2022/06/02 05:35,"Lorem ipsum","L",0,true,assignment-01
+# valor mínimo + delta
+log-31,2022/06/02 05:35,"Lorem ipsum","Lor",0,true,assignment-01
+# valor máximo - delta
+log-32,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum dolor sit amet. Consectetur elit sed do. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.",0,true,assignment-01
+# valor máximo
+log-33,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum dolor sit amet. Consectetur elit sed do. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiates.",0,true,assignment-01
+# valor máximo + delta
+log-34,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum dolor sit amet. Consectetur elit sed do. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.",0,true,assignment-01
+# caracteres no latinos
+log-35,2022/06/02 05:35,"Lorem ipsum","โลเร็ม อิปซัม",0,true,assignment-01
+log-36,2022/06/02 05:35,"Lorem ipsum","при",0,true,assignment-01
+log-37,2022/06/02 05:35,"Lorem ipsum","洛伦·伊普森",0,true,assignment-01
+# inyecciones
+log-38,2022/06/02 05:35,"Lorem ipsum","<marquee>Hacked</marquee>",0,true,assignment-01
+log-39,2022/06/02 05:35,"Lorem ipsum","<script>alert(‘Hacked!’);</script>",0,true,assignment-01
+log-40,2022/06/02 05:35,"Lorem ipsum","'' or 'A' = 'A ",0,true,assignment-01
+
+# restricciones severityLevel
+# valor medio
+log-41,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum",5,true,assignment-01
+# vacío
+log-42,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum",,true,assignment-01
+# valor mínimo - delta
+log-43,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum",-2,true,assignment-01
+# valor mínimo 
+log-44,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum",0,true,assignment-01
+# valor mínimo + delta
+log-45,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum",2,true,assignment-01
+# valor máximo - delta
+log-46,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum",8,true,assignment-01
+# valor máximo
+log-47,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum",10,true,assignment-01
+# valor máximo + delta
+log-48,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum",12,true,assignment-01
+
+# restricciones publish
+log-49,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum",0,true,assignment-01
+log-50,2022/06/02 05:35,"Lorem ipsum","Lorem ipsum",0,false,assignment-01

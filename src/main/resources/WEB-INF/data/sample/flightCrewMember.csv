@@ -3,3 +3,4 @@ member-01,user-account-member-01,"AR123456","+34987654322","español",AVAILABLE,
 member-02,user-account-member-02,"JG123456","+34987654323","español",AVAILABLE,EUR 10.00,12,airline-01
 member-03,user-account-member-03,"PC123456","+34987654324","español",ON_VACATION,EUR 23.00,1,airline-01
 member-04,user-account-member-04,"AS123456","+34987654325","español",ON_LEAVE,EUR 15.00,4,airline-01
+member,user-account-member-05,"MT123456","+34987654326","español e inglés",AVAILABLE,EUR 12.00,6,airline-01

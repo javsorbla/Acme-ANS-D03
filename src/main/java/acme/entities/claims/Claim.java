@@ -13,7 +13,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
-import acme.entities.flight.Flight;
+import acme.entities.leg.Leg;
 import acme.realms.AssistanceAgent;
 import lombok.Getter;
 import lombok.Setter;
@@ -58,6 +58,7 @@ public class Claim extends AbstractEntity {
 	//@Valid by default
 	@Automapped
 	private boolean				draftMode;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
@@ -70,6 +71,6 @@ public class Claim extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne
-	private Flight				flight;
+	private Leg					leg;
 
 }

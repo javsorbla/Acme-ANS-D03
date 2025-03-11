@@ -52,17 +52,17 @@ public class Airport extends AbstractEntity {
 
 	@Optional
 	@ValidUrl
-	@Column(unique = true) // De verdad tiene que ser unico?
+	@Automapped // unico?
 	private String				website;
 
 	@Optional
-	@ValidEmail // min=0 por ser opcional, por defecto es 1
-	@Column(unique = true)
+	@ValidEmail
+	@Automapped // unico?
 	private String				email;
 
 	@Optional
 	@ValidString(pattern = "^\\+?\\d{6,15}$")
-	@Column(unique = true)
+	@Automapped // unico?
 	private String				contactPhone;
 
 	//Runways?

@@ -45,12 +45,12 @@ public class TrackingLog extends AbstractEntity {
 	private double				resolutionPercentage;
 
 	@Mandatory
-	//@Valid by default
+	@Valid
 	@Automapped
-	private boolean				indicator;
+	private TrackingLogStatus	status;
 
-	@Optional 			//Seguro?
-	@ValidString(max = 255)
+	@Optional
+	@ValidString(min = 0, max = 255)
 	@Automapped
 	private String				resolution;
 

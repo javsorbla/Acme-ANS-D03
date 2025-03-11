@@ -48,8 +48,8 @@ assignment-25,PILOT,2022/06/02 00:30,CONFIRMED,"при",true,member-01,leg-01
 assignment-26,PILOT,2022/06/02 00:30,CONFIRMED,"洛伦·伊普森",true,member-01,leg-01
 # inyecciones
 assignment-27,PILOT,2022/06/02 00:30,CONFIRMED,"<marquee>Hacked</marquee>",true,member-01,leg-01
-assignment-28,PILOT,2022/06/02 00:30,CONFIRMED,"",true,member-01,leg-01
-assignment-29,PILOT,2022/06/02 00:30,CONFIRMED,"",true,member-01,leg-01
+assignment-28,PILOT,2022/06/02 00:30,CONFIRMED,"<script>alert(‘Hacked!’);</script>",true,member-01,leg-01
+assignment-29,PILOT,2022/06/02 00:30,CONFIRMED,"'' or 'A' = 'A ",true,member-01,leg-01
 
 # restricciones publish
 assignment-30,PILOT,2022/06/02 00:30,CONFIRMED,"",true,member-01,leg-01

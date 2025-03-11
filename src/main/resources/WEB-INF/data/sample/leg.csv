@@ -1,5 +1,62 @@
 key,flightNumber,departure,arrival,status,publish,key:deployedAircraft,key:departureAirport,key:arrivalAirport,key:flight
-leg-01,ABC1234,2022/09/01 10:00,2022/09/01 10:00:01,ON_TIME,true,aircraft,airport-01,airport-02,flight-01
-leg-02,ABC2345,2022/09/01 10:02,2022/09/01 10:00:03,ON_TIME,true,aircraft,airport-02,airport-03,flight-01
-leg-03,ABC3456,2022/09/01 10:04,2022/09/01 10:00:05,ON_TIME,true,aircraft,airport-04,airport-05,flight-01
-leg-04,ABC4567,2022/09/01 10:06,2022/09/01 10:00:07,ON_TIME,true,aircraft,airport-06,airport-07,flight-01
+
+## base (no se pueden solapar los tramos de un vuelo)
+leg-01,"ABC1234",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-01,airport-01,airport-02,flight-01
+
+# no solapamiento y variaciones de aeropuertos
+leg-02,"ABC1111",2022/09/01 10:02,2022/09/01 10:03,ON_TIME,true,aircraft-01,airport-02,airport-03,flight-01
+leg-03,"ABC2222",2022/09/01 10:04,2022/09/01 10:05,ON_TIME,true,aircraft-01,airport-04,airport-05,flight-01
+leg-04,"ABC3333",2022/09/01 10:06,2022/09/01 10:07,ON_TIME,true,aircraft-01,airport-06,airport-07,flight-01
+
+## restricciones flightNumber (unique)
+leg-05,"ABC0000",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-02,airport-01,airport-02,flight-02
+leg-06,"ABC9866",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-03,airport-01,airport-02,flight-03
+leg-07,"ABC5910",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-04,airport-01,airport-02,flight-04
+leg-08,"ABC3495",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-05,airport-01,airport-02,flight-05
+leg-09,"ABC4411",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-06,airport-01,airport-02,flight-06
+leg-10,"ABC9999",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-07,airport-01,airport-02,flight-07
+
+## restricciones departure
+# valor minimo
+leg-11,"ABC1235",2022/07/30 0:00,2022/09/01 10:01,ON_TIME,true,aircraft-08,airport-01,airport-02,flight-08
+# valor minimo + delta
+leg-12,"ABC1236",2022/07/30 0:01,2022/09/01 10:01,ON_TIME,true,aircraft-09,airport-01,airport-02,flight-09
+# valor máximo - delta (en este caso delta = 2 ya que debe haber al menos un minuto de diferencia con arrival)
+leg-13,"ABC1237",2200/12/30 23:58,2022/12/30 00:00,ON_TIME,true,aircraft-10,airport-01,airport-02,flight-10
+# valor máximo
+leg-14,"ABC1238",2200/12/30 23:59,2022/12/30 00:00,ON_TIME,true,aircraft-11,airport-01,airport-02,flight-11
+
+## restricciones arrival
+# valor minimo (no puede ser a las 00:00 ya que debe haber margen con el despegue)
+leg-15,"ABC1239",2022/07/30 0:00,2022/07/30 00:01,ON_TIME,true,aircraft-12,airport-01,airport-02,flight-12
+# valor minimo + delta
+leg-16,"ABC2340",2022/07/30 0:00,2022/07/30 00:02,ON_TIME,true,aircraft-13,airport-01,airport-02,flight-13
+# valor máximo - delta
+leg-17,"ABC2341",2200/12/30 23:58,2022/12/30 23:59,ON_TIME,true,aircraft-14,airport-01,airport-02,flight-14
+# valor máximo
+leg-18,"ABC2342",2200/12/30 23:59,2022/12/30 00:00,ON_TIME,true,aircraft-15,airport-01,airport-02,flight-15
+
+## restricciones status
+# prueba de todos los tipos posibles
+leg-19,"ABC2343",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-16,airport-01,airport-02,flight-16
+leg-20,"ABC2344",2022/09/01 10:00,2022/09/01 10:01,DELAYED,true,aircraft-17,airport-01,airport-02,flight-17
+leg-21,"ABC2345",2022/09/01 10:00,2022/09/01 10:01,CANCELLED,true,aircraft-18,airport-01,airport-02,flight-18
+leg-22,"ABC2346",2022/09/01 10:00,2022/09/01 10:01,LANDED,true,aircraft-18,airport-01,airport-02,flight-19
+
+## restricciones publish
+# valor negativo (positivo ya probado)
+leg-23,"ABC2347",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-19,airport-01,airport-02,flight-20
+
+## variaciones de airports / aircrafts / flights realizadas a lo largo de las distintas entradas 
+## para mantener algo de coherencia en los datos
+
+## variaciones de flight para asignar al menos un leg/tramo a cada vuelo
+leg-24,"ABC2348",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-20,airport-01,airport-02,flight-21
+leg-25,"ABC2349",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-21,airport-01,airport-02,flight-22
+leg-26,"ABC2350",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-22,airport-01,airport-02,flight-23
+leg-27,"ABC2351",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-23,airport-01,airport-02,flight-24
+leg-28,"ABC2352",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-24,airport-01,airport-02,flight-25
+leg-29,"ABC2353",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-25,airport-01,airport-02,flight-26
+leg-30,"ABC2354",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-26,airport-01,airport-02,flight-27
+leg-31,"ABC2355",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-27,airport-01,airport-02,flight-28
+leg-32,"ABC2356",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-28,airport-01,airport-02,flight-29

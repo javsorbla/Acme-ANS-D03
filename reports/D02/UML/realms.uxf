@@ -14,16 +14,16 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>304</y>
-      <w>480</w>
+      <x>184</x>
+      <y>216</y>
+      <w>528</w>
       <h>96</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 AirlineManager
 --
-+ identifier: String {Mandatory, ValidString(pattern="^[A-Z]{2-3}\d{6}$"), Column(unique=true)}
-+ airlineExperience: int {Mandatory, ValidNumber(min=0), Automapped}
++ identifier: String {Mandatory, ValidString(min=8,pattern="^[A-Z]{2-3}\d{6}$"), Column(unique=true)}
++ yearsOfExperience: int {Mandatory, ValidNumber(min=0,max=120,integer=3,fraction=0), Automapped}
 + dateOfBirth: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
 + picture: String {Optional, ValidUrl, Automapped}
 bg=pink
@@ -34,9 +34,9 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>544</x>
-      <y>280</y>
-      <w>520</w>
+      <x>736</x>
+      <y>216</y>
+      <w>464</w>
       <h>136</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
@@ -55,8 +55,8 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>120</y>
+      <x>192</x>
+      <y>56</y>
       <w>496</w>
       <h>136</h>
     </coordinates>
@@ -78,8 +78,8 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>544</x>
-      <y>120</y>
+      <x>736</x>
+      <y>56</y>
       <w>520</w>
       <h>136</h>
     </coordinates>
@@ -100,8 +100,8 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>440</y>
+      <x>192</x>
+      <y>376</y>
       <w>512</w>
       <h>128</h>
     </coordinates>

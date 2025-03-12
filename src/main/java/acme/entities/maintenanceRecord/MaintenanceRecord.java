@@ -33,7 +33,7 @@ public class MaintenanceRecord extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidMoment(min = "2000/01/01 00:00:00") // No hay máximo
+	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date					moment;
 

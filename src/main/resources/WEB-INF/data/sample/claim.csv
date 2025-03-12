@@ -1,4 +1,4 @@
-key,registration_moment,passenger_email,description,type,indicator,publish,key:assistanceAgent,key:leg
+key,registrationMoment,passengerEmail,description,type,indicator,publish,key:assistanceAgent,key:leg
 # base entity
 claim-01,2012/07/02 00:00,"joel@acme.com","Viaje ruidoso",LUGGAGE_ISSUES,false,false,agent-01,leg-01
 
@@ -11,7 +11,7 @@ claim-06,2025/01/01 00:00,"joel@acme.com","Viaje ruidoso",LUGGAGE_ISSUES,false,f
 
 # passengerEmail - standard variations
 claim-07,2012/07/02 00:00,"acme@lorem-ipsum.org","Viaje ruidoso",LUGGAGE_ISSUES,false,false,agent-01,leg-01
-claim-08,2012/07/02 00:00,"acme:password@lorem-ipsum.org","Viaje ruidoso",LUGGAGE_ISSUES,false,false,agent-01,leg-01
+claim-08,2012/07/02 00:00,"acmepassword@lorem-ipsum.org","Viaje ruidoso",LUGGAGE_ISSUES,false,false,agent-01,leg-01
 claim-09,2012/07/02 00:00,"a@b.e","Viaje ruidoso",LUGGAGE_ISSUES,false,false,agent-01,leg-01
 claim-10,2012/07/02 00:00,"a@b.es","Viaje ruidoso",LUGGAGE_ISSUES,false,false,agent-01,leg-01
 claim-11,2012/07/02 00:00,"a@b.esx","Viaje ruidoso",LUGGAGE_ISSUES,false,false,agent-01,leg-01

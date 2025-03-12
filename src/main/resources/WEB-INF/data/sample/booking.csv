@@ -27,11 +27,10 @@ booking-20,"PPPP123",2022/02/02 00:00,ECONOMY,EUR 999999.99,"1234",true,flight-0
 booking-21,"QQQQ123",2022/02/02 00:00,ECONOMY,EUR 1000000.00,"1234",true,flight-01,customer-01
 # lastNibble - standard variations
 booking-22,"RRRR123",2022/02/02 00:00,ECONOMY,EUR 100.00,"1234",true,flight-01,customer-02
-booking-23,"RXXX123",2022/02/02 00:00,ECONOMY,EUR 100.00,"",true,flight-01,customer-02
-booking-24,"SSSS123",2022/02/02 00:00,ECONOMY,EUR 100.00,"6789",true,flight-01,customer-02
-booking-25,"TTTT123",2022/02/02 00:00,ECONOMY,EUR 100.00,"0000",true,flight-01,customer-01
-booking-26,"VVVV123",2022/02/02 00:00,ECONOMY,EUR 100.00,"0001",true,flight-01,customer-01
-booking-27,"ZZZZ123",2022/02/02 00:00,ECONOMY,EUR 100.00,"9999",true,flight-01,customer-01
+booking-23,"SSSS123",2022/02/02 00:00,ECONOMY,EUR 100.00,"6789",true,flight-01,customer-02
+booking-24,"TTTT123",2022/02/02 00:00,ECONOMY,EUR 100.00,"0000",true,flight-01,customer-01
+booking-25,"VVVV123",2022/02/02 00:00,ECONOMY,EUR 100.00,"0001",true,flight-01,customer-01
+booking-26,"ZZZZ123",2022/02/02 00:00,ECONOMY,EUR 100.00,"9999",true,flight-01,customer-01
 # publish - standard variations 
-booking-28,"WWWW123",2022/02/02 00:00,ECONOMY,EUR 100.00,"1234",true,flight-01,customer-01
-booking-29,"XXXX123",2022/02/02 00:00,ECONOMY,EUR 100.00,"1234",false,flight-01,customer-01
+booking-27,"WWWW123",2022/02/02 00:00,ECONOMY,EUR 100.00,"1234",true,flight-01,customer-01
+booking-28,"XXXX123",2022/02/02 00:00,ECONOMY,EUR 100.00,"1234",false,flight-01,customer-01

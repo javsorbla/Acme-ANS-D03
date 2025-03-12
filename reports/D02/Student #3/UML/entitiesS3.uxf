@@ -20,37 +20,6 @@ bg=green
     <id>UMLClass</id>
     <coordinates>
       <x>426</x>
-      <y>534</y>
-      <w>84</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Aircraft
-
-bg=green
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>234</x>
-      <y>384</y>
-      <w>204</w>
-      <h>192</h>
-    </coordinates>
-    <panel_attributes>&lt; Owned by
-lt=&lt;-x
-m1=1
-m2=*
-
-</panel_attributes>
-    <additional_attributes>30.0;10.0;30.0;280.0;320.0;280.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>426</x>
       <y>360</y>
       <w>90</w>
       <h>30</h>
@@ -60,22 +29,6 @@ FlightCrewMember
 bg=pink
 </panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>462</x>
-      <y>384</y>
-      <w>60</w>
-      <h>162</h>
-    </coordinates>
-    <panel_attributes>works for v
-lt=&lt;-x
-m1=1
-m2=*
-
-</panel_attributes>
-    <additional_attributes>10.0;250.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -198,21 +151,5 @@ m2=*
 
 </panel_attributes>
     <additional_attributes>10.0;20.0;220.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>504</x>
-      <y>540</y>
-      <w>354</w>
-      <h>36</h>
-    </coordinates>
-    <panel_attributes>&lt; deploys
-lt=&lt;-x
-m1=1
-m2=*
-
-</panel_attributes>
-    <additional_attributes>10.0;20.0;570.0;20.0</additional_attributes>
   </element>
 </diagram>

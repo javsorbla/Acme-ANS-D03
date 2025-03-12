@@ -14,7 +14,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.entities.aircraft.Aircraft;
+import acme.constraints.ValidFlightCrewMember;
 import acme.entities.airline.Airline;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,6 +22,8 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidFlightCrewMember
+
 public class FlightCrewMember extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
@@ -31,7 +33,7 @@ public class FlightCrewMember extends AbstractRole {
 	// Mandatory Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$") // min y max ya vienen en el pattern?
+	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$") // min y max ya vienen en el pattern?
 	@Column(unique = true)
 	private String				employeeCode;
 
@@ -69,10 +71,5 @@ public class FlightCrewMember extends AbstractRole {
 	@Valid
 	@ManyToOne(optional = false) // segun el foro es una relacion
 	private Airline				flightCrewMemberAirline;
-
-	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private Aircraft			flightCrewMemberAircraft;
 
 }

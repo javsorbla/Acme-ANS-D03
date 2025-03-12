@@ -19,6 +19,7 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidAgent;
 import acme.entities.airline.Airline;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,6 +27,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidAgent
 public class AssistanceAgent extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
@@ -40,7 +42,7 @@ public class AssistanceAgent extends AbstractRole {
 	private String				employeeCode;
 
 	@Mandatory
-	@ValidString(max = 255)
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				languages;
 
@@ -50,12 +52,12 @@ public class AssistanceAgent extends AbstractRole {
 	private Date				startDate;
 
 	@Optional
-	@ValidString(max = 255)
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				bio;
 
 	@Optional
-	@ValidMoney
+	@ValidMoney(min = 0.00, max = 1000000.00)
 	@Automapped
 	private Money				salary;
 
@@ -68,7 +70,6 @@ public class AssistanceAgent extends AbstractRole {
 
 	// Relationships ------------------------------------------------------------------
 
-	//LA RELACION PUEDE NO SER ASI
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)

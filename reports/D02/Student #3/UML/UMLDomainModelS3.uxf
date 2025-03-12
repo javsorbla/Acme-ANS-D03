@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>472</x>
-      <y>264</y>
+      <y>256</y>
       <w>128</w>
       <h>88</h>
     </coordinates>
@@ -22,7 +22,7 @@ bg=LIGHT_GRAY</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>168</x>
-      <y>264</y>
+      <y>256</y>
       <w>128</w>
       <h>88</h>
     </coordinates>
@@ -39,7 +39,7 @@ bg=LIGHT_GRAY</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>320</x>
-      <y>264</y>
+      <y>256</y>
       <w>128</w>
       <h>88</h>
     </coordinates>
@@ -57,7 +57,7 @@ bg=LIGHT_GRAY</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>128</x>
-      <y>96</y>
+      <y>88</y>
       <w>512</w>
       <h>128</h>
     </coordinates>
@@ -78,7 +78,7 @@ bg=pink
     <id>UMLClass</id>
     <coordinates>
       <x>104</x>
-      <y>472</y>
+      <y>464</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -93,38 +93,7 @@ bg=green
     <id>UMLClass</id>
     <coordinates>
       <x>392</x>
-      <y>704</y>
-      <w>112</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Aircraft
-
-bg=green
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>136</x>
-      <y>504</y>
-      <w>272</w>
-      <h>256</h>
-    </coordinates>
-    <panel_attributes>&lt; Owned by
-lt=&lt;-x
-m1=1
-m2=*
-
-</panel_attributes>
-    <additional_attributes>30.0;10.0;30.0;280.0;320.0;280.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>392</x>
-      <y>472</y>
+      <y>464</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -135,26 +104,10 @@ bg=pink
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>440</x>
-      <y>504</y>
-      <w>80</w>
-      <h>216</h>
-    </coordinates>
-    <panel_attributes>works for v
-lt=&lt;-x
-m1=1
-m2=*
-
-</panel_attributes>
-    <additional_attributes>10.0;250.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
       <x>720</x>
-      <y>432</y>
+      <y>424</y>
       <w>584</w>
       <h>112</h>
     </coordinates>
@@ -174,7 +127,7 @@ bg=green
     <id>Relation</id>
     <coordinates>
       <x>504</x>
-      <y>480</y>
+      <y>472</y>
       <w>232</w>
       <h>48</h>
     </coordinates>
@@ -190,7 +143,7 @@ m2=*
     <id>UMLClass</id>
     <coordinates>
       <x>952</x>
-      <y>704</y>
+      <y>696</y>
       <w>112</w>
       <h>40</h>
     </coordinates>
@@ -206,7 +159,7 @@ bg=green
     <id>UMLClass</id>
     <coordinates>
       <x>776</x>
-      <y>224</y>
+      <y>216</y>
       <w>472</w>
       <h>104</h>
     </coordinates>
@@ -228,7 +181,7 @@ bg=green
     <id>Relation</id>
     <coordinates>
       <x>1000</x>
-      <y>320</y>
+      <y>312</y>
       <w>88</w>
       <h>128</h>
     </coordinates>
@@ -244,7 +197,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>1000</x>
-      <y>536</y>
+      <y>528</y>
       <w>112</w>
       <h>184</h>
     </coordinates>
@@ -260,7 +213,7 @@ m2=*
     <id>Relation</id>
     <coordinates>
       <x>216</x>
-      <y>480</y>
+      <y>472</y>
       <w>192</w>
       <h>48</h>
     </coordinates>
@@ -271,21 +224,5 @@ m2=*
 
 </panel_attributes>
     <additional_attributes>10.0;20.0;220.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>496</x>
-      <y>712</y>
-      <w>472</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>&lt; deploys
-lt=&lt;-x
-m1=1
-m2=*
-
-</panel_attributes>
-    <additional_attributes>10.0;20.0;570.0;20.0</additional_attributes>
   </element>
 </diagram>

@@ -12,6 +12,8 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidIataCode;
+import acme.constraints.ValidPhoneNumber;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,46 +28,44 @@ public class Airport extends AbstractEntity {
 	// Attributes -------------------------------------------------------
 
 	@Mandatory
-	@ValidString(max = 50) // min a 0 por default, se pone uno distinto?
-	@Automapped // Debe ser unico?
-	String						name;
+	@ValidString(min = 1, max = 50)
+	@Automapped
+	private String				name;
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{3}$")
+	@ValidIataCode
 	@Column(unique = true)
-	String						iataCode;
+	private String				iataCode;
 
 	@Mandatory
 	@Valid
 	@Automapped
-	OperationalScope			operationalScope;
+	private OperationalScope	operationalScope;
 
 	@Mandatory
-	@ValidString(max = 50) // min=1 porque es mandatory?
+	@ValidString(min = 1, max = 50)
 	@Automapped
-	String						city;
+	private String				city;
 
 	@Mandatory
-	@ValidString(max = 50) // min=1 porque es mandatory?
+	@ValidString(min = 1, max = 50)
 	@Automapped
-	String						country;
+	private String				country;
 
 	@Optional
 	@ValidUrl
-	@Column(unique = true) // De verdad tiene que ser unico?
-	String						website;
+	@Automapped
+	private String				website;
 
 	@Optional
-	@ValidEmail // min=0 por ser opcional, por defecto es 1
-	@Column(unique = true)
-	String						email;
+	@ValidEmail
+	@Automapped
+	private String				email;
 
 	@Optional
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
-	@Column(unique = true)
-	String						contactPhone;
-
-	//Runways?
+	@ValidPhoneNumber
+	@Automapped
+	private String				contactPhone;
 
 	//Derived attributes-------------------------------------------------
 

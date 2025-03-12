@@ -1,0 +1,62 @@
+key,tag,requires-self-transfer,cost,description,publish,key:manager
+# base
+flight-01,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-01
+
+## restricciones tag
+# valor minimo
+flight-02,"L",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-01
+# valor minimo + delta
+flight-03,"Lo",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-01
+# valor max - delta
+flight-04,"Lorem ipsum dolor sit amet consectetur adipiscing",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-01
+# valor max
+flight-05,"Lorem ipsum dolor sit amet consectetur adipiscinge",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-01
+# caracteres no latinos
+flight-06,"โลเร็ม อิปซัม",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-01
+flight-07,"при",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-01
+flight-08,"洛伦·伊普森",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-01
+# inyecciones
+flight-09,"<marquee>Hacked</marquee>",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-01
+flight-10,"<script>alert(‘Hacked!’);</script>",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-01
+flight-11,"' or 'A' = 'A ",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-01
+
+## restricciones requiresSelfTransSelfTransfer
+# positivo (negativo ya probado)
+flight-12,"Lorem ipsum dolor sit ame",true,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-01
+
+## restricciones cost
+# valor minimo
+flight-13,"Lorem ipsum dolor sit ame",false,EUR 0.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-01
+# valor minimo + delta
+flight-14,"Lorem ipsum dolor sit ame",false,EUR 0.01,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-01
+# valor max - delta
+flight-15,"Lorem ipsum dolor sit ame",false,EUR 999999.99,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-01
+# valor max
+flight-16,"Lorem ipsum dolor sit ame",false,EUR 1000000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-01
+# otra divisa
+flight-17,"Lorem ipsum dolor sit ame",false,USD 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-01
+
+## restricciones description
+# valor minimo
+flight-18,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"",true,manager-01
+# valor minimo + delta
+flight-19,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"L",true,manager-01
+# valor max - delta
+flight-20,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",true,manager-01
+# valor max
+flight-21,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",true,manager-01
+# caracteres no latinos
+flight-22,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"โลเร็ม อิปซัม",true,manager-01
+flight-23,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"при",true,manager-01
+flight-24,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"洛伦·伊普森",true,manager-01
+# inyecciones
+flight-25,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"<marquee>Hacked</marquee>",true,manager-01
+flight-26,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"<script>alert(‘Hacked!’);</script>",true,manager-01
+flight-27,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"' or 'A' = 'A ",true,manager-01
+
+## restricciones publish
+# negativo (positivo ya probado)
+flight-28,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false,manager-01
+
+## variacion manager
+flight-29,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-02

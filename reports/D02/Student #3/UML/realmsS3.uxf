@@ -14,8 +14,8 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>9</x>
-      <y>297</y>
+      <x>288</x>
+      <y>306</y>
       <w>576</w>
       <h>153</h>
     </coordinates>

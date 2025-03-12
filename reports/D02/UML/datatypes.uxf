@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>9</zoom_level>
+  <zoom_level>11</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>351</x>
-      <y>135</y>
-      <w>144</w>
-      <h>90</h>
+      <x>363</x>
+      <y>110</y>
+      <w>176</w>
+      <h>121</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 AirlineType
@@ -21,10 +21,10 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>522</x>
-      <y>135</y>
-      <w>162</w>
-      <h>99</h>
+      <x>572</x>
+      <y>110</y>
+      <w>198</w>
+      <h>121</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 ClaimType
@@ -39,10 +39,10 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>180</x>
-      <y>135</y>
-      <w>144</w>
-      <h>99</h>
+      <x>143</x>
+      <y>110</y>
+      <w>187</w>
+      <h>121</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 LegStatus
@@ -57,10 +57,10 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>522</x>
-      <y>288</y>
-      <w>144</w>
-      <h>99</h>
+      <x>572</x>
+      <y>297</y>
+      <w>198</w>
+      <h>121</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 CurrentUser
@@ -74,10 +74,10 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>180</x>
-      <y>288</y>
-      <w>144</w>
-      <h>99</h>
+      <x>143</x>
+      <y>297</y>
+      <w>187</w>
+      <h>121</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 AvailabilityStatus
@@ -91,10 +91,10 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>351</x>
-      <y>288</y>
-      <w>144</w>
-      <h>99</h>
+      <x>363</x>
+      <y>297</y>
+      <w>176</w>
+      <h>121</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 Duty
@@ -109,13 +109,13 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>711</x>
-      <y>135</y>
-      <w>162</w>
-      <h>99</h>
+      <x>803</x>
+      <y>110</y>
+      <w>198</w>
+      <h>121</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
-TravelClass
+TypeTravelClass
 --
 + ECONOMY
 + BUSINESS
@@ -125,10 +125,10 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>693</x>
-      <y>288</y>
-      <w>162</w>
-      <h>99</h>
+      <x>803</x>
+      <y>297</y>
+      <w>198</w>
+      <h>121</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 MaintenanceRecordStatus
@@ -142,10 +142,10 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>180</x>
-      <y>414</y>
-      <w>162</w>
-      <h>99</h>
+      <x>143</x>
+      <y>451</y>
+      <w>187</w>
+      <h>121</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 TaskType
@@ -160,10 +160,10 @@ bg=LIGHT_GRAY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>396</x>
-      <y>414</y>
-      <w>162</w>
-      <h>90</h>
+      <x>352</x>
+      <y>451</y>
+      <w>187</w>
+      <h>121</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 OperationalScope
@@ -172,6 +172,23 @@ OperationalScope
 + DOMESTIC
 + REGIONAL
 
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>572</x>
+      <y>451</y>
+      <w>198</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+TrackingLogStatus
+--
++ PENDING
++ ACCEPTED
++ REJECTED
 bg=LIGHT_GRAY</panel_attributes>
     <additional_attributes/>
   </element>

@@ -48,7 +48,7 @@ public class Service extends AbstractEntity {
 	private String				promoCode;
 
 	@Optional
-	@ValidMoney
+	@ValidMoney(min = 1.0, max = 1000000.0)
 	@Automapped
 	private Money				discountAmount; //Tipo Money, tal y como se nos indicó en el follow-up del 11/03/2025
 

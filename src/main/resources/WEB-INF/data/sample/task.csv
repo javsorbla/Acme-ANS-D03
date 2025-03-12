@@ -1,4 +1,4 @@
-key,type, description, priority, estimatedDuration
+key,type,description,priority,estimatedDuration
 ## base
 task-01,MAINTENANCE,"MANTENIMIENTO AVION",2,2.00
 ## restricciones type

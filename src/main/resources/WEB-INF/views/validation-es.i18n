@@ -12,3 +12,4 @@ acme.validation.technician.identifier.message = Identificador incorrecto
 acme.validation.assistanceagent.identifier.message = Codigo incorrecto
 acme.validation.iata.code.message = Código IATA inválido
 acme.validation.phone.number.message = Número de teléfono inválido
+acme.validation.service.promo.code = Código de promoción inválido

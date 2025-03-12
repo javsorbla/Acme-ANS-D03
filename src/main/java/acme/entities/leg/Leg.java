@@ -20,6 +20,7 @@ import acme.constraints.ValidLeg;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.airport.Airport;
 import acme.realms.AirlineManager;
+import acme.entities.flight.Flight;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,0 +1,4 @@
+key,key:user-account,identifier,phoneNumber,physicalAddress,city,country,earnedPoints
+customer-01,user-account-customer-01,"DC123456","+34987654321","Calle Osa Menor; 5","Sevilla","España",100
+customer-02,user-account-customer-02,"FLL234567","+34987654322","Calle Osa Menor; 4","Sevilla","España",250
+customer-03,user-account-customer-03,"GS135246","+34987654323","Calle Orozco; 16","Sevilla","España",1000

@@ -8,18 +8,20 @@ import java.lang.annotation.Target;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
+import javax.validation.ReportAsSingleViolation;
+import javax.validation.constraints.Pattern;
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = PromotionCodeValidator.class)
+@Constraint(validatedBy = {})
+@ReportAsSingleViolation
 
-public @interface ValidPromotionCode {
-
+@Pattern(regexp = "^\\d{4}$")
+public @interface ValidLastNibble {
 	// Standard validation properties -----------------------------------------
 
-	String message() default "";
+	String message() default "{acme.validation.booking.last.nibble.message}";
 
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
-
 }

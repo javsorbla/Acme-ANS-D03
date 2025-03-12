@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>363</x>
+      <y>110</y>
+      <w>176</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+AirlineType
+--
++ LUXURY
++ STANDARD
++ LOW-COST
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>572</x>
+      <y>110</y>
+      <w>198</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+ClaimType
+--
++ FLIGHT_ISSUES
++ LUGGAGE_ISSUES
++ SECURITY_INCIDENT
++ OTHER_ISSUES
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>143</x>
+      <y>110</y>
+      <w>187</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+LegStatus
+--
++ ON_TIME
++ DELAYED
++ CANCELLED
++ LANDED
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>572</x>
+      <y>297</y>
+      <w>198</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+CurrentUser
+--
++ CONFIRMED
++ PENDING
++ CANCELLED
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>143</x>
+      <y>297</y>
+      <w>187</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+AvailabilityStatus
+--
++ AVAILABLE
++ ON_VACATION
++ ON_LEAVE
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>363</x>
+      <y>297</y>
+      <w>176</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Duty
+--
++ PILOT
++ COPILOT
++ LEAD_ATTENDANT
++ CABIN_ATTENDANT
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>803</x>
+      <y>110</y>
+      <w>198</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+TypeTravelClass
+--
++ ECONOMY
++ BUSINESS
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>803</x>
+      <y>297</y>
+      <w>198</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+MaintenanceRecordStatus
+--
++ PENDING
++ IN_PROGRESS
++ COMPLETED
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>143</x>
+      <y>451</y>
+      <w>187</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+TaskType
+--
++ MAINTENANCE
++ INSPECTION
++ REPAIR
++ SYSTEM_CHECK
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>352</x>
+      <y>451</y>
+      <w>187</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+OperationalScope
+--
++ INTERNATIONAL
++ DOMESTIC
++ REGIONAL
+
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>572</x>
+      <y>451</y>
+      <w>198</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+TrackingLogStatus
+--
++ PENDING
++ ACCEPTED
++ REJECTED
+bg=LIGHT_GRAY</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -5,13 +5,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import acme.client.components.basis.AbstractEntity;
+import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
-import acme.client.components.validation.ValidScore;
 import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidPromotionCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -38,17 +40,17 @@ public class Service extends AbstractEntity {
 	@Mandatory
 	@ValidNumber(min = 1, max = 100, integer = 3, fraction = 2)
 	@Automapped
-	private Double				averageDwellTime;
+	private double				averageDwellTime;
 
 	@Optional
-	@ValidString(pattern = "^[A-Z]{4}-[0-9]{2}$")
+	@ValidPromotionCode
 	@Column(unique = true)
 	private String				promoCode;
 
 	@Optional
-	@ValidScore
+	@ValidMoney
 	@Automapped
-	private Double				discountAmount;
+	private Money				discountAmount; //Tipo Money, tal y como se nos indicó en el follow-up del 11/03/2025
 
 	//Derived attributes-------------------------------------------------
 

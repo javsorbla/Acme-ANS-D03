@@ -8,14 +8,21 @@ import java.lang.annotation.Target;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
+import javax.validation.ReportAsSingleViolation;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
-@Target(ElementType.TYPE)
+@Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = ManagerValidator.class)
+@Constraint(validatedBy = {})
+@ReportAsSingleViolation
 
-public @interface ValidManager {
+@NotBlank
+@Pattern(regexp = "^[A-Z]{3}\\d{4}$")
+public @interface ValidFlightNumber {
 
-	String message() default "";
+	String message() default "{acme.validation.leg.message}";
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
+
 }

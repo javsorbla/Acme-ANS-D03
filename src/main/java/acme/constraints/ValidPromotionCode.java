@@ -9,13 +9,17 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-@Target(ElementType.TYPE)
+@Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = ManagerValidator.class)
+@Constraint(validatedBy = PromotionCodeValidator.class)
 
-public @interface ValidManager {
+public @interface ValidPromotionCode {
 
-	String message() default "";
+	// Standard validation properties -----------------------------------------
+
+	String message() default "{acme.validation.service.promo.code}";
+
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
+
 }

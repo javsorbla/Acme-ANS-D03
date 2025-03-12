@@ -15,10 +15,11 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidString;
+import acme.constraints.ValidFlightNumber;
 import acme.constraints.ValidLeg;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.airport.Airport;
+import acme.realms.AirlineManager;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -35,24 +36,19 @@ public class Leg extends AbstractEntity {
 	// Attributes -------------------------------------------------------
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{3}\\d{4}$") //Should check if it contains the IATA code?
+	@ValidFlightNumber
 	@Column(unique = true)
 	private String				flightNumber;
 
 	@Mandatory
 	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				departure; //Should check if departure is before arrival
+	private Date				departure;
 
 	@Mandatory
 	@ValidMoment
-	@Temporal(TemporalType.TIMESTAMP) //After departure
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				arrival;
-
-	//@Mandatory
-	//@ValidNumber(min = 1, max = 1000)
-	//@Automapped
-	//private int					duration; // In hours //Derived? -> Time between departure and arrival equals this duration
 
 	@Mandatory
 	@Valid
@@ -80,21 +76,26 @@ public class Leg extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Aircraft	deployedAircraft;
+	private Aircraft		deployedAircraft;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Airport		departureAirport;
+	private Airport			departureAirport;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Airport		arrivalAirport;
+	private Airport			arrivalAirport;
 
-	//@Mandatory
-	//@Valid
-	//@ManyToOne(optional = false)
-	//private Flight				flight;
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Flight			flight;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private AirlineManager	manager;
 
 }

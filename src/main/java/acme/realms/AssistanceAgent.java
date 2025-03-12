@@ -42,7 +42,7 @@ public class AssistanceAgent extends AbstractRole {
 	private String				employeeCode;
 
 	@Mandatory
-	@ValidString(max = 255)
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				languages;
 
@@ -52,12 +52,12 @@ public class AssistanceAgent extends AbstractRole {
 	private Date				startDate;
 
 	@Optional
-	@ValidString(max = 255)
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				bio;
 
 	@Optional
-	@ValidMoney
+	@ValidMoney(min = 0.00, max = 1000000.00)
 	@Automapped
 	private Money				salary;
 
@@ -70,7 +70,6 @@ public class AssistanceAgent extends AbstractRole {
 
 	// Relationships ------------------------------------------------------------------
 
-	//LA RELACION PUEDE NO SER ASI
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)

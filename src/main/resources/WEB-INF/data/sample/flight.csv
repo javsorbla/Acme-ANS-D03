@@ -1,4 +1,4 @@
-key,tag,requiresSelfTransfer,cost,description,publish,key:manager
+key,tag,requires-self-transfer,cost,description,publish,key:manager
 # base
 flight-01,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-01
 

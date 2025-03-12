@@ -1,6 +1,7 @@
 
 package acme.constraints;
 
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 import javax.validation.ConstraintValidatorContext;
@@ -36,8 +37,8 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 			boolean arrivalIsAfterDeparture;
 			//Using delta = 1 minute and considering duration is a derived attribute
 			//Solution using framework, but is using ChronoUnit correct?
-			//Date minMoment = MomentHelper.deltaFromMoment(leg.getDeparture(), 1, ChronoUnit.MINUTES);
-			Date minMoment = new Date(leg.getDeparture().getTime() + 1 * 60 * 1000); //this works? uses long
+			Date minMoment = MomentHelper.deltaFromMoment(leg.getDeparture(), 1, ChronoUnit.MINUTES);
+			//Date minMoment = new Date(leg.getDeparture().getTime() + 1 * 60 * 1000); //without framework
 			arrivalIsAfterDeparture = MomentHelper.isAfterOrEqual(leg.getArrival(), minMoment);
 			super.state(context, arrivalIsAfterDeparture, "arrival", "acme.validation.leg.arrival.message");
 		}

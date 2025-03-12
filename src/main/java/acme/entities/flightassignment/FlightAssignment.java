@@ -53,7 +53,7 @@ public class FlightAssignment extends AbstractEntity {
 	private String				remarks;
 
 	@Mandatory
-	@Valid
+	//@Valid
 	@Automapped
 	private Boolean				publish; // needed for future deliverables
 

@@ -22,7 +22,7 @@ import javax.validation.constraints.Pattern;
 public @interface ValidIdentifier {
 	// Standard validation properties -----------------------------------------
 
-	String message() default "{acme.validation.airlinemanager.identifier.message}";
+	String message() default "{acme.validation.identifier.message}";
 
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};

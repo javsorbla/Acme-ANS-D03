@@ -19,7 +19,7 @@ airline-12,"'' or 'A' = 'A","ABN","http://lorem.com/ipsum",LUXURY,2008/02/02 00:
 # iataCode - standard variations
 airline-13,"Lorem ipsum","AAA","http://lorem.com/ipsum",LUXURY,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
 airline-14,"Lorem ipsum","ZZZ","http://lorem.com/ipsum",LUXURY,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
-airline-15,"Lorem ipsum","ÑXY","http://lorem.com/ipsum",LUXURY,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
+airline-15,"Lorem ipsum","NXY","http://lorem.com/ipsum",LUXURY,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
 
 # website - standard variations
 airline-16,"Lorem ipsum","ABO","http://lorem.com/ipsum",LUXURY,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
@@ -51,12 +51,12 @@ airline-36,"Lorem ipsum","ACJ","http://lorem.com/ipsum",LOW_COST,2008/02/02 00:0
 airline-37,"Lorem ipsum","ACK","http://lorem.com/ipsum",LUXURY,2012/07/02 00:00,"acme@lorem-ipsum.org","+34987654321"
 airline-38,"Lorem ipsum","ACL","http://lorem.com/ipsum",LUXURY,2000/01/01 00:00,"acme@lorem-ipsum.org","+34987654321"
 airline-39,"Lorem ipsum","ACM","http://lorem.com/ipsum",LUXURY,2000/01/01 00:01,"acme@lorem-ipsum.org","+34987654321"
-airline-40,"Lorem ipsum","ACN","http://lorem.com/ipsum",LUXURY,2024/12/31 23:59,"acme@lorem-ipsum.org","+34987654321"
-airline-41,"Lorem ipsum","ACO","http://lorem.com/ipsum",LUXURY,2025/01/01 00:00,"acme@lorem-ipsum.org","+34987654321"
+#airline-40,"Lorem ipsum","ACN","http://lorem.com/ipsum",LUXURY,2024/12/31 23:59,"acme@lorem-ipsum.org","+34987654321"
+#airline-41,"Lorem ipsum","ACO","http://lorem.com/ipsum",LUXURY,2025/01/01 00:00,"acme@lorem-ipsum.org","+34987654321"
 
 # email - standard variations
 airline-42,"Lorem ipsum","ACP","http://lorem.com/ipsum",LUXURY,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
-airline-43,"Lorem ipsum","ACQ","http://lorem.com/ipsum",LUXURY,2008/02/02 00:00,"acme:password@lorem-ipsum.org","+34987654321"
+airline-43,"Lorem ipsum","ACQ","http://lorem.com/ipsum",LUXURY,2008/02/02 00:00,"acmepassword@lorem-ipsum.org","+34987654321"
 airline-44,"Lorem ipsum","ACR","http://lorem.com/ipsum",LUXURY,2008/02/02 00:00,"a@b.e","+34987654321"
 airline-45,"Lorem ipsum","ACS","http://lorem.com/ipsum",LUXURY,2008/02/02 00:00,"a@b.es","+34987654321"
 airline-46,"Lorem ipsum","ACT","http://lorem.com/ipsum",LUXURY,2008/02/02 00:00,"a@b.esx","+34987654321"

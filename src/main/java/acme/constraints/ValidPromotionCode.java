@@ -17,7 +17,7 @@ public @interface ValidPromotionCode {
 
 	// Standard validation properties -----------------------------------------
 
-	String message() default "{acme.validation.service.promo.code}";
+	String message() default "";
 
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};

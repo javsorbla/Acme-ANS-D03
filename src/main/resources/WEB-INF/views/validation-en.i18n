@@ -12,6 +12,7 @@ acme.validation.technician.identifier.message = Invalid identifier
 acme.validation.assistanceagent.identifier.message = Invalid employee code
 acme.validation.booking.locator.code.message = Invalid locator code
 acme.validation.booking.last.nibble.message = Invalid last nibble
+acme.validation.booking.passport.number.message = Invalid passport number
 acme.validation.iata.code.message = Invalid IATA code
 acme.validation.identifier.message = Invalid identifier
 acme.validation.phone.number.message = Invalid phone number

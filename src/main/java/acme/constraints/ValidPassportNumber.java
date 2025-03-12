@@ -18,11 +18,11 @@ import javax.validation.constraints.Pattern;
 @ReportAsSingleViolation
 
 @NotBlank
-@Pattern(regexp = "^[A-Z]{2,3}\\d{6}$")
-public @interface ValidIdentifier {
+@Pattern(regexp = "^[A-Z0-9]{6,9}$")
+public @interface ValidPassportNumber {
 	// Standard validation properties -----------------------------------------
 
-	String message() default "{acme.validation.identifier.message}";
+	String message() default "{acme.validation.booking.passport.number.message}";
 
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};

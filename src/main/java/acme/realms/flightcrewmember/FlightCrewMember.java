@@ -15,6 +15,8 @@ import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.constraints.ValidFlightCrewMember;
+import acme.constraints.ValidIdentifier;
+import acme.constraints.ValidPhoneNumber;
 import acme.entities.airline.Airline;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,17 +35,17 @@ public class FlightCrewMember extends AbstractRole {
 	// Mandatory Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$") // min y max ya vienen en el pattern?
+	@ValidIdentifier
 	@Column(unique = true)
 	private String				employeeCode;
 
 	@Mandatory
-	@ValidString(pattern = "^\\+?\\d{6,15}$") // min y max ya vienen en el pattern?
-	@Automapped // puede ser Column(unique=true)
+	@ValidPhoneNumber
+	@Automapped
 	private String				phoneNumber;
 
 	@Mandatory
-	@ValidString(min = 1) // min=1 porque no puede estar vacio, no hace falta max = 255 porque es el por defecto
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				languageSkills;
 
@@ -60,7 +62,7 @@ public class FlightCrewMember extends AbstractRole {
 	// Optional Attributes -------------------------------------------------------------
 
 	@Optional
-	@ValidNumber(min = 0, max = 120, fraction = 0) // fraction puede que no haga falta?
+	@ValidNumber(min = 0, max = 120)
 	@Automapped
 	private Integer				experienceYears;
 
@@ -69,7 +71,7 @@ public class FlightCrewMember extends AbstractRole {
 	// Relationships ----------------------------------------------------------
 	@Mandatory
 	@Valid
-	@ManyToOne(optional = false) // segun el foro es una relacion
+	@ManyToOne(optional = false)
 	private Airline				flightCrewMemberAirline;
 
 }

@@ -1,33 +1,33 @@
 key,type,description,priority,estimatedDuration
 ## base
-task-01,MAINTENANCE,"MANTENIMIENTO AVION",2,2.00
+task-01,MAINTENANCE,"MANTENIMIENTO AVION",2,22
 ## restricciones type
-task-02,MAINTENANCE,"MANTENIMIENTO AVION",2,2.00
-task-03,INSPECTION,"MANTENIMIENTO AVION",2,2.00
-task-04,REPAIR,"MANTENIMIENTO AVION",2,2.00
-task-05,SYSTEM_CHECK,"MANTENIMIENTO AVION",2,2.00
+task-02,MAINTENANCE,"MANTENIMIENTO AVION",2,22
+task-03,INSPECTION,"MANTENIMIENTO AVION",2,22
+task-04,REPAIR,"MANTENIMIENTO AVION",2,22
+task-05,SYSTEM_CHECK,"MANTENIMIENTO AVION",2,22
 ## restricciones description
-task-06,MAINTENANCE,"",2,2.00
-task-07,MAINTENANCE,"M",2,2.00
-task-08,MAINTENANCE,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",2,2.00
-task-09,MAINTENANCE,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",2,2.00
+task-06,MAINTENANCE,"",2,22
+task-07,MAINTENANCE,"M",2,22
+task-08,MAINTENANCE,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",2,22
+task-09,MAINTENANCE,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",2,22
 # caracteres no latinos
-task-10,MAINTENANCE,"โลเร็ม อิปซัม",2,2.00
-task-11,MAINTENANCE,"при",2,2.00
-task-12,MAINTENANCE,"洛伦·伊普森",2,2.00
+task-10,MAINTENANCE,"โลเร็ม อิปซัม",2,22
+task-11,MAINTENANCE,"при",2,22
+task-12,MAINTENANCE,"洛伦·伊普森",2,22
 # inyecciones
-task-13,MAINTENANCE,"<marquee>Hacked</marquee>",2,2.00
-task-14,MAINTENANCE,"<script>alert(‘Hacked!’);</script>",2,2.00
-task-15,MAINTENANCE,"' or 'A' = 'A",2,2.00
+task-13,MAINTENANCE,"<marquee>Hacked</marquee>",2,22
+task-14,MAINTENANCE,"<script>alert(‘Hacked!’);</script>",2,22
+task-15,MAINTENANCE,"' or 'A' = 'A",2,22
 
 ## restricciones priority
-task-16,MAINTENANCE,"MANTENIMIENTO AVION",1,2.00
-task-17,MAINTENANCE,"MANTENIMIENTO AVION",5,2.00
-task-18,MAINTENANCE,"MANTENIMIENTO AVION",10,2.00
+task-16,MAINTENANCE,"MANTENIMIENTO AVION",1,22
+task-17,MAINTENANCE,"MANTENIMIENTO AVION",5,22
+task-18,MAINTENANCE,"MANTENIMIENTO AVION",10,22
 
 
 ## restricciones estimatedDuration
-task-19,MAINTENANCE,"MANTENIMIENTO AVION",2,0.00
-task-20,MAINTENANCE,"MANTENIMIENTO AVION",2,500000.00
-task-21,MAINTENANCE,"MANTENIMIENTO AVION",2,1000000.00
+task-19,MAINTENANCE,"MANTENIMIENTO AVION",2,0
+task-20,MAINTENANCE,"MANTENIMIENTO AVION",2,500
+task-21,MAINTENANCE,"MANTENIMIENTO AVION",2,1000
 

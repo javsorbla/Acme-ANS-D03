@@ -14,6 +14,7 @@ acme.validation.customer.identifier.duplicated.message = Identifier duplicated
 acme.validation.leg.flight.number.duplicated.message = Flight number duplicated
 acme.validation.assistanceagent.identifier.message = Invalid employee code
 acme.validation.booking.locator.code.message = Invalid locator code
+acme.validation.booking.locator.code.duplicated.message = Locator Code duplicated
 acme.validation.booking.last.nibble.message = Invalid last nibble
 acme.validation.booking.passport.number.message = Invalid passport number
 acme.validation.iata.code.message = Invalid IATA code

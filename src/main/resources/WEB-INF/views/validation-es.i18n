@@ -14,6 +14,7 @@ acme.validation.assistanceagent.identifier.message = Código incorrecto
 acme.validation.customer.identifier.duplicated.message = Identificador duplicado
 acme.validation.leg.flight.number.duplicated.message = Número de vuelo duplicado
 acme.validation.booking.locator.code.message = Código localizador incorrecto
+acme.validation.booking.locator.code.duplicated.message = Código localizador duplicado
 acme.validation.booking.last.nibble.message = Últimos 4 digitos de la tarjeta de crédito incorrectos
 acme.validation.booking.passport.number.message = Número de pasaporte incorrecto
 acme.validation.iata.code.message = Código IATA inválido

@@ -53,7 +53,7 @@ public class ActivityLog extends AbstractEntity {
 	private Integer				severityLevel;
 
 	@Mandatory
-	@Valid
+	//@Valid
 	@Automapped
 	private Boolean				publish;
 

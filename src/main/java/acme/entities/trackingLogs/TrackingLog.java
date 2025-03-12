@@ -35,14 +35,14 @@ public class TrackingLog extends AbstractEntity {
 	private Date				lastUpdateMoment;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50)
 	@Automapped
 	private String				step;
 
 	@Mandatory
 	@ValidNumber(min = 0, max = 100)	//seguro?
 	@Automapped
-	private double				resolutionPercentage;
+	private Double				resolutionPercentage;
 
 	@Mandatory
 	@Valid
@@ -50,9 +50,14 @@ public class TrackingLog extends AbstractEntity {
 	private TrackingLogStatus	status;
 
 	@Optional
-	@ValidString(min = 0, max = 255)
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				resolution;
+
+	@Mandatory
+	//@Valid by default
+	@Automapped
+	private Boolean				publish;
 
 	// Derived attributes -----------------------------------------------------
 
@@ -60,7 +65,7 @@ public class TrackingLog extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne//(optional = true)
 	private Claim				claim;
 
 }

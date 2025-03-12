@@ -13,7 +13,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
-import acme.entities.flight.Flight;
+import acme.entities.leg.Leg;
 import acme.realms.AssistanceAgent;
 import lombok.Getter;
 import lombok.Setter;
@@ -40,7 +40,7 @@ public class Claim extends AbstractEntity {
 	private String				passengerEmail;
 
 	@Mandatory
-	@ValidString(max = 255)
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				description;
 
@@ -50,26 +50,27 @@ public class Claim extends AbstractEntity {
 	private ClaimType			type;
 
 	@Mandatory
-	@Valid
+	//@Valid by default
 	@Automapped
-	private boolean				indicator;
+	private Boolean				indicator;
 
 	@Mandatory
 	//@Valid by default
 	@Automapped
-	private boolean				draftMode;
+	private Boolean				publish;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne//(optional = true)
 	private AssistanceAgent		assistanceAgent;
 
 	@Mandatory
 	@Valid
-	@ManyToOne
-	private Flight				flight;
+	@ManyToOne//(optional = true)
+	private Leg					leg;
 
 }

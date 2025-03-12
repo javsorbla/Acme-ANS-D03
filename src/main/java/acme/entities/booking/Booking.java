@@ -20,7 +20,7 @@ import acme.client.components.validation.ValidMoney;
 import acme.constraints.ValidLastNibble;
 import acme.constraints.ValidLocatorCode;
 import acme.entities.flight.Flight;
-import acme.realms.Customer;
+import acme.realms.customer.Customer;
 import lombok.Getter;
 import lombok.Setter;
 

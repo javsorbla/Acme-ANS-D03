@@ -3,16 +3,23 @@ package acme.constraints;
 
 import javax.validation.ConstraintValidatorContext;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import acme.client.components.principals.DefaultUserIdentity;
 import acme.client.components.validation.AbstractValidator;
 import acme.client.helpers.StringHelper;
-import acme.realms.AirlineManager;
+import acme.realms.manager.AirlineManager;
+import acme.realms.manager.AirlineManagerRepository;
 
 public class ManagerValidator extends AbstractValidator<ValidManager, AirlineManager> {
 
 	// Internal state ---------------------------------------------------------
 
+	@Autowired
+	private AirlineManagerRepository repository;
+
 	// Initialiser ------------------------------------------------------------
+
 
 	@Override
 	public void initialise(final ValidManager annotation) {
@@ -33,6 +40,13 @@ public class ManagerValidator extends AbstractValidator<ValidManager, AirlineMan
 		else if (StringHelper.isBlank(manager.getIdentifier()))
 			super.state(context, false, "identifier", "javax.validation.constraints.NotBlank.message");
 		else {
+			boolean uniqueManager;
+			AirlineManager existingManager;
+
+			existingManager = this.repository.findManagerByIdentifier(manager.getIdentifier());
+			uniqueManager = existingManager == null || existingManager.equals(manager);
+			super.state(context, uniqueManager, "identifier", "acme.validation.airline.identifier.duplicated.message");
+
 			boolean containsInitials;
 			DefaultUserIdentity identity = manager.getIdentity();
 			char nameFirstLetter = identity.getName().charAt(0);

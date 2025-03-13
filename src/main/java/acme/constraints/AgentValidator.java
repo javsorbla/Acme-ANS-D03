@@ -46,7 +46,7 @@ public class AgentValidator extends AbstractValidator<ValidAgent, AssistanceAgen
 
 			existingAssistanceAgent = this.repository.findAgentByEmployeeCode(agent.getEmployeeCode());
 			uniqueAssistanceAgent = existingAssistanceAgent == null || existingAssistanceAgent.equals(agent);
-			super.state(context, uniqueAssistanceAgent, "employeeCode", "acme.validation.agent.employeeCode.duplicated.message");
+			super.state(context, uniqueAssistanceAgent, "employeeCode", "acme.validation.assistanceagent.employeeCode.duplicated.message");
 
 			boolean containsInitials;
 			DefaultUserIdentity identity = agent.getIdentity();

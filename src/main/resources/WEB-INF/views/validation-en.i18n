@@ -23,3 +23,4 @@ acme.validation.iata.code.message = Invalid IATA code
 acme.validation.identifier.message = Invalid identifier
 acme.validation.phone.number.message = Invalid phone number
 acme.validation.service.promo.code = Invalid promotion code
+acme.validation.employee.code.message= Invalid employee code

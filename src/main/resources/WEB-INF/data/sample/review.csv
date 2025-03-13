@@ -1,0 +1,60 @@
+key,name,moment,subject,text,score,recommended
+## base entity
+review-01,"review",2022/02/02 00:00,"flight","flight",5.00,false
+# name - standard variations
+review-02,"Lorem ipsum dolor sit amet",2022/02/02 00:00,"flight","flight",5.00,false
+review-03,"L",2022/02/02 00:00,"flight","flight",5.00,false
+review-04,"Lo",2022/02/02 00:00,"flight","flight",5.00,false
+review-05,"Lorem ipsum dolor sit amet. consectetur adipiscin",2022/02/02 00:00,"flight","flight",5.00,false
+review-06,"Lorem ipsum dolor sit amet. consectetur adipiscing",2022/02/02 00:00,"flight","flight",5.00,false
+## name - no singular values
+review-07,"โลเร็ม อิปซัม",2022/02/02 00:00,"flight","flight",5.00,false
+review-08,"洛伦·伊普森",2022/02/02 00:00,"flight","flight",5.00,false
+review-09,"при",2022/02/02 00:00,"flight","flight",5.00,false
+review-10,"<marquee>Hacked</marquee>",2022/02/02 00:00,"flight","flight",5.00,false
+review-11,"<script>alert(‘Hacked!’);</script>",2022/02/02 00:00,"flight","flight",5.00,false
+review-12,"'' or 'A' = 'A ",2022/02/02 00:00,"flight","flight",5.00,false
+## moment - standard variations
+review-13,"review",2012/07/02 00:00,"flight","flight",5.00,false
+review-14,"review",2000/01/01 00:00,"flight","flight",5.00,false
+review-15,"review",2000/01/01 00:01,"flight","flight",5.00,false
+review-16,"review",2024/12/31 23:59,"flight","flight",5.00,false
+review-17,"review",2025/01/01 00:00,"flight","flight",5.00,false
+## subject - standard variations
+review-18,"review",2022/02/02 00:00,"Lorem ipsum dolor sit amet","flight",5.00,false
+review-19,"review",2022/02/02 00:00,"L","flight",5.00,false
+review-20,"review",2022/02/02 00:00,"Lo","flight",5.00,false
+review-21,"review",2022/02/02 00:00,"Lorem ipsum dolor sit amet. consectetur adipiscin","flight",5.00,false
+review-22,"review",2022/02/02 00:00,"Lorem ipsum dolor sit amet. consectetur adipiscing","flight",5.00,false
+## subject - no singular values
+review-23,"review",2022/02/02 00:00,"โลเร็ม อิปซัม","flight",5.00,false
+review-24,"review",2022/02/02 00:00,"洛伦·伊普森","flight",5.00,false
+review-25,"review",2022/02/02 00:00,"при","flight",5.00,false
+review-26,"review",2022/02/02 00:00,"<marquee>Hacked</marquee>","flight",5.00,false
+review-27,"review",2022/02/02 00:00,"<script>alert(‘Hacked!’);</script>","flight",5.00,false
+review-28,"review",2022/02/02 00:00,"'' or 'A' = 'A ","flight",5.00,false
+## text - normal variations
+review-29,"review",2022/02/02 00:00,"flight","Lorem ipsum dolor sit amet",5.00,false
+review-30,"review",2022/02/02 00:00,"flight","L",5.00,false
+review-31,"review",2022/02/02 00:00,"flight","Lo",5.00,false
+review-32,"review",2022/02/02 00:00,"flight","Lorem ipsum dolor sit amet; consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",5.00,false
+review-33,"review",2022/02/02 00:00,"flight","Lorem ipsum dolor sit amet; consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",5.00,false
+## text - no singular values
+review-34,"review",2022/02/02 00:00,"flight","โลเร็ม อิปซัม",5.00,false
+review-35,"review",2022/02/02 00:00,"flight","при",5.00,false
+review-36,"review",2022/02/02 00:00,"flight","洛伦·伊普森",5.00,false
+review-37,"review",2022/02/02 00:00,"flight","<marquee>Hacked</marquee>",5.00,false
+review-38,"review",2022/02/02 00:00,"flight","<script>alert(‘Hacked!’);</script>",5.00,false
+review-39,"review",2022/02/02 00:00,"flight","'' or 'A' = 'A ",5.00,false
+## score - standard variations
+review-40,"review",2022/02/02 00:00,"flight","Lorem ipsum dolor sit amet",0.00,false
+review-41,"review",2022/02/02 00:00,"flight","Lorem ipsum dolor sit amet",0.01,false
+review-42,"review",2022/02/02 00:00,"flight","Lorem ipsum dolor sit amet",5.00,false
+review-43,"review",2022/02/02 00:00,"flight","Lorem ipsum dolor sit amet",10.00,false
+review-44,"review",2022/02/02 00:00,"flight","Lorem ipsum dolor sit amet",9.99,false
+## recommended - standard variations
+review-46,"review",2022/02/02 00:00,"flight","Lorem ipsum dolor sit amet",5.00,true
+review-47,"review",2022/02/02 00:00,"flight","Lorem ipsum dolor sit amet",5.00,false
+
+
+

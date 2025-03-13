@@ -20,14 +20,14 @@ bg=green
       <h>153</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
-Technician
+Technician{ValidTechnician}
 --
-+ licenseNumber: String {Mandatory, ValidString(pattern="^[A-Z]{2,3}\d{6}$"), Column(unique=true)}
-+ phoneNumber: String {Mandatory, ValidString(pattern="^\+?\d{6,15}$"), Automapped}
-+ specialisation: String {Mandatory, ValidString(max=50), Automapped}
++ licenseNumber: String {Mandatory, ValidIdentifier, Column(unique=true)}
++ phoneNumber: String {Mandatory, ValidPhoneNumber, Automapped}
++ specialisation: String {Mandatory, ValidString(min=0,max=50), Automapped}
 + anualHealthTest: boolean {Mandatory, Automapped}
-+ experienceYears: Integer {Optional, ValidNumber(min=0), Automapped}
-+ certifications: String {Optional, ValidString, Automapped}
++ experienceYears: Integer {Optional, ValidNumber(min=0,max=120), Automapped}
++ certifications: String {Optional, ValidString(max=255), Automapped}
 bg=pink
 </panel_attributes>
     <additional_attributes/>

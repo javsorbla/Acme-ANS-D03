@@ -65,12 +65,12 @@ public class Claim extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne//(optional = true)
+	@ManyToOne(optional = true)
 	private AssistanceAgent		assistanceAgent;
 
 	@Mandatory
 	@Valid
-	@ManyToOne//(optional = true)
+	@ManyToOne(optional = true)
 	private Leg					leg;
 
 }

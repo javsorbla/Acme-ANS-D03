@@ -34,29 +34,6 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>70</x>
-      <y>147</y>
-      <w>434</w>
-      <h>119</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Role&gt;&gt;
-Customer
---
-+ identifier: String {Mandatory, ValidString(pattern="^[A-Z]{2-3}\d{6}$"), Column(unique=true)}
-+ phoneNumber: String {Mandatory, ValidString(pattern="^\+?\d{6,15}$", Automapped}
-+ physicalAddress: String {Mandatory, ValidString(min=1,max=255), Automapped}
-+ city: String {Mandatory, ValidString(min=1,max=50), Automapped}
-+ country: String {Mandatory,ValidString(min=1,max=50), Automapped}
-+ earnedPoints: Integer {Optional,ValidNumber(min=0,max=500000,fraction=0), Automapped}
-
-
-bg=pink
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
       <x>553</x>
       <y>147</y>
       <w>455</w>
@@ -116,6 +93,28 @@ Technician{ValidTechnician}
 + certifications: String {Optional, ValidString(max=255), Automapped}
 bg=pink
 </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>70</x>
+      <y>147</y>
+      <w>434</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Customer {ValidCustomer}
+--
++ identifier: String {Mandatory, ValidIdentifier, Column(unique=true)}
++ phoneNumber: String {Mandatory,ValidPhoneNumber, Automapped}
++ physicalAddress: String {Mandatory, ValidString(min=1,max=255), Automapped}
++ city: String {Mandatory, ValidString(min=1,max=50), Automapped}
++ country: String {Mandatory,ValidString(min=1,max=50), Automapped}
++ earnedPoints: Integer {Optional,ValidNumber(min=0,max=500000,fraction=0), Automapped}
+
+
+bg=pink</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

@@ -15,14 +15,14 @@ bg=green
     <id>UMLClass</id>
     <coordinates>
       <x>70</x>
-      <y>287</y>
+      <y>301</y>
       <w>462</w>
       <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
-AirlineManager
+AirlineManager {ValidManager}
 --
-+ identifier: String {Mandatory, ValidString(min=8,pattern="^[A-Z]{2-3}\d{6}$"), Column(unique=true)}
++ identifier: String {Mandatory, ValidIdentifier, Column(unique=true)}
 + yearsOfExperience: int {Mandatory, ValidNumber(min=0,max=120,integer=3,fraction=0), Automapped}
 + dateOfBirth: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
 + picture: String {Optional, ValidUrl, Automapped}
@@ -35,7 +35,7 @@ bg=pink
     <id>UMLClass</id>
     <coordinates>
       <x>553</x>
-      <y>147</y>
+      <y>161</y>
       <w>455</w>
       <h>119</h>
     </coordinates>
@@ -57,7 +57,7 @@ bg=pink
     <id>UMLClass</id>
     <coordinates>
       <x>70</x>
-      <y>413</y>
+      <y>427</y>
       <w>448</w>
       <h>119</h>
     </coordinates>
@@ -78,7 +78,7 @@ bg=pink
     <id>UMLClass</id>
     <coordinates>
       <x>553</x>
-      <y>287</y>
+      <y>301</y>
       <w>455</w>
       <h>119</h>
     </coordinates>
@@ -99,7 +99,7 @@ bg=pink
     <id>UMLClass</id>
     <coordinates>
       <x>70</x>
-      <y>147</y>
+      <y>161</y>
       <w>434</w>
       <h>119</h>
     </coordinates>

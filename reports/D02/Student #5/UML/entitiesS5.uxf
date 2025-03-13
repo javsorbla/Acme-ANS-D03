@@ -114,7 +114,7 @@ MaintenanceRecord
 + moment: Date {Mandatory, ValidMoment, Temporal(TIMESTAMP)}
 + status: MaintenanceRecordStatus {Mandatory, Valid, Automapped}
 + nextInspectionDate: Date {Mandatory, ValidMoment, Temporal(TIMESTAMP)}
-+ estimatedCost: Integer {Mandatory, ValidNumber(min=0, max=100000), Automapped}
++ estimatedCost: Money {Mandatory, ValidMoney, Automapped}
 + notes: String {Optional, ValidString(max = 255), Automapped}
 bg=green
 </panel_attributes>

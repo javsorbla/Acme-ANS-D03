@@ -36,7 +36,7 @@ public class FlightAssignment extends AbstractEntity {
 	private Duty				duty;
 
 	@Mandatory
-	@ValidMoment(min = "2000/01/01 00:00:00", past = true) // max es hace 1 segundo porque past=true
+	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				lastUpdateMoment;
 
@@ -48,12 +48,12 @@ public class FlightAssignment extends AbstractEntity {
 	// Optional Attributes -------------------------------------------------------------
 
 	@Optional
-	@ValidString(min = 0) // min=0 porque es opcional, no hace falta max=255 porque es por defecto
+	@ValidString(min = 0, max = 255)
 	@Automapped
 	private String				remarks;
 
 	@Mandatory
-	@Valid
+	//@Valid
 	@Automapped
 	private Boolean				publish; // needed for future deliverables
 

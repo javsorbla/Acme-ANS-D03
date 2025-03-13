@@ -1,0 +1,3 @@
+key,name,iataCode,operationalScope,city,country,website,email,phoneNumber
+airport-01,"Airport1","ABC",REGIONAL,"Seville","Spain","ftp://a","prueba@gmail.com","+34987654321"
+airport-02,"Airport2","BBB",REGIONAL,"Seville","Spain","ftp://b","prueba2@gmail.com","+34987654322"

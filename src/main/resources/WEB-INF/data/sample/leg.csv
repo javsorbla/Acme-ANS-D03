@@ -50,7 +50,7 @@ leg-23,"ABC2347",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-19,airp
 ## variaciones de airports / aircrafts / flights realizadas a lo largo de las distintas entradas,manager-01 
 ## para mantener algo de coherencia en los datos
 
-## variaciones de flight para asignar al menos un leg/tramo a cada vuelo
+## variaciones de flight para asignar al menos un leg/tramo a cada vuelo publicado
 leg-24,"ABC2348",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-20,airport-01,airport-02,flight-20,manager-01
 leg-25,"ABC2349",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-21,airport-01,airport-02,flight-21,manager-01
 leg-26,"ABC2350",2022/09/01 10:00,2022/09/01 10:01,ON_TIME,true,aircraft-22,airport-01,airport-02,flight-22,manager-01

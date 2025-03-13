@@ -16,6 +16,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.client.helpers.SpringHelper;
+import acme.constraints.ValidFlight;
 import acme.realms.manager.AirlineManager;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,6 +24,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+@ValidFlight
 public class Flight extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------

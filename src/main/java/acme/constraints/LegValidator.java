@@ -39,6 +39,21 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 		if (leg == null || leg.getArrival() == null || leg.getDeparture() == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
+			boolean departureIsFuture = MomentHelper.isPresentOrFuture(leg.getDeparture());
+			super.state(context, departureIsFuture, "departure", "acme.validation.leg.departure.message");
+
+			boolean arrivalIsAfterDeparture;
+			//Using delta = 1 minute and considering duration is a derived attribute
+			//Solution using framework, but is using ChronoUnit correct?
+			Date minMoment = MomentHelper.deltaFromMoment(leg.getDeparture(), 1, ChronoUnit.MINUTES);
+			//Date minMoment = new Date(leg.getDeparture().getTime() + 1 * 60 * 1000); //without framework
+			arrivalIsAfterDeparture = MomentHelper.isAfterOrEqual(leg.getArrival(), minMoment);
+			super.state(context, arrivalIsAfterDeparture, "arrival", "acme.validation.leg.arrival.message");
+		}
+
+		if (leg == null || leg.getDeployedAircraft() == null || leg.getDeployedAircraft().getAirline() == null)
+			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
+		else {
 			boolean containsIATA;
 			String iataFromAirline = leg.getDeployedAircraft().getAirline().getIataCode();
 			containsIATA = StringHelper.startsWith(leg.getFlightNumber(), iataFromAirline, false); //must be in upper case
@@ -50,17 +65,6 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 			existingLeg = this.repository.findLegByFlightNumber(leg.getFlightNumber());
 			uniqueLeg = existingLeg == null || existingLeg.equals(leg);
 			super.state(context, uniqueLeg, "flightNumber", "acme.validation.leg.flight.number.duplicated.message");
-
-			boolean departureIsFuture = MomentHelper.isPresentOrFuture(leg.getDeparture());
-			super.state(context, departureIsFuture, "departure", "acme.validation.leg.departure.message");
-
-			boolean arrivalIsAfterDeparture;
-			//Using delta = 1 minute and considering duration is a derived attribute
-			//Solution using framework, but is using ChronoUnit correct?
-			Date minMoment = MomentHelper.deltaFromMoment(leg.getDeparture(), 1, ChronoUnit.MINUTES);
-			//Date minMoment = new Date(leg.getDeparture().getTime() + 1 * 60 * 1000); //without framework
-			arrivalIsAfterDeparture = MomentHelper.isAfterOrEqual(leg.getArrival(), minMoment);
-			super.state(context, arrivalIsAfterDeparture, "arrival", "acme.validation.leg.arrival.message");
 		}
 
 		result = !super.hasErrors(context);

@@ -6,7 +6,6 @@ acme.validation.leg.arrival.message = Fecha de llegada inválida
 acme.validation.activitylog.message = Registro de actividades inválido
 acme.validation.activitylog.registrationmoment.message = Momento de registro inválido
 acme.validation.airlinemanager.identifier.message = Identificador incorrecto
-acme.validation.airline.identifier.duplicated.message = Identificador del manager duplicado
 acme.validation.customer.identifier.message = Identificador incorrecto
 acme.validation.flightcrewmember.employee.code.message = Código de empleado incorrecto
 acme.validation.flightcrewmember.employee.code.duplicated.message = Código de empleado duplicado

@@ -65,7 +65,7 @@ public class TrackingLog extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne//(optional = true)
+	@ManyToOne(optional = true)
 	private Claim				claim;
 
 }

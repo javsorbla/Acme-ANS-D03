@@ -4,42 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>126</x>
-      <y>224</y>
-      <w>168</w>
-      <h>77</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
-ValidManager
---
-+ identifier 2 first letters must
-correspond to the manager initials
-bg=RED</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>322</x>
-      <y>105</y>
-      <w>168</w>
-      <h>77</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
-ValidLeg
---
-+ departure and arrival date must 
-be in future
-+ arrival date must be at least 1
-minute after departure date
-bg=RED</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>126</x>
-      <y>105</y>
+      <x>406</x>
+      <y>574</y>
       <w>168</w>
       <h>77</h>
     </coordinates>
@@ -54,8 +20,8 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>679</x>
-      <y>105</y>
+      <x>623</x>
+      <y>175</y>
       <w>203</w>
       <h>77</h>
     </coordinates>
@@ -71,8 +37,8 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>126</x>
-      <y>343</y>
+      <x>70</x>
+      <y>413</y>
       <w>238</w>
       <h>56</h>
     </coordinates>
@@ -86,8 +52,8 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>126</x>
-      <y>427</y>
+      <x>70</x>
+      <y>497</y>
       <w>364</w>
       <h>56</h>
     </coordinates>
@@ -101,8 +67,8 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>518</x>
-      <y>105</y>
+      <x>462</x>
+      <y>175</y>
       <w>133</w>
       <h>63</h>
     </coordinates>
@@ -117,8 +83,8 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>518</x>
-      <y>427</y>
+      <x>462</x>
+      <y>497</y>
       <w>266</w>
       <h>56</h>
     </coordinates>
@@ -132,8 +98,8 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>322</x>
-      <y>224</y>
+      <x>266</x>
+      <y>294</y>
       <w>224</w>
       <h>84</h>
     </coordinates>
@@ -151,8 +117,8 @@ bg=RED
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>567</x>
-      <y>224</y>
+      <x>511</x>
+      <y>294</y>
       <w>168</w>
       <h>56</h>
     </coordinates>
@@ -166,8 +132,8 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>392</x>
-      <y>343</y>
+      <x>336</x>
+      <y>413</y>
       <w>266</w>
       <h>56</h>
     </coordinates>
@@ -181,8 +147,8 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>686</x>
-      <y>343</y>
+      <x>630</x>
+      <y>413</y>
       <w>266</w>
       <h>56</h>
     </coordinates>
@@ -196,8 +162,8 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>763</x>
-      <y>224</y>
+      <x>707</x>
+      <y>294</y>
       <w>210</w>
       <h>56</h>
     </coordinates>
@@ -211,8 +177,8 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>126</x>
-      <y>504</y>
+      <x>70</x>
+      <y>574</y>
       <w>301</w>
       <h>56</h>
     </coordinates>
@@ -221,6 +187,64 @@ ValidPromotionCode
 --
 + promotion code last two digits must match with the current year
 + promotion code must match pattern = "^[A-Z]{4}-[0-9]{2}$" 
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>273</x>
+      <y>154</y>
+      <w>154</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidLeg
+--
++ departure and arrival date must 
+be in future
++ arrival date must be at least 1
+minute after departure date
++ flightNumber starts with airline's
+IATA code 
++ flightNumber is unique
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>56</x>
+      <y>294</y>
+      <w>168</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidManager
+--
++ identifier 2 first letters must
+correspond to the manager initials
++ identifier must be unique
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>63</x>
+      <y>154</y>
+      <w>154</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidFlight
+--
++ a published flight must have at
+lest one leg
++ a published flight must have all 
+its legs published 
++ legs of a published flight can't
+be overlapped
 bg=RED</panel_attributes>
     <additional_attributes/>
   </element>

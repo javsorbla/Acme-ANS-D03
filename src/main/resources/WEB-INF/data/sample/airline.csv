@@ -1,4 +1,4 @@
-key,name,iataCode,webSite,type,foundationMoment,email,contactPhone
+key,name,iataCode,webSite,type,foundationMoment,email,phoneNumber
 # base entity
 airline-01,"Lorem ipsum","ABC","http://lorem.com/ipsum",LUXURY,2008/02/02 00:00,"acme@lorem-ipsum.org","+34987654321"
 
@@ -62,7 +62,7 @@ airline-45,"Lorem ipsum","ACS","http://lorem.com/ipsum",LUXURY,2008/02/02 00:00,
 airline-46,"Lorem ipsum","ACT","http://lorem.com/ipsum",LUXURY,2008/02/02 00:00,"a@b.esx","+34987654321"
 airline-47,"Lorem ipsum","ACU","http://lorem.com/ipsum",LUXURY,2008/02/02 00:00,"ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org","+34987654321"
 
-# contactPhone - standard variations
+# phoneNumber - standard variations
 airline-48,"Lorem ipsum","ACV","http://lorem.com/ipsum",LUXURY,2008/02/02 00:00,"acme@lorem-ipsum.org","+3498765432"
 airline-49,"Lorem ipsum","ACW","http://lorem.com/ipsum",LUXURY,2008/02/02 00:00,"acme@lorem-ipsum.org","+349876"
 airline-50,"Lorem ipsum","ACX","http://lorem.com/ipsum",LUXURY,2008/02/02 00:00,"acme@lorem-ipsum.org","+3498765"

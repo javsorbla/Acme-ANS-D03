@@ -10,24 +10,24 @@ FlightAssignment
 + publish: boolean {Mandatory, Valid, Automapped}
 bg=green
 </help_text>
-  <zoom_level>9</zoom_level>
+  <zoom_level>11</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>288</x>
-      <y>306</y>
-      <w>576</w>
-      <h>153</h>
+      <x>319</x>
+      <y>319</y>
+      <w>704</w>
+      <h>187</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
-FlightCrewMember
+FlightCrewMember{ValidFlightCrewMember}
 --
-+ employeeCode: String {Mandatory, ValidString(pattern="^[A-Z]{2,3}\d{6}$"), Column(unique=true)}
-+ phoneNumber: String {Mandatory, ValidString(pattern="^\+?\d{6,15}$"), Automapped}
-+ languageSkills: String {Mandatory, ValidString(min=1), Automapped}
++ employeeCode: String {Mandatory, ValidIdentifier, Column(unique=true)}
++ phoneNumber: String {Mandatory, ValidPhoneNumber, Automapped}
++ languageSkills: String {Mandatory, ValidString(min=1,max=255), Automapped}
 + availabilityStatus: AvailabilityStatus{Mandatory, Valid, Automapped}
 + salary: Money {Mandatory, ValidMoney(min=0.00,max=1000000.00, Automapped}
-+ experienceYears: Integer {Optional, ValidNumber(min=0,max=120,fraction=0), Automapped}
++ experienceYears: Integer {Optional, ValidNumber(min=0,max=120), Automapped}
 bg=pink
 </panel_attributes>
     <additional_attributes/>

@@ -57,7 +57,7 @@ public class Review extends AbstractEntity {
 	@Optional
 	//@Valid
 	@Automapped
-	private boolean				recommended;
+	private Boolean				recommended;
 
 	// Derived attributes -----------------------------------------------------
 

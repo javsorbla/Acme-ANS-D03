@@ -67,6 +67,7 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 			super.state(context, uniqueLeg, "flightNumber", "acme.validation.leg.flight.number.duplicated.message");
 		}
 
+		//Check aircraft not used at the same time?
 		result = !super.hasErrors(context);
 		return result;
 

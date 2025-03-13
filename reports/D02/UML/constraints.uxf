@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>10</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>260</x>
-      <y>310</y>
-      <w>240</w>
-      <h>110</h>
+      <x>126</x>
+      <y>224</y>
+      <w>168</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Constraint&gt;&gt;
 ValidManager
@@ -20,10 +20,10 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>540</x>
-      <y>140</y>
-      <w>240</w>
-      <h>110</h>
+      <x>322</x>
+      <y>105</y>
+      <w>168</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Constraint&gt;&gt;
 ValidLeg
@@ -38,16 +38,189 @@ bg=RED</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>260</x>
-      <y>140</y>
-      <w>240</w>
-      <h>110</h>
+      <x>126</x>
+      <y>105</y>
+      <w>168</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Constraint&gt;&gt;
 ValidAgent
 --
 + employeeCode 2-3 first letters must
 correspond to the agent initials
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>679</x>
+      <y>105</y>
+      <w>203</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidFlightCrewMember
+--
++ employeeCode 2-3 first letters must
+correspond to the flight crew member initials
++ employeeCode must be unique
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>126</x>
+      <y>343</y>
+      <w>238</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidPhoneNumber
+--
++ phoneNumber must match pattern "^\\+?\\d{6,15}$"
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>126</x>
+      <y>427</y>
+      <w>364</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidIdentifier
+--
++ identifier/employeeCode/licenseNumber must match pattern "^[A-Z]{2,3}\\d{6}$"
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>518</x>
+      <y>105</y>
+      <w>133</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidActivityLog
+--
++ registration moment must
+be after legs arrival
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>518</x>
+      <y>427</y>
+      <w>266</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidLocatorCode
+--
++ Locator code must match pattern = "^[A-Z0-9]{6,8}$"
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>322</x>
+      <y>224</y>
+      <w>224</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidCustomer
+--
++ The 2-3 first letters of identifier must
+correspond to the initials of the customer's name
+
++ Identifier must be unique
+bg=RED
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>567</x>
+      <y>224</y>
+      <w>168</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidBooking
+--
++ Locator code must be unique
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>392</x>
+      <y>343</y>
+      <w>266</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidPassportNumber
+--
++ Passport number must match pattern = "^[A-Z0-9]{6,9}$"
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>686</x>
+      <y>343</y>
+      <w>266</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidLastNibble
+--
++ Last nibble must match pattern = "^\\d{4}$"
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>763</x>
+      <y>224</y>
+      <w>210</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidIataCode
+--
++ iata code must patch pattern = "^[A-Z]{3}$"
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>126</x>
+      <y>504</y>
+      <w>301</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidPromotionCode
+--
++ promotion code last two digits must match with the current year
++ promotion code must match pattern = "^[A-Z]{4}-[0-9]{2}$" 
 bg=RED</panel_attributes>
     <additional_attributes/>
   </element>

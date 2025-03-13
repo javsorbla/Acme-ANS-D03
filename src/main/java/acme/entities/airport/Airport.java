@@ -65,7 +65,7 @@ public class Airport extends AbstractEntity {
 	@Optional
 	@ValidPhoneNumber
 	@Automapped
-	private String				contactPhone;
+	private String				phoneNumber;
 
 	//Derived attributes-------------------------------------------------
 

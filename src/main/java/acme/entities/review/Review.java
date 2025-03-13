@@ -4,10 +4,8 @@ package acme.entities.review;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -16,7 +14,6 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.entities.airline.Airline;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -31,7 +28,7 @@ public class Review extends AbstractEntity {
 	// Mandatory Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString(max = 50) // min = 1 porque es obligatorio?
+	@ValidString(min = 1, max = 50)
 	@Automapped
 	private String				name;
 
@@ -41,12 +38,12 @@ public class Review extends AbstractEntity {
 	private Date				moment;
 
 	@Mandatory
-	@ValidString(max = 50) // min=1 porque es obligatorio?
+	@ValidString(min = 1, max = 50)
 	@Automapped
 	private String				subject;
 
 	@Mandatory
-	@ValidString(max = 255)  // max=255 no hace falta
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				text;
 
@@ -55,29 +52,15 @@ public class Review extends AbstractEntity {
 	@Optional
 	@ValidNumber(min = 0, max = 10)
 	@Automapped
-	private double				score; //double o Double?
+	private double				score;
 
 	@Optional
 	//@Valid  no funciona con boolean
 	@Automapped
-	private boolean				recommended; //boolean o Boolean?
+	private boolean				recommended;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
 
-	@Mandatory
-	@Valid
-	@ManyToOne
-	private Airline				airline; // sobra?
-
-	//	@Mandatory
-	//	@Valid
-	//	@ManyToOne
-	//	private Service				service; sobra?
-
-	//	@Mandatory
-	//	@Valid
-	//	@ManyToOne
-	//	private Airport				airport; sobra?
 }

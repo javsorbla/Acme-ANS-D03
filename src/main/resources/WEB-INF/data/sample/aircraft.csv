@@ -1,3 +1,63 @@
 key,model,registrationNumber,capacity,cargoWeight,status,details,key:airline
+# base entity
 aircraft-01,"Prueba","AAAAA",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
 aircraft-02,"Prueba2","BBBBB",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+
+#model
+aircraft-03,"Lorem ipsum dolor sit ame","AAAAA",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-04,"L","AAAAA",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-05,"Lo","AAAAA",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-06,"Lorem ipsum dolor sit amet, consectetur adipiscin","AAAAA",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-07,"Lorem ipsum dolor sit amet, consectetur adipiscing","AAAAA",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-08,"โลเร็ม อิปซัม","AAAAA",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-09,"لوريم إيبسوم","AAAAA",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-10,"洛伦·伊普森","AAAAA",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-11,"<marquee>Hacked</marquee>","AAAAA",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-12,"<script>alert(‘Hacked!’);</script>","AAAAA",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-13,"' or 'A' = 'A ","AAAAA",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+
+#registrationNumber
+aircraft-14,"Prueba","Lorem ipsum dolor sit ame",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-15,"Prueba","L",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-16,"Prueba","Lo",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-17,"Prueba","Lorem ipsum dolor sit amet, consectetur adipiscin",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-18,"Prueba","Lorem ipsum dolor sit amet, consectetur adipiscing",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-19,"Prueba","โลเร็ม อิปซัม",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-20,"Prueba","لوريم إيبسوم",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-21,"Prueba","洛伦·伊普森",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-22,"Prueba","<marquee>Hacked</marquee>",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-23,"Prueba","' or 'A' = 'A ",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+
+#capacity
+aircraft-24,"Prueba","AAAAA",127,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-25,"Prueba","AAAAA",0,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-26,"Prueba","AAAAA",1,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-27,"Prueba","AAAAA",254,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-28,"Prueba","AAAAA",255,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+
+#cargoWeight
+aircraft-29,"Prueba","AAAAA",100,26000,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-30,"Prueba","AAAAA",100,2000,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-31,"Prueba","AAAAA",100,2001,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-32,"Prueba","AAAAA",100,49999,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-33,"Prueba","AAAAA",100,50000,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+
+#status
+aircraft-34,"Prueba","AAAAA",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+aircraft-34,"Prueba","AAAAA",100,2500,MAINTENANCE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-01
+
+#details
+aircraft-34,"Prueba","AAAAA",100,2500,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",airline-01
+aircraft-35,"Prueba","AAAAA",100,2500,ACTIVE,"",airline-01
+aircraft-36,"Prueba","AAAAA",100,2500,ACTIVE,"L",airline-01
+aircraft-37,"Prueba","AAAAA",100,2500,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",airline-01
+aircraft-38,"Prueba","AAAAA",100,2500,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",airline-01
+aircraft-39,"Prueba","AAAAA",100,2500,ACTIVE,"โลเร็ม อิปซัม",airline-01
+aircraft-40,"Prueba","AAAAA",100,2500,ACTIVE,"لوريم إيبسوم",airline-01
+aircraft-41,"Prueba","AAAAA",100,2500,ACTIVE,"洛伦·伊普森",airline-01
+aircraft-42,"Prueba","AAAAA",100,2500,ACTIVE,"<marquee>Hacked</marquee>",airline-01
+aircraft-43,"Prueba","AAAAA",100,2500,ACTIVE,"<script>alert(‘Hacked!’);</script>",airline-01
+aircraft-44,"Prueba","AAAAA",100,2500,ACTIVE,"' or 'A' = 'A ",airline-01
+
+#key:airline
+aircraft-45,"Prueba","AAAAA",100,2500,ACTIVE,"Pruebaaaaaaaaaaaaaaaaaaaaaaaa",airline-02

@@ -1,3 +1,86 @@
 key,name,iataCode,operationalScope,city,country,website,email,phoneNumber
+# base entity
 airport-01,"Airport1","ABC",REGIONAL,"Seville","Spain","ftp://a","prueba@gmail.com","+34987654321"
 airport-02,"Airport2","BBB",REGIONAL,"Seville","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+
+# name
+airport-01,"Lorem ipsum dolor sit ame","ABC",REGIONAL,"Seville","Spain","ftp://a","prueba@gmail.com","+34987654321"
+airport-02,"L","BBB",REGIONAL,"Seville","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+airport-03,"Lo","ABC",REGIONAL,"Seville","Spain","ftp://a","prueba@gmail.com","+34987654321"
+airport-04,"Lorem ipsum dolor sit amet, consectetur adipiscin","BBB",REGIONAL,"Seville","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+airport-05,"Lorem ipsum dolor sit amet, consectetur adipiscing","ABC",REGIONAL,"Seville","Spain","ftp://a","prueba@gmail.com","+34987654321"
+airport-06,"โลเร็ม อิปซัม","BBB",REGIONAL,"Seville","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+airport-07,"لوريم إيبسوم","ABC",REGIONAL,"Seville","Spain","ftp://a","prueba@gmail.com","+34987654321"
+airport-08,"洛伦·伊普森","BBB",REGIONAL,"Seville","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+airport-09,"<marquee>Hacked</marquee>","ABC",REGIONAL,"Seville","Spain","ftp://a","prueba@gmail.com","+34987654321"
+airport-10,"<script>alert(‘Hacked!’);</script>","BBB",REGIONAL,"Seville","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+airport-11,"' or 'A' = 'A ","BBB",REGIONAL,"Seville","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+
+# iataCode
+airport-12,"Airport2","AAA",REGIONAL,"Seville","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+airport-13,"Airport2","ZZZ",REGIONAL,"Seville","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+
+# operationalScope
+airport-14,"Airport2","BBB",INTERNATIONAL,"Seville","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+airport-15,"Airport2","BBB",DOMESTIC,"Seville","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+airport-16,"Airport2","BBB",REGIONAL,"Seville","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+
+# city
+airport-17,"Airport2","BBB",REGIONAL,"Lorem ipsum dolor sit ame","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+airport-18,"Airport2","BBB",REGIONAL,"L","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+airport-19,"Airport2","BBB",REGIONAL,"Lo","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+airport-20,"Airport2","BBB",REGIONAL,"Lorem ipsum dolor sit amet, consectetur adipiscin","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+airport-21,"Airport2","BBB",REGIONAL,"Lorem ipsum dolor sit amet, consectetur adipiscing","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+airport-22,"Airport2","BBB",REGIONAL,"โลเร็ม อิปซัม","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+airport-23,"Airport2","BBB",REGIONAL,"لوريم إيبسوم","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+airport-24,"Airport2","BBB",REGIONAL,"洛伦·伊普森","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+airport-25,"Airport2","BBB",REGIONAL,"<marquee>Hacked</marquee>","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+airport-26,"Airport2","BBB",REGIONAL,"<script>alert(‘Hacked!’);</script>","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+airport-27,"Airport2","BBB",REGIONAL,"' or 'A' = 'A ","Spain","ftp://b","prueba2@gmail.com","+34987654322"
+
+# country
+airport-28,"Airport1","ABC",REGIONAL,"Seville","Lorem ipsum dolor sit ame","ftp://a","prueba@gmail.com","+34987654321"
+airport-29,"Airport1","ABC",REGIONAL,"Seville","L","ftp://a","prueba@gmail.com","+34987654321"
+airport-30,"Airport1","ABC",REGIONAL,"Seville","Lo","ftp://a","prueba@gmail.com","+34987654321"
+airport-31,"Airport1","ABC",REGIONAL,"Seville","Lorem ipsum dolor sit amet, consectetur adipiscin","ftp://a","prueba@gmail.com","+34987654321"
+airport-32,"Airport1","ABC",REGIONAL,"Seville","Lorem ipsum dolor sit amet, consectetur adipiscing","ftp://a","prueba@gmail.com","+34987654321"
+airport-33,"Airport1","ABC",REGIONAL,"Seville","โลเร็ม อิปซัม","ftp://a","prueba@gmail.com","+34987654321"
+airport-34,"Airport1","ABC",REGIONAL,"Seville","لوريم إيبسوم","ftp://a","prueba@gmail.com","+34987654321"
+airport-35,"Airport1","ABC",REGIONAL,"Seville","洛伦·伊普森","ftp://a","prueba@gmail.com","+34987654321"
+airport-36,"Airport1","ABC",REGIONAL,"Seville","<marquee>Hacked</marquee>","ftp://a","prueba@gmail.com","+34987654321"
+airport-37,"Airport1","ABC",REGIONAL,"Seville","<script>alert(‘Hacked!’);</script>","ftp://a","prueba@gmail.com","+34987654321"
+airport-38,"Airport1","ABC",REGIONAL,"Seville","' or 'A' = 'A ","ftp://a","prueba@gmail.com","+34987654321"
+
+# website
+airport-39,"Airport1","ABC",REGIONAL,"Seville","Spain","http://lorem.com/ipsum","prueba@gmail.com","+34987654321"
+airport-40,"Airport1","ABC",REGIONAL,"Seville","Spain","ftp://a","prueba@gmail.com","+34987654321"
+airport-41,"Airport1","ABC",REGIONAL,"Seville","Spain","ftp://a.b","prueba@gmail.com","+34987654321"
+airport-42,"Airport1","ABC",REGIONAL,"Seville","Spain","http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/","prueba@gmail.com","+34987654321"
+airport-43,"Airport1","ABC",REGIONAL,"Seville","Spain","http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X","prueba@gmail.com","+34987654321"
+airport-44,"Airport1","ABC",REGIONAL,"Seville","Spain","https://www.lorem-ipsum.org","prueba@gmail.com","+34987654321"
+airport-45,"Airport1","ABC",REGIONAL,"Seville","Spain","ftp://www.lorem-ipsum.org","prueba@gmail.com","+34987654321"
+airport-46,"Airport1","ABC",REGIONAL,"Seville","Spain","http://www.lorem-ipsum.org/dolor/sit.html","prueba@gmail.com","+34987654321"
+airport-47,"Airport1","ABC",REGIONAL,"Seville","Spain","http://example.org?a=1&b=2","prueba@gmail.com","+34987654321"
+airport-48,"Airport1","ABC",REGIONAL,"Seville","Spain","http://example.org?","prueba@gmail.com","+34987654321"
+airport-49,"Airport1","ABC",REGIONAL,"Seville","Spain","http://example.org?a","prueba@gmail.com","+34987654321"
+airport-50,"Airport1","ABC",REGIONAL,"Seville","Spain","http://example.org/","prueba@gmail.com","+34987654321"
+airport-51,"Airport1","ABC",REGIONAL,"Seville","Spain","http://example.org/a","prueba@gmail.com","+34987654321"
+airport-52,"Airport1","ABC",REGIONAL,"Seville","Spain","http://example.org/a/b","prueba@gmail.com","+34987654321"
+airport-53,"Airport1","ABC",REGIONAL,"Seville","Spain","http://example.org/a/b?","prueba@gmail.com","+34987654321"
+airport-54,"Airport1","ABC",REGIONAL,"Seville","Spain","http://example.org/a/b?a&b","prueba@gmail.com","+34987654321"
+
+# email
+airport-55,"Airport1","ABC",REGIONAL,"Seville","Spain","ftp://a","acme@lorem-ipsum.org","+34987654321"
+airport-56,"Airport1","ABC",REGIONAL,"Seville","Spain","ftp://a","acmepassword@lorem-ipsum.org","+34987654321"
+airport-57,"Airport1","ABC",REGIONAL,"Seville","Spain","ftp://a","a@b.e","+34987654321"
+airport-58,"Airport1","ABC",REGIONAL,"Seville","Spain","ftp://a","a@b.es","+34987654321"
+airport-59,"Airport1","ABC",REGIONAL,"Seville","Spain","ftp://a","a@b.esx","+34987654321"
+airport-60,"Airport1","ABC",REGIONAL,"Seville","Spain","ftp://a","lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu","+34987654321"
+
+# phoneNumber
+
+airport-61,"Airport2","BBB",REGIONAL,"Seville","Spain","ftp://b","prueba2@gmail.com","+3498765432"
+airport-62,"Airport1","ABC",REGIONAL,"Seville","Spain","ftp://a","prueba@gmail.com","+349876"
+airport-63,"Airport2","BBB",REGIONAL,"Seville","Spain","ftp://b","prueba2@gmail.com","+3498765"
+airport-64,"Airport1","ABC",REGIONAL,"Seville","Spain","ftp://a","prueba@gmail.com","+34987654321234"
+airport-65,"Airport2","BBB",REGIONAL,"Seville","Spain","ftp://b","prueba2@gmail.com","+349876543212345"

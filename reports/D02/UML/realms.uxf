@@ -10,14 +10,14 @@ FlightAssignment
 + publish: boolean {Mandatory, Valid, Automapped}
 bg=green
 </help_text>
-  <zoom_level>8</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>312</y>
-      <w>528</w>
-      <h>96</h>
+      <x>70</x>
+      <y>287</y>
+      <w>462</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 AirlineManager
@@ -34,31 +34,10 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>552</x>
-      <y>312</y>
-      <w>464</w>
-      <h>136</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;Role&gt;&gt;
-Technician
---
-+ licenseNumber: String {Mandatory, ValidString(pattern="^[A-Z]{2,3}\d{6}$"), Column(unique=true)}
-+ phoneNumber: String {Mandatory, ValidString(pattern="^\+?\d{6,15}$"), Automapped}
-+ specialisation: String {Mandatory, ValidString(max=50), Automapped}
-+ anualHealthTest: boolean {Mandatory, Automapped}
-+ experienceYears: Integer {Optional, ValidNumber(min=0), Automapped}
-+ certifications: String {Optional, ValidString, Automapped}
-bg=pink
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>0</x>
-      <y>152</y>
-      <w>496</w>
-      <h>136</h>
+      <x>70</x>
+      <y>147</y>
+      <w>434</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Customer
@@ -78,10 +57,10 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>552</x>
-      <y>152</y>
-      <w>520</w>
-      <h>136</h>
+      <x>553</x>
+      <y>147</y>
+      <w>455</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 AssistanceAgent
@@ -100,10 +79,10 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>456</y>
-      <w>512</w>
-      <h>136</h>
+      <x>70</x>
+      <y>413</y>
+      <w>448</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 FlightCrewMember{ValidFlightCrewMember}
@@ -114,6 +93,27 @@ FlightCrewMember{ValidFlightCrewMember}
 + availabilityStatus: AvailabilityStatus{Mandatory, Valid, Automapped}
 + salary: Money {Mandatory, ValidMoney(min=0.00,max=1000000.00, Automapped}
 + experienceYears: Integer {Optional, ValidNumber(min=0,max=120), Automapped}
+bg=pink
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>553</x>
+      <y>287</y>
+      <w>455</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Technician{ValidTechnician}
+--
++ licenseNumber: String {Mandatory, ValidIdentifier, Column(unique=true)}
++ phoneNumber: String {Mandatory, ValidPhoneNumber, Automapped}
++ specialisation: String {Mandatory, ValidString(min=0,max=50), Automapped}
++ anualHealthTest: boolean {Mandatory, Automapped}
++ experienceYears: Integer {Optional, ValidNumber(min=0,max=120), Automapped}
++ certifications: String {Optional, ValidString(max=255), Automapped}
 bg=pink
 </panel_attributes>
     <additional_attributes/>

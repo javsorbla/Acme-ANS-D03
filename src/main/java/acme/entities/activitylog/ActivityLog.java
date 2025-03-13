@@ -33,7 +33,7 @@ public class ActivityLog extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidMoment(past = true)
+	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				registrationMoment;
 

@@ -17,16 +17,18 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
+import acme.constraints.ValidBooking;
 import acme.constraints.ValidLastNibble;
 import acme.constraints.ValidLocatorCode;
 import acme.entities.flight.Flight;
-import acme.realms.Customer;
+import acme.realms.customer.Customer;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
+@ValidBooking
 public class Booking extends AbstractEntity {
 	// Serialisation version --------------------------------------------
 

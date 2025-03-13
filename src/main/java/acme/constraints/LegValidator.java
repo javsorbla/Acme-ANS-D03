@@ -6,15 +6,23 @@ import java.util.Date;
 
 import javax.validation.ConstraintValidatorContext;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import acme.client.components.validation.AbstractValidator;
 import acme.client.helpers.MomentHelper;
+import acme.client.helpers.StringHelper;
 import acme.entities.leg.Leg;
+import acme.entities.leg.LegRepository;
 
 public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 
 	// Internal State ----------------------------------------------------
 
+	@Autowired
+	private LegRepository repository;
+
 	// Initialiser -------------------------------------------------------
+
 
 	@Override
 	public void initialise(final ValidLeg annotation) {
@@ -41,6 +49,22 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 			//Date minMoment = new Date(leg.getDeparture().getTime() + 1 * 60 * 1000); //without framework
 			arrivalIsAfterDeparture = MomentHelper.isAfterOrEqual(leg.getArrival(), minMoment);
 			super.state(context, arrivalIsAfterDeparture, "arrival", "acme.validation.leg.arrival.message");
+		}
+
+		if (leg == null || leg.getDeployedAircraft() == null || leg.getDeployedAircraft().getAirline() == null)
+			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
+		else {
+			boolean containsIATA;
+			String iataFromAirline = leg.getDeployedAircraft().getAirline().getIataCode();
+			containsIATA = StringHelper.startsWith(leg.getFlightNumber(), iataFromAirline, false); //must be in upper case
+			super.state(context, containsIATA, "flightNumber", "acme.validation.leg.flight.number.message");
+
+			boolean uniqueLeg;
+			Leg existingLeg;
+
+			existingLeg = this.repository.findLegByFlightNumber(leg.getFlightNumber());
+			uniqueLeg = existingLeg == null || existingLeg.equals(leg);
+			super.state(context, uniqueLeg, "flightNumber", "acme.validation.leg.flight.number.duplicated.message");
 		}
 
 		result = !super.hasErrors(context);

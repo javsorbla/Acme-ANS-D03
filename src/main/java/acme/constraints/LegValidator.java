@@ -67,17 +67,6 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 			super.state(context, uniqueLeg, "flightNumber", "acme.validation.leg.flight.number.duplicated.message");
 		}
 
-		if (leg == null || leg.getDeparture() == null || leg.getFlight() == null && leg.isPublish())
-			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
-		else {
-			boolean notOverlapped;
-			Date latestArrival;
-
-			latestArrival = this.repository.findLatestNotCancelledArrivalDate(leg.getFlight().getId());
-			notOverlapped = latestArrival == null || MomentHelper.isAfterOrEqual(leg.getDeparture(), latestArrival); // || !leg.isPublish()?
-			super.state(context, notOverlapped, "departure", "acme.validation.leg.overlap.message");
-		}
-
 		//Check aircraft not used at the same time?
 		result = !super.hasErrors(context);
 		return result;

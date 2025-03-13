@@ -1,8 +1,10 @@
 #validation-en.i18n
 
+acme.validation.flight.publish.message = Flight can only be published if it has one leg or more. All of them must be published as well
 acme.validation.leg.message = Invalid leg
 acme.validation.leg.departure.message = Invalid departure date
 acme.validation.leg.arrival.message = Invalid arrival date
+acme.validation.leg.overlap.message = Leg is overlapped with another one from the same flight
 acme.validation.activitylog.message = Invalid activity log
 acme.validation.activitylog.registrationmoment.message = Invalid registration moment
 acme.validation.airlinemanager.identifier.message = Invalid manager identifier

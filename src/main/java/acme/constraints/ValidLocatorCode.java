@@ -18,12 +18,11 @@ import javax.validation.constraints.Pattern;
 @ReportAsSingleViolation
 
 @NotBlank
-@Pattern(regexp = "^[A-Z]{3}$")
-public @interface ValidIataCode {
-
+@Pattern(regexp = "^[A-Z0-9]{6,8}$")
+public @interface ValidLocatorCode {
 	// Standard validation properties -----------------------------------------
 
-	String message() default "{acme.validation.iata.code.message}";
+	String message() default "{acme.validation.booking.locator.code.message}";
 
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};

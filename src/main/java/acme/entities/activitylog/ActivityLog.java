@@ -33,29 +33,29 @@ public class ActivityLog extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidMoment(past = true)
+	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				registrationMoment;
 
 	@Mandatory
-	@ValidString(min = 1, max = 50) // min=1 porque es obligatorio
+	@ValidString(min = 1, max = 50)
 	@Automapped
 	private String				incidentType;
 
 	@Mandatory
-	@ValidString(min = 1) // min=1 porque es obligatorio, no hace falta max=255 porque es por defecto
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				description;
 
 	@Mandatory
-	@ValidNumber(min = 0, max = 10, fraction = 0) // fraction=0 para que no tenga decimales
+	@ValidNumber(min = 0, max = 10)
 	@Automapped
 	private Integer				severityLevel;
 
 	@Mandatory
 	//@Valid
 	@Automapped
-	private Boolean				publish;
+	private Boolean				publish; // needed for future deliverables
 
 	// Derived attributes -----------------------------------------------------
 

@@ -40,12 +40,12 @@ public class Aircraft extends AbstractEntity {
 	@Mandatory
 	@ValidNumber(min = 1, max = 255, integer = 3) // el máximo es raro pero así se ha establecido en el foro
 	@Automapped
-	private int					capacity;
+	private Integer				capacity;
 
 	@Mandatory
 	@ValidNumber(min = 2000, max = 50000)
 	@Automapped
-	private double				cargoWeight; // es integer
+	private Integer				cargoWeight;
 
 	@Mandatory
 	@Valid
@@ -55,7 +55,7 @@ public class Aircraft extends AbstractEntity {
 	// @Optional Attributes -------------------------------------------------------------
 
 	@Optional
-	@ValidString
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				details;
 

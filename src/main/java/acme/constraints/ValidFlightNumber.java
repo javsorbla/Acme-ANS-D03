@@ -18,13 +18,11 @@ import javax.validation.constraints.Pattern;
 @ReportAsSingleViolation
 
 @NotBlank
-@Pattern(regexp = "^[A-Z]{3}$")
-public @interface ValidIataCode {
+@Pattern(regexp = "^[A-Z]{3}\\d{4}$")
+public @interface ValidFlightNumber {
 
-	// Standard validation properties -----------------------------------------
-
-	String message() default "{acme.validation.iata.code.message}";
-
+	String message() default "{acme.validation.leg.message}";
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
+
 }

@@ -15,8 +15,8 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidIdentifier;
 import acme.constraints.ValidManager;
-import acme.constraints.ValidManagerIdentifier;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -33,14 +33,14 @@ public class AirlineManager extends AbstractRole {
 	// Attributes -------------------------------------------------------
 
 	@Mandatory
-	@ValidManagerIdentifier
+	@ValidIdentifier
 	@Column(unique = true)
 	private String				identifier;
 
 	@Mandatory
-	@ValidNumber(min = 0, max = 120, integer = 3, fraction = 0) //max=120 según lo establecido en el foro
+	@ValidNumber(min = 0, max = 120, integer = 3) //max=120 según lo establecido en el foro
 	@Automapped
-	private int					yearsOfExperience;
+	private Integer				yearsOfExperience;
 
 	@Mandatory
 	@ValidMoment(past = true)

@@ -14,8 +14,8 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>184</x>
-      <y>216</y>
+      <x>0</x>
+      <y>256</y>
       <w>528</w>
       <h>96</h>
     </coordinates>
@@ -34,8 +34,8 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>736</x>
-      <y>216</y>
+      <x>552</x>
+      <y>256</y>
       <w>464</w>
       <h>136</h>
     </coordinates>
@@ -55,8 +55,8 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>192</x>
-      <y>56</y>
+      <x>8</x>
+      <y>96</y>
       <w>496</w>
       <h>136</h>
     </coordinates>
@@ -78,8 +78,8 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>736</x>
-      <y>56</y>
+      <x>552</x>
+      <y>96</y>
       <w>520</w>
       <h>136</h>
     </coordinates>
@@ -87,11 +87,11 @@ bg=pink
 AssistanceAgent
 --
 + employeeCode: String {Mandatory, ValidString(pattern = "^[A-Z]{2-3}\d{6}$"), Column(unique = true)}
-+ spokenLanguages: String {Mandatory, ValidString(max = 255), Automapped}
++ spokenLanguages: String {Mandatory, ValidString(min = 1, max = 255), Automapped}
 + airline: Airline {Mandatory, Valid, Automapped}
 + startDate: Date {Mandatory, ValidMoment(past=true), Temporal(TIMESTAMP)}
-+ bio: String {Optional, ValidString(max = 255), Automapped}
-+ salary: Money {Optional, ValidMoney, Automapped}
++ bio: String {Optional, ValidString(min = 1, max = 255), Automapped}
++ salary: Money {Optional, ValidMoney(min=0.00,max=1000000.00), Automapped}
 + photoUrl: String {Optional, ValidUrl, Automapped}
 bg=pink
 </panel_attributes>
@@ -100,8 +100,8 @@ bg=pink
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>192</x>
-      <y>376</y>
+      <x>8</x>
+      <y>416</y>
       <w>512</w>
       <h>128</h>
     </coordinates>

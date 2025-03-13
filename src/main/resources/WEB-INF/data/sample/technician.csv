@@ -1,0 +1,5 @@
+key,key:user-account,licenseNumber,phoneNumber,specialisation,anualHealthTest,experienceYears,certifications
+technician-01,user-account-technician-01,"TC123456","+34987654344","Tyres",true,5,""
+technician-02,user-account-technician-02,"ABZ234567","+34987654345","Electrical wiring",true,10,"ISO2000"
+technician-03,user-account-technician-03,"ZF456328","+34987654346","Wings",false,2,"Cambridge C1"
+

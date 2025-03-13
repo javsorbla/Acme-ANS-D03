@@ -16,7 +16,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.client.helpers.SpringHelper;
-import acme.realms.AirlineManager;
+import acme.realms.manager.AirlineManager;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -33,7 +33,7 @@ public class Flight extends AbstractEntity {
 
 	@Mandatory
 	@ValidString(min = 1, max = 50)
-	@Automapped // unico?
+	@Automapped
 	private String				tag;
 
 	@Mandatory
@@ -111,7 +111,7 @@ public class Flight extends AbstractEntity {
 		repository = SpringHelper.getBean(FlightRepository.class);
 		legs = repository.getNumberOfLegs(this.getId());
 
-		return legs == null ? 0 : legs - 1; //Should never have 0 legs so that it has - 1 layovers
+		return legs == null ? null : legs - 1; //Should never have 0 legs so that it has - 1 layovers
 		//return legs != null && legs == 0 ? legs : legs - 1; //Doesnt make sense to have -1 layovers if flight has no legs yet
 	}
 

@@ -3,16 +3,23 @@ package acme.constraints;
 
 import javax.validation.ConstraintValidatorContext;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import acme.client.components.principals.DefaultUserIdentity;
 import acme.client.components.validation.AbstractValidator;
 import acme.client.helpers.StringHelper;
-import acme.realms.Customer;
+import acme.realms.customer.Customer;
+import acme.realms.customer.CustomerRepository;
 
 public class CustomerValidator extends AbstractValidator<ValidCustomer, Customer> {
 
 	// Internal state ---------------------------------------------------------
 
+	@Autowired
+	CustomerRepository repository;
+
 	// Initialiser ------------------------------------------------------------
+
 
 	@Override
 	public void initialise(final ValidCustomer annotation) {
@@ -33,6 +40,14 @@ public class CustomerValidator extends AbstractValidator<ValidCustomer, Customer
 		else if (StringHelper.isBlank(customer.getIdentifier()))
 			super.state(context, false, "identifier", "javax.validation.constraints.NotBlank.message");
 		else {
+
+			boolean uniqueCustomer;
+			Customer existingCustomer;
+
+			existingCustomer = this.repository.findCustomerByIdentifier(customer.getIdentifier());
+			uniqueCustomer = existingCustomer == null || existingCustomer.equals(customer);
+			super.state(context, uniqueCustomer, "identifier", "acme.validation.customer.identifier.duplicated.message");
+
 			boolean containsInitials;
 			DefaultUserIdentity identity = customer.getIdentity();
 			char nameFirstLetter = identity.getName().charAt(0);

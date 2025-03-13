@@ -50,12 +50,12 @@ public class Review extends AbstractEntity {
 	// @Optional Attributes -------------------------------------------------------------
 
 	@Optional
-	@ValidNumber(min = 0, max = 10)
+	@ValidNumber(min = 0, max = 10, integer = 2, fraction = 2)
 	@Automapped
 	private double				score;
 
 	@Optional
-	//@Valid  no funciona con boolean
+	//@Valid
 	@Automapped
 	private boolean				recommended;
 

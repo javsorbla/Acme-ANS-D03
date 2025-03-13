@@ -1,5 +1,5 @@
 
-package acme.realms;
+package acme.realms.manager;
 
 import java.util.Date;
 
@@ -14,8 +14,8 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
-import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidIdentifier;
 import acme.constraints.ValidManager;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,14 +33,14 @@ public class AirlineManager extends AbstractRole {
 	// Attributes -------------------------------------------------------
 
 	@Mandatory
-	@ValidString(min = 8, pattern = "^[A-Z]{2,3}\\d{6}$")
+	@ValidIdentifier
 	@Column(unique = true)
 	private String				identifier;
 
 	@Mandatory
-	@ValidNumber(min = 0, max = 120, integer = 3, fraction = 0) //fraction=0 necessary?
+	@ValidNumber(min = 0, max = 120, integer = 3) //max=120 según lo establecido en el foro
 	@Automapped
-	private int					yearsOfExperience;
+	private Integer				yearsOfExperience;
 
 	@Mandatory
 	@ValidMoment(past = true)
@@ -53,10 +53,5 @@ public class AirlineManager extends AbstractRole {
 	private String				picture;
 
 	// Relationships -----------------------------------------------------
-
-	//@Valid
-	//@Mandatory
-	//@ManyToOne(optional = false)
-	//private Airline airline;
 
 }

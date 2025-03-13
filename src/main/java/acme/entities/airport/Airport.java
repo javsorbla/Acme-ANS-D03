@@ -12,6 +12,8 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidIataCode;
+import acme.constraints.ValidPhoneNumber;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,12 +28,12 @@ public class Airport extends AbstractEntity {
 	// Attributes -------------------------------------------------------
 
 	@Mandatory
-	@ValidString(min = 1, max = 50) // min a 0 por default, se pone uno distinto?
+	@ValidString(min = 1, max = 50)
 	@Automapped
 	private String				name;
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{3}$") //Should check min?
+	@ValidIataCode
 	@Column(unique = true)
 	private String				iataCode;
 
@@ -41,31 +43,29 @@ public class Airport extends AbstractEntity {
 	private OperationalScope	operationalScope;
 
 	@Mandatory
-	@ValidString(max = 50) // min=1 porque es mandatory?
+	@ValidString(min = 1, max = 50)
 	@Automapped
 	private String				city;
 
 	@Mandatory
-	@ValidString(max = 50) // min=1 porque es mandatory?
+	@ValidString(min = 1, max = 50)
 	@Automapped
 	private String				country;
 
 	@Optional
 	@ValidUrl
-	@Automapped // unico?
+	@Automapped
 	private String				website;
 
 	@Optional
 	@ValidEmail
-	@Automapped // unico?
+	@Automapped
 	private String				email;
 
 	@Optional
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
-	@Automapped // unico?
+	@ValidPhoneNumber
+	@Automapped
 	private String				contactPhone;
-
-	//Runways?
 
 	//Derived attributes-------------------------------------------------
 

@@ -5,9 +5,9 @@
     <id>UMLClass</id>
     <coordinates>
       <x>260</x>
-      <y>130</y>
+      <y>310</y>
       <w>240</w>
-      <h>90</h>
+      <h>110</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Constraint&gt;&gt;
 ValidManager
@@ -21,7 +21,7 @@ bg=RED</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>540</x>
-      <y>130</y>
+      <y>140</y>
       <w>240</w>
       <h>110</h>
     </coordinates>
@@ -32,6 +32,22 @@ ValidLeg
 be in future
 + arrival date must be at least 1
 minute after departure date
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>140</y>
+      <w>240</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidAgent
+--
++ employeeCode 2-3 first letters must
+correspond to the agent initials
 bg=RED</panel_attributes>
     <additional_attributes/>
   </element>

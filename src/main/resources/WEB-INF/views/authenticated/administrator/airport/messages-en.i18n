@@ -1,0 +1,12 @@
+
+
+
+
+administrator.airport.list.title = Airport list
+administrator.airport.form.title = Airport details
+
+administrator.airport.list.label.name = Name
+administrator.airport.list.label.iataCode = IATA Code
+administrator.airport.list.label.operationalScope = Operational Scope
+
+administrator.airport.list.button.create = Create

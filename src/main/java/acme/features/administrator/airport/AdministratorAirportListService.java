@@ -3,6 +3,8 @@ package acme.features.administrator.airport;
 
 import java.util.Collection;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import acme.client.components.models.Dataset;
 import acme.client.components.principals.Administrator;
 import acme.client.services.AbstractGuiService;
@@ -14,6 +16,7 @@ public class AdministratorAirportListService extends AbstractGuiService<Administ
 
 	//Internal state ---------------------------------------------
 
+	@Autowired
 	private AdministratorAirportRepository repository;
 
 	//AbstractGuiService interface -------------------------------
@@ -39,7 +42,7 @@ public class AdministratorAirportListService extends AbstractGuiService<Administ
 
 		dataset = super.unbindObject(airport, "name", "iataCode", "operationalScope");
 
-		super.addPayload(dataset, airport, "text");
+		super.addPayload(dataset, airport, "name");
 
 		super.getResponse().addData(dataset);
 	}

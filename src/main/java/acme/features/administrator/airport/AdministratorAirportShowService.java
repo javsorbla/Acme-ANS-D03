@@ -48,7 +48,7 @@ public class AdministratorAirportShowService extends AbstractGuiService<Administ
 
 		choices = SelectChoices.from(OperationalScope.class, airport.getOperationalScope());
 
-		dataset = super.unbindObject(airport, "name", "iataCode", "operationalScope");
+		dataset = super.unbindObject(airport, "name", "iataCode", "operationalScope", "city", "country", "website", "email", "phoneNumber");
 		dataset.put("confirmation", false);
 		dataset.put("readonly", true);
 		dataset.put("statuses", choices);

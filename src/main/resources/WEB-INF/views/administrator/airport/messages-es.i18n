@@ -9,6 +9,11 @@ administrator.airport.list.label.operationalScope = Escope operacional
 
 administrator.airport.list.button.create = Crear
 
-administrator.airport.form.label.name = nombre
+administrator.airport.form.label.name = Nombre
 administrator.airport.form.label.iataCode = Codigo IATA
 administrator.airport.form.label.operationalScope = Escope operacional
+administrator.airport.form.label.city = Ciudad
+administrator.airport.form.label.country = Pais
+administrator.airport.form.label.website = Pagina web
+administrator.airport.form.label.email = email
+administrator.airport.form.label.phoneNumber = Telefono

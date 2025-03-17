@@ -34,6 +34,19 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-system-down" action="/administrator/system/shut-down"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.administrator.airports" access="hasRealm('Administrator')">
+			<acme:menu-suboption code="master.menu.administrator.airports.airports-list" action="/administrator/airport/list"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.administrator.airlines" access="hasRealm('Administrator')">
+			<acme:menu-suboption code="master.menu.administrator.airlines.airlines-list" action="/administrator/airlines/list"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.administrator.aircraft" access="hasRealm('Administrator')">
+			<acme:menu-suboption code="master.menu.administrator.aircraft.aircraft-list" action="/administrator/aircraft/list"/>
+		</acme:menu-option>
+		
 
 		<acme:menu-option code="master.menu.provider" access="hasRealm('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>

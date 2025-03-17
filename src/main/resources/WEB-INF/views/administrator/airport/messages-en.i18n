@@ -10,3 +10,7 @@ administrator.airport.list.label.iataCode = IATA Code
 administrator.airport.list.label.operationalScope = Operational Scope
 
 administrator.airport.list.button.create = Create
+
+administrator.airport.form.label.name = Name
+administrator.airport.form.label.iataCode = IATA Code
+administrator.airport.form.label.operationalScope = Operational Scope

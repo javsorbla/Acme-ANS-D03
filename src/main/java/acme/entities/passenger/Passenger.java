@@ -56,7 +56,7 @@ public class Passenger extends AbstractEntity {
 	@Mandatory
 	//@Valid
 	@Automapped
-	private Boolean				publish; // Attribute needed for future deliverables
+	private boolean				publish; // Attribute needed for future deliverables
 
 	//Derived attributes-------------------------------------------------
 

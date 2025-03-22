@@ -41,7 +41,7 @@ public class TechnicianValidator extends AbstractValidator<ValidTechnician, Tech
 			// Solution without using the framework helper
 			//containsInitials = customer.getIdentifier().charAt(0) == nameFirstLetter && customer.getIdentifier().charAt(1) == surnameFirstLetter;
 			containsInitials = StringHelper.startsWith(technician.getLicenseNumber(), initials, false); //Checks if identifier starts with the 2 initials
-			super.state(context, containsInitials, "identifier", "acme.validation.technician.identifier.message");
+			super.state(context, containsInitials, "LicenseNumber", "acme.validation.technician.identifier.message");
 		}
 
 		result = !super.hasErrors(context);

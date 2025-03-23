@@ -1,0 +1,18 @@
+
+
+
+
+technician.maintenanceRecord.list.title =  Lista de documentos de mantenimiento
+technician.maintenanceRecord.form.title = Detalles del documento de mantenimiento
+
+technician.maintenanceRecord.list.label.moment = Momento
+technician.maintenanceRecord.list.label.status = Estado
+technician.maintenanceRecord.list.label.nextInspectionDate = Fecha de la próxima inspección
+
+technician.maintenanceRecord.list.button.create = Crear
+
+technician.maintenanceRecord.form.label.moment = Momento
+technician.maintenanceRecord.form.label.status = Estado
+technician.maintenanceRecord.form.label.nextInspectionDate = Fecha de la próxima inspección
+technician.maintenanceRecord.form.label.estimatedCost = Coste Estimado
+technician.maintenanceRecord.form.label.notes = Notas

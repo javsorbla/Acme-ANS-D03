@@ -27,17 +27,17 @@ public class FlightAssignmentListService extends AbstractGuiService<FlightCrewMe
 
 	@Override
 	public void load() {
-		Collection<FlightAssignment> completedFlightAssignment;
+		Collection<FlightAssignment> completedFlightAssignments;
 
-		completedFlightAssignment = this.repository.findCompletedFlightAssignments();
+		completedFlightAssignments = this.repository.findCompletedFlightAssignments();
 
-		super.getBuffer().addData(completedFlightAssignment);
+		super.getBuffer().addData(completedFlightAssignments);
 
-		Collection<FlightAssignment> upcomingFlightAssignment;
+		Collection<FlightAssignment> upcomingFlightAssignments;
 
-		upcomingFlightAssignment = this.repository.findUpcomingFlightAssignments();
+		upcomingFlightAssignments = this.repository.findUpcomingFlightAssignments();
 
-		super.getBuffer().addData(upcomingFlightAssignment);
+		super.getBuffer().addData(upcomingFlightAssignments);
 	}
 
 	@Override

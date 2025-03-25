@@ -62,12 +62,12 @@ public class Flight extends AbstractEntity {
 
 
 	@Transient
-	public Date getScheduledDeparture() {
+	public Date getScheduledDeparture() { // No need to check min and max values, since it's already done in legs
 		Date departure;
 		FlightRepository repository;
 
 		repository = SpringHelper.getBean(FlightRepository.class);
-		departure = repository.getScheduledDeparture(this.getId());
+		departure = repository.getScheduledDeparture(this.getId()); //Returns null when there are no legs for the flight
 
 		return departure;
 	}
@@ -78,7 +78,7 @@ public class Flight extends AbstractEntity {
 		FlightRepository repository;
 
 		repository = SpringHelper.getBean(FlightRepository.class);
-		arrival = repository.getScheduledArrival(this.getId());
+		arrival = repository.getScheduledArrival(this.getId()); //Returns null when there are no legs for the flight
 
 		return arrival;
 	}
@@ -111,9 +111,9 @@ public class Flight extends AbstractEntity {
 		FlightRepository repository;
 
 		repository = SpringHelper.getBean(FlightRepository.class);
-		legs = repository.getNumberOfLegs(this.getId());
+		legs = repository.getNumberOfLegs(this.getId()); // if there are no legs, returns 0
 
-		return legs != null && legs > 0 ? legs - 1 : 0;
+		return legs > 0 ? legs - 1 : 0; //if there are no legs for a flight, there are 0 layovers
 	}
 
 	// Relationships -----------------------------------------------------

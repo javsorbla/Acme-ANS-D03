@@ -1,0 +1,10 @@
+
+
+airline-manager.flight.list.title = Flight list
+airline-manager.flight.form.title = Flight details
+
+airline-manager.flight.list.label.tag = Tag
+airline-manager.flight.list.label.requiresSelfTransfer = Requires Self Transfer
+airline-manager.flight.list.label.cost = Cost
+
+airline-manager.flight.list.button.create = Create

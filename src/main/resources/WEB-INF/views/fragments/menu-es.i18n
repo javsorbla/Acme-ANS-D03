@@ -56,9 +56,9 @@ master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.consumer-profile = Perfil de consumidor
 
 # master.menu.manager ########################################################
-master.menu.manager = Mánager de Aerolínea
-master.menu.manager.flights = Vuelos
-master.menu.manager.flights.flights-list = Lista de vuelos
+master.menu.airline-manager = Mánager de Aerolínea
+master.menu.airline-manager.flights = Vuelos
+master.menu.airline-manager.flights.flights-list = Lista de vuelos
 
 # master.menu.technician ########################################################
 master.menu.technician = Técnico

@@ -21,7 +21,6 @@ import acme.constraints.ValidLeg;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.airport.Airport;
 import acme.entities.flight.Flight;
-import acme.realms.manager.AirlineManager;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -60,7 +59,7 @@ public class Leg extends AbstractEntity {
 	@Mandatory
 	//@Valid
 	@Automapped
-	private boolean				publish; // Attribute needed for future deliverables
+	private boolean				publish;
 
 	//Derived attributes-------------------------------------------------
 
@@ -77,26 +76,21 @@ public class Leg extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Aircraft		deployedAircraft;
+	private Aircraft	deployedAircraft;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Airport			departureAirport;
+	private Airport		departureAirport;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Airport			arrivalAirport;
+	private Airport		arrivalAirport;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Flight			flight;
-
-	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private AirlineManager	manager;
+	private Flight		flight;
 
 }

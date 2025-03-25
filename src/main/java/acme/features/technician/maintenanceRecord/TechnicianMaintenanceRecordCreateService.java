@@ -45,17 +45,7 @@ public class TechnicianMaintenanceRecordCreateService extends AbstractGuiService
 
 	@Override
 	public void bind(final MaintenanceRecord maintenanceRecord) {
-		//		Date moment;
-		//		Technician technician = (Technician) super.getRequest().getPrincipal().getActiveRealm();
-
-		//		moment = MomentHelper.getCurrentMoment();
-
-		//		assert maintenanceRecord != null;
-
 		super.bindObject(maintenanceRecord, "status", "nextInspectionDate", "estimatedCost", "notes", "aircraft");
-		//		maintenanceRecord.setTechnician(technician);
-		//		maintenanceRecord.setMoment(moment);
-
 	}
 
 	@Override

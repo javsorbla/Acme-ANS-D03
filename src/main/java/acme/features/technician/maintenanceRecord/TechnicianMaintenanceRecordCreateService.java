@@ -51,6 +51,20 @@ public class TechnicianMaintenanceRecordCreateService extends AbstractGuiService
 	@Override
 	public void validate(final MaintenanceRecord maintenanceRecord) {
 
+		if (!this.getBuffer().getErrors().hasErrors("status"))
+			super.state(maintenanceRecord.getStatus() != null, "status", "technician.maintenance-record.form.error.noStatus", maintenanceRecord);
+
+		if (!this.getBuffer().getErrors().hasErrors("nextInspectionDate") && maintenanceRecord.getNextInspectionDate() != null)
+			super.state(maintenanceRecord.getNextInspectionDate().compareTo(maintenanceRecord.getMoment()) > 0, "nextInspectionDate", "technician.maintenance-record.form.error.nextInspectionDate", maintenanceRecord);
+
+		if (!this.getBuffer().getErrors().hasErrors("estimatedCost") && maintenanceRecord.getEstimatedCost() != null)
+			super.state(0.00 <= maintenanceRecord.getEstimatedCost().getAmount() && maintenanceRecord.getEstimatedCost().getAmount() <= 1000000.00, "estimatedCost", "technician.maintenance-record.form.error.estimatedCost", maintenanceRecord);
+
+		if (!this.getBuffer().getErrors().hasErrors("notes") && maintenanceRecord.getNotes() != null)
+			super.state(maintenanceRecord.getNotes().length() <= 255, "notes", "technician.maintenance-record.form.error.notes", maintenanceRecord);
+
+		if (!this.getBuffer().getErrors().hasErrors("aircraft") && maintenanceRecord.getAircraft() != null)
+			super.state(this.repository.findAllAircrafts().contains(maintenanceRecord.getAircraft()), "aircraft", "technician.maintenance-record.form.error.aircraft", maintenanceRecord);
 	}
 
 	@Override

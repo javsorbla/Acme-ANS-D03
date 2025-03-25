@@ -62,7 +62,7 @@ public class Claim extends AbstractEntity {
 
 
 	@Transient
-	public ClaimIndicator indicator() {
+	public ClaimIndicator getIndicator() {
 		ClaimIndicator result;
 		ClaimRepository repository;
 		TrackingLog trackingLog;

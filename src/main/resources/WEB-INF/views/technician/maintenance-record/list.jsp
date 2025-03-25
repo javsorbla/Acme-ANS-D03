@@ -12,4 +12,4 @@
 	<acme:list-payload path="payload"/>	
 </acme:list>
 
-<acme:button code="technician.maintenance-record.form.button.create" action ="/technician/maintenance-record/create"/>
+<acme:button code="technician.maintenance-record.list.button.create" action ="/technician/maintenance-record/create"/>

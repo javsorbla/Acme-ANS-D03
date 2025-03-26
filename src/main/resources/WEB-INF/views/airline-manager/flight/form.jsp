@@ -19,7 +19,7 @@
 	<acme:input-moment code ="airline-manager.flight.form.label.scheduledArrival" path ="scheduledArrival" readonly="${isShowOrUpdate}"/>
 	<acme:input-textbox code ="airline-manager.flight.form.label.originCity" path ="originCity" readonly="${isShowOrUpdate}"/>
 	<acme:input-textbox code ="airline-manager.flight.form.label.destinationCity" path ="destinationCity" readonly="${isShowOrUpdate}"/>
-	<acme:input-double code ="airline-manager.flight.form.label.numberOfLayovers" path ="numberOfLayovers" readonly="${isShowOrUpdate}" />
+	<acme:input-double code ="airline-manager.flight.form.label.numberOfLayovers" path ="numberOfLayovers" readonly="${isShowOrUpdate}"/>
 	<!-- acme:input-integer no va bien -->
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command,'show|update')}">

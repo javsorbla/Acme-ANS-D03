@@ -11,8 +11,20 @@ technician.maintenance-record.list.label.nextInspectionDate = Fecha de la próxi
 
 technician.maintenance-record.list.button.create = Crear
 
+technician.maintenance-record.form.button.create = Crear
+technician.maintenance-record.form.button.update = Actualizar
+technician.maintenance-record.form.button.delete = Borrar
+
+
 technician.maintenance-record.form.label.moment = Momento
 technician.maintenance-record.form.label.status = Estado
 technician.maintenance-record.form.label.nextInspectionDate = Fecha de la próxima inspección
 technician.maintenance-record.form.label.estimatedCost = Coste Estimado
 technician.maintenance-record.form.label.notes = Notas
+technician.maintenance-record.form.label.aircraft = Avión
+
+technician.maintenance-record.form.error.noStatus = No se ha seleccionado ningún estado.
+technician.maintenance-record.form.error.nextInspectionDate = La fecha y hora de la próxima inspección debe ser posterior al momento actual.
+technician.maintenance-record.form.error.estimatedCost = El coste estimado debe ser mayor o igual a 0.00, y menor o igual a 1000000.00 .
+technician.maintenance-record.form.error.notes = La longitud máxima de las anotaciones es de 255 caractéres.
+technician.maintenance-record.form.error.aircraft = El avión seleccionado no existe.

@@ -1,6 +1,8 @@
 
 package acme.constraints;
 
+import java.text.Normalizer;
+
 import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,13 +52,16 @@ public class AgentValidator extends AbstractValidator<ValidAgent, AssistanceAgen
 
 			boolean containsInitials;
 			DefaultUserIdentity identity = agent.getIdentity();
-			char nameFirstLetter = identity.getName().charAt(0);
-			char surnameFirstLetter = identity.getSurname().charAt(0);
+			//Normalizo nombre y apellidos para eliminar tildes y demás (no es necesario pasar a minúsculas, se ignorará en la comprobación)
+			String normalizedName = Normalizer.normalize(identity.getName(), Normalizer.Form.NFD).replaceAll("\\p{M}", "");
+			String normalizedSurname = Normalizer.normalize(identity.getSurname(), Normalizer.Form.NFD).replaceAll("\\p{M}", "");
+			char nameFirstLetter = normalizedName.charAt(0);
+			char surnameFirstLetter = normalizedSurname.charAt(0);
 			String initials = "" + nameFirstLetter + surnameFirstLetter;
-			// Solution without using the framework helper
-			//containsInitials = agent.getEmployeeCode().charAt(0) == nameFirstLetter && agent.getEmployeeCode().charAt(1) == surnameFirstLetter;
-			containsInitials = StringHelper.startsWith(agent.getEmployeeCode(), initials, false); //Checks if identifier starts with the 2 initials
-			super.state(context, containsInitials, "employeeCode", "acme.validation.assistanceagent.identifier.message");
+			// Solución sin el framework helper
+			//containsInitials = manager.getIdentifier().charAt(0) == nameFirstLetter && manager.getIdentifier().charAt(1) == surnameFirstLetter;
+			containsInitials = StringHelper.startsWith(agent.getEmployeeCode(), initials, true); //Checks if identifier starts with the 2 initials
+			super.state(context, containsInitials, "identifier", "acme.validation.assistanceagent.employeeCode.message");
 		}
 
 		result = !super.hasErrors(context);

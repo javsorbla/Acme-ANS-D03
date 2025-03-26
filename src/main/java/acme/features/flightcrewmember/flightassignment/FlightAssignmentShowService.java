@@ -1,8 +1,6 @@
 
 package acme.features.flightcrewmember.flightassignment;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
@@ -15,29 +13,40 @@ import acme.entities.flightassignment.FlightAssignment;
 import acme.realms.flightcrewmember.FlightCrewMember;
 
 @GuiService
-public class FlightAssignmentListService extends AbstractGuiService<FlightCrewMember, FlightAssignment> {
+public class FlightAssignmentShowService extends AbstractGuiService<FlightCrewMember, FlightAssignment> {
 
-	//Internal state ---------------------------------------------
+	//Internal state ----------------------------------------------------------
 
 	@Autowired
 	private FlightAssignmentRepository repository;
 
-	//AbstractGuiService interface -------------------------------
+	//AbstractGuiService state ----------------------------------------------------------
 
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		FlightAssignment flightAssignment;
+		int flightAssignmentId;
+
+		flightAssignmentId = super.getRequest().getData("id", int.class);
+		flightAssignment = this.repository.findFlightAssignmentById(flightAssignmentId);
+
+		FlightCrewMember flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
+
+		if (flightCrewMember.equals(flightAssignment.getFlightAssignmentCrewMember()))
+			super.getResponse().setAuthorised(true);
+
 	}
 
 	@Override
 	public void load() {
-		Collection<FlightAssignment> flightAssignments;
+		FlightAssignment flightAssignment;
+		int flightAssignmentId;
 
-		flightAssignments = this.repository.findCompletedFlightAssignments();
+		flightAssignmentId = super.getRequest().getData("id", int.class);
+		flightAssignment = this.repository.findFlightAssignmentById(flightAssignmentId);
 
-		super.getBuffer().addData(flightAssignments);
-
+		super.getBuffer().addData(flightAssignment);
 	}
 
 	@Override

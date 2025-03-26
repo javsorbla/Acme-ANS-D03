@@ -12,7 +12,7 @@ import acme.entities.flightassignment.FlightAssignment;
 @Repository
 public interface FlightAssignmentRepository extends AbstractRepository {
 
-	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.flightAssignmentLeg.status = acme.entities.leg.LegStatus.LANDED")
+	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.flightAssignmentLeg.arrival < CURRENT_TIMESTAMP")
 	Collection<FlightAssignment> findCompletedFlightAssignments();
 
 	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.flightAssignmentLeg.departure > CURRENT_TIMESTAMP")

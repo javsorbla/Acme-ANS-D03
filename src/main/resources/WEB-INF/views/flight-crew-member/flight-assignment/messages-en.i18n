@@ -2,16 +2,9 @@
 
 
 
-flight-crew-member.flight-assignment.completed-flight-assignments.list.title = Completed Flight Assignment list
+flight-crew-member.flight-assignment.list.title = Completed Flight Assignment list
 flight-crew-member.flight-assignment.form.title = Flight Assignment details
 
-flight-crew-member.flight-assignment.completed-flight-assignments.list.label.duty = Duty
-flight-crew-member.flight-assignment.completed-flight-assignments.list.label.moment = Last update moment
-flight-crew-member.flight-assignment.completed-flight-assignments.list.label.currentStatus = Current Status
-
-flight-crew-member.flight-assignment.upcoming-flight-assignments.list.title = Upcoming Flight Assignment list
-flight-crew-member.flight-assignment.form.title = Flight Assignment details
-
-flight-crew-member.flight-assignment.upcoming-flight-assignments.list.label.duty = Duty
-flight-crew-member.flight-assignment.upcoming-flight-assignments.list.label.moment = Last update moment
-flight-crew-member.flight-assignment.upcoming-flight-assignments.list.label.currentStatus = Current Status
+flight-crew-member.flight-assignment.list.label.duty = Duty
+flight-crew-member.flight-assignment.list.label.lastUpdateMoment = Last update moment
+flight-crew-member.flight-assignment.list.label.currentStatus = Current Status

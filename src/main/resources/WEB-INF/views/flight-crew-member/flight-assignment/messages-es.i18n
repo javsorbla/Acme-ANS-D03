@@ -2,16 +2,9 @@
 
 
 
-flight-crew-member.flight-assignment.completed-flight-assignments.list.title = Lista de asignaciones de vuelos completados
+flight-crew-member.flight-assignment.list.title = Lista de asignaciones de vuelos completados
 flight-crew-member.flight-assignment.form.title = Detalles de las asignaciones de vuelo
 
-flight-crew-member.flight-assignment.completed-flight-assignments.list.label.duty = Servicio
-flight-crew-member.flight-assignment.completed-flight-assignments.list.label.moment = Momento de la última actualización
-flight-crew-member.flight-assignment.completed-flight-assignments.list.label.currentStatus = Estado actual
-
-flight-crew-member.flight-assignment.upcoming-flight-assignments.list.title = Lista de asignaciones de vuelos próximos
-flight-crew-member.flight-assignment.form.title = Detalles de las asignaciones de vuelo
-
-flight-crew-member.flight-assignment.upcoming-flight-assignments.list.label.duty = Servicio
-flight-crew-member.flight-assignment.upcoming-flight-assignments.list.label.moment = Momento de la última actualización
-flight-crew-member.flight-assignment.upcoming-flight-assignments.list.label.currentStatus = Estado actual
+flight-crew-member.flight-assignment.list.label.duty = Servicio
+flight-crew-member.flight-assignment.list.label.lastUpdateMoment = Momento de la última actualización
+flight-crew-member.flight-assignment.list.label.currentStatus = Estado actual

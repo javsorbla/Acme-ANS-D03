@@ -58,8 +58,7 @@ master.menu.user-account.consumer-profile = Perfil de consumidor
 # master.menu.flightcrewmember ########################################################
 master.menu.flightcrewmember = Miembro de la tripulación del vuelo
 master.menu.flightcrewmember.flightassignments = Asignaciones del vuelo
-master.menu.flightcrewmember.flightassignments.completedFlightAssignments-list = Asignaciones de vuelos completados
-master.menu.flightcrewmember.flightassignments.upcomingFlightAssignments-list = Asignaciones de vuelos próximos
+master.menu.flightcrewmember.flightassignments.flightAssignments-list = Asignaciones de vuelos completados
 
 # master.menu.technician ########################################################
 master.menu.technician = Técnico

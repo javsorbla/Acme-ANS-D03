@@ -47,8 +47,8 @@
 			<acme:menu-suboption code="master.menu.administrator.aircraft.aircraft-list" action="/administrator/aircraft/list"/>
 		</acme:menu-option>
 		
-		<acme:menu-option code="master.menu.airline-manager.flights" access="hasRealm('AirlineManager')">
-			<acme:menu-suboption code="master.menu.airline-manager.flights.flights-list" action="/airline-manager/flight/list"/>
+		<acme:menu-option code="master.menu.airline-manager" access="hasRealm('AirlineManager')">
+			<acme:menu-suboption code="master.menu.airline-manager.flights-list" action="/airline-manager/flight/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.technician.maintenanceRecords" access="hasRealm('Technician')">

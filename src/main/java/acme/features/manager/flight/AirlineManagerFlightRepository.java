@@ -18,4 +18,7 @@ public interface AirlineManagerFlightRepository extends AbstractRepository {
 	@Query("select f from Flight f where f.manager.id = :managerId")
 	Collection<Flight> findAllFlightsByManagerId(int managerId);
 
+	@Query("select f from Flight f where f.id = :flightId")
+	Flight findFlightById(int flightId);
+
 }

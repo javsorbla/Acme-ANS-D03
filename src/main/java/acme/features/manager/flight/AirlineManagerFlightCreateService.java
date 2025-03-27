@@ -35,15 +35,19 @@ public class AirlineManagerFlightCreateService extends AbstractGuiService<Airlin
 
 	@Override
 	public void bind(final Flight flight) {
+		int managerId;
+		AirlineManager manager;
+
+		managerId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		manager = this.repository.findManagerById(managerId);
+
 		super.bindObject(flight, "tag", "requiresSelfTransfer", "cost", "description");
+		flight.setManager(manager);
 	}
 
 	@Override
 	public void validate(final Flight flight) {
-
-		if (!this.getBuffer().getErrors().hasErrors("tag"))
-			super.state(flight.getTag() != null, "tag", "airline-manager.flight.form.error.noTag", flight);
-		//check for errors in the other attributes and add i18n
+		;
 	}
 
 	@Override

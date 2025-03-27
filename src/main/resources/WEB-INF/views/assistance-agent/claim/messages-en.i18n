@@ -1,4 +1,6 @@
 
+
+#List
 assistance-agent.claim.list.title = Claims
 master.menu.assistance-agent.claims = Claims
 master.menu.assistance-agent.claims.claims-list = Claims list
@@ -8,3 +10,16 @@ assistance-agent.claim.list.button.create = Create
 assistance-agent.claim.list.label.registrationMoment = Registration moment
 assistance-agent.claim.list.label.passengerEmail =  Passenger email
 assistance-agent.claim.list.label.type = Type
+
+#Show
+
+assistance-agent.claim.form.title = Claims
+assistance-agent.claim.form.label.registrationMoment = Registration moment
+assistance-agent.claim.form.label.passengerEmail = Pasenger email
+assistance-agent.claim.form.label.description = Description
+assistance-agent.claim.form.label.type = Type
+assistance-agent.claim.form.label.indicator = Indicator
+assistance-agent.claim.form.label.assistanceAgent = Assistance agent
+assistance-agent.claim.form.label.leg = Leg
+assistance-agent.claim.form.button.update = Update
+assistance-agent.claim.form.button.tracking-log = Tracking Logs

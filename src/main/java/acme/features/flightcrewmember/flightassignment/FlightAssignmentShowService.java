@@ -58,12 +58,12 @@ public class FlightAssignmentShowService extends AbstractGuiService<FlightCrewMe
 		duty = SelectChoices.from(Duty.class, flightAssignment.getDuty());
 		currentStatus = SelectChoices.from(CurrentStatus.class, flightAssignment.getCurrentStatus());
 
-		dataset = super.unbindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus");
+		dataset = super.unbindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks");
 		dataset.put("duty", duty);
 		dataset.put("currentStatus", currentStatus);
 
 		super.addPayload(dataset, flightAssignment, "duty");
-
+		
 		super.getResponse().addData(dataset);
 	}
 }

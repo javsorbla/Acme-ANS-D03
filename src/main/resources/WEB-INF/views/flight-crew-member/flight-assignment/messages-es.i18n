@@ -8,3 +8,10 @@ flight-crew-member.flight-assignment.form.title = Detalles de las asignaciones d
 flight-crew-member.flight-assignment.list.label.duty = Servicio
 flight-crew-member.flight-assignment.list.label.lastUpdateMoment = Momento de la última actualización
 flight-crew-member.flight-assignment.list.label.currentStatus = Estado actual
+
+flight-crew-member.flight-assignment.form.label.duty = Deber
+flight-crew-member.flight-assignment.form.label.lastUpdateMoment = Momento de la última actualización
+flight-crew-member.flight-assignment.form.label.currentStatus = Estado actual
+flight-crew-member.flight-assignment.form.label.remarks = Observaciones
+
+flight-crew-member.flight-assignment.list.button.create = Create

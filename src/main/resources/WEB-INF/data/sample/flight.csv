@@ -2,7 +2,7 @@ key,tag,requiresSelfTransfer,cost,description,publish,key:manager
 # base
 flight-01,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false,manager-01
 
-## variaciones tag
+## tag - standard variations
 # valor minimo
 flight-02,"L",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false,manager-01
 # valor minimo + delta
@@ -19,12 +19,14 @@ flight-08,"洛伦·伊普森",false,EUR 500000.00,"Lorem ipsum dolor sit amet co
 flight-09,"<marquee>Hacked</marquee>",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false,manager-01
 flight-10,"<script>alert(‘Hacked!’);</script>",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false,manager-01
 flight-11,"' or 'A' = 'A ",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false,manager-01
+## tag - no singular values
 
-## variaciones requiresSelfTransSelfTransfer
+## requiresSelfTransSelfTransfer - standard variations
 # positivo (negativo ya probado)
 flight-12,"Lorem ipsum dolor sit ame",true,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false,manager-01
+## requiresSelfTransSelfTransfer - no singular values
 
-## variaciones cost
+## cost - standard variations
 # valor minimo
 flight-13,"Lorem ipsum dolor sit ame",false,EUR 0.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false,manager-01
 # valor minimo + delta
@@ -35,8 +37,9 @@ flight-15,"Lorem ipsum dolor sit ame",false,EUR 999999.99,"Lorem ipsum dolor sit
 flight-16,"Lorem ipsum dolor sit ame",false,EUR 1000000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false,manager-01
 # otra divisa
 flight-17,"Lorem ipsum dolor sit ame",false,USD 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false,manager-01
+## cost - no singular values
 
-## variaciones description
+## description - standard variations
 # valor minimo
 flight-18,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"",false,manager-01
 # valor minimo + delta
@@ -53,10 +56,13 @@ flight-24,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"洛伦·伊普森",fa
 flight-25,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"<marquee>Hacked</marquee>",false,manager-01
 flight-26,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"<script>alert(‘Hacked!’);</script>",false,manager-01
 flight-27,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"' or 'A' = 'A ",false,manager-01
+## description - no singular values
 
-## variaciones publish
+## publish - standard variations
 # positivo (negativo ya probado)
 flight-28,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false,manager-01
+## publish - no singular values
 
-## variacion manager
+## manager - standard variations
 flight-29,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true,manager-02
+## manager - no singular values

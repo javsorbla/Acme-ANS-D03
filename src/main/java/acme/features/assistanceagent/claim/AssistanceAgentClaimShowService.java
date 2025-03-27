@@ -25,6 +25,7 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 	public void authorise() {
 		Claim claim;
 		int claimId;
+		int clainAgentId;
 		int agentId;
 		boolean owned;
 
@@ -32,7 +33,8 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 		claim = this.repository.findClaimById(claimId);
 
 		agentId = super.getRequest().getPrincipal().getAccountId();
-		owned = claim.getAssistanceAgent().getId() == agentId;
+		clainAgentId = claim.getAssistanceAgent().getUserAccount().getId();
+		owned = clainAgentId == agentId;
 
 		super.getResponse().setAuthorised(owned);
 

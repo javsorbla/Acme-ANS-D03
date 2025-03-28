@@ -40,7 +40,7 @@ leg-24,"ABC2346",2025/09/01 10:00,2025/09/01 10:01,LANDED,false,aircraft-01,airp
 # status - no singular values
 
 # publish - standard variations
-leg-25,"ABC2347",2025/09/01 10:00,2025/09/01 10:01,ON_TIME,true,aircraft-01,airport-01,airport-02,flight-29
+leg-25,"ABC2347",2025/09/01 10:00,2025/09/01 10:01,ON_TIME,true,aircraft-01,airport-01,airport-02,flight-28
 # publish - no singular values
 
 # aircraft - standard variations

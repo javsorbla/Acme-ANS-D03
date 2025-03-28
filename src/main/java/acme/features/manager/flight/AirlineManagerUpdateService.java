@@ -10,29 +10,28 @@ import acme.entities.flight.Flight;
 import acme.realms.manager.AirlineManager;
 
 @GuiService
-public class AirlineManagerFlightShowService extends AbstractGuiService<AirlineManager, Flight> {
-	//Internal state ----------------------------------------------------------
+public class AirlineManagerUpdateService extends AbstractGuiService<AirlineManager, Flight> {
+
+	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	private AirlineManagerFlightRepository repository;
 
-	//AbstractGuiService state ----------------------------------------------------------
 
-
+	// AbstractGuiService interface -------------------------------------------
 	@Override
 	public void authorise() {
 		Flight flight;
 		int flightId;
 		int managerId;
-		boolean owned;
+		boolean status;
 
 		flightId = super.getRequest().getData("id", int.class);
 		flight = this.repository.findFlightById(flightId);
-		managerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		owned = flight.getManager().getId() == managerId;
+		managerId = flight == null ? null : super.getRequest().getPrincipal().getActiveRealm().getId();
+		status = flight != null && flight.getManager().getId() == managerId && !flight.isPublish();
 
-		super.getResponse().setAuthorised(owned);
-
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -44,19 +43,30 @@ public class AirlineManagerFlightShowService extends AbstractGuiService<AirlineM
 		flight = this.repository.findFlightById(id);
 
 		super.getBuffer().addData(flight);
+	}
 
+	@Override
+	public void bind(final Flight flight) {
+		super.bindObject(flight, "tag", "requiresSelfTransfer", "cost", "description");
+	}
+
+	@Override
+	public void validate(final Flight flight) {
+		;
+	}
+
+	@Override
+	public void perform(final Flight flight) {
+		assert flight != null;
+
+		this.repository.save(flight);
 	}
 
 	@Override
 	public void unbind(final Flight flight) {
 		Dataset dataset;
 
-		dataset = super.unbindObject(flight, "tag", "requiresSelfTransfer", "cost", "description", "publish");
-		dataset.put("scheduledDeparture", flight.getScheduledDeparture());
-		dataset.put("scheduledArrival", flight.getScheduledArrival());
-		dataset.put("originCity", flight.getOriginCity());
-		dataset.put("destinationCity", flight.getDestinationCity());
-		dataset.put("numberOfLayovers", flight.getNumberOfLayovers());
+		dataset = super.unbindObject(flight, "tag", "requiresSelfTransfer", "cost", "description");
 
 		super.getResponse().addData(dataset);
 	}

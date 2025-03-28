@@ -47,7 +47,7 @@ public class AirlineManagerFlightListService extends AbstractGuiService<AirlineM
 		dataset.put("originCity", flight.getOriginCity());
 		dataset.put("destinationCity", flight.getDestinationCity());
 
-		super.addPayload(dataset, flight, "tag");
+		super.addPayload(dataset, flight, "publish", "description");
 
 		super.getResponse().addData(dataset);
 	}

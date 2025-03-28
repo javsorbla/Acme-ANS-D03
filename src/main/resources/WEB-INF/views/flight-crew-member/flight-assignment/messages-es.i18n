@@ -16,4 +16,6 @@ flight-crew-member.flight-assignment.form.label.remarks = Observaciones
 flight-crew-member.flight-assignment.form.label.flightAssignmentLeg = Tramo
 flight-crew-member.flight-assignment.form.label.flightAssignmentCrewMember = Miembro de la tripulación del vuelo
 
-flight-crew-member.flight-assignment.list.button.create = Create
+flight-crew-member.flight-assignment.list.button.create = Crear
+
+flight-crew-member.flight-assignment.form.button.create = Crear

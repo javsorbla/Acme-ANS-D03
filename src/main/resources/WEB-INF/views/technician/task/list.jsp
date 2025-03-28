@@ -10,3 +10,5 @@
 	<acme:list-column code ="technician.task.list.label.priority" path ="priority" width ="20%"/>
 	<acme:list-payload path="payload"/>	
 </acme:list>
+
+<acme:button code="technician.task.list.button.create" action ="/technician/task/create"/>

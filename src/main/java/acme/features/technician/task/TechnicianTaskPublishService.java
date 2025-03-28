@@ -12,7 +12,7 @@ import acme.entities.task.TaskType;
 import acme.realms.technician.Technician;
 
 @GuiService
-public class TechnicianTaskDeleteService extends AbstractGuiService<Technician, Task> {
+public class TechnicianTaskPublishService extends AbstractGuiService<Technician, Task> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -62,7 +62,8 @@ public class TechnicianTaskDeleteService extends AbstractGuiService<Technician, 
 
 	@Override
 	public void perform(final Task task) {
-		this.repository.delete(task);
+		task.setDraftMode(false);
+		this.repository.save(task);
 	}
 
 	@Override

@@ -41,14 +41,8 @@ public class FlightAssignmentCreateService extends AbstractGuiService<FlightCrew
 
 	@Override
 	public void bind(final FlightAssignment flightAssignment) {
-		int flightCrewMemberId;
-		FlightCrewMember flightCrewMember;
-
-		flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		flightCrewMember = this.repository.findFlightCrewMemeberById(flightCrewMemberId);
 
 		super.bindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "flightAssignmentCrewMember", "flightAssignmentLeg");
-		flightAssignment.setFlightAssignmentCrewMember(flightCrewMember);
 	}
 
 	@Override

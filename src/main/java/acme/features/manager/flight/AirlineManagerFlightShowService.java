@@ -51,7 +51,7 @@ public class AirlineManagerFlightShowService extends AbstractGuiService<AirlineM
 	public void unbind(final Flight flight) {
 		Dataset dataset;
 
-		dataset = super.unbindObject(flight, "tag", "requiresSelfTransfer", "cost", "description");//como le asigno el valor del derivado
+		dataset = super.unbindObject(flight, "tag", "requiresSelfTransfer", "cost", "description", "publish");
 		dataset.put("scheduledDeparture", flight.getScheduledDeparture());
 		dataset.put("scheduledArrival", flight.getScheduledArrival());
 		dataset.put("originCity", flight.getOriginCity());

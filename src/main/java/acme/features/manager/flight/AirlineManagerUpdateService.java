@@ -4,13 +4,13 @@ package acme.features.manager.flight;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
-import acme.client.services.AbstractService;
+import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flight.Flight;
 import acme.realms.manager.AirlineManager;
 
 @GuiService
-public class AirlineManagerUpdateService extends AbstractService<AirlineManager, Flight> {
+public class AirlineManagerUpdateService extends AbstractGuiService<AirlineManager, Flight> {
 
 	// Internal state ---------------------------------------------------------
 

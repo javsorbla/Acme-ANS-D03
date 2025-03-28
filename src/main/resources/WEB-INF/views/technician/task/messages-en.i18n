@@ -13,6 +13,7 @@ technician.task.list.button.create = Create
 technician.task.form.button.update = Update
 technician.task.form.button.create = Create
 technician.task.form.button.delete = Delete
+technician.task.form.button.publish = Publish
 
 technician.task.form.label.type = Type
 technician.task.form.label.description = Description

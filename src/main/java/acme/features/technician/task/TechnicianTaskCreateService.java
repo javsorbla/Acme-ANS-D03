@@ -32,7 +32,9 @@ public class TechnicianTaskCreateService extends AbstractGuiService<Technician, 
 		Technician technician = (Technician) super.getRequest().getPrincipal().getActiveRealm();
 
 		task = new Task();
+		task.setDraftMode(true);
 		task.setTechnician(technician);
+
 		super.getBuffer().addData(task);
 	}
 
@@ -69,7 +71,7 @@ public class TechnicianTaskCreateService extends AbstractGuiService<Technician, 
 		Dataset dataset;
 		choices = SelectChoices.from(TaskType.class, task.getType());
 
-		dataset = super.unbindObject(task, "type", "description", "priority", "estimatedDuration");
+		dataset = super.unbindObject(task, "type", "description", "priority", "estimatedDuration", "draftMode");
 
 		dataset.put("type", choices.getSelected().getKey());
 		dataset.put("type", choices);

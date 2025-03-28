@@ -21,9 +21,9 @@ public class TechnicianTaskController extends AbstractGuiController<Technician, 
 	@Autowired
 	private TechnicianTaskShowService	showService;
 
-	//	@Autowired
-	//	private TechnicianTaskCreateService	createService;
-	//
+	@Autowired
+	private TechnicianTaskCreateService	createService;
+
 	//	@Autowired
 	//	private TechnicianTaskUpdateService	updateService;
 	//
@@ -37,7 +37,7 @@ public class TechnicianTaskController extends AbstractGuiController<Technician, 
 	protected void initialise() {
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
-		//		super.addBasicCommand("create", this.createService);
+		super.addBasicCommand("create", this.createService);
 		//		super.addBasicCommand("update", this.updateService);
 		//		super.addBasicCommand("delete", this.deleteService);
 

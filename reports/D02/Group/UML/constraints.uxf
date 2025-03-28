@@ -248,4 +248,21 @@ be overlapped
 bg=RED</panel_attributes>
     <additional_attributes/>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>595</x>
+      <y>574</y>
+      <w>203</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidTechnician
+--
++ licenseNumber 2-3 first letters must
+correspond to the flight crew member initials
++ licenseNumber must be unique
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>

@@ -30,8 +30,11 @@ public class FlightAssignmentListService extends AbstractGuiService<FlightCrewMe
 	@Override
 	public void load() {
 		Collection<FlightAssignment> flightAssignments;
+		int flightCrewMemberId;
 
-		flightAssignments = this.repository.findUpcomingFlightAssignments();
+		flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+
+		flightAssignments = this.repository.findUpcomingFlightAssignmentsByMemberId(flightCrewMemberId);
 
 		super.getBuffer().addData(flightAssignments);
 

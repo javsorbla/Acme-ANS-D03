@@ -35,4 +35,7 @@ public interface FlightAssignmentRepository extends AbstractRepository {
 	@Query("SELECT fcm FROM FlightCrewMember fcm")
 	Collection<FlightCrewMember> findAllFlightCrewMembers();
 
+	@Query("SELECT fcm FROM FlightCrewMember fcm WHERE fcm.id = :flightCrewMemberId")
+	FlightCrewMember findFlightCrewMemeberById(int flightCrewMemberId);
+
 }

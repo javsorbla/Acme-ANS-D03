@@ -17,3 +17,5 @@ flight-crew-member.flight-assignment.form.label.flightAssignmentLeg = Leg
 flight-crew-member.flight-assignment.form.label.flightAssignmentCrewMember = Flight Crew Member
 
 flight-crew-member.flight-assignment.list.button.create = Create
+
+flight-crew-member.flight-assignment.form.button.create = Create

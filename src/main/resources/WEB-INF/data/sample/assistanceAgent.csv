@@ -1,2 +1,3 @@
 key,key:user-account,employeeCode,languages,startDate,bio,salary,photo,key:airline
 agent-01,user-account-agent-01,FPA123456,español,2010/01/02 00:00,trabajador eficaz,EUR 10.00,http://foto.jpg,airline-01
+agent-02,user-account-agent-02,LMA123456,ingles,2010/05/05 00:00,trabajador muy eficaz,EUR 100.00,http://foto.jpg,airline-01

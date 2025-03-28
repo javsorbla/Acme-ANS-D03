@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.flightassignment.FlightAssignment;
+import acme.entities.leg.Leg;
+import acme.realms.flightcrewmember.FlightCrewMember;
 
 @Repository
 public interface FlightAssignmentRepository extends AbstractRepository {
@@ -26,5 +28,11 @@ public interface FlightAssignmentRepository extends AbstractRepository {
 
 	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.id = :id")
 	FlightAssignment findFlightAssignmentById(int id);
+
+	@Query("SELECT l FROM Leg l")
+	Collection<Leg> findAllLegs();
+
+	@Query("SELECT fcm FROM FlightCrewMember fcm")
+	Collection<FlightCrewMember> findAllFlightCrewMembers();
 
 }

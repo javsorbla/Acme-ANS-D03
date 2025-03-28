@@ -1,6 +1,8 @@
 
 package acme.features.flightcrewmember.flightassignment;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
@@ -10,6 +12,7 @@ import acme.client.services.GuiService;
 import acme.entities.flightassignment.CurrentStatus;
 import acme.entities.flightassignment.Duty;
 import acme.entities.flightassignment.FlightAssignment;
+import acme.entities.leg.Leg;
 import acme.realms.flightcrewmember.FlightCrewMember;
 
 @GuiService
@@ -52,18 +55,30 @@ public class FlightAssignmentShowService extends AbstractGuiService<FlightCrewMe
 	@Override
 	public void unbind(final FlightAssignment flightAssignment) {
 		Dataset dataset;
-		SelectChoices duty;
-		SelectChoices currentStatus;
+		SelectChoices dutyChoice;
+		SelectChoices currentStatusChoice;
 
-		duty = SelectChoices.from(Duty.class, flightAssignment.getDuty());
-		currentStatus = SelectChoices.from(CurrentStatus.class, flightAssignment.getCurrentStatus());
+		SelectChoices legChoice;
+		Collection<Leg> legs;
 
-		dataset = super.unbindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks");
-		dataset.put("duty", duty);
-		dataset.put("currentStatus", currentStatus);
+		SelectChoices flightCrewMemberChoice;
+		Collection<FlightCrewMember> flightCrewMembers;
 
-		super.addPayload(dataset, flightAssignment, "duty");
-		
+		dutyChoice = SelectChoices.from(Duty.class, flightAssignment.getDuty());
+		currentStatusChoice = SelectChoices.from(CurrentStatus.class, flightAssignment.getCurrentStatus());
+
+		legs = this.repository.findAllLegs();
+		legChoice = SelectChoices.from(legs, "id", flightAssignment.getFlightAssignmentLeg());
+
+		flightCrewMembers = this.repository.findAllFlightCrewMembers();
+		flightCrewMemberChoice = SelectChoices.from(flightCrewMembers, "id", flightAssignment.getFlightAssignmentCrewMember());
+
+		dataset = super.unbindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "flightAssignmentLeg", "flightAssignmentCrewMember");
+		dataset.put("dutyChoice", dutyChoice);
+		dataset.put("currentStatusChoice", currentStatusChoice);
+		dataset.put("legChoice", legChoice);
+		dataset.put("flightCrewMemberChoice", flightCrewMemberChoice);
+
 		super.getResponse().addData(dataset);
 	}
 }

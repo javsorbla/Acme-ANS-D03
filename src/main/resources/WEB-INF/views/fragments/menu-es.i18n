@@ -62,6 +62,6 @@ master.menu.airline-manager.flights.flights-list = Lista de vuelos
 
 # master.menu.technician ########################################################
 master.menu.technician = Técnico
-master.menu.technician.maintenanceRecords = Documentos de Mantenimiento
+master.menu.technician.tasks.tasks-list = Listado de tareas
 master.menu.technician.maintenanceRecords.maintenanceRecords-list = Listado de los documentos de Mantenimiento
 

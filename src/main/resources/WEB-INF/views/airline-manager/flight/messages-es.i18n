@@ -22,5 +22,3 @@ airline-manager.flight.list.button.create = Crear
 airline-manager.flight.form.button.create = Crear
 airline-manager.flight.form.button.update = Actualizar
 airline-manager.flight.form.button.legs = Legs List
-
-airline-manager.flight.error.update-published = No se puede actualizar un vuelo publicado

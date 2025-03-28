@@ -21,5 +21,3 @@ airline-manager.flight.list.button.create = Create
 airline-manager.flight.form.button.create = Create
 airline-manager.flight.form.button.update = Update
 airline-manager.flight.form.button.legs = Lista de Tramos
-
-airline-manager.flight.error.update-published = Can't update a published flight

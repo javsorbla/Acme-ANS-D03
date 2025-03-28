@@ -24,14 +24,14 @@ public class AirlineManagerUpdateService extends AbstractGuiService<AirlineManag
 		Flight flight;
 		int flightId;
 		int managerId;
-		boolean owned;
+		boolean status;
 
 		flightId = super.getRequest().getData("id", int.class);
 		flight = this.repository.findFlightById(flightId);
-		managerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		owned = flight.getManager().getId() == managerId;
+		managerId = flight == null ? null : super.getRequest().getPrincipal().getActiveRealm().getId();
+		status = flight != null && flight.getManager().getId() == managerId && !flight.isPublish();
 
-		super.getResponse().setAuthorised(owned);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -52,8 +52,7 @@ public class AirlineManagerUpdateService extends AbstractGuiService<AirlineManag
 
 	@Override
 	public void validate(final Flight flight) {
-		if (flight.isPublish())
-			super.state(false, "publish", "airline-manager.flight.error.update-published");
+		;
 	}
 
 	@Override

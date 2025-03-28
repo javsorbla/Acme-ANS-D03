@@ -16,17 +16,21 @@ public class FlightAssignmentController extends AbstractGuiController<FlightCrew
 	//Internal state --------------------------------------------------------------
 
 	@Autowired
-	private FlightAssignmentListService	listService;
+	private FlightAssignmentListCompletedService	listCompletedService;
 
 	@Autowired
-	private FlightAssignmentShowService	showService;
+	private FlightAssignmentListPlannedService		listPlannedService;
+
+	@Autowired
+	private FlightAssignmentShowService				showService;
 
 	//Constructors ----------------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
-		super.addBasicCommand("list", this.listService);
+		super.addCustomCommand("list-completed", "list", this.listCompletedService);
+		super.addCustomCommand("list-planned", "list", this.listPlannedService);
 		super.addBasicCommand("show", this.showService);
 	}
 }

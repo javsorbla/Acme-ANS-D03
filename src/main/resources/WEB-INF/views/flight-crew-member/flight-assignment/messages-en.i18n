@@ -19,3 +19,4 @@ flight-crew-member.flight-assignment.form.label.flightAssignmentCrewMember = Fli
 flight-crew-member.flight-assignment.list.button.create = Create
 
 flight-crew-member.flight-assignment.form.button.create = Create
+flight-crew-member.flight-assignment.form.button.update = Update

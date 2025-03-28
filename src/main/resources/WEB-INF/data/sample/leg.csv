@@ -1,5 +1,4 @@
 key,flightNumber,departure,arrival,status,publish,key:deployedAircraft,key:departureAirport,key:arrivalAirport,key:flight
-
 ## base
 leg-01,"ABC1234",2025/09/01 10:00,2025/09/01 10:01,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-01
 
@@ -8,52 +7,50 @@ leg-02,"ABC1111",2025/09/01 10:02,2025/09/01 10:03,ON_TIME,false,aircraft-01,air
 leg-03,"ABC2222",2025/09/01 10:04,2025/09/01 10:05,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-01
 leg-04,"ABC3333",2025/09/01 10:06,2025/09/01 10:07,ON_TIME,false,aircraft-01,airport-02,airport-01,flight-01
 
-## variaciones flightNumber (unique)
+# flightNumber - standard variations (unique)
 leg-05,"ABC0000",2025/09/01 10:00,2025/09/01 10:01,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-02
 leg-06,"ABC9866",2025/09/01 10:00,2025/09/01 10:01,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-03
 leg-07,"ABC5910",2025/09/01 10:00,2025/09/01 10:01,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-04
 leg-08,"ABC3495",2025/09/01 10:00,2025/09/01 10:01,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-05
 leg-09,"ABC4411",2025/09/01 10:00,2025/09/01 10:01,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-06
 leg-10,"ABC9999",2025/09/01 10:00,2025/09/01 10:01,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-07
+# flightNumber - no singular values
 
-## variaciones departure
-# valor minimo
+# departure - standard variations
 leg-11,"ABC1235",2025/01/01 0:00,2025/09/01 10:01,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-08
-# valor minimo + delta
 leg-12,"ABC1236",2025/01/01 0:01,2025/09/01 10:01,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-09
-# valor máximo - delta (en este caso delta = 2 ya que debe haber al menos un minuto de diferencia con arrival)
 leg-13,"ABC1237",2200/12/31 23:57,2200/12/31 23:58,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-10
-# valor máximo
 leg-14,"ABC1238",2200/12/31 23:58,2200/12/31 23:59,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-11
-# fecha rara
+# singular values departure (leap year)
 leg-15,"ABC3497",2028/02/29 0:00,2028/02/29 10:01,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-12
 
-## variaciones arrival
-# valor minimo (no puede ser a las 00:00 ya que debe haber margen con el despegue)
+# arrival - standard variations
 leg-16,"ABC1239",2025/01/01 0:00,2025/07/30 00:01,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-13
-# valor minimo + delta
 leg-17,"ABC2340",2025/01/01 0:00,2025/07/30 00:02,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-14
-# valor máximo - delta
 leg-18,"ABC2341",2200/12/31 23:57,2200/12/31 23:58,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-15
-# valor máximo
 leg-19,"ABC2342",2200/12/31 23:58,2200/12/31 23:59,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-16
-# fecha rara
+# singular values arrival (leap year)
 leg-20,"ABC3491",2028/02/29 0:00,2028/02/29 10:01,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-17
 
-## variaciones status
-# prueba de todos los tipos posibles
+# status - standard variations
 leg-21,"ABC2343",2025/09/01 10:00,2025/09/01 10:01,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-18
 leg-22,"ABC2344",2025/09/01 10:00,2025/09/01 10:01,DELAYED,false,aircraft-01,airport-01,airport-02,flight-19
 leg-23,"ABC2345",2025/09/01 10:00,2025/09/01 10:01,CANCELLED,false,aircraft-01,airport-01,airport-02,flight-20
 leg-24,"ABC2346",2025/09/01 10:00,2025/09/01 10:01,LANDED,false,aircraft-01,airport-01,airport-02,flight-21
+# status - no singular values
 
-## variaciones publish
-# valor positivo (negativo ya probado)
+# publish - standard variations
 leg-25,"ABC2347",2025/09/01 10:00,2025/09/01 10:01,ON_TIME,true,aircraft-01,airport-01,airport-02,flight-29
+# publish - no singular values
 
-## variacion de aircraft
+# aircraft - standard variations
 leg-26,"ABC2348",2025/09/01 10:00,2025/09/01 10:01,ON_TIME,false,aircraft-02,airport-01,airport-02,flight-22
+# aircraft - no singular values
 
-## mas variaciones de aeropuertos
+# departureAirport - standard variations
 leg-27,"ABC2349",2025/09/01 10:00,2025/09/01 10:01,ON_TIME,false,aircraft-01,airport-03,airport-02,flight-23
+# departureAirport - no singular values
+
+# arrivalAirport - standard variations
 leg-28,"ABC2350",2025/09/01 10:00,2025/09/01 10:01,ON_TIME,false,aircraft-01,airport-01,airport-04,flight-24
+# arrivalAirport - no singular values

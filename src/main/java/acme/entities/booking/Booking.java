@@ -77,9 +77,15 @@ public class Booking extends AbstractEntity {
 		Money flightCost = this.getFlightId().getCost();
 		Integer numberOfPassengers = bookingRepository.getNumberOfPassengersOfBooking(this.getId());
 
-		price.setCurrency(flightCost.getCurrency());
-		price.setAmount(flightCost.getAmount() * numberOfPassengers);
-		return price;
+		if (this.getFlightId() == null) {
+			price.setAmount(0.0);
+			price.setCurrency("EUR");
+			return price;
+		} else {
+			price.setCurrency(flightCost.getCurrency());
+			price.setAmount(flightCost.getAmount() * numberOfPassengers);
+			return price;
+		}
 
 	}
 

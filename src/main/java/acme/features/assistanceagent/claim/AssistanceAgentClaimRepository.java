@@ -17,4 +17,7 @@ public interface AssistanceAgentClaimRepository extends AbstractRepository {
 
 	@Query("SELECT c FROM Claim c WHERE c.assistanceAgent.id = :assistanceAgentId")
 	Collection<Claim> findAllClaimsByAssistanceAgentId(int assistanceAgentId);
+
+	@Query("SELECT c FROM Claim c WHERE c.id = :claimId")
+	Claim findClaimById(int claimId);
 }

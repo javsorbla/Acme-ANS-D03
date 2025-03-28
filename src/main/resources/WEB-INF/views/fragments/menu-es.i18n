@@ -60,6 +60,12 @@ master.menu.airline-manager = Mánager de Aerolínea
 master.menu.airline-manager.flights = Vuelos
 master.menu.airline-manager.flights.flights-list = Lista de vuelos
 
+# master.menu.flightcrewmember ########################################################
+master.menu.flightcrewmember = Miembro de la tripulación del vuelo
+master.menu.flightcrewmember.flightassignments = Asignaciones del vuelo
+master.menu.flightcrewmember.flightassignments.flightAssignments-list-completed = Lista de asignaciones de vuelos completados
+master.menu.flightcrewmember.flightassignments.flightAssignments-list-planned = Lista de asignaciones de vuelos planeados
+
 # master.menu.technician ########################################################
 master.menu.technician = Técnico
 master.menu.technician.tasks.tasks-list = Listado de tareas

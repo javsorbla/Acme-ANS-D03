@@ -8,15 +8,18 @@
 
 <acme:form> 
 	<acme:input-select code="flight-crew-member.flight-assignment.form.label.duty" path="duty" choices="${dutyChoice }"/>
-	<acme:input-moment code="flight-crew-member.flight-assignment.form.label.lastUpdateMoment" path="lastUpdateMoment"/>
+	<acme:input-moment code="flight-crew-member.flight-assignment.form.label.lastUpdateMoment" path="lastUpdateMoment" readonly="true"/>
 	<acme:input-select code="flight-crew-member.flight-assignment.form.label.currentStatus" path="currentStatus" choices="${currentStatusChoice }"/>
 	<acme:input-textbox code="flight-crew-member.flight-assignment.form.label.remarks" path="remarks"/>
 	<acme:input-select code="flight-crew-member.flight-assignment.form.label.flightAssignmentLeg" path="flightAssignmentLeg" choices="${legChoice }"/>
 	<acme:input-select code="flight-crew-member.flight-assignment.form.label.flightAssignmentCrewMember" path="flightAssignmentCrewMember" choices="${flightCrewMemberChoice }"/>
 	
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(_command,'show') }">
-		</jstl:when>	
+		<jstl:when test="${acme:anyOf(_command,'show|update|delete|publish') && publish == false}">
+			<acme:submit code="flight-crew-member.flight-assignment.form.button.update" action="/flighct-crew-member/flight-assignment/update"/>
+			<acme:submit code="flight-crew-member.flight-assignment.form.button.delete" action="/flighct-crew-member/flight-assignment/delete"/>
+		</jstl:when>
+			
 		<jstl:when test="${acme:anyOf(_command,'create') }">
 			<acme:submit code="flight-crew-member.flight-assignment.form.button.create" action="/flight-crew-member/flight-assignment/create"/>
 		</jstl:when>

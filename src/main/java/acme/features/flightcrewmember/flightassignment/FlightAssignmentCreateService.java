@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flightassignment.CurrentStatus;
@@ -36,7 +37,9 @@ public class FlightAssignmentCreateService extends AbstractGuiService<FlightCrew
 
 		flightAssignment = new FlightAssignment();
 		flightAssignment.setFlightAssignmentCrewMember(flightCrewMember);
+		flightAssignment.setLastUpdateMoment(MomentHelper.getCurrentMoment());
 		super.getBuffer().addData(flightAssignment);
+
 	}
 
 	@Override

@@ -12,7 +12,7 @@ import acme.entities.booking.Booking;
 @Repository
 public interface CustomerBookingRepository extends AbstractRepository {
 
-	@Query("select b from Booking b where b.customer.id =:customerId")
+	@Query("select b from Booking b where b.customerId.id =:customerId")
 	Collection<Booking> findBookingsByCustomerId(int customerId);
 
 }

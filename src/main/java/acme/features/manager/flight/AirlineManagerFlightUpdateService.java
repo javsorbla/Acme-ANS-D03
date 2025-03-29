@@ -10,7 +10,7 @@ import acme.entities.flight.Flight;
 import acme.realms.manager.AirlineManager;
 
 @GuiService
-public class AirlineManagerUpdateService extends AbstractGuiService<AirlineManager, Flight> {
+public class AirlineManagerFlightUpdateService extends AbstractGuiService<AirlineManager, Flight> {
 
 	// Internal state ---------------------------------------------------------
 

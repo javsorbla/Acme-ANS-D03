@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -16,7 +17,7 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidMoney;
+import acme.client.helpers.SpringHelper;
 import acme.constraints.ValidBooking;
 import acme.constraints.ValidLastNibble;
 import acme.constraints.ValidLocatorCode;
@@ -51,10 +52,10 @@ public class Booking extends AbstractEntity {
 	@Automapped
 	private TypeTravelClass		travelClass;
 
-	@Mandatory
-	@ValidMoney(min = 0.00, max = 1000000.0)
-	@Automapped
-	private Money				price;
+	//	@Mandatory
+	//	@ValidMoney(min = 0.00, max = 1000000.0)
+	//	@Automapped
+	//	private Money				price;
 
 	@Optional
 	@ValidLastNibble
@@ -68,16 +69,37 @@ public class Booking extends AbstractEntity {
 
 	//Derived attributes-------------------------------------------------
 
+
+	@Transient
+	public Money getPrice() {
+		Money price = new Money();
+		BookingRepository bookingRepository = SpringHelper.getBean(BookingRepository.class);
+		Money flightCost = this.getFlightId().getCost();
+		Integer numberOfPassengers = bookingRepository.getNumberOfPassengersOfBooking(this.getId());
+
+		if (this.getFlightId() == null) {
+			price.setAmount(0.0);
+			price.setCurrency("EUR");
+			return price;
+		} else {
+			price.setCurrency(flightCost.getCurrency());
+			price.setAmount(flightCost.getAmount() * numberOfPassengers);
+			return price;
+		}
+
+	}
+
 	// Relationships -----------------------------------------------------
 
-	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private Flight				flightId;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Customer			customerId;
+	private Flight		flightId;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Customer	customerId;
 
 }

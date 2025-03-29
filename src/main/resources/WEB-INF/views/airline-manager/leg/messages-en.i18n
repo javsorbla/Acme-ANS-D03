@@ -1,0 +1,23 @@
+
+
+airline-manager.leg.list.title = Leg list
+airline-manager.leg.form.title = Leg details
+
+airline-manager.leg.list.label.flightNumber = Flight Number
+airline-manager.leg.list.label.departure = Departure Moment
+airline-manager.leg.list.label.arrival = Arrival Moment
+airline-manager.leg.list.label.status = Status
+
+airline-manager.leg.form.label.flightNumber = Flight Number
+airline-manager.leg.form.label.departure = Departure Moment
+airline-manager.leg.form.label.arrival = Arrival Moment
+airline-manager.leg.form.label.status = Status
+airline-manager.leg.form.label.duration = Duration
+airline-manager.leg.form.label.aircraft = Deployed Aircraft
+airline-manager.leg.form.label.departureAirport = Departure Airport
+airline-manager.leg.form.label.arrivalAirport = Arrival Airport
+airline-manager.leg.form.label.flight = Flight
+
+airline-manager.leg.list.button.create = Create
+airline-manager.leg.form.button.create = Create
+airline-manager.leg.form.button.update = Update

@@ -1,5 +1,5 @@
 
-package acme.features.manager.flight;
+package acme.features.manager.leg;
 
 import javax.annotation.PostConstruct;
 
@@ -7,31 +7,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.controllers.AbstractGuiController;
 import acme.client.controllers.GuiController;
-import acme.entities.flight.Flight;
+import acme.entities.leg.Leg;
 import acme.realms.manager.AirlineManager;
 
 @GuiController
-public class AirlineManagerFlightController extends AbstractGuiController<AirlineManager, Flight> {
-
+public class AirlineManagerLegController extends AbstractGuiController<AirlineManager, Leg> {
 	//Internal state --------------------------------------------------------------
 
 	@Autowired
-	private AirlineManagerFlightListService		listService;
+	private AirlineManagerLegListService	listService;
 
 	@Autowired
-	private AirlineManagerFlightShowService		showService;
+	private AirlineManagerLegShowService	showService;
 
 	@Autowired
-	private AirlineManagerFlightCreateService	createService;
+	private AirlineManagerLegCreateService	createService;
 
 	@Autowired
-	private AirlineManagerFlightUpdateService	updateService;
+	private AirlineManagerLegUpdateService	updateService;
 
 	@Autowired
-	private AirlineManagerFlightDeleteService	deleteService;
+	private AirlineManagerLegDeleteService	deleteService;
 
 	@Autowired
-	private AirlineManagerFlightPublishService	publishService;
+	private AirlineManagerLegPublishService	publishService;
 
 	//Constructors ----------------------------------------------------------------
 

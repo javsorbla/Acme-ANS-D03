@@ -65,6 +65,7 @@ master.menu.flightcrewmember = Miembro de la tripulación del vuelo
 master.menu.flightcrewmember.flightassignments = Asignaciones del vuelo
 master.menu.flightcrewmember.flightassignments.flightAssignments-list-completed = Lista de asignaciones de vuelos completados
 master.menu.flightcrewmember.flightassignments.flightAssignments-list-planned = Lista de asignaciones de vuelos planeados
+master.menu.flightcrewmember.activitylogs.activityLogs-list = Lista de registros de actividades
 
 # master.menu.technician ########################################################
 master.menu.technician = Técnico

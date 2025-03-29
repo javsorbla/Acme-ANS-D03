@@ -15,10 +15,11 @@
 	<acme:input-select code="flight-crew-member.flight-assignment.form.label.flightAssignmentCrewMember" path="flightAssignmentCrewMember" choices="${flightCrewMemberChoice }"/>
 	
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(_command,'show|update|delete') }">
+		<jstl:when test="${acme:anyOf(_command,'show|update|delete|publish') && publish == false}">
 			<acme:submit code="flight-crew-member.flight-assignment.form.button.update" action="/flighct-crew-member/flight-assignment/update"/>
 			<acme:submit code="flight-crew-member.flight-assignment.form.button.delete" action="/flighct-crew-member/flight-assignment/delete"/>
-		</jstl:when>	
+		</jstl:when>
+			
 		<jstl:when test="${acme:anyOf(_command,'create') }">
 			<acme:submit code="flight-crew-member.flight-assignment.form.button.create" action="/flight-crew-member/flight-assignment/create"/>
 		</jstl:when>

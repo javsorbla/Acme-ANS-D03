@@ -26,20 +26,18 @@ public class FlightAssignmentUpdateService extends AbstractGuiService<FlightCrew
 	// AbstractGuiService interface -------------------------------------------
 	@Override
 	public void authorise() {
-		boolean exist;
-		int id;
 		FlightAssignment flightAssignment;
-		FlightCrewMember flightCrewMember;
+		boolean status;
+		int flightAssignmentId;
+		int flightCrewMemberId;
 
-		id = super.getRequest().getData("id", int.class);
-		flightAssignment = this.repository.findFlightAssignmentById(id);
+		flightAssignmentId = super.getRequest().getData("id", int.class);
+		flightAssignment = this.repository.findFlightAssignmentById(flightAssignmentId);
+		flightCrewMemberId = flightAssignment == null ? null : super.getRequest().getPrincipal().getActiveRealm().getId();
+		status = flightAssignment != null && flightAssignment.getFlightAssignmentCrewMember().getId() == flightCrewMemberId && !flightAssignment.isPublish();
 
-		exist = flightAssignment != null;
-		if (exist) {
-			flightCrewMember = (FlightCrewMember) super.getRequest().getPrincipal().getActiveRealm();
-			if (flightCrewMember.equals(flightAssignment.getFlightAssignmentCrewMember()))
-				super.getResponse().setAuthorised(true);
-		}
+		super.getResponse().setAuthorised(status);
+
 	}
 
 	@Override
@@ -66,6 +64,7 @@ public class FlightAssignmentUpdateService extends AbstractGuiService<FlightCrew
 	@Override
 	public void perform(final FlightAssignment flightAssignment) {
 		assert flightAssignment != null;
+
 		this.repository.save(flightAssignment);
 	}
 

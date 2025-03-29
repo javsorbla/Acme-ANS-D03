@@ -16,8 +16,8 @@ public interface ActivityLogRepository extends AbstractRepository {
 	@Query("SELECT al FROM ActivityLog al")
 	Collection<ActivityLog> findAllActivityLogs();
 
-	@Query("SELECT al FROM ActivityLog al WHERE al.activityLogAssignment.id = :flightAssignmentId")
-	Collection<ActivityLog> findActivityLogByFlightAssignmentId(final int flightAssignmentId);
+	@Query("SELECT al FROM ActivityLog al WHERE al.activityLogAssignment.flightAssignmentCrewMember.id = :flightCrewMemberId")
+	Collection<ActivityLog> findActivityLogByFlightCrewMembertId(final int flightCrewMemberId);
 
 	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.id = :id")
 	FlightAssignment findFlightAssignmentById(int id);

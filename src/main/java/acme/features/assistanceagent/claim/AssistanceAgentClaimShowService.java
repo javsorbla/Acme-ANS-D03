@@ -58,7 +58,7 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 		Dataset dataset;
 
 		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type");//como metemos las derivadas?
-		dataset.put("indicator", claim.getIndicator());
+		//dataset.put("indicator", claim.getIndicator());
 
 		super.getResponse().addData(dataset);
 

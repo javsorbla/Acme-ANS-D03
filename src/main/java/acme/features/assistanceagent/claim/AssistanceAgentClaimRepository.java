@@ -20,4 +20,8 @@ public interface AssistanceAgentClaimRepository extends AbstractRepository {
 
 	@Query("SELECT c FROM Claim c WHERE c.id = :claimId")
 	Claim findClaimById(int claimId);
+
+	@Query("SELECT DISTINCT c FROM Claim c JOIN TrackingLog t ON t.claim.id = c.id WHERE t.lastUpdateMoment = (SELECT MAX(t2.lastUpdateMoment) FROM TrackingLog t2 WHERE t2.claim = c) AND (t.status = 'PENDING' AND c.assistanceAgent.id = :agentId)")
+	Collection<Claim> findAllPendingClaimsByAgentId(int agentId);
+
 }

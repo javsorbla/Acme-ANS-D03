@@ -2,8 +2,6 @@
 
 #List
 assistance-agent.claim.list.title = Reclamaciones
-master.menu.assistance-agent.claims = Reclamaciones
-master.menu.assistance-agent.claims.claims-list = Listado de reclamaciones
 assistance-agent.claim.list.button.create = Crear
 
 

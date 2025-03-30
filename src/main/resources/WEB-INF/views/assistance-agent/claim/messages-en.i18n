@@ -2,8 +2,6 @@
 
 #List
 assistance-agent.claim.list.title = Claims
-master.menu.assistance-agent.claims = Claims
-master.menu.assistance-agent.claims.claims-list = Claims list
 assistance-agent.claim.list.button.create = Create
 
 

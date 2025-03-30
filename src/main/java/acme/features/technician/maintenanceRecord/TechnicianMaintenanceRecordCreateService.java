@@ -38,6 +38,7 @@ public class TechnicianMaintenanceRecordCreateService extends AbstractGuiService
 		Technician technician = (Technician) super.getRequest().getPrincipal().getActiveRealm();
 
 		maintenanceRecord = new MaintenanceRecord();
+		maintenanceRecord.setDraftMode(true);
 		maintenanceRecord.setTechnician(technician);
 		maintenanceRecord.setMoment(moment);
 		super.getBuffer().addData(maintenanceRecord);
@@ -85,7 +86,7 @@ public class TechnicianMaintenanceRecordCreateService extends AbstractGuiService
 		choices = SelectChoices.from(MaintenanceRecordStatus.class, maintenanceRecord.getStatus());
 		aircraft = SelectChoices.from(aircrafts, "id", maintenanceRecord.getAircraft());
 
-		dataset = super.unbindObject(maintenanceRecord, "status", "nextInspectionDate", "estimatedCost", "notes", "aircraft");
+		dataset = super.unbindObject(maintenanceRecord, "status", "nextInspectionDate", "estimatedCost", "notes", "aircraft", "draftMode");
 
 		dataset.put("status", choices.getSelected().getKey());
 		dataset.put("status", choices);

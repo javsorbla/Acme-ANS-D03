@@ -15,7 +15,7 @@ import acme.entities.maintenanceRecord.MaintenanceRecordStatus;
 import acme.realms.technician.Technician;
 
 @GuiService
-public class TechnicianMaintenanceRecordDeleteService extends AbstractGuiService<Technician, MaintenanceRecord> {
+public class TechnicianMaintenanceRecordPublishService extends AbstractGuiService<Technician, MaintenanceRecord> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -65,7 +65,8 @@ public class TechnicianMaintenanceRecordDeleteService extends AbstractGuiService
 
 	@Override
 	public void perform(final MaintenanceRecord maintenanceRecord) {
-		this.repository.delete(maintenanceRecord);
+		maintenanceRecord.setDraftMode(false);
+		this.repository.save(maintenanceRecord);
 	}
 
 	@Override
@@ -82,7 +83,9 @@ public class TechnicianMaintenanceRecordDeleteService extends AbstractGuiService
 		dataset = super.unbindObject(maintenanceRecord, "status", "nextInspectionDate", "estimatedCost", "notes", "aircraft", "draftMode");
 
 		dataset.put("status", choices.getSelected().getKey());
+		dataset.put("status", choices);
 		dataset.put("aircraft", aircraft.getSelected().getKey());
+		dataset.put("aircraft", aircraft);
 
 		super.getResponse().addData(dataset);
 	}

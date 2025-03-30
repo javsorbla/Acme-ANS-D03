@@ -52,11 +52,6 @@ public class Booking extends AbstractEntity {
 	@Automapped
 	private TypeTravelClass		travelClass;
 
-	//	@Mandatory
-	//	@ValidMoney(min = 0.00, max = 1000000.0)
-	//	@Automapped
-	//	private Money				price;
-
 	@Optional
 	@ValidLastNibble
 	@Automapped
@@ -74,16 +69,22 @@ public class Booking extends AbstractEntity {
 	public Money getPrice() {
 		Money price = new Money();
 		BookingRepository bookingRepository = SpringHelper.getBean(BookingRepository.class);
-		Money flightCost = this.getFlightId().getCost();
 		Integer numberOfPassengers = bookingRepository.getNumberOfPassengersOfBooking(this.getId());
 
-		if (this.getFlightId() == null) {
-			price.setAmount(0.0);
+		if (this.getFlight() == null) {
 			price.setCurrency("EUR");
+			price.setAmount(0.0);
 			return price;
 		} else {
-			price.setCurrency(flightCost.getCurrency());
-			price.setAmount(flightCost.getAmount() * numberOfPassengers);
+			Money flightCost = this.getFlight().getCost();
+
+			if (flightCost == null) {
+				price.setCurrency("EUR");
+				price.setAmount(0.0);
+			} else {
+				price.setCurrency(flightCost.getCurrency());
+				price.setAmount(flightCost.getAmount() * numberOfPassengers);
+			}
 			return price;
 		}
 
@@ -95,11 +96,11 @@ public class Booking extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Flight		flightId;
+	private Flight		flight;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Customer	customerId;
+	private Customer	customer;
 
 }

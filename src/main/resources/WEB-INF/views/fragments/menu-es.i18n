@@ -72,3 +72,7 @@ master.menu.technician = Técnico
 master.menu.technician.tasks.tasks-list = Listado de tareas
 master.menu.technician.maintenanceRecords.maintenanceRecords-list = Listado de los documentos de Mantenimiento
 
+# master.menu.customer ##########################################################
+master.menu.customer = Cliente
+master.menu.customer.bookings-list = Listado de mis reservas
+

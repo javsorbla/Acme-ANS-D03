@@ -66,6 +66,10 @@
 		<acme:menu-option code="master.menu.assistance-agent.claims" access="hasRealm('AssistanceAgent')">
 			<acme:menu-suboption code="master.menu.assistance-agent.claims.claims-list" action="/assistance-agent/claim/list"/>
 		</acme:menu-option>	
+		
+		<acme:menu-option code="master.menu.customer" access="hasRealm('Customer')">
+ 			<acme:menu-suboption code="master.menu.customer.bookings-list" action="/customer/booking/list"/>
+ 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRealm('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
@@ -74,6 +78,9 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRealm('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
+		
+		
+ 		
 	</acme:menu-left>
 
 	<acme:menu-right>		

@@ -71,12 +71,12 @@ public class Booking extends AbstractEntity {
 		BookingRepository bookingRepository = SpringHelper.getBean(BookingRepository.class);
 		Integer numberOfPassengers = bookingRepository.getNumberOfPassengersOfBooking(this.getId());
 
-		if (this.getFlightId() == null) {
+		if (this.getFlight() == null) {
 			price.setCurrency("EUR");
 			price.setAmount(0.0);
 			return price;
 		} else {
-			Money flightCost = this.getFlightId().getCost();
+			Money flightCost = this.getFlight().getCost();
 
 			if (flightCost == null) {
 				price.setCurrency("EUR");
@@ -96,11 +96,11 @@ public class Booking extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Flight		flightId;
+	private Flight		flight;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Customer	customerId;
+	private Customer	customer;
 
 }

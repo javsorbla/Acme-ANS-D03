@@ -13,4 +13,6 @@
 	<acme:list-payload path="payload"/>	
 </acme:list>
 
-<acme:button code="airline-manager.flight.list.button.create" action ="/airline-manager/leg/create?masterId=${masterId}"/>
+<jstl:if test="${showCreate}">
+	<acme:button code="airline-manager.flight.list.button.create" action ="/airline-manager/leg/create?flightId=${flightId}"/>
+</jstl:if>

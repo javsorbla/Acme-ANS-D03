@@ -9,15 +9,16 @@ airline-manager.leg.list.label.arrival = Momento de llegada
 airline-manager.leg.list.label.status = Estado
 
 airline-manager.leg.form.label.flightNumber = Número de Vuelo
-airline-manager.leg.form.label.departure = Momento de salida
-airline-manager.leg.form.label.arrival = Momento de llegada
+airline-manager.leg.form.label.departure = Momento de Salida
+airline-manager.leg.form.label.arrival = Momento de Llegada
 airline-manager.leg.form.label.status = Estado
-airline-manager.leg.form.label.duration = Duración
-airline-manager.leg.form.label.aircraft = Avión Desplegado
+airline-manager.leg.form.label.durationInHours = Duración en Horas
+airline-manager.leg.form.label.deployedAircraft = Avión Desplegado
 airline-manager.leg.form.label.departureAirport = Aeropuerto de Salida
 airline-manager.leg.form.label.arrivalAirport = Aeropuerto de Llegada
-airline-manager.leg.form.label.flight = Vuelo
 
 airline-manager.leg.list.button.create = Crear
 airline-manager.leg.form.button.create = Crear
 airline-manager.leg.form.button.update = Actualizar
+airline-manager.leg.form.button.delete = Eliminar
+airline-manager.leg.form.button.publish = Publicar

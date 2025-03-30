@@ -8,20 +8,20 @@
 
 
 <acme:form>
-
-	<jstl:set var="isShowOrUpdate" value="${_command eq 'show' or _command eq 'update'}"/>
 	
-	<acme:input-textbox code ="assistance-agent.claim.form.label.registrationMoment" path = "registrationMoment"/>
+	<acme:input-moment  code ="assistance-agent.claim.form.label.registrationMoment" path = "registrationMoment"/>
 	<acme:input-textbox code ="assistance-agent.claim.form.label.passengerEmail" path ="passengerEmail"/>
-	<acme:input-textbox code ="assistance-agent.claim.form.label.description" path ="description"/>
-	<acme:input-textbox code ="assistance-agent.claim.form.label.type" path ="type"/>
-	<acme:input-textbox code ="assistance-agent.claim.form.label.indicator" path ="indicator" readonly="${isShowOrUpdate}"/>
-	<acme:input-textbox code ="assistance-agent.claim.form.label.assistanceAgent" path ="assistanceAgent" readonly="${isShowOrUpdate}"/>
-	<acme:input-textbox code ="assistance-agent.claim.form.label.leg" path ="leg" readonly="${isShowOrUpdate}"/>
-	<!-- acme:input-integer no va bien -->
+	<acme:input-textarea  code ="assistance-agent.claim.form.label.description" path ="description"/>
+	<acme:input-select  code ="assistance-agent.claim.form.label.type" path ="type" choices= "${types}"/>
+	<acme:input-textbox code ="assistance-agent.claim.form.label.indicator" path ="indicator" readonly="true"/>
+	<acme:input-select code ="assistance-agent.claim.form.label.leg" path ="leg" choices="${legs}"/>
+	
+	
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(_command,'show|update')}">
-			<acme:submit code="assistance-agent.claim.form.button.update" action="/assistance-agent/claim/update/"/>	
+		<jstl:when test="${acme:anyOf(_command,'show|update|delete|publish') && publish == false}">
+			<acme:submit code="assistance-agent.claim.form.button.update" action="/assistance-agent/claim/update/"/>
+			<acme:submit code="assistance-agent.claim.form.button.delete" action="/assistance-agent/claim/delete/"/>
+			<acme:submit code="assistance-agent.claim.form.button.publish" action="/assistance-agent/claim/publish/"/>	
 		</jstl:when>
 		<jstl:when  test="${acme:anyOf(_command,'create')}">
 			<acme:submit code="assistance-agent.claim.form.button.create" action="/assistance-agent/claim/create"/>

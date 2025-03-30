@@ -44,9 +44,11 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 	public void load() {
 		Claim claim;
 		int claimId;
+		Boolean publish;
 
 		claimId = super.getRequest().getData("id", int.class);
 		claim = this.repository.findClaimById(claimId);
+		publish = claim.getPublish();
 
 		super.getBuffer().addData(claim);
 
@@ -58,7 +60,9 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 		Dataset dataset;
 
 		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type");//como metemos las derivadas?
-		dataset.put("indicator", claim.getIndicator());
+		//dataset.put("indicator", claim.getIndicator());
+
+		super.addPayload(dataset, claim, "publish");
 
 		super.getResponse().addData(dataset);
 

@@ -12,7 +12,7 @@ import acme.entities.claims.Claim;
 import acme.realms.assistanceagent.AssistanceAgent;
 
 @GuiService
-public class AssistanceAgentClaimListService extends AbstractGuiService<AssistanceAgent, Claim> {
+public class AssistanceAgentClaimListPendingService extends AbstractGuiService<AssistanceAgent, Claim> {
 
 	//Internal state ---------------------------------------------
 
@@ -30,19 +30,16 @@ public class AssistanceAgentClaimListService extends AbstractGuiService<Assistan
 	@Override
 	public void load() {
 		Collection<Claim> claims;
-		int assistaceAgentId;
+		int agentId;
 
-		assistaceAgentId = super.getRequest().getPrincipal().getActiveRealm().getId();
-
-		claims = this.repository.findAllClaimsByAssistanceAgentId(assistaceAgentId);
+		agentId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		claims = this.repository.findAllPendingClaimsByAgentId(agentId);
 
 		super.getBuffer().addData(claims);
-
 	}
 
 	@Override
 	public void unbind(final Claim claim) {
-
 		Dataset dataset;
 		//ClaimIndicator indicator;
 		Boolean publish = claim.getPublish();
@@ -52,7 +49,6 @@ public class AssistanceAgentClaimListService extends AbstractGuiService<Assistan
 		super.addPayload(dataset, claim, "registrationMoment", "publish");
 
 		super.getResponse().addData(dataset);
-
 	}
 
 }

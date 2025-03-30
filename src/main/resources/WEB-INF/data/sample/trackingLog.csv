@@ -7,7 +7,7 @@ trackingLog-02,2012/07/02 00:00,"Va bien la reclamacion",25.00,ACCEPTED,"Por dec
 trackingLog-03,2000/01/01 00:00,"Va bien la reclamacion",25.00,ACCEPTED,"Por decidir",false,claim-01
 trackingLog-04,2000/01/01 00:01,"Va bien la reclamacion",25.00,ACCEPTED,"Por decidir",false,claim-01
 trackingLog-05,2024/12/31 23:59,"Va bien la reclamacion",25.00,ACCEPTED,"Por decidir",false,claim-01
-trackingLog-06,2025/01/01 00:00,"Va bien la reclamacion",25.00,ACCEPTED,"Por decidir",false,claim-01
+trackingLog-06,2025/01/01 00:00,"Va bien la reclamacion",25.00,PENDING,"Por decidir",false,claim-01
 
 # step
 trackingLog-07,2012/07/02 00:00,"Lorem ipsum dolor sit ame",25.00,ACCEPTED,"Por decidir",false,claim-01

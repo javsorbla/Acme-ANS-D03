@@ -33,5 +33,5 @@
 			<acme:submit code="airline-manager.flight.form.button.create" action="/airline-manager/flight/create"/>
 		</jstl:when>
 	</jstl:choose>
-	<acme:button code="airline-manager.flight.form.button.legs" action="/airline-manager/leg/list?masterId=${id}"/>
+	<acme:button code="airline-manager.flight.form.button.legs" action="/airline-manager/leg/list?flightId=${id}"/>
 </acme:form>

@@ -63,7 +63,6 @@ master.menu.flightcrewmember = Flight Crew Member
 master.menu.flightcrewmember.flightassignments = Flight Assignments
 master.menu.flightcrewmember.flightassignments.flightAssignments-list-completed = List completed flight assignments
 master.menu.flightcrewmember.flightassignments.flightAssignments-list-planned = List planned flight assignments
-master.menu.flightcrewmember.activitylogs.activityLogs-list = List activity logs
 
 # master.menu.technician ########################################################
 master.menu.technician = Technician

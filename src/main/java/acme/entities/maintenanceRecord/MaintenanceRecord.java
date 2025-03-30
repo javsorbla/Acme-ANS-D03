@@ -52,6 +52,11 @@ public class MaintenanceRecord extends AbstractEntity {
 	@Automapped
 	private Money					estimatedCost;
 
+	@Mandatory
+	@Valid
+	@Automapped
+	private Boolean					draftMode;
+
 	// @Optional Attributes -------------------------------------------------------------
 
 	@Optional

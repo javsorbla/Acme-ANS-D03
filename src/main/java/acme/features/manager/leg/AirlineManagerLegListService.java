@@ -32,7 +32,6 @@ public class AirlineManagerLegListService extends AbstractGuiService<AirlineMana
 		flightId = super.getRequest().getData("flightId", int.class);
 		managerId = super.getRequest().getPrincipal().getActiveRealm().getId();
 		flight = this.repository.findFlightById(flightId);
-
 		status = flight != null && flight.getManager().getId() == managerId;
 
 		super.getResponse().setAuthorised(status);
@@ -44,7 +43,6 @@ public class AirlineManagerLegListService extends AbstractGuiService<AirlineMana
 		int flightId;
 
 		flightId = super.getRequest().getData("flightId", int.class);
-
 		legs = this.repository.findAllLegsByFlightId(flightId);
 
 		super.getBuffer().addData(legs);

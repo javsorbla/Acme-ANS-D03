@@ -79,6 +79,7 @@ public class AirlineManagerLegCreateService extends AbstractGuiService<AirlineMa
 		SelectChoices choicesArrivalAirport;
 		Collection<Aircraft> aircrafts;
 		Collection<Airport> airports;
+		int flightId;
 
 		Dataset dataset;
 
@@ -90,11 +91,14 @@ public class AirlineManagerLegCreateService extends AbstractGuiService<AirlineMa
 		choicesDepartureAirport = SelectChoices.from(airports, "iataCode", leg.getDepartureAirport());
 		choicesArrivalAirport = SelectChoices.from(airports, "iataCode", leg.getArrivalAirport());
 
+		flightId = super.getRequest().getData("flightId", int.class);
+
 		dataset = super.unbindObject(leg, "flightNumber", "departure", "arrival");
 		dataset.put("statuses", choicesStatuses);
 		dataset.put("departureAirports", choicesDepartureAirport);
 		dataset.put("arrivalAirports", choicesArrivalAirport);
 		dataset.put("aircrafts", choicesAircrafts);
+		dataset.put("flightId", flightId);
 
 		super.getResponse().addData(dataset);
 	}

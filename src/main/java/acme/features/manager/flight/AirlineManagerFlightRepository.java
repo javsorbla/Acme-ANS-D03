@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.airline.Airline;
 import acme.entities.flight.Flight;
 import acme.realms.manager.AirlineManager;
 
@@ -24,5 +25,8 @@ public interface AirlineManagerFlightRepository extends AbstractRepository {
 
 	@Query("select m from AirlineManager m where m.id = :managerId")
 	AirlineManager findManagerById(int managerId);
+
+	@Query("select a from Airline a")
+	Collection<Airline> findAllAirlines();
 
 }

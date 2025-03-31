@@ -66,7 +66,7 @@ public class Leg extends AbstractEntity {
 
 	@Transient // javax.persistence
 	public Double getDurationInHours() {
-		double durationInH = MomentHelper.computeDuration(this.departure, this.arrival).toHours() * 1.0;
+		double durationInH = MomentHelper.computeDuration(this.departure, this.arrival).toMinutes() / 60.0;
 		return durationInH;
 	}
 

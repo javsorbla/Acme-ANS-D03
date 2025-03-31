@@ -1,9 +1,9 @@
 #validation-es.i18n
 
 acme.validation.flight.publish.message = Un vuelo no puede ser publicado si no tiene al menos un tramo, estando cada tramo publicado
-acme.validation.leg.message = Tramo inválido
-acme.validation.leg.departure.message = Fecha de salida inválida
-acme.validation.leg.arrival.message = Fecha de llegada inválida
+acme.validation.leg.flightNumber.message = El número de vuelo debe estar compuesto por el código IATA de la aerolínea del avión y 4 dígitos
+acme.validation.leg.departure.message = La fecha de salida no puede ser pasada
+acme.validation.leg.arrival.message = La fecha de llegada debe ser al menos un minuto posterior a la de salida
 acme.validation.flight.leg.overlap.message = Hay tramos del vuelo que se solapan
 acme.validation.activitylog.message = Registro de actividades inválido
 acme.validation.activitylog.registrationmoment.message = Momento de registro inválido

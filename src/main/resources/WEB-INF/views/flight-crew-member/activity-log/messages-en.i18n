@@ -16,3 +16,4 @@ flight-crew-member.activity-log.form.label.activityLogAssignment = Flight Assign
 
 flight-crew-member.activity-log.list.button.create = Create
 flight-crew-member.activity-log.form.button.create = Create
+flight-crew-member.activity-log.form.button.update = Update

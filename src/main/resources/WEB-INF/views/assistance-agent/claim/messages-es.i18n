@@ -8,6 +8,7 @@ assistance-agent.claim.list.button.create = Crear
 assistance-agent.claim.list.label.registrationMoment = Momenrto de registro
 assistance-agent.claim.list.label.passengerEmail =  Correo del pasageo
 assistance-agent.claim.list.label.type = Tipo
+assistance-agent.claim.list.label.indicator = Indicador
 
 #Show
 
@@ -19,5 +20,8 @@ assistance-agent.claim.form.label.type = Tipo
 assistance-agent.claim.form.label.indicator = Indicador
 assistance-agent.claim.form.label.assistanceAgent = Agente
 assistance-agent.claim.form.label.leg = Tramo
+assistance-agent.claim.form.label.publish = ¿Publicado?
 assistance-agent.claim.form.button.update = Actualizar
-assistance-agent.claim.form.button.tracking-log = Registros 
+assistance-agent.claim.form.button.delete = Borrar
+assistance-agent.claim.form.button.publish = Publicar
+assistance-agent.claim.form.button.tracking-log = Registros

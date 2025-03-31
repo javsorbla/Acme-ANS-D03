@@ -1,30 +1,30 @@
 key,locatorCode,purchaseMoment,travelClass,lastNibble,publish,key:flight,key:customer
 # base entity
-booking-01,"ABCD123",2022/02/02 00:00,ECONOMY,"1234",true,flight-01,customer-01
+booking-01,"ABCD123",2022/02/02 00:00,ECONOMY,"1234",false,flight-01,customer-01
 # locatorCode - standard variations
-booking-02,"123456",2022/02/02 00:00,ECONOMY,"1234",true,flight-01,customer-01
-booking-03,"12345678",2022/02/02 00:00,ECONOMY,"1234",true,flight-01,customer-01
-booking-04,"ABCDEF",2022/02/02 00:00,ECONOMY,"1234",true,flight-01,customer-02
-booking-05,"ABCDEFGH",2022/02/02 00:00,ECONOMY,"1234",true,flight-01,customer-02
-booking-06,"123ABC",2022/02/02 00:00,ECONOMY,"1234",true,flight-01,customer-02
-booking-07,"AZZ321",2022/02/02 00:00,ECONOMY,"1234",true,flight-01,customer-02
-booking-08,"1234ABCD",2022/02/02 00:00,ECONOMY,"1234",true,flight-01,customer-02
-booking-09,"AZZB3211",2022/02/02 00:00,ECONOMY,"1234",true,flight-01,customer-02
+booking-02,"123456",2022/02/02 00:00,ECONOMY,"1234",false,flight-01,customer-01
+booking-03,"12345678",2022/02/02 00:00,ECONOMY,"1234",false,flight-01,customer-01
+booking-04,"ABCDEF",2022/02/02 00:00,ECONOMY,"1234",false,flight-01,customer-02
+booking-05,"ABCDEFGH",2022/02/02 00:00,ECONOMY,"1234",false,flight-01,customer-02
+booking-06,"123ABC",2022/02/02 00:00,ECONOMY,"1234",false,flight-01,customer-02
+booking-07,"AZZ321",2022/02/02 00:00,ECONOMY,"1234",false,flight-01,customer-02
+booking-08,"1234ABCD",2022/02/02 00:00,ECONOMY,"1234",false,flight-01,customer-02
+booking-09,"AZZB3211",2022/02/02 00:00,ECONOMY,"1234",false,flight-01,customer-02
 # purchaseMoment - standard variations
-booking-10,"AAAA123",2012/07/02 00:00,ECONOMY,"1234",true,flight-01,customer-01
-booking-11,"DDDD123",2000/01/01 00:00,ECONOMY,"1234",true,flight-01,customer-01
-booking-12,"EEEE123",2000/01/01 00:01,ECONOMY,"1234",true,flight-01,customer-01
-booking-13,"FFFF123",2024/12/31 23:59,ECONOMY,"1234",true,flight-01,customer-01
-booking-14,"GGGG123",2025/01/01 00:00,ECONOMY,"1234",true,flight-01,customer-02
+booking-10,"AAAA123",2012/07/02 00:00,ECONOMY,"1234",false,flight-01,customer-01
+booking-11,"DDDD123",2000/01/01 00:00,ECONOMY,"1234",false,flight-01,customer-01
+booking-12,"EEEE123",2000/01/01 00:01,ECONOMY,"1234",false,flight-01,customer-01
+booking-13,"FFFF123",2024/12/31 23:59,ECONOMY,"1234",false,flight-01,customer-01
+booking-14,"GGGG123",2025/01/01 00:00,ECONOMY,"1234",false,flight-01,customer-02
 # travelClass - standard variations
-booking-15,"IIII123",2022/02/02 00:00,ECONOMY,"1234",true,flight-01,customer-01
-booking-16,"JJJJ123",2022/02/02 00:00,BUSINESS,"1234",true,flight-01,customer-02
+booking-15,"IIII123",2022/02/02 00:00,ECONOMY,"1234",false,flight-01,customer-01
+booking-16,"JJJJ123",2022/02/02 00:00,BUSINESS,"1234",false,flight-01,customer-02
 # lastNibble - standard variations
-booking-17,"RRRR123",2022/02/02 00:00,ECONOMY,"1234",true,flight-17,customer-02
-booking-18,"SSSS123",2022/02/02 00:00,ECONOMY,"6789",true,flight-01,customer-02
-booking-19,"TTTT123",2022/02/02 00:00,ECONOMY,"0000",true,flight-01,customer-01
-booking-20,"VVVV123",2022/02/02 00:00,ECONOMY,"0001",true,flight-01,customer-01
-booking-21,"ZZZZ123",2022/02/02 00:00,ECONOMY,"9999",true,flight-01,customer-01
+booking-17,"RRRR123",2022/02/02 00:00,ECONOMY,"1234",false,flight-17,customer-02
+booking-18,"SSSS123",2022/02/02 00:00,ECONOMY,"6789",false,flight-01,customer-02
+booking-19,"TTTT123",2022/02/02 00:00,ECONOMY,"0000",false,flight-01,customer-01
+booking-20,"VVVV123",2022/02/02 00:00,ECONOMY,"0001",false,flight-01,customer-01
+booking-21,"ZZZZ123",2022/02/02 00:00,ECONOMY,"9999",false,flight-01,customer-01
 # publish - standard variations 
 booking-22,"WWWW123",2022/02/02 00:00,ECONOMY,"1234",true,flight-01,customer-01
 booking-23,"XXXX123",2022/02/02 00:00,ECONOMY,"1234",false,flight-01,customer-01

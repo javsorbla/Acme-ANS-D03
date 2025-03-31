@@ -6,3 +6,5 @@ customer.booking.list.title = Mis Reservas
  customer.booking.list.label.lastNibble = Ultimos dígitos de la tarjeta
  customer.booking.list.label.publish = Publicado
  customer.booking.list.label.price= Precio
+  customer.booking.list.label.flight = Id Vuelo
+   customer.booking.form.title = Detalles de la reserva

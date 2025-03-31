@@ -16,7 +16,10 @@ public class CustomerBookingController extends AbstractGuiController<Customer, B
 	//Internal state --------------------------------------------------------------
 
 	@Autowired
-	protected CustomerBookingListService listService;
+	protected CustomerBookingListService	listService;
+
+	@Autowired
+	protected CustomerBookingShowService	showService;
 
 	//Constructors ----------------------------------------------------------------
 
@@ -24,5 +27,6 @@ public class CustomerBookingController extends AbstractGuiController<Customer, B
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("list", this.listService);
+		super.addBasicCommand("show", this.showService);
 	}
 }

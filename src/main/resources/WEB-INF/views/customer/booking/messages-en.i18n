@@ -5,4 +5,6 @@ customer.booking.list.title = My Bookings
  customer.booking.list.label.travelClass = Travel Class
  customer.booking.list.label.lastNibble = Last Nibble
  customer.booking.list.label.publish = Publish
- customer.booking.list.label.price= Price
+ customer.booking.list.label.price = Price
+ customer.booking.list.label.flight = Flight Id
+ customer.booking.form.title = Booking details

@@ -34,10 +34,10 @@ public class BookingValidator extends AbstractValidator<ValidBooking, Booking> {
 
 		boolean result;
 
-		if (booking == null || booking.getLocatorCode() == null || booking.getLocatorCode() == null)
+		if (booking == null || booking.getLocatorCode() == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else if (StringHelper.isBlank(booking.getLocatorCode()))
-			super.state(context, false, "identifier", "javax.validation.constraints.NotBlank.message");
+			super.state(context, false, "locatorCode", "javax.validation.constraints.NotBlank.message");
 		else {
 
 			boolean uniqueBooking;
@@ -45,7 +45,7 @@ public class BookingValidator extends AbstractValidator<ValidBooking, Booking> {
 
 			existingBooking = this.repository.findBookingByLocatorCode(booking.getLocatorCode());
 			uniqueBooking = existingBooking == null || existingBooking.equals(booking);
-			super.state(context, uniqueBooking, "identifier", "acme.validation.booking.locator.code.duplicated.message");
+			super.state(context, uniqueBooking, "locatorCode", "acme.validation.booking.locator.code.duplicated.message");
 
 		}
 

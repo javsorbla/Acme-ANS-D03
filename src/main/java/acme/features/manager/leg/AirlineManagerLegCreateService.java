@@ -63,7 +63,7 @@ public class AirlineManagerLegCreateService extends AbstractGuiService<AirlineMa
 
 	@Override
 	public void validate(final Leg leg) {
-		;//hay que hacer unas cuantas, por lo que sea;
+		;
 	}
 
 	@Override

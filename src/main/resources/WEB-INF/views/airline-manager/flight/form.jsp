@@ -12,7 +12,7 @@
 	<acme:input-textbox code = "airline-manager.flight.form.label.tag" path = "tag"/>
 	<acme:input-checkbox code ="airline-manager.flight.form.label.requiresSelfTransfer" path ="requiresSelfTransfer"/>
 	<acme:input-money code ="airline-manager.flight.form.label.cost" path ="cost"/>
-	<acme:input-textbox code ="airline-manager.flight.form.label.description" path ="description"/>
+	<acme:input-textarea code ="airline-manager.flight.form.label.description" path ="description"/>
 	<acme:input-select code ="airline-manager.flight.form.label.airline" path ="airline" choices="${airlines}"/>
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command,'show|update|delete|publish')}">

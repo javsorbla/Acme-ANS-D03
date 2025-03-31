@@ -52,14 +52,15 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 				super.state(context, arrivalIsAfterDeparture, "arrival", "acme.validation.leg.arrival.message");
 			}
 
-			if (leg.getDeployedAircraft() != null) {
-				boolean containsIATA;
-				String iataFromAirline = leg.getDeployedAircraft().getAirline().getIataCode();
-				containsIATA = StringHelper.startsWith(leg.getFlightNumber(), iataFromAirline, false); //must be in upper case
-				super.state(context, containsIATA, "flightNumber", "acme.validation.leg.flight.number.message");
-			}
-
 			if (leg.getFlightNumber() != null) {
+
+				if (leg.getDeployedAircraft() != null) {
+					boolean containsIATA;
+					String iataFromAirline = leg.getDeployedAircraft().getAirline().getIataCode();
+					containsIATA = StringHelper.startsWith(leg.getFlightNumber(), iataFromAirline, false); //must be in upper case
+					super.state(context, containsIATA, "flightNumber", "acme.validation.leg.flight.number.message");
+				}
+
 				boolean uniqueLeg;
 				Leg existingLeg;
 

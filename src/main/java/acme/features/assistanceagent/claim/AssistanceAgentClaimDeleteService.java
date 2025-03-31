@@ -59,7 +59,7 @@ public class AssistanceAgentClaimDeleteService extends AbstractGuiService<Assist
 
 	@Override
 	public void validate(final Claim claim) {
-
+		;
 	}
 
 	@Override
@@ -74,18 +74,18 @@ public class AssistanceAgentClaimDeleteService extends AbstractGuiService<Assist
 	@Override
 	public void unbind(final Claim claim) {
 		Collection<Leg> legs;
-		SelectChoices choices;
-		SelectChoices choices2;
+		SelectChoices typesChoices;
+		SelectChoices legsChoices;
 		Dataset dataset;
 
-		choices = SelectChoices.from(ClaimType.class, claim.getType());
+		typesChoices = SelectChoices.from(ClaimType.class, claim.getType());
 		legs = this.repository.findAllLeg();
-		choices2 = SelectChoices.from(legs, "flightNumber", claim.getLeg());
+		legsChoices = SelectChoices.from(legs, "flightNumber", claim.getLeg());
 
 		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "publish");
-		dataset.put("types", choices);
-		dataset.put("leg", choices2.getSelected().getKey());
-		dataset.put("legs", choices2);
+		dataset.put("types", typesChoices);
+		dataset.put("leg", legsChoices.getSelected().getKey());
+		dataset.put("legs", legsChoices);
 
 		super.getResponse().addData(dataset);
 	}

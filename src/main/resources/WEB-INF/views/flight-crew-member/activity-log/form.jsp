@@ -11,6 +11,11 @@
 	<acme:input-textbox code="flight-crew-member.activity-log.form.label.incidentType" path="incidentType"/>
 	<acme:input-textbox code="flight-crew-member.activity-log.form.label.description" path="description"/>
 	<acme:input-integer code="flight-crew-member.activity-log.form.label.severityLevel" path="severityLevel"/>
-	<acme:input-select code="flight-crew-member.activity-log.form.label.activityLogAssignment" path="activityLogAssignment" choices="${flightAssignmentChoice }"/>
+	<acme:input-select code="flight-crew-member.activity-log.form.label.activityLogAssignment" path="activityLogAssignment" choices="${flightAssignmentChoice }" readonly="true"/>
 	
+	<jstl:choose>
+		<jstl:when test="${acme:anyOf(_command,'create') }">
+			<acme:submit code="flight-crew-member.activity-log.form.button.create" action="/flight-crew-member/activity-log/create?masterId=${masterId }"/>
+		</jstl:when>
+	</jstl:choose>	
 </acme:form>

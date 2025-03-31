@@ -6,6 +6,7 @@ acme.validation.leg.departure.message = Invalid departure date
 acme.validation.leg.arrival.message = Invalid arrival date
 acme.validation.flight.leg.overlap.message = Legs overlapping
 acme.validation.activitylog.message = Invalid activity log
+acme.validation.activitylog.registrationmoment.required = Registration moment cannot be null
 acme.validation.activitylog.registrationmoment.message = Invalid registration moment
 acme.validation.airlinemanager.identifier.message = Invalid manager identifier
 acme.validation.airline.identifier.duplicated.message = Duplicated manager identifier

@@ -6,6 +6,7 @@ acme.validation.leg.departure.message = Fecha de salida inválida
 acme.validation.leg.arrival.message = Fecha de llegada inválida
 acme.validation.flight.leg.overlap.message = Hay tramos del vuelo que se solapan
 acme.validation.activitylog.message = Registro de actividades inválido
+acme.validation.activitylog.registrationmoment.required = El momento de registro no puede ser nulo
 acme.validation.activitylog.registrationmoment.message = Momento de registro inválido
 acme.validation.airlinemanager.identifier.message = Identificador de mánager inválido
 acme.validation.airline.identifier.duplicated.message = Identificador de mánager duplicado

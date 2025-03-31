@@ -11,3 +11,4 @@ customer.booking.form.title = Booking details
 customer.booking.form.error.duplicate.locator.code = Error duplicated locator code
 customer.booking.list.button.create = Create booking
 customer.booking.list.button.update = Update booking
+customer.booking.form.button.publish = Publish booking

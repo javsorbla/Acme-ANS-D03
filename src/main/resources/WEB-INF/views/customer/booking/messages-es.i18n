@@ -11,3 +11,4 @@ customer.booking.form.title = Detalles de la reserva
 customer.booking.form.error.duplicate.locator.code = Código localizador duplicado
 customer.booking.list.button.create = Crear reserva
 customer.booking.list.button.update = Actualizar reserva
+customer.booking.form.button.publish = Publicar reserva

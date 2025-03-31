@@ -57,8 +57,7 @@ master.menu.user-account.consumer-profile = Perfil de consumidor
 
 # master.menu.manager ########################################################
 master.menu.airline-manager = Mánager de Aerolínea
-master.menu.airline-manager.flights = Vuelos
-master.menu.airline-manager.flights.flights-list = Lista de vuelos
+master.menu.airline-manager.flights-list = Lista de Vuelos
 
 # master.menu.flightcrewmember ########################################################
 master.menu.flightcrewmember = Miembro de la tripulación del vuelo

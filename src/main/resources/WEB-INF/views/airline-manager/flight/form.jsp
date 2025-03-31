@@ -13,8 +13,9 @@
 	<acme:input-checkbox code ="airline-manager.flight.form.label.requiresSelfTransfer" path ="requiresSelfTransfer"/>
 	<acme:input-money code ="airline-manager.flight.form.label.cost" path ="cost"/>
 	<acme:input-textbox code ="airline-manager.flight.form.label.description" path ="description"/>
+	<acme:input-select code ="airline-manager.flight.form.label.airline" path ="airline" choices="${airlines}"/>
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(_command,'show|delete|publish')}">
+		<jstl:when test="${acme:anyOf(_command,'show|update|delete|publish')}">
 			<acme:input-moment code ="airline-manager.flight.form.label.scheduledDeparture" path ="scheduledDeparture" readonly="true"/>
 			<acme:input-moment code ="airline-manager.flight.form.label.scheduledArrival" path ="scheduledArrival" readonly="true"/>
 			<acme:input-textbox code ="airline-manager.flight.form.label.originCity" path ="originCity" readonly="true"/>
@@ -33,5 +34,9 @@
 			<acme:submit code="airline-manager.flight.form.button.create" action="/airline-manager/flight/create"/>
 		</jstl:when>
 	</jstl:choose>
-	<acme:button code="airline-manager.flight.form.button.legs" action="/airline-manager/leg/list?flightId=${id}"/>
+	<jstl:choose>
+		<jstl:when test="${acme:anyOf(_command,'show|update|delete|publish')}">
+			<acme:button code="airline-manager.flight.form.button.legs" action="/airline-manager/leg/list?flightId=${id}"/>
+		</jstl:when>
+	</jstl:choose>
 </acme:form>

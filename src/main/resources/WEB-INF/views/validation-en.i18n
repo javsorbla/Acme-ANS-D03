@@ -15,6 +15,7 @@ acme.validation.flightcrewmember.employee.code.duplicated.message = Duplicated e
 acme.validation.technician.identifier.message = Invalid identifier
 acme.validation.customer.identifier.duplicated.message = Identifier duplicated
 acme.validation.leg.flight.number.duplicated.message = Flight number duplicated
+acme.validation.leg.flight.number.message = Flight Number must start with IATA
 acme.validation.assistanceagent.identifier.message = Invalid employee code
 acme.validation.assistanceagent.employeeCode.duplicated.message = Employee code duplicated
 acme.validation.booking.locator.code.message = Invalid locator code

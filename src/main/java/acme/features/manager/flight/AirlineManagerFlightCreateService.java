@@ -30,19 +30,14 @@ public class AirlineManagerFlightCreateService extends AbstractGuiService<Airlin
 
 		flight = new Flight();
 		flight.setManager(manager);
+		flight.setPublish(false);
+
 		super.getBuffer().addData(flight);
 	}
 
 	@Override
 	public void bind(final Flight flight) {
-		int managerId;
-		AirlineManager manager;
-
-		managerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		manager = this.repository.findManagerById(managerId);
-
 		super.bindObject(flight, "tag", "requiresSelfTransfer", "cost", "description");
-		flight.setManager(manager);
 	}
 
 	@Override
@@ -52,8 +47,6 @@ public class AirlineManagerFlightCreateService extends AbstractGuiService<Airlin
 
 	@Override
 	public void perform(final Flight flight) {
-		assert flight != null;
-
 		this.repository.save(flight);
 	}
 
@@ -62,8 +55,6 @@ public class AirlineManagerFlightCreateService extends AbstractGuiService<Airlin
 		Dataset dataset;
 
 		dataset = super.unbindObject(flight, "tag", "requiresSelfTransfer", "cost", "description");
-
-		//put values from derived attributes in dataset?
 
 		super.getResponse().addData(dataset);
 	}

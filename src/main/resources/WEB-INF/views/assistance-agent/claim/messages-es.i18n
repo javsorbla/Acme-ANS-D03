@@ -21,6 +21,7 @@ assistance-agent.claim.form.label.indicator = Indicador
 assistance-agent.claim.form.label.assistanceAgent = Agente
 assistance-agent.claim.form.label.leg = Tramo
 assistance-agent.claim.form.label.publish = ¿Publicado?
+assistance-agent.claim.form.button.create = Crear
 assistance-agent.claim.form.button.update = Actualizar
 assistance-agent.claim.form.button.delete = Borrar
 assistance-agent.claim.form.button.publish = Publicar

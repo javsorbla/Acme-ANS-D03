@@ -60,7 +60,11 @@ public class TechnicianMaintenanceRecordPublishService extends AbstractGuiServic
 
 	@Override
 	public void validate(final MaintenanceRecord maintenanceRecord) {
+		int id;
+		id = super.getRequest().getData("id", int.class);
 
+		if (!this.getBuffer().getErrors().hasErrors("draftMode") && maintenanceRecord.getDraftMode() != null)
+			super.state(this.repository.findPublishedTaskOfMaintenanceRecord(id) > 0, "draftMode", "technician.maintenance-record.form.error.draftMode", maintenanceRecord);
 	}
 
 	@Override

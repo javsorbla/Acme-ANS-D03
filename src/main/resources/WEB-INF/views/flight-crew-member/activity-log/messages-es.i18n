@@ -18,3 +18,4 @@ flight-crew-member.activity-log.list.button.create = Crear
 
 flight-crew-member.activity-log.form.button.create = Crear
 flight-crew-member.activity-log.form.button.update = Actualizar
+flight-crew-member.activity-log.form.button.delete = Eliminar

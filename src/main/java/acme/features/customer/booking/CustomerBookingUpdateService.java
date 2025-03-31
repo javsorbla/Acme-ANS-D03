@@ -15,7 +15,7 @@ import acme.entities.flight.Flight;
 import acme.realms.customer.Customer;
 
 @GuiService
-public class CustomerBookingShowService extends AbstractGuiService<Customer, Booking> {
+public class CustomerBookingUpdateService extends AbstractGuiService<Customer, Booking> {
 
 	//Internal state ---------------------------------------------
 
@@ -40,23 +40,40 @@ public class CustomerBookingShowService extends AbstractGuiService<Customer, Boo
 
 	@Override
 	public void load() {
-		Booking booking;
-		int id = super.getRequest().getData("id", int.class);
 
-		booking = this.repository.getBookingById(id);
+		int id = super.getRequest().getData("id", int.class);
+		Booking booking = this.repository.getBookingById(id);
+
 		super.getBuffer().addData(booking);
 	}
 
 	@Override
+	public void bind(final Booking booking) {
+		super.bindObject(booking, "flight", "locatorCode", "travelClass", "price", "lastNibble");
+	}
+
+	@Override
+	public void validate(final Booking booking) {
+
+	}
+
+	@Override
+	public void perform(final Booking booking) {
+		booking.setPublish(false);
+		this.repository.save(booking);
+	}
+
+	@Override
 	public void unbind(final Booking booking) {
-		assert booking != null;
 		Dataset dataset;
-		SelectChoices travelClasses = SelectChoices.from(TypeTravelClass.class, booking.getTravelClass());
+		SelectChoices travelClasses;
+
+		travelClasses = SelectChoices.from(TypeTravelClass.class, booking.getTravelClass());
 
 		Collection<Flight> flights = this.repository.findAllFlights();
 		SelectChoices flightChoices = SelectChoices.from(flights, "id", booking.getFlight());
 
-		dataset = super.unbindObject(booking, "locatorCode", "purchaseMoment", "travelClass", "price", "lastNibble", "publish", "id");
+		dataset = super.unbindObject(booking, "flight", "locatorCode", "purchaseMoment", "travelClass", "price", "lastNibble", "publish", "id");
 		dataset.put("travelClasses", travelClasses);
 		dataset.put("flights", flightChoices);
 

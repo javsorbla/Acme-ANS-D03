@@ -11,8 +11,9 @@
     <acme:input-double code="customer.booking.list.label.price" path="price" readonly="true"/>
     
     <jstl:choose>
-		   <jstl:when test="${acme:anyOf(_command,'show|update') && publish == false}">
+		   <jstl:when test="${acme:anyOf(_command,'show|update|publish') && publish == false}">
 				<acme:submit code="customer.booking.list.button.update" action="/customer/booking/update"/>
+				<acme:submit code="customer.booking.form.button.publish" action="/customer/booking/publish"/>
 		</jstl:when>
 		
      	<jstl:when test="${acme:anyOf(_command,'create') }">

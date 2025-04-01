@@ -12,3 +12,4 @@ customer.booking.form.error.duplicate.locator.code = Código localizador duplica
 customer.booking.list.button.create = Crear reserva
 customer.booking.list.button.update = Actualizar reserva
 customer.booking.form.button.publish = Publicar reserva
+customer.booking.form.add.passenger = Añadir pasajero

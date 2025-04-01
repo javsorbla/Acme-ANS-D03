@@ -34,7 +34,7 @@ public class ActivityLogDeleteService extends AbstractGuiService<FlightCrewMembe
 		activityLog = this.repository.findActivityLogById(activityLogId);
 		flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
-		status = activityLog != null && activityLog.getActivityLogAssignment().getFlightAssignmentCrewMember().getId() == flightCrewMemberId;
+		status = activityLog != null && !activityLog.isPublish() && activityLog.getActivityLogAssignment().getFlightAssignmentCrewMember().getId() == flightCrewMemberId;
 
 		super.getResponse().setAuthorised(status);
 	}

@@ -26,17 +26,13 @@ public class ActivityLogPublishService extends AbstractGuiService<FlightCrewMemb
 	@Override
 	public void authorise() {
 		boolean status;
-		int masterId;
-		int flightCrewMemberId;
-		FlightAssignment flightAssignment;
+		int acitivityLogId;
 		ActivityLog activityLog;
 
-		flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		masterId = super.getRequest().getData("masterId", int.class);
-		flightAssignment = this.repository.findFlightAssignmentById(masterId);
-		activityLog = this.repository.findActivityLogById(masterId);
+		acitivityLogId = super.getRequest().getData("id", int.class);
+		activityLog = this.repository.findActivityLogById(acitivityLogId);
 
-		status = !activityLog.isPublish() && flightAssignment != null && flightAssignment.isPublish() && activityLog.getActivityLogAssignment().getFlightAssignmentCrewMember().getId() == flightCrewMemberId;
+		status = activityLog != null && !activityLog.isPublish() && activityLog.getActivityLogAssignment() != null && activityLog.getActivityLogAssignment().isPublish();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -44,17 +40,22 @@ public class ActivityLogPublishService extends AbstractGuiService<FlightCrewMemb
 	@Override
 	public void load() {
 		ActivityLog activityLog;
-		int masterId;
+		int id;
 
-		masterId = super.getRequest().getData("masterId", int.class);
-		activityLog = this.repository.findActivityLogById(masterId);
+		id = super.getRequest().getData("id", int.class);
+		activityLog = this.repository.findActivityLogById(id);
 
 		super.getBuffer().addData(activityLog);
 	}
 
 	@Override
 	public void bind(final ActivityLog activityLog) {
-		super.bindObject(activityLog, "registrationMomenr", "incidentType", "description", "severityLevel", "activityLogAssignment");
+		super.bindObject(activityLog, "registrationMoment", "incidentType", "description", "severityLevel", "activityLogAssignment");
+	}
+
+	@Override
+	public void validate(final ActivityLog activityLog) {
+		;
 	}
 
 	@Override

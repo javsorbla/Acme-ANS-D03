@@ -29,10 +29,11 @@ public class AssistanceAgentClaimPublishService extends AbstractGuiService<Assis
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int claimId;
 		Claim claim;
 		AssistanceAgent assistanceAgent;
+
+		boolean status;
+		int claimId;
 
 		claimId = super.getRequest().getData("id", int.class);
 		claim = this.repository.findClaimById(claimId);
@@ -72,10 +73,10 @@ public class AssistanceAgentClaimPublishService extends AbstractGuiService<Assis
 	//CUANDO SE ARREGLE EL BUG TEMPORAL SE PODRAN USAR ALGUNA DE LAS LINEAS COMENTADAS 
 	@Override
 	public void unbind(final Claim claim) {
+		Dataset dataset;
 		Collection<Leg> legs;
 		SelectChoices typesChoices;
 		SelectChoices legsChoices;
-		Dataset dataset;
 
 		Date actualMoment;
 

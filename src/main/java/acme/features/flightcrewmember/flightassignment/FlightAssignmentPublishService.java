@@ -57,11 +57,19 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 
 	@Override
 	public void validate(final FlightAssignment flightAssignment) {
-		int id;
-		id = super.getRequest().getPrincipal().getActiveRealm().getId();
+		int flightCrewMemberId;
+		boolean availableMember;
+		boolean completedLeg;
 
-		if (!this.getBuffer().getErrors().hasErrors("publish"))
-			super.state(this.repository.findFlightCrewMemberById(id).getAvailabilityStatus().equals(AvailabilityStatus.AVAILABLE), "flightAssignmentCrewMember", "acme.validation.flightassignment.flightcrewmember.available.message", flightAssignment);
+		flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+
+		availableMember = this.repository.findFlightCrewMemberById(flightCrewMemberId).getAvailabilityStatus().equals(AvailabilityStatus.AVAILABLE);
+		completedLeg = MomentHelper.isBefore(flightAssignment.getFlightAssignmentLeg().getArrival(), MomentHelper.getCurrentMoment());
+
+		if (!this.getBuffer().getErrors().hasErrors("publish")) {
+			super.state(availableMember, "flightAssignmentCrewMember", "acme.validation.flightassignment.flightcrewmember.available.message", flightAssignment);
+			super.state(!completedLeg, "flightAssignmentLeg", "acme.validation.flightassignment.leg.completed.message", flightAssignment);
+		}
 	}
 
 	@Override

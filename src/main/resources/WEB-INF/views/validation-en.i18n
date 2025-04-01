@@ -21,6 +21,7 @@ acme.validation.customer.identifier.message = Invalid identifier
 acme.validation.flightcrewmember.employee.code.message = Invalid employee code
 acme.validation.flightcrewmember.employee.code.duplicated.message = Duplicated employee code
 acme.validation.flightassignment.flightcrewmember.available.message = Only available members can be assigned
+acme.validation.flightassignment.leg.completed.message = The assignment cannot be linked to a completed leg
 
 acme.validation.technician.identifier.message = Invalid identifier
 

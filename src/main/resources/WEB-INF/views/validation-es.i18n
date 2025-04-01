@@ -57,4 +57,3 @@ acme.validation.phone.number.message = Número de teléfono inválido
 acme.validation.service.promo.code = Código de promoción inválido
 
 acme.validation.employee.code.message= Codigo de empleeado no valido
-

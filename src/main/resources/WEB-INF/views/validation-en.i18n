@@ -59,5 +59,3 @@ acme.validation.service.promo.code = Invalid promotion code
 
 acme.validation.employee.code.message= Invalid employee code
 
-
-

@@ -22,6 +22,3 @@ airline-manager.leg.form.button.create = Crear
 airline-manager.leg.form.button.update = Actualizar
 airline-manager.leg.form.button.delete = Eliminar
 airline-manager.leg.form.button.publish = Publicar
-
-airline-manager.leg.form.validation.overlapped = El tramo está solapado con algún otro tramo publicado y no cancelado
-airline-manaeg.leg.form.validation.used-aircraft = El avión ya está asignado a otro leg en el mismo intervalo de tiempo

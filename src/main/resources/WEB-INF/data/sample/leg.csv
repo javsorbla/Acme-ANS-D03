@@ -2,10 +2,10 @@ key,flightNumber,departure,arrival,status,publish,key:deployedAircraft,key:depar
 ## base
 leg-01,"ABC1234",2025/09/01 10:00,2025/09/01 10:01,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-01
 
-# no solapamiento de cara a la publicacion posterior (y variaciones de aeropuertos por logica)
-leg-02,"ABC1111",2025/09/01 10:02,2025/09/01 10:03,ON_TIME,false,aircraft-01,airport-02,airport-01,flight-01
-leg-03,"ABC2222",2025/09/01 10:04,2025/09/01 10:05,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-01
-leg-04,"ABC3333",2025/09/01 10:06,2025/09/01 10:07,ON_TIME,false,aircraft-01,airport-02,airport-01,flight-01
+# no solapamiento de cara a la publicacion posterior (variaciones de aeropuertos por logica y publicados para datos de otros students)
+leg-02,"ABC1111",2025/09/01 10:02,2025/09/01 10:03,ON_TIME,true,aircraft-01,airport-02,airport-01,flight-01
+leg-03,"ABC2222",2025/09/01 10:04,2025/09/01 10:05,ON_TIME,true,aircraft-01,airport-01,airport-02,flight-01
+leg-04,"ABC3333",2025/09/01 10:06,2025/09/01 10:07,ON_TIME,true,aircraft-01,airport-02,airport-01,flight-01
 
 # flightNumber - standard variations (unique)
 leg-05,"ABC0000",2025/09/01 10:00,2025/09/01 10:01,ON_TIME,false,aircraft-01,airport-01,airport-02,flight-02

@@ -8,7 +8,7 @@ booking-04,"ABCDEF",2022/02/02 00:00,ECONOMY,"1234",false,flight-28,customer-02
 booking-05,"ABCDEFGH",2022/02/02 00:00,ECONOMY,"1234",false,flight-28,customer-02
 booking-06,"123ABC",2022/02/02 00:00,ECONOMY,"1234",false,flight-28,customer-02
 booking-07,"AZZ321",2022/02/02 00:00,ECONOMY,"1234",false,flight-28,customer-02
-booking-08,"1234ABCD",2022/02/02 00:00,ECONOMY,"1234",false,flight28,customer-02
+booking-08,"1234ABCD",2022/02/02 00:00,ECONOMY,"1234",false,flight-28,customer-02
 booking-09,"AZZB3211",2022/02/02 00:00,ECONOMY,"1234",false,flight-28,customer-02
 # purchaseMoment - standard variations
 booking-10,"AAAA123",2012/07/02 00:00,ECONOMY,"1234",false,flight-28,customer-01

@@ -1,0 +1,6 @@
+customer.passenger.list.title = Lista de pasajeros
+customer.passenger.list.label.fullName = Nombre completo
+customer.passenger.list.label.passportNumber = Número de pasaporte
+customer.passenger.list.label.dateOfBirth = Fecha de nacimiento
+customer.passenger.list.label.email = Email
+customer.passenger.list.label.publish = Publicado

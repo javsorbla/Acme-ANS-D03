@@ -14,6 +14,7 @@ import acme.entities.flightassignment.CurrentStatus;
 import acme.entities.flightassignment.Duty;
 import acme.entities.flightassignment.FlightAssignment;
 import acme.entities.leg.Leg;
+import acme.realms.flightcrewmember.AvailabilityStatus;
 import acme.realms.flightcrewmember.FlightCrewMember;
 
 @GuiService
@@ -56,7 +57,11 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 
 	@Override
 	public void validate(final FlightAssignment flightAssignment) {
-		;
+		int id;
+		id = super.getRequest().getPrincipal().getActiveRealm().getId();
+
+		if (!this.getBuffer().getErrors().hasErrors("publish"))
+			super.state(this.repository.findFlightCrewMemberById(id).getAvailabilityStatus().equals(AvailabilityStatus.AVAILABLE), "flightAssignmentCrewMember", "acme.validation.flightassignment.flightcrewmember.available.message", flightAssignment);
 	}
 
 	@Override
@@ -86,7 +91,7 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 		flightCrewMembers = this.repository.findAllFlightCrewMembers();
 		flightCrewMemberChoice = SelectChoices.from(flightCrewMembers, "id", flightAssignment.getFlightAssignmentCrewMember());
 
-		dataset = super.unbindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "flightAssignmentLeg", "flightAssignmentCrewMember");
+		dataset = super.unbindObject(flightAssignment, "duty", "lastUpdateMoment", "currentStatus", "remarks", "publish", "flightAssignmentLeg", "flightAssignmentCrewMember");
 		dataset.put("dutyChoice", dutyChoice);
 		dataset.put("currentStatusChoice", currentStatusChoice);
 		dataset.put("legChoice", legChoice);

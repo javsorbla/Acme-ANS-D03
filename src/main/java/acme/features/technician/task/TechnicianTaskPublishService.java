@@ -62,7 +62,7 @@ public class TechnicianTaskPublishService extends AbstractGuiService<Technician,
 
 	@Override
 	public void perform(final Task task) {
-		task.setDraftMode(false);
+		task.setPublished(true);
 		this.repository.save(task);
 	}
 
@@ -73,7 +73,7 @@ public class TechnicianTaskPublishService extends AbstractGuiService<Technician,
 		Dataset dataset;
 		choices = SelectChoices.from(TaskType.class, task.getType());
 
-		dataset = super.unbindObject(task, "type", "description", "priority", "estimatedDuration", "draftMode");
+		dataset = super.unbindObject(task, "type", "description", "priority", "estimatedDuration", "published");
 		dataset.put("type", choices.getSelected().getKey());
 
 		super.getResponse().addData(dataset);

@@ -63,13 +63,13 @@ public class TechnicianMaintenanceRecordPublishService extends AbstractGuiServic
 		int id;
 		id = super.getRequest().getData("id", int.class);
 
-		if (!this.getBuffer().getErrors().hasErrors("draftMode") && maintenanceRecord.getDraftMode() != null)
-			super.state(this.repository.findPublishedTaskOfMaintenanceRecord(id) > 0, "draftMode", "technician.maintenance-record.form.error.draftMode", maintenanceRecord);
+		if (!this.getBuffer().getErrors().hasErrors("published") && maintenanceRecord.getPublished() != null)
+			super.state(this.repository.findPublishedTaskOfMaintenanceRecord(id) > 0, "published", "technician.maintenance-record.form.error.published", maintenanceRecord);
 	}
 
 	@Override
 	public void perform(final MaintenanceRecord maintenanceRecord) {
-		maintenanceRecord.setDraftMode(false);
+		maintenanceRecord.setPublished(true);
 		this.repository.save(maintenanceRecord);
 	}
 
@@ -84,7 +84,7 @@ public class TechnicianMaintenanceRecordPublishService extends AbstractGuiServic
 		choices = SelectChoices.from(MaintenanceRecordStatus.class, maintenanceRecord.getStatus());
 		aircraft = SelectChoices.from(aircrafts, "id", maintenanceRecord.getAircraft());
 
-		dataset = super.unbindObject(maintenanceRecord, "status", "nextInspectionDate", "estimatedCost", "notes", "aircraft", "draftMode");
+		dataset = super.unbindObject(maintenanceRecord, "status", "nextInspectionDate", "estimatedCost", "notes", "aircraft", "published");
 
 		dataset.put("status", choices.getSelected().getKey());
 		dataset.put("status", choices);

@@ -38,7 +38,7 @@ public class TechnicianMaintenanceRecordCreateService extends AbstractGuiService
 		Technician technician = (Technician) super.getRequest().getPrincipal().getActiveRealm();
 
 		maintenanceRecord = new MaintenanceRecord();
-		maintenanceRecord.setDraftMode(true);
+		maintenanceRecord.setPublished(false);
 		maintenanceRecord.setTechnician(technician);
 		maintenanceRecord.setMoment(moment);
 		super.getBuffer().addData(maintenanceRecord);

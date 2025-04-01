@@ -29,4 +29,4 @@ technician.maintenance-record.form.error.nextInspectionDate =  The date and time
 technician.maintenance-record.form.error.estimatedCost = The estimated cost must be greater than or equal to 0.00, and less than or equal to 1000000.00
 technician.maintenance-record.form.error.notes = The maximum length of notes is 255 characters
 technician.maintenance-record.form.error.aircraft = The selected aircraft does not exist
-technician.maintenance-record.form.error.draftMode = To publish a record it has to be at least 1 published task related to this record
+technician.maintenance-record.form.error.published = To publish a record it has to be at least 1 published task related to this record

@@ -19,7 +19,10 @@
 		<jstl:when test="${acme:anyOf(_command,'show|update|delete|publish') && published == false}">
 			<acme:submit code="technician.maintenance-record.form.button.publish" action="/technician/maintenance-record/publish"/>
 			<acme:submit code="technician.maintenance-record.form.button.update" action="/technician/maintenance-record/update"/>	
-			<acme:submit code="technician.maintenance-record.form.button.delete" action="/technician/maintenance-record/delete"/>	
+			<acme:submit code="technician.maintenance-record.form.button.delete" action="/technician/maintenance-record/delete"/>
+			<jstl:if test="${_command != 'create'}">
+				<acme:button code="technician.maintenance-record.form.add.task" action="/technician/involves/create?maintenanceRecordId=${id}"/>
+			</jstl:if>
 		</jstl:when>
 		<jstl:when  test="${acme:anyOf(_command,'create')}">
 			<acme:submit code="technician.maintenance-record.form.button.create" action="/technician/maintenance-record/create"/>

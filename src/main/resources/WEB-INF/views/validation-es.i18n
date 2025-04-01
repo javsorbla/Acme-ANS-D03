@@ -20,6 +20,7 @@ acme.validation.customer.identifier.message = Identificador incorrecto
 acme.validation.flightcrewmember.employee.code.message = Código de empleado incorrecto
 acme.validation.flightcrewmember.employee.code.duplicated.message = Código de empleado duplicado
 acme.validation.flightassignment.flightcrewmember.available.message = Solo se pueden asignar miembros disponibles
+acme.validation.flightassignment.leg.completed.message = No puedes asignar la tarea a un tramo que ya ha ocurrido
 
 acme.validation.technician.identifier.message = Identificador incorrecto
 

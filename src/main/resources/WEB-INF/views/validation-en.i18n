@@ -24,6 +24,16 @@ acme.validation.flightassignment.flightcrewmember.available.message = Only avail
 acme.validation.flightassignment.leg.completed.message = The assignment cannot be linked to a completed leg
 
 acme.validation.technician.identifier.message = Invalid identifier
+acme.validation.technician.maintenance-record.noStatus.message = Any status has been selected
+acme.validation.technician.maintenance-record.nextInspectionDate.message =  The date and time of the next inspection must be after the current moment
+acme.validation.technician.maintenance-record.estimatedCost.message = The estimated cost must be greater than or equal to 0.00, and less than or equal to 1000000.00
+acme.validation.technician.maintenance-record.notes.message = The maximum length of notes is 255 characters
+acme.validation.technician.maintenance-record.aircraft.message = The selected aircraft does not exist
+acme.validation.technician.maintenance-record.published.message = To publish a record it has to be at least 1 published task related to this record
+acme.validation.technician.task.noType.message = Any type has been selected
+acme.validation.technician.task.description.message =  The maximum length of description is 255 characters
+acme.validation.technician.task.priority.message = The priority must be greater than or equal to 0, and less than or equal to 10
+acme.validation.technician.task.estimatedDuration.message = The estimated duration must be greater than or equal to 0, and less than or equal to 1000
 
 acme.validation.customer.identifier.duplicated.message = Identifier duplicated
 
@@ -48,3 +58,4 @@ acme.validation.phone.number.message = Invalid phone number
 acme.validation.service.promo.code = Invalid promotion code
 
 acme.validation.employee.code.message= Invalid employee code
+

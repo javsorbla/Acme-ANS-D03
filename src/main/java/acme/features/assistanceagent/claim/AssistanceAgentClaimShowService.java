@@ -2,11 +2,13 @@
 package acme.features.assistanceagent.claim;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.claims.Claim;
@@ -61,30 +63,35 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 	}
 
 	//Revisar este metodo ya que hay cosas inconclusa 
+	//CUANDO SE ARREGLE EL BUG TEMPORAL DE LAS LEGS SE USARA LA LINEA COMENTADA
 	@Override
 	public void unbind(final Claim claim) {
 
 		Dataset dataset;
 		ClaimIndicator indicator;
-
 		Collection<Leg> legs;
+		SelectChoices typesChoices;
+		SelectChoices legsChoices;
 
-		SelectChoices choices;
-		SelectChoices choices2;
+		Date actualMoment;
+
+		actualMoment = MomentHelper.getCurrentMoment();
 
 		indicator = claim.getIndicator();
-		choices = SelectChoices.from(ClaimType.class, claim.getType());
+		typesChoices = SelectChoices.from(ClaimType.class, claim.getType());
+		//legs = this.repository.findAllPublishedLegsBefore(actualMoment);
+		//legs = this.repository.findAllPublishedLegs();
 		legs = this.repository.findAllLeg();
-		choices2 = SelectChoices.from(legs, "flightNumber", claim.getLeg());
+		legsChoices = SelectChoices.from(legs, "flightNumber", claim.getLeg());
 
 		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "publish");
-		dataset.put("types", choices);
-		dataset.put("leg", choices2.getSelected().getKey());
-		dataset.put("legs", choices2);
+		dataset.put("types", typesChoices);
+		dataset.put("leg", legsChoices.getSelected().getKey());
+		//dataset.put("leg", legsChoices);
+		dataset.put("legs", legsChoices);
 		dataset.put("indicator", indicator);
 
 		super.getResponse().addData(dataset);
 
 	}
-
 }

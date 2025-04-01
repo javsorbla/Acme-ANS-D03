@@ -12,6 +12,7 @@ airline-manager.flight.form.label.tag = Tag
 airline-manager.flight.form.label.requiresSelfTransfer = Requires Self Transfer
 airline-manager.flight.form.label.cost = Cost
 airline-manager.flight.form.label.description = Description
+airline-manager.flight.form.label.airline = Airline
 airline-manager.flight.form.label.scheduledDeparture = Scheduled Departure
 airline-manager.flight.form.label.scheduledArrival = Scheduled Arrival
 airline-manager.flight.form.label.originCity = Origin City

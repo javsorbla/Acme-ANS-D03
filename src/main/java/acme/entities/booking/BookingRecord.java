@@ -26,11 +26,11 @@ public class BookingRecord extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Booking				bookingId;
+	private Booking				booking;
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Passenger			passengerId;
+	private Passenger			passenger;
 
 }

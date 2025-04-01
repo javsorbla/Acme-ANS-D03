@@ -1,56 +1,56 @@
-key,fullName,email,passportNumber,dateOfBirth,specialNeeds,publish
+key,fullName,email,passportNumber,dateOfBirth,specialNeeds,publish,key:customer
 # base entity
-passenger-01,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
+passenger-01,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
 # fullName - standard variations
-passenger-02,"Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","diegocustomer@acme.com",ABC12345,2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-03,"L","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-04,"Lo","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-05,"Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-06,"Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
+passenger-02,"Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","diegocustomer@acme.com",ABC12345,2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-03,"L","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-04,"Lo","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-05,"Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-06,"Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
 # fullName - no singular values
-passenger-07,"โลเร็ม อิปซัม","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-08,"لوريم إيبسوم","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-09,"洛伦·伊普森","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-10,"<marquee>Hacked</marquee>","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-11,"<script>alert(‘Hacked!’);</script>","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-12,"'' or 'A' = 'A ","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
+passenger-07,"โลเร็ม อิปซัม","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-08,"لوريم إيبسوم","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-09,"洛伦·伊普森","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-10,"<marquee>Hacked</marquee>","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-11,"<script>alert(‘Hacked!’);</script>","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-12,"'' or 'A' = 'A ","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
 # email - standard variations
-passenger-13,"Diego Customer","acme@lorem-ipsum.org","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-14,"Diego Customer","acmepassword@lorem-ipsum.org","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-15,"Diego Customer","a@b.e","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-16,"Diego Customer","a@b.es","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-17,"Diego Customer","a@b.esx","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-18,"Diego Customer","lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-19,"Diego Customer","lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
+passenger-13,"Diego Customer","acme@lorem-ipsum.org","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-14,"Diego Customer","acmepassword@lorem-ipsum.org","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-15,"Diego Customer","a@b.e","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-16,"Diego Customer","a@b.es","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-17,"Diego Customer","a@b.esx","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-18,"Diego Customer","lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-19,"Diego Customer","lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
 # passportNumber - standard variations
-passenger-20,"Diego Customer","diegocustomer@acme.com","ABCDEF",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-21,"Diego Customer","diegocustomer@acme.com","ABCDEFGHI",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-22,"Diego Customer","diegocustomer@acme.com","123456",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-23,"Diego Customer","diegocustomer@acme.com","123456789",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-24,"Diego Customer","diegocustomer@acme.com","ABC123",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-25,"Diego Customer","diegocustomer@acme.com","123ABC",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-26,"Diego Customer","diegocustomer@acme.com","12345ABCD",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-27,"Diego Customer","diegocustomer@acme.com","ABCDE1234",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
+passenger-20,"Diego Customer","diegocustomer@acme.com","ABCDEF",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-21,"Diego Customer","diegocustomer@acme.com","ABCDEFGHI",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-22,"Diego Customer","diegocustomer@acme.com","123456",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-23,"Diego Customer","diegocustomer@acme.com","123456789",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-24,"Diego Customer","diegocustomer@acme.com","ABC123",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-25,"Diego Customer","diegocustomer@acme.com","123ABC",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-26,"Diego Customer","diegocustomer@acme.com","12345ABCD",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-27,"Diego Customer","diegocustomer@acme.com","ABCDE1234",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
 # dateOfBirth - standard variations
-passenger-28,"Diego Customer","diegocustomer@acme.com","AAA12345",2012/07/02 00:00,"No tengo ninguna necesidad especial",true
-passenger-29,"Diego Customer","diegocustomer@acme.com","BBB12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-30,"Diego Customer","diegocustomer@acme.com","CCC12345",2000/01/01 00:01,"No tengo ninguna necesidad especial",true
-passenger-31,"Diego Customer","diegocustomer@acme.com","DDD12345",2024/12/31 23:59,"No tengo ninguna necesidad especial",true
-passenger-32,"Diego Customer","diegocustomer@acme.com","EEE12345",2025/01/01 00:00,"No tengo ninguna necesidad especial",true
+passenger-28,"Diego Customer","diegocustomer@acme.com","AAA12345",2012/07/02 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-29,"Diego Customer","diegocustomer@acme.com","BBB12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-30,"Diego Customer","diegocustomer@acme.com","CCC12345",2000/01/01 00:01,"No tengo ninguna necesidad especial",true,customer-01
+passenger-31,"Diego Customer","diegocustomer@acme.com","DDD12345",2024/12/31 23:59,"No tengo ninguna necesidad especial",true,customer-01
+passenger-32,"Diego Customer","diegocustomer@acme.com","EEE12345",2025/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
 # specialNeeds - standard variations
-passenger-33,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"Lorem ipsum dolor sit ame",true
-passenger-34,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"",true
-passenger-35,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"L",true
-passenger-36,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"Lo",true
-passenger-37,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"Lorem ipsum dolor sit amet. consectetur adipiscin",true
-passenger-38,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"Lorem ipsum dolor sit amet. consectetur adipiscing",true
+passenger-33,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"Lorem ipsum dolor sit ame",true,customer-01
+passenger-34,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"",true,customer-01
+passenger-35,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"L",true,customer-01
+passenger-36,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"Lo",true,customer-01
+passenger-37,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"Lorem ipsum dolor sit amet. consectetur adipiscin",true,customer-01
+passenger-38,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"Lorem ipsum dolor sit amet. consectetur adipiscing",true,customer-01
 # specialNeeds - no singular values
-passenger-39,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"โลเร็ม อิปซัม",true
-passenger-40,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"لوريم إيبسوم",true
-passenger-41,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"洛伦·伊普森",true
-passenger-42,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"<marquee>Hacked</marquee>",true
-passenger-43,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"<script>alert(‘Hacked!’);</script>",true
-passenger-44,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"'' or 'A' = 'A ",true
+passenger-39,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"โลเร็ม อิปซัม",true,customer-01
+passenger-40,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"لوريم إيبسوم",true,customer-01
+passenger-41,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"洛伦·伊普森",true,customer-01
+passenger-42,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"<marquee>Hacked</marquee>",true,customer-01
+passenger-43,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"<script>alert(‘Hacked!’);</script>",true,customer-01
+passenger-44,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"'' or 'A' = 'A ",true,customer-01
 # publish - standard variations
-passenger-45,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true
-passenger-46,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",false
+passenger-45,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",true,customer-01
+passenger-46,"Diego Customer","diegocustomer@acme.com","ABC12345",2000/01/01 00:00,"No tengo ninguna necesidad especial",false,customer-01

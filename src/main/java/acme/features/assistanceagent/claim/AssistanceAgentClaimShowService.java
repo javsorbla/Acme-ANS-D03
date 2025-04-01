@@ -1,12 +1,18 @@
 
 package acme.features.assistanceagent.claim;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.claims.Claim;
+import acme.entities.claims.ClaimIndicator;
+import acme.entities.claims.ClaimType;
+import acme.entities.leg.Leg;
 import acme.realms.assistanceagent.AssistanceAgent;
 
 @GuiService
@@ -57,12 +63,25 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 	//Revisar este metodo ya que hay cosas inconclusa 
 	@Override
 	public void unbind(final Claim claim) {
+
 		Dataset dataset;
+		ClaimIndicator indicator;
 
-		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type");//como metemos las derivadas?
-		//dataset.put("indicator", claim.getIndicator());
+		Collection<Leg> legs;
 
-		super.addPayload(dataset, claim, "publish");
+		SelectChoices choices;
+		SelectChoices choices2;
+
+		indicator = claim.getIndicator();
+		choices = SelectChoices.from(ClaimType.class, claim.getType());
+		legs = this.repository.findAllLeg();
+		choices2 = SelectChoices.from(legs, "flightNumber", claim.getLeg());
+
+		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "publish");
+		dataset.put("types", choices);
+		dataset.put("leg", choices2.getSelected().getKey());
+		dataset.put("legs", choices2);
+		dataset.put("indicator", indicator);
 
 		super.getResponse().addData(dataset);
 

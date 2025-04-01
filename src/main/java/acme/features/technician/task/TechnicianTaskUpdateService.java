@@ -83,7 +83,7 @@ public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, 
 		Dataset dataset;
 		choices = SelectChoices.from(TaskType.class, task.getType());
 
-		dataset = super.unbindObject(task, "type", "description", "priority", "estimatedDuration", "draftMode");
+		dataset = super.unbindObject(task, "type", "description", "priority", "estimatedDuration", "published");
 
 		dataset.put("type", choices.getSelected().getKey());
 		dataset.put("type", choices);

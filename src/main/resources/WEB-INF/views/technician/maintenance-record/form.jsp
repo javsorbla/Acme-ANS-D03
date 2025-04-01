@@ -16,9 +16,10 @@
 	<acme:input-select code = "technician.maintenance-record.form.label.aircraft" path = "aircraft" choices="${aircraft}"/>
 	
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(_command,'show|update|delete') }">
-			<acme:submit code="technician.maintenance-record.form.button.update" action="/technician/maintenance-record/update"/>	
-			<acme:submit code="technician.maintenance-record.form.button.delete" action="/technician/maintenance-record/delete"/>	
+		<jstl:when test="${acme:anyOf(_command,'show|update|delete|publish') && published == false}">
+			<acme:submit code="technician.maintenance-record.form.button.publish" action="/technician/maintenance-record/publish?id=${id}"/>
+			<acme:submit code="technician.maintenance-record.form.button.update" action="/technician/maintenance-record/update?id=${id}"/>	
+			<acme:submit code="technician.maintenance-record.form.button.delete" action="/technician/maintenance-record/delete?id=${id}"/>	
 		</jstl:when>
 		<jstl:when  test="${acme:anyOf(_command,'create')}">
 			<acme:submit code="technician.maintenance-record.form.button.create" action="/technician/maintenance-record/create"/>

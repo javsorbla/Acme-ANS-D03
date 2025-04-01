@@ -15,7 +15,7 @@ import acme.entities.maintenanceRecord.MaintenanceRecordStatus;
 import acme.realms.technician.Technician;
 
 @GuiService
-public class TechnicianMaintenanceRecordDeleteService extends AbstractGuiService<Technician, MaintenanceRecord> {
+public class TechnicianMaintenanceRecordPublishService extends AbstractGuiService<Technician, MaintenanceRecord> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -60,12 +60,17 @@ public class TechnicianMaintenanceRecordDeleteService extends AbstractGuiService
 
 	@Override
 	public void validate(final MaintenanceRecord maintenanceRecord) {
+		int id;
+		id = super.getRequest().getData("id", int.class);
 
+		if (!this.getBuffer().getErrors().hasErrors("published") && maintenanceRecord.getPublished() != null)
+			super.state(this.repository.findPublishedTaskOfMaintenanceRecord(id) > 0, "published", "technician.maintenance-record.form.error.published", maintenanceRecord);
 	}
 
 	@Override
 	public void perform(final MaintenanceRecord maintenanceRecord) {
-		this.repository.delete(maintenanceRecord);
+		maintenanceRecord.setPublished(true);
+		this.repository.save(maintenanceRecord);
 	}
 
 	@Override
@@ -82,7 +87,9 @@ public class TechnicianMaintenanceRecordDeleteService extends AbstractGuiService
 		dataset = super.unbindObject(maintenanceRecord, "status", "nextInspectionDate", "estimatedCost", "notes", "aircraft", "published");
 
 		dataset.put("status", choices.getSelected().getKey());
+		dataset.put("status", choices);
 		dataset.put("aircraft", aircraft.getSelected().getKey());
+		dataset.put("aircraft", aircraft);
 
 		super.getResponse().addData(dataset);
 	}

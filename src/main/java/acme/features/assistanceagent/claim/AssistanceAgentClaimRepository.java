@@ -2,6 +2,7 @@
 package acme.features.assistanceagent.claim;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -28,6 +29,12 @@ public interface AssistanceAgentClaimRepository extends AbstractRepository {
 
 	@Query("SELECT l FROM Leg l")
 	Collection<Leg> findAllLeg();
+
+	@Query("SELECT l FROM Leg l WHERE l.publish = true AND l.arrival < :maxArrivalDate")
+	Collection<Leg> findAllPublishedLegsBefore(Date maxArrivalDate);
+
+	@Query("SELECT l FROM Leg l WHERE l.publish = true")
+	Collection<Leg> findAllPublishedLegs();
 
 	@Query("SELECT l FROM Leg l WHERE l.id = :id")
 	Leg findLegById(int id);

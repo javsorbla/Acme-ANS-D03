@@ -39,17 +39,19 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 		if (leg == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
-			if (leg.getArrival() != null && leg.getDeparture() != null) {
+			if (leg.getDeparture() != null) {
 				boolean departureIsFuture = MomentHelper.isPresentOrFuture(leg.getDeparture());
 				super.state(context, departureIsFuture, "departure", "acme.validation.leg.departure.message");
 
-				boolean arrivalIsAfterDeparture;
-				//Using delta = 1 minute and considering duration is a derived attribute
-				//Solution using framework, but is using ChronoUnit correct?
-				Date minMoment = MomentHelper.deltaFromMoment(leg.getDeparture(), 1, ChronoUnit.MINUTES);
-				//Date minMoment = new Date(leg.getDeparture().getTime() + 1 * 60 * 1000); //without framework
-				arrivalIsAfterDeparture = MomentHelper.isAfterOrEqual(leg.getArrival(), minMoment);
-				super.state(context, arrivalIsAfterDeparture, "arrival", "acme.validation.leg.arrival.message");
+				if (leg.getArrival() != null) {
+					boolean arrivalIsAfterDeparture;
+					//Using delta = 1 minute and considering duration is a derived attribute
+					//Solution using framework, but is using ChronoUnit correct?
+					Date minMoment = MomentHelper.deltaFromMoment(leg.getDeparture(), 1, ChronoUnit.MINUTES);
+					//Date minMoment = new Date(leg.getDeparture().getTime() + 1 * 60 * 1000); //without framework
+					arrivalIsAfterDeparture = MomentHelper.isAfterOrEqual(leg.getArrival(), minMoment);
+					super.state(context, arrivalIsAfterDeparture, "arrival", "acme.validation.leg.arrival.message");
+				}
 			}
 
 			if (leg.getFlightNumber() != null) {
@@ -67,6 +69,14 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 				existingLeg = this.repository.findLegByFlightNumber(leg.getFlightNumber());
 				uniqueLeg = existingLeg == null || existingLeg.equals(leg);
 				super.state(context, uniqueLeg, "flightNumber", "acme.validation.leg.flight.number.duplicated.message");
+			}
+
+			if (leg.getArrivalAirport() != null && leg.getDepartureAirport() != null) {
+				boolean differentAirports;
+
+				differentAirports = !leg.getDepartureAirport().equals(leg.getArrivalAirport());
+				super.state(context, differentAirports, "departureAirport", "acme.validation.leg.airport.sameAirport");
+				super.state(context, differentAirports, "arrivalAirport", "acme.validation.leg.airport.sameAirport");
 			}
 
 		}

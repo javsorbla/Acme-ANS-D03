@@ -61,7 +61,6 @@ public class AirlineManagerLegShowService extends AbstractGuiService<AirlineMana
 		SelectChoices choicesArrivalAirport;
 		Collection<Aircraft> aircrafts;
 		Collection<Airport> airports;
-
 		Dataset dataset;
 
 		choicesStatuses = SelectChoices.from(LegStatus.class, leg.getStatus());

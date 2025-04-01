@@ -15,6 +15,7 @@ technician.maintenance-record.form.button.create = Crear
 technician.maintenance-record.form.button.update = Actualizar
 technician.maintenance-record.form.button.delete = Borrar
 technician.maintenance-record.form.button.publish = Publicar
+technician.maintenance-record.form.add.task = Añadir tarea
 
 technician.maintenance-record.form.label.moment = Momento
 technician.maintenance-record.form.label.status = Estado

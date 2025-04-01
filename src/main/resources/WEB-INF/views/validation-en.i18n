@@ -22,6 +22,7 @@ acme.validation.flightcrewmember.employee.code.message = Invalid employee code
 acme.validation.flightcrewmember.employee.code.duplicated.message = Duplicated employee code
 acme.validation.flightassignment.flightcrewmember.available.message = Only available members can be assigned
 acme.validation.flightassignment.leg.completed.message = The assignment cannot be linked to a completed leg
+acme.validation.flightassignment.leg.overlap.message = Legs cannot be overlapped
 
 acme.validation.technician.identifier.message = Invalid identifier
 

@@ -2,6 +2,7 @@
 package acme.features.flightcrewmember.flightassignment;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -47,4 +48,6 @@ public interface FlightAssignmentRepository extends AbstractRepository {
 	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.flightAssignmentLeg.id = :id AND fa.duty = 'COPILOT'")
 	Collection<FlightAssignment> findFlightAssignmentWithCopilotByLegId(int id);
 
+	@Query("SELECT fa.flightAssignmentLeg FROM FlightAssignment fa WHERE fa.flightAssignmentCrewMember.id = :flightCrewMemberId ORDER BY fa.flightAssignmentLeg.departure ASC")
+	List<Leg> findLegsByMemberId(int flightCrewMemberId);
 }

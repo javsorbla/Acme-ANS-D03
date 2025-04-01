@@ -22,6 +22,3 @@ airline-manager.leg.form.button.create = Create
 airline-manager.leg.form.button.update = Update
 airline-manager.leg.form.button.delete = Delete
 airline-manager.leg.form.button.publish = Publish
-
-airline-manager.leg.form.validation.overlapped = Leg is overlapping with another published and not cancelled leg
-airline-manaeg.leg.form.validation.used-aircraft = Aircraft is already assigned to another leg in the same time interval

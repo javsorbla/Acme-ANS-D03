@@ -71,15 +71,15 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 			|| flightLegs.stream().filter(l -> !l.equals(leg) && l.isPublish() && l.getStatus() != LegStatus.CANCELLED) //Solo importa que no se solape con los ya publicados y no cancelados
 				.noneMatch(l -> MomentHelper.isInRange(leg.getDeparture(), l.getDeparture(), l.getArrival()) || MomentHelper.isInRange(leg.getArrival(), l.getDeparture(), l.getArrival()));
 
-		super.state(notOverlapping, "departure", "airline-manager.leg.form.validation.overlapped");
-		super.state(notOverlapping, "arrival", "airline-manager.leg.form.validation.overlapped");
+		super.state(notOverlapping, "departure", "acme.validation.leg.overlapped");
+		super.state(notOverlapping, "arrival", "acme.validation.leg.overlapped");
 
 		Integer aircraftId;
 		aircraftId = leg.getDeployedAircraft() != null ? leg.getDeployedAircraft().getId() : null;
 		Integer numberOfLegsDeployingAircraft = this.repository.findNumberOfLegsDeployingSameAircraft(leg.getDeparture(), leg.getArrival(), LegStatus.CANCELLED, aircraftId);
 		aircraftNotUsed = leg.getStatus() == LegStatus.CANCELLED || numberOfLegsDeployingAircraft == 0; //Si el leg se ha cancelado no importa que se asigne un aircraft usado
 
-		super.state(aircraftNotUsed, "deployedAircraft", "airline-manaeg.leg.form.validation.used-aircraft");
+		super.state(aircraftNotUsed, "deployedAircraft", "acme.validation.leg.used-aircraft");
 	}
 
 	@Override

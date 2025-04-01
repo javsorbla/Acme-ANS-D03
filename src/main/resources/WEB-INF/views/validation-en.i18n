@@ -1,12 +1,18 @@
 #validation-en.i18n
 
 acme.validation.flight.publish.message = Flight can only be published if it has one leg or more. All of them must be published as well
+acme.validation.flight.leg.overlap.message = Legs overlapping
+acme.validation.flight.delete-when-published = Can't delete a published flight
+acme.validation.flight.delete-legs-published = Can't delete a flight with published legs
 
 acme.validation.leg.flightNumber.message = Flight number must be composed of the aircraft's airline IATA code and 4 digits
 acme.validation.leg.departure.message = Departure date can't be in the past
 acme.validation.leg.arrival.message = Arrival date must be at least one minute after departure date
-
-acme.validation.flight.leg.overlap.message = Legs overlapping
+acme.validation.leg.overlapped = Leg is overlapping with another published and not cancelled leg
+acme.validation.leg.used-aircraft = Aircraft is already assigned to another leg in the same time interval
+acme.validation.leg.flight.number.duplicated.message = Flight number duplicated
+acme.validation.leg.flight.number.message = Flight Number must start with IATA
+acme.validation.leg.airport.sameAirport = Arrival and departure airports must be different
 
 acme.validation.activitylog.message = Invalid activity log
 acme.validation.activitylog.registrationmoment.required = Registration moment cannot be null
@@ -26,10 +32,6 @@ acme.validation.flightassignment.leg.completed.message = The assignment cannot b
 acme.validation.technician.identifier.message = Invalid identifier
 
 acme.validation.customer.identifier.duplicated.message = Identifier duplicated
-
-acme.validation.leg.flight.number.duplicated.message = Flight number duplicated
-acme.validation.leg.flight.number.message = Flight Number must start with IATA
-acme.validation.leg.airport.sameAirport = Arrival and departure airports must be different
 
 acme.validation.assistanceagent.identifier.message = Invalid employee code
 acme.validation.assistanceagent.employeeCode.duplicated.message = Employee code duplicated

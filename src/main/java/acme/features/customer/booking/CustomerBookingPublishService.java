@@ -13,6 +13,7 @@ import acme.client.services.GuiService;
 import acme.entities.booking.Booking;
 import acme.entities.booking.TypeTravelClass;
 import acme.entities.flight.Flight;
+import acme.entities.passenger.Passenger;
 import acme.realms.customer.Customer;
 
 @GuiService
@@ -54,7 +55,16 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 
 	@Override
 	public void validate(final Booking booking) {
+		boolean atLeastOnePassenger;
+		boolean allPassengerPublished;
+		Collection<Passenger> bookingPassengers;
 
+		bookingPassengers = this.repository.findAllPassengersByBookingId(booking.getId());
+		atLeastOnePassenger = !bookingPassengers.isEmpty();
+		allPassengerPublished = bookingPassengers.stream().allMatch(b -> b.isPublish());
+
+		super.state(atLeastOnePassenger, "*", "acme.validation.booking.publish-no-passengers");
+		super.state(allPassengerPublished, "*", "acme.validation.booking.publish-passengers-not-published");
 	}
 
 	@Override

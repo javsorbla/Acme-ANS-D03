@@ -54,6 +54,8 @@ acme.validation.booking.locator.code.message = Código localizador incorrecto
 acme.validation.booking.locator.code.duplicated.message = Código localizador duplicado
 acme.validation.booking.last.nibble.message = Últimos 4 digitos de la tarjeta de crédito incorrectos
 acme.validation.booking.passport.number.message = Número de pasaporte incorrecto
+acme.validation.booking.publish-no-passengers = No puede publicar esta reserva debido a que no hay ningún pasajero asociado
+acme.validation.booking.publish-passengers-not-published = No puede publicar esta reserva debido a que hay pasajeros no publicados asociados 
 
 acme.validation.iata.code.message = Código IATA inválido
 

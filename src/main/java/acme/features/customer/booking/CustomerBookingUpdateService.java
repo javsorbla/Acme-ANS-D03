@@ -28,21 +28,19 @@ public class CustomerBookingUpdateService extends AbstractGuiService<Customer, B
 	@Override
 	public void authorise() {
 		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
-
 		super.getResponse().setAuthorised(status);
 
 		int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
 		int bookingId = super.getRequest().getData("id", int.class);
-		Booking booking = this.repository.getBookingById(bookingId);
+		Booking booking = this.repository.findBookingById(bookingId);
 
 		super.getResponse().setAuthorised(customerId == booking.getCustomer().getId());
 	}
 
 	@Override
 	public void load() {
-
 		int id = super.getRequest().getData("id", int.class);
-		Booking booking = this.repository.getBookingById(id);
+		Booking booking = this.repository.findBookingById(id);
 
 		super.getBuffer().addData(booking);
 	}
@@ -66,15 +64,13 @@ public class CustomerBookingUpdateService extends AbstractGuiService<Customer, B
 	@Override
 	public void unbind(final Booking booking) {
 		Dataset dataset;
-		SelectChoices travelClasses;
-
-		travelClasses = SelectChoices.from(TypeTravelClass.class, booking.getTravelClass());
-
-		Collection<Flight> flights = this.repository.findAllFlights();
+		SelectChoices typeTravelClasses;
+		typeTravelClasses = SelectChoices.from(TypeTravelClass.class, booking.getTravelClass());
+		Collection<Flight> flights = this.repository.findAllPublishFlights();
 		SelectChoices flightChoices = SelectChoices.from(flights, "id", booking.getFlight());
 
 		dataset = super.unbindObject(booking, "flight", "locatorCode", "purchaseMoment", "travelClass", "price", "lastNibble", "publish", "id");
-		dataset.put("travelClasses", travelClasses);
+		dataset.put("travelClasses", typeTravelClasses);
 		dataset.put("flights", flightChoices);
 
 		super.getResponse().addData(dataset);

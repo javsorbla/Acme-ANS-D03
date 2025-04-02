@@ -1,4 +1,4 @@
-key,key:bookingId,key:passengerId
+key,key:booking,key:passenger
 bookingRecord-01,booking-01,passenger-01
 bookingRecord-02,booking-01,passenger-02
 bookingRecord-03,booking-01,passenger-03

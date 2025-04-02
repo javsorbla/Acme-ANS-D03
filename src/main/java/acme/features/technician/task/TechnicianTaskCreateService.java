@@ -32,7 +32,7 @@ public class TechnicianTaskCreateService extends AbstractGuiService<Technician, 
 		Technician technician = (Technician) super.getRequest().getPrincipal().getActiveRealm();
 
 		task = new Task();
-		task.setDraftMode(true);
+		task.setPublished(false);
 		task.setTechnician(technician);
 
 		super.getBuffer().addData(task);
@@ -47,16 +47,16 @@ public class TechnicianTaskCreateService extends AbstractGuiService<Technician, 
 	public void validate(final Task task) {
 
 		if (!this.getBuffer().getErrors().hasErrors("type"))
-			super.state(task.getType() != null, "type", "technician.task.form.error.noType", task);
+			super.state(task.getType() != null, "type", "acme.validation.technician.task.noType.message", task);
 
 		if (!this.getBuffer().getErrors().hasErrors("description") && task.getDescription() != null)
-			super.state(task.getDescription().length() <= 255, "description", "technician.task.form.error.description", task);
+			super.state(task.getDescription().length() <= 255, "description", "acme.validation.technician.task.description.message", task);
 
 		if (!this.getBuffer().getErrors().hasErrors("priority") && task.getPriority() != null)
-			super.state(0 <= task.getPriority() && task.getPriority() <= 10, "priority", "technician.task.form.error.priority", task);
+			super.state(0 <= task.getPriority() && task.getPriority() <= 10, "priority", "acme.validation.technician.task.priority.message", task);
 
 		if (!this.getBuffer().getErrors().hasErrors("estimatedDuration") && task.getEstimatedDuration() != null)
-			super.state(0 <= task.getEstimatedDuration() && task.getEstimatedDuration() <= 1000, "estimatedDuration", "technician.task.form.error.estimatedDuration", task);
+			super.state(0 <= task.getEstimatedDuration() && task.getEstimatedDuration() <= 1000, "estimatedDuration", "acme.validation.technician.task.estimatedDuration.message", task);
 	}
 
 	@Override
@@ -71,7 +71,7 @@ public class TechnicianTaskCreateService extends AbstractGuiService<Technician, 
 		Dataset dataset;
 		choices = SelectChoices.from(TaskType.class, task.getType());
 
-		dataset = super.unbindObject(task, "type", "description", "priority", "estimatedDuration", "draftMode");
+		dataset = super.unbindObject(task, "type", "description", "priority", "estimatedDuration", "published");
 
 		dataset.put("type", choices.getSelected().getKey());
 		dataset.put("type", choices);

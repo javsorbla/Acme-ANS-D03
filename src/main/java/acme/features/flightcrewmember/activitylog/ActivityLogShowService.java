@@ -43,11 +43,11 @@ public class ActivityLogShowService extends AbstractGuiService<FlightCrewMember,
 	@Override
 	public void load() {
 		ActivityLog activityLog;
-		int activityLogId;
+		int id;
 
-		activityLogId = super.getRequest().getData("id", int.class);
+		id = super.getRequest().getData("id", int.class);
 
-		activityLog = this.repository.findActivityLogById(activityLogId);
+		activityLog = this.repository.findActivityLogById(id);
 
 		super.getBuffer().addData(activityLog);
 	}

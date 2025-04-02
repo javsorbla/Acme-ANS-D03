@@ -77,6 +77,6 @@ master.menu.customer.passengers-list = Passengers List = Listado de pasajeros
 
 # master.menu.menu.assistance-agent ##########################################################
 master.menu.assistance-agent.claims = Reclamaciones
-master.menu.assistance-agent.claims.claims-list = Lista de reclamaciones completadas
+master.menu.assistance-agent.claims.claims-list = Lista de reclamaciones 
 master.menu.assistance-agent.claims.list-claims-pending = Lista de reclamaciones pendientes
 

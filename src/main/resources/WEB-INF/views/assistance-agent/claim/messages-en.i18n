@@ -9,6 +9,7 @@ assistance-agent.claim.list.label.registrationMoment = Registration moment
 assistance-agent.claim.list.label.passengerEmail =  Passenger email
 assistance-agent.claim.list.label.type = Type
 assistance-agent.claim.list.label.indicator = Indicator
+assistance-agent.claim.list.label.publish = Publish?
 
 #Show
 

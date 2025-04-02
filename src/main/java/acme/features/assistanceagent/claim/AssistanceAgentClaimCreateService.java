@@ -41,14 +41,13 @@ public class AssistanceAgentClaimCreateService extends AbstractGuiService<Assist
 		//El momento cogeremos el actual ficticio
 		Date registrationMoment = MomentHelper.getCurrentMoment();
 
-		//llenamos el obeto vacio
 		claim = new Claim();
 		claim.setRegistrationMoment(registrationMoment);
 
-		claim.setPassengerEmail("");
-		claim.setDescription("");
+		//		claim.setPassengerEmail("");
+		//		claim.setDescription("");
 		claim.setAssistanceAgent(agent);
-		claim.setType(ClaimType.FLIGHT_ISSUES);
+		//		claim.setType(ClaimType.FLIGHT_ISSUES);
 
 		claim.setPublish(false);
 

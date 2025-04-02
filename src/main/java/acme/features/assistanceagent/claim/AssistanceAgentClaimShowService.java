@@ -33,18 +33,16 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 	public void authorise() {
 		Claim claim;
 		int claimId;
-		int clainAgentId;
 		int agentId;
-		boolean owned;
+		boolean status;
 
 		claimId = super.getRequest().getData("id", int.class);
 		claim = this.repository.findClaimById(claimId);
+		agentId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
-		agentId = super.getRequest().getPrincipal().getAccountId();
-		clainAgentId = claim.getAssistanceAgent().getUserAccount().getId();
-		owned = clainAgentId == agentId;
+		status = claim != null && claim.getAssistanceAgent().getId() == agentId;
 
-		super.getResponse().setAuthorised(owned);
+		super.getResponse().setAuthorised(status);
 
 	}
 
@@ -52,11 +50,9 @@ public class AssistanceAgentClaimShowService extends AbstractGuiService<Assistan
 	public void load() {
 		Claim claim;
 		int claimId;
-		Boolean publish;
 
 		claimId = super.getRequest().getData("id", int.class);
 		claim = this.repository.findClaimById(claimId);
-		publish = claim.getPublish();
 
 		super.getBuffer().addData(claim);
 

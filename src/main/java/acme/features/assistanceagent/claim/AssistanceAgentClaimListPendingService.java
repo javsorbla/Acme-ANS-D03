@@ -20,6 +20,7 @@ public class AssistanceAgentClaimListPendingService extends AbstractGuiService<A
 	private AssistanceAgentClaimRepository repository;
 
 	//AbstractGuiService interface -------------------------------
+	//SEGURAMENTE ESTA CLASE SE BORRARA
 
 
 	@Override
@@ -42,10 +43,9 @@ public class AssistanceAgentClaimListPendingService extends AbstractGuiService<A
 	public void unbind(final Claim claim) {
 		Dataset dataset;
 		//ClaimIndicator indicator;
-		Boolean publish = claim.getPublish();
-		//	indicator = claim.getIndicator();
+		//indicator = claim.getIndicator();
 		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "publish");
-		//	dataset.put("indicator", indicator);
+		//dataset.put("indicator", indicator);
 		super.addPayload(dataset, claim, "registrationMoment", "publish");
 
 		super.getResponse().addData(dataset);

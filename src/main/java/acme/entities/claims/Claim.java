@@ -58,7 +58,7 @@ public class Claim extends AbstractEntity {
 	@Mandatory
 	//@Valid by default
 	@Automapped
-	private Boolean				publish;
+	private boolean				publish;
 
 	// Derived attributes -----------------------------------------------------
 

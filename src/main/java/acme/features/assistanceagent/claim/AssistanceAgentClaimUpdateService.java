@@ -29,25 +29,26 @@ public class AssistanceAgentClaimUpdateService extends AbstractGuiService<Assist
 
 	@Override
 	public void authorise() {
-		boolean status;
 		Claim claim;
-		int id;
-		AssistanceAgent assistanceAgent;
+		int claimId;
+		int agentId;
+		boolean status;
 
-		id = super.getRequest().getData("id", int.class);
-		claim = this.repository.findClaimById(id);
-		assistanceAgent = claim == null ? null : claim.getAssistanceAgent();
-		status = super.getRequest().getPrincipal().hasRealm(assistanceAgent) && (claim == null || claim.getPublish() == false);
+		claimId = super.getRequest().getData("id", int.class);
+		claim = this.repository.findClaimById(claimId);
+		agentId = claim == null ? null : super.getRequest().getPrincipal().getActiveRealm().getId();
+		status = claim != null && !claim.isPublish() && claim.getAssistanceAgent().getId() == agentId;
+
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
 		Claim claim;
-		int id;
+		int claimId;
 
-		id = super.getRequest().getData("id", int.class);
-		claim = this.repository.findClaimById(id);
+		claimId = super.getRequest().getData("id", int.class);
+		claim = this.repository.findClaimById(claimId);
 
 		super.getBuffer().addData(claim);
 	}
@@ -57,6 +58,7 @@ public class AssistanceAgentClaimUpdateService extends AbstractGuiService<Assist
 		super.bindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "leg");
 	}
 
+	//Validar que los atributos de entrada cumplen requisitos
 	@Override
 	public void validate(final Claim claim) {
 		;
@@ -67,6 +69,7 @@ public class AssistanceAgentClaimUpdateService extends AbstractGuiService<Assist
 		this.repository.save(claim);
 	}
 
+	//el bug temporal esta aqui tambien 
 	@Override
 	public void unbind(final Claim claim) {
 		Collection<Leg> legs;

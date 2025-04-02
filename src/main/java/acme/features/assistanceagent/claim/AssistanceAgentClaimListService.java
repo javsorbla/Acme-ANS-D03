@@ -47,7 +47,7 @@ public class AssistanceAgentClaimListService extends AbstractGuiService<Assistan
 		Dataset dataset;
 		ClaimIndicator indicator;
 
-		Boolean publish = claim.getPublish();
+		//Boolean publish = claim.getPublish();
 		indicator = claim.getIndicator();
 
 		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type");

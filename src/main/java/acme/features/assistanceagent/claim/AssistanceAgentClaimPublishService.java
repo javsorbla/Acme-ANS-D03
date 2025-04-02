@@ -30,15 +30,14 @@ public class AssistanceAgentClaimPublishService extends AbstractGuiService<Assis
 	@Override
 	public void authorise() {
 		Claim claim;
-		AssistanceAgent assistanceAgent;
-
-		boolean status;
 		int claimId;
+		int agentId;
+		boolean status;
 
 		claimId = super.getRequest().getData("id", int.class);
 		claim = this.repository.findClaimById(claimId);
-		assistanceAgent = claim == null ? null : claim.getAssistanceAgent();
-		status = super.getRequest().getPrincipal().hasRealm(assistanceAgent) && (claim == null || claim.getPublish() == false);
+		agentId = claim == null ? null : super.getRequest().getPrincipal().getActiveRealm().getId();
+		status = claim != null && !claim.isPublish() && claim.getAssistanceAgent().getId() == agentId;
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -59,6 +58,8 @@ public class AssistanceAgentClaimPublishService extends AbstractGuiService<Assis
 		super.bindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "leg");
 	}
 
+	//Esta validacion es que para publicar un claim todos sus atributos tienen que estar correctos
+	//los tracking logs aqui no afectan?
 	@Override
 	public void validate(final Claim claim) {
 		;

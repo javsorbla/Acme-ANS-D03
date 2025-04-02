@@ -14,6 +14,7 @@
 	<acme:input-textarea  code ="assistance-agent.claim.form.label.description" path ="description"/>
 	<acme:input-select  code ="assistance-agent.claim.form.label.type" path ="type" choices = "${types}"/>
 	<acme:input-select code ="assistance-agent.claim.form.label.leg" path ="leg" choices = "${legs}"/>
+	
 	<acme:input-textbox code ="assistance-agent.claim.form.label.indicator" path ="indicator" readonly="true"/>
 	<acme:input-checkbox code ="assistance-agent.claim.form.label.publish" path ="publish" readonly="true"/>
 	
@@ -28,5 +29,10 @@
 		</jstl:when>		
 	</jstl:choose>
 	
-	<acme:button code="assistance-agent.claim.form.button.tracking-log" action="/assistance-agent/tracking-log/list"/>
+	<jstl:choose>
+		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish')}">
+			<acme:button code="assistance-agent.claim.form.button.tracking-log" action="/assistance-agent/tracking-log/list"/>
+			<acme:button code="assistance-agent.claim.form.button.tracking-log" action="/assistance-agent/tracking-log/list?claimId=${id}"/>
+		</jstl:when>		
+	</jstl:choose>
 </acme:form>

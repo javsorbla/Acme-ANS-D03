@@ -1,11 +1,15 @@
 
 package acme.features.manager.flight;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
+import acme.entities.airline.Airline;
 import acme.entities.flight.Flight;
 import acme.realms.manager.AirlineManager;
 
@@ -29,7 +33,7 @@ public class AirlineManagerFlightUpdateService extends AbstractGuiService<Airlin
 		flightId = super.getRequest().getData("id", int.class);
 		flight = this.repository.findFlightById(flightId);
 		managerId = flight == null ? null : super.getRequest().getPrincipal().getActiveRealm().getId();
-		status = flight != null && flight.getManager().getId() == managerId && !flight.isPublish();
+		status = flight != null && !flight.isPublish() && flight.getManager().getId() == managerId && !flight.isPublish();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -47,7 +51,7 @@ public class AirlineManagerFlightUpdateService extends AbstractGuiService<Airlin
 
 	@Override
 	public void bind(final Flight flight) {
-		super.bindObject(flight, "tag", "requiresSelfTransfer", "cost", "description");
+		super.bindObject(flight, "tag", "requiresSelfTransfer", "cost", "description", "airline");
 	}
 
 	@Override
@@ -57,16 +61,25 @@ public class AirlineManagerFlightUpdateService extends AbstractGuiService<Airlin
 
 	@Override
 	public void perform(final Flight flight) {
-		assert flight != null;
-
 		this.repository.save(flight);
 	}
 
 	@Override
 	public void unbind(final Flight flight) {
 		Dataset dataset;
+		SelectChoices choicesAirline;
+		Collection<Airline> airlines;
 
-		dataset = super.unbindObject(flight, "tag", "requiresSelfTransfer", "cost", "description");
+		airlines = this.repository.findAllAirlines();
+		choicesAirline = SelectChoices.from(airlines, "iataCode", flight.getAirline());
+
+		dataset = super.unbindObject(flight, "tag", "requiresSelfTransfer", "cost", "description", "publish");
+		dataset.put("scheduledDeparture", flight.getScheduledDeparture());
+		dataset.put("scheduledArrival", flight.getScheduledArrival());
+		dataset.put("originCity", flight.getOriginCity());
+		dataset.put("destinationCity", flight.getDestinationCity());
+		dataset.put("numberOfLayovers", flight.getNumberOfLayovers());
+		dataset.put("airlines", choicesAirline);
 
 		super.getResponse().addData(dataset);
 	}

@@ -14,10 +14,10 @@
 	<acme:input-integer code = "technician.task.form.label.priority" path = "priority"/>
 	<acme:input-integer code = "technician.task.form.label.estimatedDuration" path = "estimatedDuration"/>	
 	<jstl:choose>    
-	    <jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
-	        <acme:submit code="technician.task.form.button.publish" action="/technician/task/publish?id=${id}"/>
-	        <acme:submit code="technician.task.form.button.delete" action="/technician/task/delete?id=${id}"/>
-	        <acme:submit code="technician.task.form.button.update" action="/technician/task/update?id=${id}"/>
+	    <jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && published == false}">
+	        <acme:submit code="technician.task.form.button.publish" action="/technician/task/publish"/>
+	        <acme:submit code="technician.task.form.button.delete" action="/technician/task/delete"/>
+	        <acme:submit code="technician.task.form.button.update" action="/technician/task/update"/>
 	    </jstl:when>    
 	    <jstl:when test="${_command == 'create'}">
 			<acme:submit code="technician.task.form.button.create" action="/technician/task/create"/>

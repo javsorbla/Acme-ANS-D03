@@ -5,14 +5,24 @@
 <acme:form>
     <acme:input-select code="customer.booking.list.label.flight" path="flight" choices="${flights}"/>
     <acme:input-textbox code="customer.booking.list.label.locatorCode" path="locatorCode"/>
+    <acme:input-textbox code="customer.booking.list.label.purchaseMoment" path="purchaseMoment" readonly="true"/>
     <acme:input-textbox code="customer.booking.list.label.lastNibble" path="lastNibble"/>
     <acme:input-select code="customer.booking.list.label.travelClass" path="travelClass" choices="${travelClasses}"/>
     <acme:input-double code="customer.booking.list.label.price" path="price" readonly="true"/>
     
     <jstl:choose>
+		   <jstl:when test="${acme:anyOf(_command,'show|update|publish') && publish == false}">
+				<acme:submit code="customer.booking.list.button.update" action="/customer/booking/update"/>
+				<acme:submit code="customer.booking.form.button.publish" action="/customer/booking/publish"/>
+				<jstl:if test="${_command != 'create'}">
+ 				<acme:button code="customer.booking.form.add.passenger" action="/customer/booking-record/create?bookingId=${id}"/>
+ 			</jstl:if>
+		</jstl:when>
+		
      	<jstl:when test="${acme:anyOf(_command,'create') }">
 			<acme:submit code="customer.booking.list.button.create" action="/customer/booking/create"/>
 		</jstl:when>
+			
     </jstl:choose>
    
     

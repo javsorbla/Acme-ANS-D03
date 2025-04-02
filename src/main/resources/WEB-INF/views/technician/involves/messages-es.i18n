@@ -1,0 +1,6 @@
+technician.involves.form.title = Añade una tarea al registro de mantenimiento
+
+technician.involves.list.label.maintenanceRecord = Registro de mantenimiento
+technician.involves.form.label.task = Tareas
+technician.task.form.button.create = Crear nueva tarea
+technician.involves.form.button.create = Añadir al registro de mantenimiento

@@ -1,11 +1,25 @@
 
 
+#Title
+assistance-agent.tracking-log.list.title = Registros de avances
+assistance-agent.tracking-log.form.title = Registro
 
-assistance-agent.tracking-log.list.title = Registros de progresos
 
-assistance-agent.trackingLog.list.label.lastUpdateMoment = Ultima actualizacion 
-assistance-agent.trackingLog.list.label.resolutionPercentage = Porcentaje de resolsucion
+#List
+assistance-agent.trackingLog.list.label.lastUpdateMoment = Ultima actualiacion
+assistance-agent.trackingLog.list.label.resolutionPercentage = Porcentage de resolucion
 assistance-agent.trackingLog.list.label.status = Estado
 
-
 assistance-agent.trackingLog.list.button.create = Crear
+
+#Show
+assistance-agent.trackingLog.form.label.lastUpdateMoment = Ultima actualiacion
+assistance-agent.trackingLog.form.label.step = Paso
+assistance-agent.trackingLog.form.label.resolutionPercentage = Porcentage de resolucion
+assistance-agent.trackingLog.form.label.status = Estado
+assistance-agent.trackingLog.form.label.resolution = Resolucion
+assistance-agent.trackingLog.form.publish = Publicado?
+
+assistance-agent.trackingLog.form.button.update = Actualizar
+assistance-agent.trackingLog.form.button.delete = Borrar
+assistance-agent.trackingLog.form.button.publish = Publicar

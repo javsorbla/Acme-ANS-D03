@@ -22,7 +22,7 @@ acme.validation.activitylog.registrationmoment.required = El momento de registro
 acme.validation.activitylog.registrationmoment.message = Momento de registro inválido
 
 acme.validation.airlinemanager.identifier.message = Identificador de mánager inválido
-acme.validation.airline.identifier.duplicated.message = Identificador de mánager duplicado
+acme.validation.airlinemanager.identifier.duplicated.message = Identificador de mánager duplicado
 
 acme.validation.customer.identifier.message = Identificador incorrecto
 
@@ -67,3 +67,9 @@ acme.validation.phone.number.message = Número de teléfono inválido
 acme.validation.service.promo.code = Código de promoción inválido
 
 acme.validation.employee.code.message= Codigo de empleeado no valido
+
+acme.validation.confirmation.message = No se ha confirmado esta acción
+
+acme.validation.airline.iata.code.duplicated.message = El código IATA de la aerolínea está duplicado
+acme.validation.airport.iata.code.duplicated.message = El código IATA del aeropuerto está duplicado
+acme.validation.aircraft.registration.number.duplicated.message = El número de registro del vuelo está duplicado

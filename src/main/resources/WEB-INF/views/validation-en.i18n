@@ -52,6 +52,8 @@ acme.validation.booking.locator.code.message = Invalid locator code
 acme.validation.booking.locator.code.duplicated.message = Locator code duplicated
 acme.validation.booking.last.nibble.message = Invalid last nibble
 acme.validation.booking.passport.number.message = Invalid passport number
+acme.validation.booking.publish-no-passengers = You can not publish this booking due to there is not passengers associated
+acme.validation.booking.publish-passengers-not-published = You can not publish this booking due to there are not published passengers associated
 
 acme.validation.iata.code.message = Invalid IATA code
 

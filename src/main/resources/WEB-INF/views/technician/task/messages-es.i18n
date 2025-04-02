@@ -19,8 +19,3 @@ technician.task.form.label.type = Tipo
 technician.task.form.label.description = Descripción
 technician.task.form.label.priority = Prioridad
 technician.task.form.label.estimatedDuration = Duración Estimada
-
-technician.task.form.error.noType = No se ha seleccionado ningún tipo.
-technician.task.form.error.description =  La longitud máxima de la descripción es de 255 caractéres.
-technician.task.form.error.priority = La prioridad debe ser mayor o igual a 0, y menor o igual a 10 .
-technician.task.form.error.estimatedDuration = La duración estimada debe ser mayor o igual a 0, y menor o igual a 1000 .

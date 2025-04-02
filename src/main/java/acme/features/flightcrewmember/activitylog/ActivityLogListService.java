@@ -9,6 +9,7 @@ import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.activitylog.ActivityLog;
+import acme.entities.flightassignment.FlightAssignment;
 import acme.realms.flightcrewmember.FlightCrewMember;
 
 @GuiService
@@ -24,17 +25,28 @@ public class ActivityLogListService extends AbstractGuiService<FlightCrewMember,
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		int masterId;
+		int flightCrewMemberId;
+		FlightAssignment flightAssignment;
+		boolean status;
+
+		masterId = super.getRequest().getData("masterId", int.class);
+		flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		flightAssignment = this.repository.findFlightAssignmentById(masterId);
+
+		status = flightAssignment.getFlightAssignmentCrewMember().getId() == flightCrewMemberId;
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
 		Collection<ActivityLog> activityLogs;
-		int flightCrewMemberId;
+		int masterId;
 
-		flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		masterId = super.getRequest().getData("masterId", int.class);
 
-		activityLogs = this.repository.findActivityLogByFlightCrewMembertId(flightCrewMemberId);
+		activityLogs = this.repository.findAllActivityLogsByFlightAssignmentId(masterId);
 
 		super.getBuffer().addData(activityLogs);
 	}
@@ -48,5 +60,12 @@ public class ActivityLogListService extends AbstractGuiService<FlightCrewMember,
 		super.addPayload(dataset, activityLog, "publish");
 
 		super.getResponse().addData(dataset);
+	}
+
+	@Override
+	public void unbind(final Collection<ActivityLog> activityLog) {
+		int masterId;
+		masterId = super.getRequest().getData("masterId", int.class);
+		super.getResponse().addGlobal("masterId", masterId);
 	}
 }

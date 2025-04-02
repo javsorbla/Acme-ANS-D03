@@ -1,28 +1,68 @@
 #validation-es.i18n
 
 acme.validation.flight.publish.message = Un vuelo no puede ser publicado si no tiene al menos un tramo, estando cada tramo publicado
-acme.validation.leg.message = Tramo inválido
-acme.validation.leg.departure.message = Fecha de salida inválida
-acme.validation.leg.arrival.message = Fecha de llegada inválida
 acme.validation.flight.leg.overlap.message = Hay tramos del vuelo que se solapan
+acme.validation.flight.delete-when-published = No es posible borrar un vuelo publicado
+acme.validation.flight.delete-legs-published = No es posible borrar un vuelo con tramos publicados
+acme.validation.flight.publish-no-legs = No se puede publicar un vuelo sin tramos
+acme.validation.flight.publish-legs-not-published = Para publicar un vuelo todos sus tramos deben estar publicados
+
+acme.validation.leg.flightNumber.message = El número de vuelo debe estar compuesto por el código IATA de la aerolínea del avión y 4 dígitos
+acme.validation.leg.departure.message = La fecha de salida no puede ser pasada
+acme.validation.leg.arrival.message = La fecha de llegada debe ser al menos un minuto posterior a la de salida
+acme.validation.leg.overlapped = El tramo está solapado con algún otro tramo publicado y no cancelado
+acme.validation.leg.used-aircraft = El avión ya está asignado a otro leg en el mismo intervalo de tiempo
+acme.validation.leg.flight.number.duplicated.message = Número de vuelo duplicado
+acme.validation.leg.flight.number.message = El número de vuelo debe empezar por el IATA
+acme.validation.leg.airport.sameAirport = Los aeropuertos de salida y llegada deben ser distintos
+
 acme.validation.activitylog.message = Registro de actividades inválido
+acme.validation.activitylog.registrationmoment.required = El momento de registro no puede ser nulo
 acme.validation.activitylog.registrationmoment.message = Momento de registro inválido
+
 acme.validation.airlinemanager.identifier.message = Identificador de mánager inválido
 acme.validation.airline.identifier.duplicated.message = Identificador de mánager duplicado
+
 acme.validation.customer.identifier.message = Identificador incorrecto
+
 acme.validation.flightcrewmember.employee.code.message = Código de empleado incorrecto
 acme.validation.flightcrewmember.employee.code.duplicated.message = Código de empleado duplicado
+acme.validation.flightassignment.flightcrewmember.available.message = Solo se pueden asignar miembros disponibles
+acme.validation.flightassignment.leg.completed.message = No puedes asignar la tarea a un tramo que ya ha ocurrido
+acme.validation.flightassignment.leg.overlap.message = Los tramos asignados no se pueden solapar
+acme.validation.flightassignment.duty.pilot.message = Solo puede haber un piloto por tramo
+acme.validation.flightassignment.duty.copilot.message = Solo puede haber un copiloto por tramo
+
 acme.validation.technician.identifier.message = Identificador incorrecto
+acme.validation.technician.maintenance-record.noStatus.message = No se ha seleccionado ningún estado
+acme.validation.technician.maintenance-record.nextInspectionDate.message = La fecha y hora de la próxima inspección debe ser posterior al momento actual
+acme.validation.technician.maintenance-record.estimatedCost.message = El coste estimado debe ser mayor o igual a 0.00, y menor o igual a 1000000.00
+acme.validation.technician.maintenance-record.notes.message = La longitud máxima de las anotaciones es de 255 caractéres
+acme.validation.technician.maintenance-record.aircraft.message = El avión seleccionado no existe
+acme.validation.technician.maintenance-record.published.message = Para publicar un registro, debe haber al menos 1 tarea publicada relacionada con este registro
+acme.validation.technician.task.noType.message = No se ha seleccionado ningún tipo
+acme.validation.technician.task.description.message =  La longitud máxima de la descripción es de 255 caractéres
+acme.validation.technician.task.priority.message = La prioridad debe ser mayor o igual a 0, y menor o igual a 10
+acme.validation.technician.task.estimatedDuration.message = La duración estimada debe ser mayor o igual a 0, y menor o igual a 1000
+
 acme.validation.assistanceagent.identifier.message = Código incorrecto
 acme.validation.assistanceagent.employeeCode.duplicated.message = Codigo de empleado duplicado
+
 acme.validation.customer.identifier.duplicated.message = Identificador duplicado
-acme.validation.leg.flight.number.duplicated.message = Número de vuelo duplicado
+
 acme.validation.booking.locator.code.message = Código localizador incorrecto
 acme.validation.booking.locator.code.duplicated.message = Código localizador duplicado
 acme.validation.booking.last.nibble.message = Últimos 4 digitos de la tarjeta de crédito incorrectos
 acme.validation.booking.passport.number.message = Número de pasaporte incorrecto
+acme.validation.booking.publish-no-passengers = No puede publicar esta reserva debido a que no hay ningún pasajero asociado
+acme.validation.booking.publish-passengers-not-published = No puede publicar esta reserva debido a que hay pasajeros no publicados asociados 
+
 acme.validation.iata.code.message = Código IATA inválido
+
 acme.validation.identifier.message = Identificador incorrecto
+
 acme.validation.phone.number.message = Número de teléfono inválido
+
 acme.validation.service.promo.code = Código de promoción inválido
+
 acme.validation.employee.code.message= Codigo de empleeado no valido

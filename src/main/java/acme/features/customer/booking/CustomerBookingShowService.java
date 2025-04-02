@@ -17,19 +17,22 @@ import acme.realms.customer.Customer;
 @GuiService
 public class CustomerBookingShowService extends AbstractGuiService<Customer, Booking> {
 
+	//Internal state ---------------------------------------------
+
 	@Autowired
 	private CustomerBookingRepository repository;
+
+	//AbstractGuiService interface -------------------------------
 
 
 	@Override
 	public void authorise() {
 		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
-
 		super.getResponse().setAuthorised(status);
 
 		int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
 		int bookingId = super.getRequest().getData("id", int.class);
-		Booking booking = this.repository.getBookingById(bookingId);
+		Booking booking = this.repository.findBookingById(bookingId);
 
 		super.getResponse().setAuthorised(customerId == booking.getCustomer().getId());
 	}
@@ -38,22 +41,21 @@ public class CustomerBookingShowService extends AbstractGuiService<Customer, Boo
 	public void load() {
 		Booking booking;
 		int id = super.getRequest().getData("id", int.class);
+		booking = this.repository.findBookingById(id);
 
-		booking = this.repository.getBookingById(id);
 		super.getBuffer().addData(booking);
 	}
 
 	@Override
 	public void unbind(final Booking booking) {
-		assert booking != null;
+		//assert booking != null;
 		Dataset dataset;
-		SelectChoices travelClasses = SelectChoices.from(TypeTravelClass.class, booking.getTravelClass());
-
+		SelectChoices typeTravelClasses = SelectChoices.from(TypeTravelClass.class, booking.getTravelClass());
 		Collection<Flight> flights = this.repository.findAllFlights();
 		SelectChoices flightChoices = SelectChoices.from(flights, "id", booking.getFlight());
 
-		dataset = super.unbindObject(booking, "locatorCode", "travelClass", "price", "lastNibble", "publish", "id");
-		dataset.put("travelClasses", travelClasses);
+		dataset = super.unbindObject(booking, "locatorCode", "purchaseMoment", "travelClass", "price", "lastNibble", "publish", "id");
+		dataset.put("travelClasses", typeTravelClasses);
 		dataset.put("flights", flightChoices);
 
 		super.getResponse().addData(dataset);

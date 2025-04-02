@@ -31,10 +31,15 @@ public class ActivityLogValidator extends AbstractValidator<ValidActivityLog, Ac
 		if (activityLog == null || activityLog.getActivityLogAssignment() == null || activityLog.getActivityLogAssignment().getFlightAssignmentLeg() == null || activityLog.getActivityLogAssignment().getFlightAssignmentLeg().getArrival() == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
-			boolean registrationMomentIsAfterArrivalLeg;
-			Date minRegistrationMoment = new Date(activityLog.getActivityLogAssignment().getFlightAssignmentLeg().getArrival().getTime());
-			registrationMomentIsAfterArrivalLeg = MomentHelper.isAfterOrEqual(activityLog.getRegistrationMoment(), minRegistrationMoment);
-			super.state(context, registrationMomentIsAfterArrivalLeg, "registrationMoment", "acme.validation.activitylog.registrationmoment.message");
+			boolean registrationMomentIsValid = activityLog.getRegistrationMoment() != null;
+			super.state(context, registrationMomentIsValid, "registrationMoment", "acme.validation.activitylog.registrationmoment.required");
+
+			if (registrationMomentIsValid) {
+				boolean registrationMomentIsAfterArrivalLeg;
+				Date minRegistrationMoment = new Date(activityLog.getActivityLogAssignment().getFlightAssignmentLeg().getArrival().getTime());
+				registrationMomentIsAfterArrivalLeg = MomentHelper.isAfterOrEqual(activityLog.getRegistrationMoment(), minRegistrationMoment);
+				super.state(context, registrationMomentIsAfterArrivalLeg, "registrationMoment", "acme.validation.activitylog.registrationmoment.message");
+			}
 		}
 
 		result = !super.hasErrors(context);

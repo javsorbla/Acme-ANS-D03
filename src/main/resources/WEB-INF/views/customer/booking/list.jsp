@@ -11,3 +11,5 @@
  	<acme:list-column code="customer.booking.list.label.price" path="price" />
  	<acme:list-column code="customer.booking.list.label.publish" path="publish" width="20%" />
  </acme:list>
+ 
+ <acme:button code="customer.booking.list.button.create" action="/customer/booking/create"/>

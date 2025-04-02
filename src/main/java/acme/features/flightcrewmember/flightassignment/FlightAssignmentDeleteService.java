@@ -63,7 +63,7 @@ public class FlightAssignmentDeleteService extends AbstractGuiService<FlightCrew
 
 	@Override
 	public void perform(final FlightAssignment flightAssignment) {
-		this.repository.save(flightAssignment);
+		this.repository.delete(flightAssignment);
 	}
 
 	@Override

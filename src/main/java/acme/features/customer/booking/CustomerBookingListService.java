@@ -35,7 +35,6 @@ public class CustomerBookingListService extends AbstractGuiService<Customer, Boo
 		int customerId;
 
 		customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-
 		bookings = this.repository.findBookingsByCustomerId(customerId);
 
 		super.getBuffer().addData(bookings);
@@ -43,7 +42,6 @@ public class CustomerBookingListService extends AbstractGuiService<Customer, Boo
 
 	@Override
 	public void unbind(final Booking booking) {
-
 		Dataset dataset;
 
 		dataset = super.unbindObject(booking, "locatorCode", "purchaseMoment", "travelClass", "lastNibble", "publish");

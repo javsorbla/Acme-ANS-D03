@@ -24,28 +24,26 @@ public class AirlineManagerLegListService extends AbstractGuiService<AirlineMana
 
 	@Override
 	public void authorise() {
-		int masterId;
+		int flightId;
 		int managerId;
 		Flight flight;
-		boolean owned;
+		boolean status;
 
-		masterId = super.getRequest().getData("masterId", int.class);
+		flightId = super.getRequest().getData("flightId", int.class);
 		managerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		flight = this.repository.findFlightById(masterId); //Could also be obtained through one of the legs
+		flight = this.repository.findFlightById(flightId);
+		status = flight != null && flight.getManager().getId() == managerId;
 
-		owned = flight.getManager().getId() == managerId;
-
-		super.getResponse().setAuthorised(owned);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
 		Collection<Leg> legs;
-		int masterId;
+		int flightId;
 
-		masterId = super.getRequest().getData("masterId", int.class);
-
-		legs = this.repository.findAllLegsByFlightId(masterId);
+		flightId = super.getRequest().getData("flightId", int.class);
+		legs = this.repository.findAllLegsByFlightId(flightId);
 
 		super.getBuffer().addData(legs);
 	}
@@ -53,15 +51,23 @@ public class AirlineManagerLegListService extends AbstractGuiService<AirlineMana
 	@Override
 	public void unbind(final Leg leg) {
 		Dataset dataset;
-		int masterId;
 
-		dataset = super.unbindObject(leg, "flightNumber", "departure", "arrival", "status");
-		masterId = super.getRequest().getData("masterId", int.class);
-
-		super.addPayload(dataset, leg, "publish");
-
-		super.getResponse().addGlobal("masterId", masterId);
+		dataset = super.unbindObject(leg, "flightNumber", "departure", "arrival", "status", "publish");
 
 		super.getResponse().addData(dataset);
+	}
+
+	@Override
+	public void unbind(final Collection<Leg> legs) {
+		int flightId;
+		Flight flight;
+		final boolean showCreate;
+
+		flightId = super.getRequest().getData("flightId", int.class);
+		flight = this.repository.findFlightById(flightId);
+		showCreate = !flight.isPublish() && super.getRequest().getPrincipal().hasRealm(flight.getManager());
+
+		super.getResponse().addGlobal("flightId", flightId);
+		super.getResponse().addGlobal("showCreate", showCreate);
 	}
 }

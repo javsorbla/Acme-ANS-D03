@@ -11,8 +11,12 @@
     <acme:input-double code="customer.booking.list.label.price" path="price" readonly="true"/>
     
     <jstl:choose>
-		   <jstl:when test="${acme:anyOf(_command,'show|update') && publish == false}">
+		   <jstl:when test="${acme:anyOf(_command,'show|update|publish') && publish == false}">
 				<acme:submit code="customer.booking.list.button.update" action="/customer/booking/update"/>
+				<acme:submit code="customer.booking.form.button.publish" action="/customer/booking/publish"/>
+				<jstl:if test="${_command != 'create'}">
+ 				<acme:button code="customer.booking.form.add.passenger" action="/customer/booking-record/create?bookingId=${id}"/>
+ 			</jstl:if>
 		</jstl:when>
 		
      	<jstl:when test="${acme:anyOf(_command,'create') }">
@@ -20,6 +24,9 @@
 		</jstl:when>
 			
     </jstl:choose>
+    <jstl:if test="${_command != 'create'}">
+ 		<acme:button code="customer.booking.form.show.passengers" action="/customer/passenger/list?bookingId=${id}"/>
+ 	</jstl:if>
    
     
 </acme:form>

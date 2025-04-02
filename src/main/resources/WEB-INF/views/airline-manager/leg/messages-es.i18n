@@ -7,6 +7,7 @@ airline-manager.leg.list.label.flightNumber = Número de Vuelo
 airline-manager.leg.list.label.departure = Momento de salida
 airline-manager.leg.list.label.arrival = Momento de llegada
 airline-manager.leg.list.label.status = Estado
+airline-manager.leg.list.label.publish = Publicado
 
 airline-manager.leg.form.label.flightNumber = Número de Vuelo
 airline-manager.leg.form.label.departure = Momento de Salida

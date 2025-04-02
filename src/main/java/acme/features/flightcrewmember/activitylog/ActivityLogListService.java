@@ -54,15 +54,18 @@ public class ActivityLogListService extends AbstractGuiService<FlightCrewMember,
 	@Override
 	public void unbind(final ActivityLog activityLog) {
 		Dataset dataset;
-		int masterId;
 
 		dataset = super.unbindObject(activityLog, "registrationMoment", "incidentType", "severityLevel");
-		masterId = super.getRequest().getData("masterId", int.class);
 
 		super.addPayload(dataset, activityLog, "publish");
 
-		super.getResponse().addGlobal("masterId", masterId);
-
 		super.getResponse().addData(dataset);
+	}
+
+	@Override
+	public void unbind(final Collection<ActivityLog> activityLog) {
+		int masterId;
+		masterId = super.getRequest().getData("masterId", int.class);
+		super.getResponse().addGlobal("masterId", masterId);
 	}
 }

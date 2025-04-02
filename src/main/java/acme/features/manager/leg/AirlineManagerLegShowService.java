@@ -55,28 +55,28 @@ public class AirlineManagerLegShowService extends AbstractGuiService<AirlineMana
 
 	@Override
 	public void unbind(final Leg leg) {
-		SelectChoices status;
-		SelectChoices deployedAircraft;
-		SelectChoices departureAirport;
-		SelectChoices arrivalAirport;
+		SelectChoices choicesStatuses;
+		SelectChoices choicesAircrafts;
+		SelectChoices choicesDepartureAirport;
+		SelectChoices choicesArrivalAirport;
 		Collection<Aircraft> aircrafts;
 		Collection<Airport> airports;
-
 		Dataset dataset;
 
+		choicesStatuses = SelectChoices.from(LegStatus.class, leg.getStatus());
 		aircrafts = this.repository.findAllAircrafts();
+		choicesAircrafts = SelectChoices.from(aircrafts, "registrationNumber", leg.getDeployedAircraft());
+
 		airports = this.repository.findAllAirports();
-		status = SelectChoices.from(LegStatus.class, leg.getStatus());
-		deployedAircraft = SelectChoices.from(aircrafts, "registrationNumber", leg.getDeployedAircraft());
-		departureAirport = SelectChoices.from(airports, "iataCode", leg.getDepartureAirport());
-		arrivalAirport = SelectChoices.from(airports, "iataCode", leg.getArrivalAirport());
+		choicesDepartureAirport = SelectChoices.from(airports, "iataCode", leg.getDepartureAirport());
+		choicesArrivalAirport = SelectChoices.from(airports, "iataCode", leg.getArrivalAirport());
 
 		dataset = super.unbindObject(leg, "flightNumber", "departure", "arrival", "publish");
 		dataset.put("durationInHours", leg.getDurationInHours());
-		dataset.put("status", status);
-		dataset.put("deployedAircraft", deployedAircraft);
-		dataset.put("departureAirport", departureAirport);
-		dataset.put("arrivalAirport", arrivalAirport);
+		dataset.put("statuses", choicesStatuses);
+		dataset.put("departureAirports", choicesDepartureAirport);
+		dataset.put("arrivalAirports", choicesArrivalAirport);
+		dataset.put("aircrafts", choicesAircrafts);
 
 		super.getResponse().addData(dataset);
 	}

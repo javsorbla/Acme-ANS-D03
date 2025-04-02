@@ -1,11 +1,15 @@
 
 package acme.features.manager.flight;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
+import acme.entities.airline.Airline;
 import acme.entities.flight.Flight;
 import acme.realms.manager.AirlineManager;
 
@@ -30,19 +34,14 @@ public class AirlineManagerFlightCreateService extends AbstractGuiService<Airlin
 
 		flight = new Flight();
 		flight.setManager(manager);
+		flight.setPublish(false);
+
 		super.getBuffer().addData(flight);
 	}
 
 	@Override
 	public void bind(final Flight flight) {
-		int managerId;
-		AirlineManager manager;
-
-		managerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		manager = this.repository.findManagerById(managerId);
-
-		super.bindObject(flight, "tag", "requiresSelfTransfer", "cost", "description");
-		flight.setManager(manager);
+		super.bindObject(flight, "tag", "requiresSelfTransfer", "cost", "description", "airline");
 	}
 
 	@Override
@@ -52,18 +51,20 @@ public class AirlineManagerFlightCreateService extends AbstractGuiService<Airlin
 
 	@Override
 	public void perform(final Flight flight) {
-		assert flight != null;
-
 		this.repository.save(flight);
 	}
 
 	@Override
 	public void unbind(final Flight flight) {
 		Dataset dataset;
+		SelectChoices choicesAirline;
+		Collection<Airline> airlines;
+
+		airlines = this.repository.findAllAirlines();
+		choicesAirline = SelectChoices.from(airlines, "iataCode", flight.getAirline());
 
 		dataset = super.unbindObject(flight, "tag", "requiresSelfTransfer", "cost", "description");
-
-		//put values from derived attributes in dataset?
+		dataset.put("airlines", choicesAirline);
 
 		super.getResponse().addData(dataset);
 	}

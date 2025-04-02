@@ -45,7 +45,7 @@ public class Task extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Automapped
-	private Boolean				draftMode;
+	private Boolean				published;
 
 	// Derived attributes -----------------------------------------------------
 

@@ -9,6 +9,7 @@ import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.claims.Claim;
+import acme.entities.claims.ClaimIndicator;
 import acme.realms.assistanceagent.AssistanceAgent;
 
 @GuiService
@@ -44,12 +45,14 @@ public class AssistanceAgentClaimListService extends AbstractGuiService<Assistan
 	public void unbind(final Claim claim) {
 
 		Dataset dataset;
-		//ClaimIndicator indicator;
+		ClaimIndicator indicator;
+
 		Boolean publish = claim.getPublish();
-		//	indicator = claim.getIndicator();
-		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "publish");
-		//	dataset.put("indicator", indicator);
-		super.addPayload(dataset, claim, "registrationMoment", "publish");
+		indicator = claim.getIndicator();
+
+		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type");
+		dataset.put("indicator", indicator);
+		super.addPayload(dataset, claim, "registrationMoment", "description");
 
 		super.getResponse().addData(dataset);
 

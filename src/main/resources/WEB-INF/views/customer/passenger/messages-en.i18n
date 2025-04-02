@@ -6,3 +6,4 @@ customer.passenger.list.label.dateOfBirth = Date of birth
 customer.passenger.list.label.email = Email
 customer.passenger.list.label.specialNeeds = Special needs
 customer.passenger.list.label.publish = Publish
+customer.passenger.list.button.create = Create new passenger

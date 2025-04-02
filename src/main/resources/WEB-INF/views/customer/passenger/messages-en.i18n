@@ -1,6 +1,8 @@
 customer.passenger.list.title = List of Passengers
+customer.passenger.form.title = Passenger details
 customer.passenger.list.label.fullName = Full name
 customer.passenger.list.label.passportNumber = Passport Number 
 customer.passenger.list.label.dateOfBirth = Date of birth
 customer.passenger.list.label.email = Email
+customer.passenger.list.label.specialNeeds = Special needs
 customer.passenger.list.label.publish = Publish

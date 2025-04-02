@@ -9,9 +9,10 @@
      <acme:input-textarea code="customer.passenger.list.label.specialNeeds" path="specialNeeds"/>
      
      <jstl:choose>
-     	<jstl:when test="${acme:anyOf(_command,'show|update') && publish == false}">
+     	<jstl:when test="${acme:anyOf(_command,'show|update|publish') && publish == false}">
 			<acme:submit code="customer.passenger.list.button.update" action="/customer/passenger/update"/>
 			<acme:submit code="customer.passenger.form.button.publish" action="/customer/passenger/publish"/>
+			<acme:submit code="customer.passenger.form.button.delete" action="/customer/passenger/delete"/>
      	</jstl:when>
      
      	<jstl:when test="${acme:anyOf(_command,'create') }">

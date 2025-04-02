@@ -2,6 +2,8 @@
 package acme.features.flightcrewmember.flightassignment;
 
 import java.util.Collection;
+import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -58,17 +60,43 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 	@Override
 	public void validate(final FlightAssignment flightAssignment) {
 		int flightCrewMemberId;
+		int legId;
+		int flightAssignmentId;
 		boolean availableMember;
 		boolean completedLeg;
+		List<Leg> legsByMember;
+		//boolean hasPilot;
+		//boolean hasCopilot;
 
 		flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		legId = super.getRequest().getData("leg", Leg.class).getId();
+		flightAssignmentId = flightAssignment.getId();
 
 		availableMember = this.repository.findFlightCrewMemberById(flightCrewMemberId).getAvailabilityStatus().equals(AvailabilityStatus.AVAILABLE);
 		completedLeg = MomentHelper.isBefore(flightAssignment.getFlightAssignmentLeg().getArrival(), MomentHelper.getCurrentMoment());
+		legsByMember = this.repository.findLegsByMemberId(flightCrewMemberId);
+		//hasPilot = this.repository.flightAssignmentHasPilot(legId, flightAssignmentId);
+		//hasCopilot = this.repository.flightAssignmentHasCopilot(legId, flightAssignmentId);
+
+		boolean legsNotOverlapping = true;
+
+		if (legsByMember.size() > 1)
+			for (int i = 0; i < legsByMember.size() - 1; i++) {
+				Date currentLegArrival = legsByMember.get(i).getArrival();
+				Date nextLegDeparture = legsByMember.get(i + 1).getDeparture();
+
+				if (!MomentHelper.isAfter(nextLegDeparture, currentLegArrival)) {
+					legsNotOverlapping = false;
+					break;
+				}
+			}
 
 		if (!this.getBuffer().getErrors().hasErrors("publish")) {
 			super.state(availableMember, "flightAssignmentCrewMember", "acme.validation.flightassignment.flightcrewmember.available.message", flightAssignment);
 			super.state(!completedLeg, "flightAssignmentLeg", "acme.validation.flightassignment.leg.completed.message", flightAssignment);
+			super.state(!legsNotOverlapping, "flightAssignmentLeg", "acme.validation.flightassignment.leg.overlap.message", flightAssignment);
+			//super.state(!hasPilot, "duty", "acme.validation.flightassignment.duty.pilot.message", flightAssignment);
+			//super.state(!hasCopilot, "duty", "acme.validation.flightassignment.duty.copilot.message", flightAssignment);
 		}
 	}
 

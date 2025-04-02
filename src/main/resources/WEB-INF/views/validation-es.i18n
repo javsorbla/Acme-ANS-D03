@@ -29,6 +29,9 @@ acme.validation.flightcrewmember.employee.code.message = Código de empleado inc
 acme.validation.flightcrewmember.employee.code.duplicated.message = Código de empleado duplicado
 acme.validation.flightassignment.flightcrewmember.available.message = Solo se pueden asignar miembros disponibles
 acme.validation.flightassignment.leg.completed.message = No puedes asignar la tarea a un tramo que ya ha ocurrido
+acme.validation.flightassignment.leg.overlap.message = Los tramos asignados no se pueden solapar
+acme.validation.flightassignment.duty.pilot.message = Solo puede haber un piloto por tramo
+acme.validation.flightassignment.duty.copilot.message = Solo puede haber un copiloto por tramo
 
 acme.validation.technician.identifier.message = Identificador incorrecto
 acme.validation.technician.maintenance-record.noStatus.message = No se ha seleccionado ningún estado

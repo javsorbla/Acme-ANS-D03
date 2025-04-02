@@ -57,7 +57,6 @@ public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, 
 
 	@Override
 	public void validate(final Task task) {
-
 		if (!this.getBuffer().getErrors().hasErrors("type"))
 			super.state(task.getType() != null, "type", "acme.validation.technician.task.noType.message", task);
 

@@ -2,6 +2,7 @@
 package acme.features.flightcrewmember.flightassignment;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -41,10 +42,13 @@ public interface FlightAssignmentRepository extends AbstractRepository {
 	@Query("SELECT fcm FROM FlightCrewMember fcm WHERE fcm.id = :flightCrewMemberId")
 	FlightCrewMember findFlightCrewMemberById(int flightCrewMemberId);
 
-	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.flightAssignmentLeg.id = :id AND fa.duty = 'PILOT'")
-	Collection<FlightAssignment> findFlightAssignmentWithPilotByLegId(int id);
+	@Query("SELECT fa.flightAssignmentLeg FROM FlightAssignment fa WHERE fa.flightAssignmentCrewMember.id = :flightCrewMemberId ORDER BY fa.flightAssignmentLeg.departure ASC")
+	List<Leg> findLegsByMemberId(int flightCrewMemberId);
 
-	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.flightAssignmentLeg.id = :id AND fa.duty = 'COPILOT'")
-	Collection<FlightAssignment> findFlightAssignmentWithCopilotByLegId(int id);
+	@Query("SELECT COUNT(fa) > 0 FROM FlightAssignment fa WHERE fa.flightAssignmentLeg.id = :legId AND fa.duty = 'PILOT' AND fa.id != :id")
+	Boolean flightAssignmentHasPilot(int legId, int id);
+
+	@Query("SELECT COUNT(fa) > 0 FROM FlightAssignment fa WHERE fa.flightAssignmentLeg.id = :legId AND fa.duty = 'COPILOT' AND fa.id != :id")
+	Boolean flightAssignmentHasCopilot(int legId, int id);
 
 }

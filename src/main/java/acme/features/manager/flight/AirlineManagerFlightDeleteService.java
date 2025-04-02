@@ -16,6 +16,7 @@ import acme.realms.manager.AirlineManager;
 
 @GuiService
 public class AirlineManagerFlightDeleteService extends AbstractGuiService<AirlineManager, Flight> {
+
 	// Internal state ---------------------------------------------------------
 
 	@Autowired

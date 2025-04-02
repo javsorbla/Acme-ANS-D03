@@ -31,7 +31,6 @@
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish')}">
-			<acme:button code="assistance-agent.claim.form.button.tracking-log" action="/assistance-agent/tracking-log/list"/>
 			<acme:button code="assistance-agent.claim.form.button.tracking-log" action="/assistance-agent/tracking-log/list?claimId=${id}"/>
 		</jstl:when>		
 	</jstl:choose>

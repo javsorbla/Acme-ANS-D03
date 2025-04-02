@@ -36,7 +36,6 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 		int bookingId = super.getRequest().getData("id", int.class);
 		Booking booking = this.repository.findBookingById(bookingId);
 
-		//super.getResponse().setAuthorised(customerId == booking.getCustomer().getId());
 		super.getResponse().setAuthorised(booking != null && !booking.isPublish() && booking.getCustomer().getId() == customerId);
 	}
 
@@ -58,7 +57,6 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 		boolean atLeastOnePassenger;
 		boolean allPassengerPublished;
 		Collection<Passenger> bookingPassengers;
-
 		bookingPassengers = this.repository.findAllPassengersByBookingId(booking.getId());
 		atLeastOnePassenger = !bookingPassengers.isEmpty();
 		allPassengerPublished = bookingPassengers.stream().allMatch(b -> b.isPublish());
@@ -79,9 +77,9 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 		Dataset dataset;
 		SelectChoices typeTravelClasses;
 		typeTravelClasses = SelectChoices.from(TypeTravelClass.class, booking.getTravelClass());
-
-		Collection<Flight> flights = this.repository.findAllPublishFlights();
-		SelectChoices flightChoices = SelectChoices.from(flights, "id", booking.getFlight());
+		Collection<Flight> publishFlights = this.repository.findAllPublishFlights();
+		Collection<Flight> publishFutureFlights = publishFlights.stream().filter(f -> MomentHelper.isBefore(booking.getPurchaseMoment(), f.getScheduledDeparture())).toList();
+		SelectChoices flightChoices = SelectChoices.from(publishFutureFlights, "id", booking.getFlight());
 
 		dataset = super.unbindObject(booking, "flight", "locatorCode", "purchaseMoment", "travelClass", "price", "lastNibble", "publish", "id");
 		dataset.put("travelClasses", typeTravelClasses);

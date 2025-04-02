@@ -75,6 +75,6 @@ master.menu.customer.bookings-list = Bookings List
 master.menu.customer.passengers-list = Passengers List
 
 # master.menu.menu.assistance-agent ##########################################################
-master.menu.assistance-agent.claims = Claims
+master.menu.assistance-agent.claims = Assistance agent
 master.menu.assistance-agent.claims.claims-list = Claims list
 master.menu.assistance-agent.claims.list-claims-pending = Pending claims list

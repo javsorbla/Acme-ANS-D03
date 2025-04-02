@@ -4,6 +4,8 @@ acme.validation.flight.publish.message = Un vuelo no puede ser publicado si no t
 acme.validation.flight.leg.overlap.message = Hay tramos del vuelo que se solapan
 acme.validation.flight.delete-when-published = No es posible borrar un vuelo publicado
 acme.validation.flight.delete-legs-published = No es posible borrar un vuelo con tramos publicados
+acme.validation.flight.publish-no-legs = No se puede publicar un vuelo sin tramos
+acme.validation.flight.publish-legs-not-published = Para publicar un vuelo todos sus tramos deben estar publicados
 
 acme.validation.leg.flightNumber.message = El número de vuelo debe estar compuesto por el código IATA de la aerolínea del avión y 4 dígitos
 acme.validation.leg.departure.message = La fecha de salida no puede ser pasada

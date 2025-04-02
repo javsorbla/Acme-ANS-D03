@@ -7,6 +7,7 @@ airline-manager.flight.list.label.tag = Etiqueta
 airline-manager.flight.list.label.originCity = Ciudad de origen
 airline-manager.flight.list.label.destinationCity = Ciudad de destino
 airline-manager.flight.list.label.cost = Coste
+airline-manager.flight.list.label.publish = Publicado
 
 airline-manager.flight.form.label.tag = Etiqueta
 airline-manager.flight.form.label.requiresSelfTransfer = Requiere Autotransferencia

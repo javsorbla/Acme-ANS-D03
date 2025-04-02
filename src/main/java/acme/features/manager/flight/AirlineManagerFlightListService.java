@@ -43,11 +43,11 @@ public class AirlineManagerFlightListService extends AbstractGuiService<AirlineM
 	public void unbind(final Flight flight) {
 		Dataset dataset;
 
-		dataset = super.unbindObject(flight, "tag", "cost");
+		dataset = super.unbindObject(flight, "tag", "cost", "publish");
 		dataset.put("originCity", flight.getOriginCity());
 		dataset.put("destinationCity", flight.getDestinationCity());
 
-		super.addPayload(dataset, flight, "publish", "description", "numberOfLayovers");
+		super.addPayload(dataset, flight, "description", "numberOfLayovers");
 
 		super.getResponse().addData(dataset);
 	}

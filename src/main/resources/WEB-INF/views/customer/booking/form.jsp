@@ -24,6 +24,9 @@
 		</jstl:when>
 			
     </jstl:choose>
+    <jstl:if test="${_command != 'create'}">
+ 		<acme:button code="customer.booking.form.show.passengers" action="/customer/passenger/list?bookingId=${id}"/>
+ 	</jstl:if>
    
     
 </acme:form>

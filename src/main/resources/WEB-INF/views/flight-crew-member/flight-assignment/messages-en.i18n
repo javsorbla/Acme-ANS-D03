@@ -8,6 +8,7 @@ flight-crew-member.flight-assignment.form.title = Flight Assignment details
 flight-crew-member.flight-assignment.list.label.duty = Duty
 flight-crew-member.flight-assignment.list.label.lastUpdateMoment = Last update moment
 flight-crew-member.flight-assignment.list.label.currentStatus = Current Status
+flight-crew-member.flight-assignment.list.label.publish = Publish
 
 flight-crew-member.flight-assignment.form.label.duty = Duty
 flight-crew-member.flight-assignment.form.label.lastUpdateMoment = Last Update Moment
@@ -18,6 +19,7 @@ flight-crew-member.flight-assignment.form.label.flightAssignmentCrewMember = Fli
 
 flight-crew-member.flight-assignment.list.button.create = Create
 
+flight-crew-member.flight-assignment.form.button.publish = Publish
 flight-crew-member.flight-assignment.form.button.create = Create
 flight-crew-member.flight-assignment.form.button.update = Update
 flight-crew-member.flight-assignment.form.button.delete = Delete

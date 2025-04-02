@@ -15,4 +15,8 @@ flight-crew-member.activity-log.form.label.severityLevel = Severity Level
 flight-crew-member.activity-log.form.label.activityLogAssignment = Flight Assignment
 
 flight-crew-member.activity-log.list.button.create = Create
+
+flight-crew-member.activity-log.form.button.publish = Publish
 flight-crew-member.activity-log.form.button.create = Create
+flight-crew-member.activity-log.form.button.update = Update
+flight-crew-member.activity-log.form.button.delete = Delete

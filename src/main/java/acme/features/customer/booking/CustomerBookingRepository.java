@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import acme.client.repositories.AbstractRepository;
 import acme.entities.booking.Booking;
 import acme.entities.flight.Flight;
+import acme.entities.passenger.Passenger;
 
 @Repository
 public interface CustomerBookingRepository extends AbstractRepository {
@@ -27,4 +28,7 @@ public interface CustomerBookingRepository extends AbstractRepository {
 
 	@Query("select b from Booking b where b.locatorCode= :locatorCode")
 	Booking findBookingByLocatorCode(String locatorCode);
+
+	@Query("SELECT br.passenger FROM BookingRecord br WHERE br.booking.id = :bookingId")
+	Collection<Passenger> findAllPassengersByBookingId(int bookingId);
 }

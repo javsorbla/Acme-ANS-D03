@@ -1,29 +1,70 @@
 #validation-en.i18n
 
 acme.validation.flight.publish.message = Flight can only be published if it has one leg or more. All of them must be published as well
-acme.validation.leg.message = Invalid leg
-acme.validation.leg.departure.message = Invalid departure date
-acme.validation.leg.arrival.message = Invalid arrival date
 acme.validation.flight.leg.overlap.message = Legs overlapping
+acme.validation.flight.delete-when-published = Can't delete a published flight
+acme.validation.flight.delete-legs-published = Can't delete a flight with published legs
+acme.validation.flight.publish-no-legs = Can't publish a flight with no legs
+acme.validation.flight.publish-legs-not-published = Flight must have all its legs published in order to be published
+
+acme.validation.leg.flightNumber.message = Flight number must be composed of the aircraft's airline IATA code and 4 digits
+acme.validation.leg.departure.message = Departure date can't be in the past
+acme.validation.leg.arrival.message = Arrival date must be at least one minute after departure date
+acme.validation.leg.overlapped = Leg is overlapping with another published and not cancelled leg
+acme.validation.leg.used-aircraft = Aircraft is already assigned to another leg in the same time interval
+acme.validation.leg.flight.number.duplicated.message = Flight number duplicated
+acme.validation.leg.flight.number.message = Flight Number must start with IATA
+acme.validation.leg.airport.sameAirport = Arrival and departure airports must be different
+
 acme.validation.activitylog.message = Invalid activity log
 acme.validation.activitylog.registrationmoment.required = Registration moment cannot be null
 acme.validation.activitylog.registrationmoment.message = Invalid registration moment
+
 acme.validation.airlinemanager.identifier.message = Invalid manager identifier
+
 acme.validation.airline.identifier.duplicated.message = Duplicated manager identifier
+
 acme.validation.customer.identifier.message = Invalid identifier
+
 acme.validation.flightcrewmember.employee.code.message = Invalid employee code
 acme.validation.flightcrewmember.employee.code.duplicated.message = Duplicated employee code
+acme.validation.flightassignment.flightcrewmember.available.message = Only available members can be assigned
+acme.validation.flightassignment.leg.completed.message = The assignment cannot be linked to a completed leg
+acme.validation.flightassignment.leg.overlap.message = Legs cannot be overlapped
+acme.validation.flightassignment.duty.pilot.message = Each leg can only have one pilot
+acme.validation.flightassignment.duty.copilot.message = Each leg can only have one copilot
+
 acme.validation.technician.identifier.message = Invalid identifier
+acme.validation.technician.maintenance-record.noStatus.message = Any status has been selected
+acme.validation.technician.maintenance-record.nextInspectionDate.message =  The date and time of the next inspection must be after the current moment
+acme.validation.technician.maintenance-record.estimatedCost.message = The estimated cost must be greater than or equal to 0.00, and less than or equal to 1000000.00
+acme.validation.technician.maintenance-record.notes.message = The maximum length of notes is 255 characters
+acme.validation.technician.maintenance-record.aircraft.message = The selected aircraft does not exist
+acme.validation.technician.maintenance-record.published.message = To publish a record it has to be at least 1 published task related to this record
+acme.validation.technician.task.noType.message = Any type has been selected
+acme.validation.technician.task.description.message =  The maximum length of description is 255 characters
+acme.validation.technician.task.priority.message = The priority must be greater than or equal to 0, and less than or equal to 10
+acme.validation.technician.task.estimatedDuration.message = The estimated duration must be greater than or equal to 0, and less than or equal to 1000
+
 acme.validation.customer.identifier.duplicated.message = Identifier duplicated
-acme.validation.leg.flight.number.duplicated.message = Flight number duplicated
+
 acme.validation.assistanceagent.identifier.message = Invalid employee code
 acme.validation.assistanceagent.employeeCode.duplicated.message = Employee code duplicated
+
 acme.validation.booking.locator.code.message = Invalid locator code
 acme.validation.booking.locator.code.duplicated.message = Locator code duplicated
 acme.validation.booking.last.nibble.message = Invalid last nibble
 acme.validation.booking.passport.number.message = Invalid passport number
+acme.validation.booking.publish-no-passengers = You can not publish this booking due to there is not passengers associated
+acme.validation.booking.publish-passengers-not-published = You can not publish this booking due to there are not published passengers associated
+
 acme.validation.iata.code.message = Invalid IATA code
+
 acme.validation.identifier.message = Invalid identifier
+
 acme.validation.phone.number.message = Invalid phone number
+
 acme.validation.service.promo.code = Invalid promotion code
+
 acme.validation.employee.code.message= Invalid employee code
+

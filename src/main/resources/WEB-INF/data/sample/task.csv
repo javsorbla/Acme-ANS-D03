@@ -1,31 +1,31 @@
-key,type,description,priority,estimatedDuration,draftMode,key:technician
+key,type,description,priority,estimatedDuration,published,key:technician
 ## base
-task-01,MAINTENANCE,MANTENIMIENTO AVION,2,22,TRUE,technician-01
+task-01,MAINTENANCE,MANTENIMIENTO AVION,2,22,FALSE,technician-01
 ## restricciones type
-task-02,MAINTENANCE,MANTENIMIENTO AVION,2,22,TRUE,technician-01
-task-03,INSPECTION,MANTENIMIENTO AVION,2,22,TRUE,technician-01
-task-04,REPAIR,MANTENIMIENTO AVION,2,22,TRUE,technician-01
-task-05,SYSTEM_CHECK,MANTENIMIENTO AVION,2,22,TRUE,technician-01
+task-02,MAINTENANCE,MANTENIMIENTO AVION,2,22,FALSE,technician-01
+task-03,INSPECTION,MANTENIMIENTO AVION,2,22,FALSE,technician-01
+task-04,REPAIR,MANTENIMIENTO AVION,2,22,FALSE,technician-01
+task-05,SYSTEM_CHECK,MANTENIMIENTO AVION,2,22,FALSE,technician-01
 ## restricciones description
-task-06,MAINTENANCE,M,2,22,TRUE,technician-01
-task-07,MAINTENANCE,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,2,22,TRUE,technician-01
-task-08,MAINTENANCE,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,2,22,TRUE,technician-01
+task-06,MAINTENANCE,M,2,22,FALSE,technician-01
+task-07,MAINTENANCE,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,2,22,FALSE,technician-01
+task-08,MAINTENANCE,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,2,22,FALSE,technician-01
 # caracteres no latinos
-task-09,MAINTENANCE,โลเร็ม อิปซัม,2,22,TRUE,technician-01
-task-10,MAINTENANCE,при,2,22,TRUE,technician-01
-task-11,MAINTENANCE,洛伦·伊普森,2,22,TRUE,technician-01
+task-09,MAINTENANCE,โลเร็ม อิปซัม,2,22,FALSE,technician-01
+task-10,MAINTENANCE,при,2,22,FALSE,technician-01
+task-11,MAINTENANCE,洛伦·伊普森,2,22,FALSE,technician-01
 # inyecciones
-task-12,MAINTENANCE,<marquee>Hacked</marquee>,2,22,TRUE,technician-01
-task-13,MAINTENANCE,<script>alert(‘Hacked!’);</script>,2,22,TRUE,technician-01
-task-14,MAINTENANCE,' or 'A' = 'A,2,22,TRUE,technician-01
+task-12,MAINTENANCE,<marquee>Hacked</marquee>,2,22,FALSE,technician-01
+task-13,MAINTENANCE,<script>alert(‘Hacked!’);</script>,2,22,FALSE,technician-01
+task-14,MAINTENANCE,' or 'A' = 'A,2,22,FALSE,technician-01
 ## restricciones priority
-task-15,MAINTENANCE,MANTENIMIENTO AVION,1,22,TRUE,technician-01
-task-16,MAINTENANCE,MANTENIMIENTO AVION,5,22,TRUE,technician-01
-task-17,MAINTENANCE,MANTENIMIENTO AVION,10,22,TRUE,technician-01
+task-15,MAINTENANCE,MANTENIMIENTO AVION,1,22,FALSE,technician-01
+task-16,MAINTENANCE,MANTENIMIENTO AVION,5,22,FALSE,technician-01
+task-17,MAINTENANCE,MANTENIMIENTO AVION,10,22,FALSE,technician-01
 ## restricciones estimatedDuration
-task-18,MAINTENANCE,MANTENIMIENTO AVION,2,0,TRUE,technician-01
-task-19,MAINTENANCE,MANTENIMIENTO AVION,2,500,TRUE,technician-01
-task-20,MAINTENANCE,MANTENIMIENTO AVION,2,1000,TRUE,technician-01
-task-21,MAINTENANCE,MANTENIMIENTO AVION,2,1000,TRUE,technician-02
+task-18,MAINTENANCE,MANTENIMIENTO AVION,2,0,FALSE,technician-01
+task-19,MAINTENANCE,MANTENIMIENTO AVION,2,500,FALSE,technician-01
+task-20,MAINTENANCE,MANTENIMIENTO AVION,2,1000,FALSE,technician-01
+task-21,MAINTENANCE,MANTENIMIENTO AVION,2,1000,FALSE,technician-02
 ##
-task-22,MAINTENANCE,MANTENIMIENTO AVION,2,22,FALSE,technician-01
+task-22,MAINTENANCE,MANTENIMIENTO AVION,2,22,TRUE,technician-01

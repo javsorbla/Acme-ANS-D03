@@ -7,9 +7,10 @@
 
 <acme:list>
 	<acme:list-column code ="airline-manager.flight.list.label.tag" path ="tag" width ="20%"/>
-	<acme:list-column code ="airline-manager.flight.list.label.originCity" path ="originCity" width="30%"/>
-	<acme:list-column code ="airline-manager.flight.list.label.destinationCity" path ="destinationCity" width="30%"/>
-	<acme:list-column code ="airline-manager.flight.list.label.cost" path ="cost" width =""/>
+	<acme:list-column code ="airline-manager.flight.list.label.originCity" path ="originCity" width="20%"/>
+	<acme:list-column code ="airline-manager.flight.list.label.destinationCity" path ="destinationCity" width="20%"/>
+	<acme:list-column code ="airline-manager.flight.list.label.cost" path ="cost" width ="20%"/>
+	<acme:list-column code ="airline-manager.flight.list.label.publish" path ="publish" width ="20%"/>
 	<acme:list-payload path="payload"/>	
 </acme:list>
 

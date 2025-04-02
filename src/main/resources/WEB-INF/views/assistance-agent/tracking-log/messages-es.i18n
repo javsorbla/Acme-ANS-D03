@@ -1,0 +1,11 @@
+
+
+
+assistance-agent.tracking-log.list.title = Registros de progresos
+
+assistance-agent.trackingLog.list.label.lastUpdateMoment = Ultima actualizacion 
+assistance-agent.trackingLog.list.label.resolutionPercentage = Porcentaje de resolsucion
+assistance-agent.trackingLog.list.label.status = Estado
+
+
+assistance-agent.trackingLog.list.button.create = Crear

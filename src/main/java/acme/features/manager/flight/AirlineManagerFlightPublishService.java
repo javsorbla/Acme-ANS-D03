@@ -60,6 +60,8 @@ public class AirlineManagerFlightPublishService extends AbstractGuiService<Airli
 		boolean atLeastOneLeg;
 		boolean allLegsPublished;
 		Collection<Leg> flightLegs;
+		// Puede que sea necesario validar que el vuelo es futuro al publicar, por si pasara el tiempo
+		// y las fechas se convirtieran en pasadas
 
 		flightLegs = this.repository.findAllLegsByFlightId(flight.getId());
 		atLeastOneLeg = !flightLegs.isEmpty();

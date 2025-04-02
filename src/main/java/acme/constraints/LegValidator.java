@@ -39,9 +39,14 @@ public class LegValidator extends AbstractValidator<ValidLeg, Leg> {
 		if (leg == null)
 			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
 		else {
+			if (leg.getArrival() != null) {
+				//Realmente no hace falta validarlo, ya que debe ser despues que la salida, pero así el mensaje de error es más visual en el frontend
+				boolean arrivalIsFuture = MomentHelper.isPresentOrFuture(leg.getArrival());
+				super.state(context, arrivalIsFuture, "arrival", "acme.validation.leg.past-arrival.message");
+			}
 			if (leg.getDeparture() != null) {
 				boolean departureIsFuture = MomentHelper.isPresentOrFuture(leg.getDeparture());
-				super.state(context, departureIsFuture, "departure", "acme.validation.leg.departure.message");
+				super.state(context, departureIsFuture, "departure", "acme.validation.leg.past-departure.message");
 
 				if (leg.getArrival() != null) {
 					boolean arrivalIsAfterDeparture;

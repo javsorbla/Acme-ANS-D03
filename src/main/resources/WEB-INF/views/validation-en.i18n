@@ -8,7 +8,8 @@ acme.validation.flight.publish-no-legs = Can't publish a flight with no legs
 acme.validation.flight.publish-legs-not-published = Flight must have all its legs published in order to be published
 
 acme.validation.leg.flightNumber.message = Flight number must be composed of the aircraft's airline IATA code and 4 digits
-acme.validation.leg.departure.message = Departure date can't be in the past
+acme.validation.leg.past-departure.message = Departure date can't be in the past
+acme.validation.leg.past-arrival.message = Arrival date can't be in the past
 acme.validation.leg.arrival.message = Arrival date must be at least one minute after departure date
 acme.validation.leg.overlapped = Leg is overlapping with another published and not cancelled leg
 acme.validation.leg.used-aircraft = Aircraft is already assigned to another leg in the same time interval

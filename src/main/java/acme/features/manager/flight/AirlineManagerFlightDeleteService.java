@@ -57,15 +57,12 @@ public class AirlineManagerFlightDeleteService extends AbstractGuiService<Airlin
 
 	@Override
 	public void validate(final Flight flight) {
-		boolean flightNotPublished;
 		boolean legsNotPublished;
 		Collection<Leg> flightLegs;
 
 		flightLegs = this.repository.findAllLegsByFlightId(flight.getId());
 		legsNotPublished = flightLegs.stream().noneMatch(l -> l.isPublish());
-		flightNotPublished = !flight.isPublish();
 
-		super.state(flightNotPublished, "publish", "acme.validation.flight.delete-when-published");
 		super.state(legsNotPublished, "*", "acme.validation.flight.delete-legs-published");
 	}
 

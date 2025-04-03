@@ -67,9 +67,8 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 		flightId = leg.getFlight().getId();
 		flightLegs = this.repository.findAllLegsByFlightId(flightId);
 		//No es lo más optimo, con una query como la del aircraft lo sería más
-		notOverlapping = leg.getStatus() == LegStatus.CANCELLED //Si el leg está cancelado, da igual que haya overlap 
-			|| flightLegs.stream().filter(l -> !l.equals(leg) && l.isPublish() && l.getStatus() != LegStatus.CANCELLED) //Solo importa que no se solape con los ya publicados y no cancelados
-				.noneMatch(l -> MomentHelper.isInRange(leg.getDeparture(), l.getDeparture(), l.getArrival()) || MomentHelper.isInRange(leg.getArrival(), l.getDeparture(), l.getArrival()));
+		notOverlapping = flightLegs.stream().filter(l -> !l.equals(leg) && l.isPublish()) //Solo importa que no se solape con los ya publicados
+			.noneMatch(l -> MomentHelper.isInRange(leg.getDeparture(), l.getDeparture(), l.getArrival()) || MomentHelper.isInRange(leg.getArrival(), l.getDeparture(), l.getArrival()));
 
 		super.state(notOverlapping, "departure", "acme.validation.leg.overlapped");
 		super.state(notOverlapping, "arrival", "acme.validation.leg.overlapped");

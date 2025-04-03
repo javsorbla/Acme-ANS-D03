@@ -24,3 +24,5 @@ assistance-agent.trackingLog.form.button.update = Update
 assistance-agent.trackingLog.form.button.delete = Delete
 assistance-agent.trackingLog.form.button.publish = Publish
 assistance-agent.trackingLog.form.button.create = Create
+
+acme.validation.trackingLog.unpublished.message = Cant publish tracking log until publish the claim first

@@ -18,6 +18,7 @@ technician.maintenance-record.form.button.delete = Delete
 technician.maintenance-record.form.button.publish = Publish
 technician.maintenance-record.form.add.task = Add task
 technician.maintenance-record.form.list.task = Show tasks
+technician.maintenance-record.form.delete.task = Unlink Task
 
 technician.maintenance-record.form.label.moment = Moment
 technician.maintenance-record.form.label.status = Status

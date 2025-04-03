@@ -74,6 +74,7 @@ master.menu.technician.maintenanceRecords.maintenanceRecords-list = Listado de l
 master.menu.customer = Cliente
 master.menu.customer.bookings-list = Listado de mis reservas
 master.menu.customer.passengers-list = Passengers List = Listado de pasajeros
+master.menu.technician.dashboard = Tablero
 
 # master.menu.menu.assistance-agent ##########################################################
 master.menu.assistance-agent = Agente de apoyo

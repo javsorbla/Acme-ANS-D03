@@ -68,6 +68,7 @@ master.menu.flightcrewmember.flightassignments.flightAssignments-list-planned = 
 master.menu.technician = Technician
 master.menu.technician.tasks.tasks-list = Tasks List
 master.menu.technician.maintenanceRecords.maintenanceRecords-list = Maintenance Records List
+master.menu.technician.dashboard = Dashboard
 
 # master.menu.customer ##########################################################
 master.menu.customer = Customer

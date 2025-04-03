@@ -1,10 +1,11 @@
-technician.involves.form.title = Task related to the maintenance record
-
-technician.involves.list.label.maintenanceRecord = Maintenance record
-technician.involves.form.label.task = Tasks
-technician.task.form.button.create = Create new task
-technician.involves.form.button.create = Add to maintenance record
-technician.involves.list.label.type = Type
-technician.involves.list.label.priority = Priority
-technician.involves.list.label.published = Published
-technician.involves.form.button.delete = Unlink task
+technician.technician-dashboard.form.title =Technician Dashboard
+technician.dashboard.form.label.nearestInspectionDue=Nearest Inspection Due
+technician.dashboard.form.label.averageEstimatedCost=Average Estimated Cost
+technician.dashboard.form.label.deviationEstimatedCost=Deviation Estimated Cost
+technician.dashboard.form.label.minEstimatedCost=Minimum Estimated Cost
+technician.dashboard.form.label.maxEstimatedCost=Maximum Estimated Cost
+technician.dashboard.form.label.averageEstimatedDuration = Average Estimated Duration
+technician.dashboard.form.label.deviationEstimatedDuration = Deviation Estimated Duration
+technician.dashboard.form.label.minEstimatedDuration = Minimum Estimated Duration
+technician.dashboard.form.label.maxEstimatedDuration = Maximum Estimated Duration
+technician.dashboard.form.label.topFiveAircrafts=Top Five Aircrafts

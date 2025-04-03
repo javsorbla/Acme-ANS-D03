@@ -1,10 +1,12 @@
-technician.involves.form.title = Tarea relacionada con el registro de mantenimiento
-
-technician.involves.list.label.maintenanceRecord = Registro de mantenimiento
-technician.involves.form.label.task = Tareas
-technician.task.form.button.create = Crear nueva tarea
-technician.involves.form.button.create = Añadir al registro de mantenimiento
-technician.involves.list.label.type = Tipo
-technician.involves.list.label.priority = Prioridad
-technician.involves.list.label.published = Publicado
-technician.involves.form.button.delete = Desenlazar tarea
+technician.technician-dashboard.form.title =Technician Dashboard
+technician.dashboard.form.label.maintenanceStatus=Estado de Mantenimiento
+technician.dashboard.form.label.nearestInspectionDue=Próxima Inspección Programada
+technician.dashboard.form.label.averageEstimatedCost=Costo Estimado Promedio
+technician.dashboard.form.label.deviationEstimatedCost=Desviación del Costo Estimado
+technician.dashboard.form.label.minEstimatedCost=Costo Estimado Mínimo
+technician.dashboard.form.label.maxEstimatedCost=Costo Estimado Máximo
+technician.dashboard.form.label.averageEstimatedDuration = Duración Estimada Promedio
+technician.dashboard.form.label.deviationEstimatedDuration = Desviación de la Duración Estimado
+technician.dashboard.form.label.minEstimatedDuration =Duración Estimada Mínimo 
+technician.dashboard.form.label.maxEstimatedDuration = Duración Estimada Máximo
+technician.dashboard.form.label.topFiveAircrafts=Top Cinco Aeronaves

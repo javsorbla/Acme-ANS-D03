@@ -23,3 +23,4 @@ assistance-agent.trackingLog.form.publish = Publish?
 assistance-agent.trackingLog.form.button.update = Update
 assistance-agent.trackingLog.form.button.delete = Delete
 assistance-agent.trackingLog.form.button.publish = Publish
+assistance-agent.trackingLog.form.button.create = Create

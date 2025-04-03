@@ -29,22 +29,14 @@
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.list-user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.airports.airports-list" action="/administrator/airport/list"/>
+			<acme:menu-suboption code="master.menu.administrator.airlines.airlines-list" action="/administrator/airline/list"/>
+			<acme:menu-suboption code="master.menu.administrator.aircraft.aircraft-list" action="/administrator/aircraft/list"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-db-initial" action="/administrator/system/populate-initial"/>
 			<acme:menu-suboption code="master.menu.administrator.populate-db-sample" action="/administrator/system/populate-sample"/>			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-system-down" action="/administrator/system/shut-down"/>
-		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.administrator.airports" access="hasRealm('Administrator')">
-			<acme:menu-suboption code="master.menu.administrator.airports.airports-list" action="/administrator/airport/list"/>
-		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.administrator.airlines" access="hasRealm('Administrator')">
-			<acme:menu-suboption code="master.menu.administrator.airlines.airlines-list" action="/administrator/airlines/list"/>
-		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.administrator.aircraft" access="hasRealm('Administrator')">
-			<acme:menu-suboption code="master.menu.administrator.aircraft.aircraft-list" action="/administrator/aircraft/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.airline-manager" access="hasRealm('AirlineManager')">
@@ -62,7 +54,7 @@
 			<acme:menu-suboption code="master.menu.technician.tasks.tasks-list" action="/technician/task/list"/>		
 		</acme:menu-option>
 		
-		<acme:menu-option code="master.menu.assistance-agent.claims" access="hasRealm('AssistanceAgent')">
+		<acme:menu-option code="master.menu.assistance-agent" access="hasRealm('AssistanceAgent')">
 			<acme:menu-suboption code="master.menu.assistance-agent.claims.claims-list" action="/assistance-agent/claim/list"/>
 <%--
 -			<acme:menu-suboption code="master.menu.assistance-agent.claims.list-claims-pending" action="/assistance-agent/claim/pending"/>	

@@ -29,8 +29,8 @@ master.menu.administrator.shut-system-down = Parar el sistema
 master.menu.administrator.airports = Aeropuertos
 master.menu.administrator.airports.airports-list = Lista de aeropuertos
 
-master.menu.administrator.airlines = Aerolineas
-master.menu.administrator.airlines.airlines-list = Lista de aerolineas
+master.menu.administrator.airlines = Aerolíneas
+master.menu.administrator.airlines.airlines-list = Lista de aerolíneas
 
 master.menu.administrator.aircraft = Aviones
 master.menu.administrator.aircraft.aircraft-list = Lista de aviones
@@ -76,7 +76,6 @@ master.menu.customer.bookings-list = Listado de mis reservas
 master.menu.customer.passengers-list = Passengers List = Listado de pasajeros
 
 # master.menu.menu.assistance-agent ##########################################################
-master.menu.assistance-agent.claims = Reclamaciones
+master.menu.assistance-agent = Agente de apoyo
 master.menu.assistance-agent.claims.claims-list = Lista de reclamaciones 
 master.menu.assistance-agent.claims.list-claims-pending = Lista de reclamaciones pendientes
-

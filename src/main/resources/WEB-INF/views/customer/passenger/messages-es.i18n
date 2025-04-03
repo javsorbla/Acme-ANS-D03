@@ -9,3 +9,4 @@ customer.passenger.list.label.publish = Publicado
 customer.passenger.list.button.create = Crear nuevo pasajero
 customer.passenger.list.button.update = Actualizar pasajero
 customer.passenger.form.button.publish = Publicar pasajero
+customer.passenger.form.button.delete = Eliminar pasajero

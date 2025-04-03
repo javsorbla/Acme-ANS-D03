@@ -47,7 +47,7 @@ public class ManagerValidator extends AbstractValidator<ValidManager, AirlineMan
 
 			existingManager = this.repository.findManagerByIdentifier(manager.getIdentifier());
 			uniqueManager = existingManager == null || existingManager.equals(manager);
-			super.state(context, uniqueManager, "identifier", "acme.validation.airline.identifier.duplicated.message");
+			super.state(context, uniqueManager, "identifier", "acme.validation.airlinemanager.identifier.duplicated.message");
 
 			boolean containsInitials;
 			DefaultUserIdentity identity = manager.getIdentity();

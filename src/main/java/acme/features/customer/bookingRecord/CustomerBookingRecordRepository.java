@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.booking.Booking;
+import acme.entities.booking.BookingRecord;
 import acme.entities.passenger.Passenger;
 
 public interface CustomerBookingRecordRepository extends AbstractRepository {
@@ -19,5 +20,11 @@ public interface CustomerBookingRecordRepository extends AbstractRepository {
 
 	@Query("select p from Passenger p where p.customer.id=:customerId")
 	Collection<Passenger> findAllPassengersByCustomer(int customerId);
+
+	@Query("select br from BookingRecord br where br.id=:bookingRecordId")
+	BookingRecord findBookingRecordById(int bookingRecordId);
+
+	@Query("select br from BookingRecord  br where br.booking.id = :bookingId AND br.passenger.id = :passengerId")
+	BookingRecord findBookingRecordByBookingAndPassenger(int bookingId, int passengerId);
 
 }

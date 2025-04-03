@@ -17,9 +17,10 @@
 				<acme:submit code="customer.booking.form.button.delete" action="/customer/booking/delete"/>
 				<jstl:if test="${_command != 'create'}">
  				<acme:button code="customer.booking.form.add.passenger" action="/customer/booking-record/create?bookingId=${id}"/>
+ 				<acme:button code="customer.booking.form.delete.passenger" action="/customer/booking-record/delete?bookingId=${id}"/>
  			</jstl:if>
 		</jstl:when>
-
+		
      	<jstl:when test="${acme:anyOf(_command,'create') }">
 			<acme:submit code="customer.booking.list.button.create" action="/customer/booking/create"/>
 		</jstl:when>

@@ -45,10 +45,4 @@ public interface FlightAssignmentRepository extends AbstractRepository {
 	@Query("SELECT fa.flightAssignmentLeg FROM FlightAssignment fa WHERE fa.flightAssignmentCrewMember.id = :flightCrewMemberId ORDER BY fa.flightAssignmentLeg.departure ASC")
 	List<Leg> findLegsByMemberId(int flightCrewMemberId);
 
-	@Query("SELECT COUNT(fa) > 0 FROM FlightAssignment fa WHERE fa.flightAssignmentLeg.id = :legId AND fa.duty = 'PILOT' AND fa.id != :id")
-	Boolean flightAssignmentHasPilot(int legId, int id);
-
-	@Query("SELECT COUNT(fa) > 0 FROM FlightAssignment fa WHERE fa.flightAssignmentLeg.id = :legId AND fa.duty = 'COPILOT' AND fa.id != :id")
-	Boolean flightAssignmentHasCopilot(int legId, int id);
-
 }

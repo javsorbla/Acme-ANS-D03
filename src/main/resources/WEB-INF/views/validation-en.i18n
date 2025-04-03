@@ -20,6 +20,7 @@ acme.validation.leg.airport.sameAirport = Arrival and departure airports must be
 acme.validation.activitylog.message = Invalid activity log
 acme.validation.activitylog.registrationmoment.required = Registration moment cannot be null
 acme.validation.activitylog.registrationmoment.message = Invalid registration moment
+acme.validation.activitylog.flightassignment.publish.message = The flight assignment must be published
 
 acme.validation.airlinemanager.identifier.message = Invalid manager identifier
 

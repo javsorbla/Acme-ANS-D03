@@ -60,23 +60,16 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 	@Override
 	public void validate(final FlightAssignment flightAssignment) {
 		int flightCrewMemberId;
-		int legId;
-		int flightAssignmentId;
+
 		boolean availableMember;
 		boolean completedLeg;
 		List<Leg> legsByMember;
-		//boolean hasPilot;
-		//boolean hasCopilot;
 
 		flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		legId = super.getRequest().getData("leg", Leg.class).getId();
-		flightAssignmentId = flightAssignment.getId();
 
 		availableMember = this.repository.findFlightCrewMemberById(flightCrewMemberId).getAvailabilityStatus().equals(AvailabilityStatus.AVAILABLE);
 		completedLeg = MomentHelper.isBefore(flightAssignment.getFlightAssignmentLeg().getArrival(), MomentHelper.getCurrentMoment());
 		legsByMember = this.repository.findLegsByMemberId(flightCrewMemberId);
-		//hasPilot = this.repository.flightAssignmentHasPilot(legId, flightAssignmentId);
-		//hasCopilot = this.repository.flightAssignmentHasCopilot(legId, flightAssignmentId);
 
 		boolean legsNotOverlapping = true;
 
@@ -95,8 +88,6 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 			super.state(availableMember, "flightAssignmentCrewMember", "acme.validation.flightassignment.flightcrewmember.available.message", flightAssignment);
 			super.state(!completedLeg, "flightAssignmentLeg", "acme.validation.flightassignment.leg.completed.message", flightAssignment);
 			super.state(!legsNotOverlapping, "flightAssignmentLeg", "acme.validation.flightassignment.leg.overlap.message", flightAssignment);
-			//super.state(!hasPilot, "duty", "acme.validation.flightassignment.duty.pilot.message", flightAssignment);
-			//super.state(!hasCopilot, "duty", "acme.validation.flightassignment.duty.copilot.message", flightAssignment);
 		}
 	}
 

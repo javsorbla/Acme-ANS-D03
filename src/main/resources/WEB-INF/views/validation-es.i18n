@@ -20,6 +20,7 @@ acme.validation.leg.airport.sameAirport = Los aeropuertos de salida y llegada de
 acme.validation.activitylog.message = Registro de actividades inválido
 acme.validation.activitylog.registrationmoment.required = El momento de registro no puede ser nulo
 acme.validation.activitylog.registrationmoment.message = Momento de registro inválido
+acme.validation.activitylog.flightassignment.publish.message = La asignación del vuelo debe estar publicada
 
 acme.validation.airlinemanager.identifier.message = Identificador de mánager inválido
 acme.validation.airlinemanager.identifier.duplicated.message = Identificador de mánager duplicado

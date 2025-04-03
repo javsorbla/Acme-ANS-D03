@@ -55,8 +55,7 @@ public class FlightAssignment extends AbstractEntity {
 	@Mandatory
 	//@Valid
 	@Automapped
-	private boolean				publish; // needed for future deliverables
-
+	private boolean				publish;
 	//Derived attributes-------------------------------------------------
 
 	// Relationships -----------------------------------------------------

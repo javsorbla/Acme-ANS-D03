@@ -7,6 +7,7 @@ flight-crew-member.activity-log.form.title = Activity Log details
 flight-crew-member.activity-log.list.label.registrationMoment = Registration Moment
 flight-crew-member.activity-log.list.label.incidentType = Incident Type
 flight-crew-member.activity-log.list.label.severityLevel = Severity Level
+flight-crew-member.activity-log.list.label.publish = Publish
 
 flight-crew-member.activity-log.form.label.registrationMoment = Registration Moment
 flight-crew-member.activity-log.form.label.incidentType = Incident Type

@@ -2,6 +2,7 @@
 package acme.features.flightcrewmember.flightassignment;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -58,24 +59,36 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 	@Override
 	public void validate(final FlightAssignment flightAssignment) {
 		int flightCrewMemberId;
+		int legId;
 
-		boolean availableMember;
 		boolean completedLeg;
+		boolean availableMember;
+		boolean hasSimultaneousLegs;
 		boolean hasPilot;
 		boolean hasCopilot;
+		Date departure;
+		Date arrival;
+		Collection<Leg> simultaneousLegs;
 		Collection<FlightAssignment> pilotAssignments;
 		Collection<FlightAssignment> copilotAssignments;
-		Leg legWithDuty;
+		Leg leg;
 
 		flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		leg = flightAssignment.getFlightAssignmentLeg();
+		legId = leg.getId();
 
-		availableMember = this.repository.findFlightCrewMemberById(flightCrewMemberId).getAvailabilityStatus().equals(AvailabilityStatus.AVAILABLE);
 		completedLeg = MomentHelper.isBefore(flightAssignment.getFlightAssignmentLeg().getArrival(), MomentHelper.getCurrentMoment());
+		availableMember = this.repository.findFlightCrewMemberById(flightCrewMemberId).getAvailabilityStatus().equals(AvailabilityStatus.AVAILABLE);
 
-		legWithDuty = flightAssignment.getFlightAssignmentLeg();
+		hasSimultaneousLegs = false;
+		departure = flightAssignment.getFlightAssignmentLeg().getDeparture();
+		arrival = flightAssignment.getFlightAssignmentLeg().getArrival();
+		simultaneousLegs = this.repository.findSimultaneousLegsByMemberId(departure, arrival, legId, flightCrewMemberId);
+		if (simultaneousLegs.isEmpty())
+			hasSimultaneousLegs = true;
 
-		pilotAssignments = this.repository.findFlightAssignmentByLegAndDuty(legWithDuty, Duty.PILOT);
-		copilotAssignments = this.repository.findFlightAssignmentByLegAndDuty(legWithDuty, Duty.COPILOT);
+		pilotAssignments = this.repository.findFlightAssignmentByLegAndDuty(leg, Duty.PILOT);
+		copilotAssignments = this.repository.findFlightAssignmentByLegAndDuty(leg, Duty.COPILOT);
 
 		hasPilot = true;
 		hasCopilot = true;
@@ -85,8 +98,9 @@ public class FlightAssignmentPublishService extends AbstractGuiService<FlightCre
 			hasCopilot = false;
 
 		if (!this.getBuffer().getErrors().hasErrors("publish")) {
-			super.state(availableMember, "flightAssignmentCrewMember", "acme.validation.flightassignment.flightcrewmember.available.message", flightAssignment);
 			super.state(!completedLeg, "flightAssignmentLeg", "acme.validation.flightassignment.leg.completed.message", flightAssignment);
+			super.state(availableMember, "flightAssignmentCrewMember", "acme.validation.flightassignment.flightcrewmember.available.message", flightAssignment);
+			super.state(hasSimultaneousLegs, "flightAssignmentLeg", "acme.validation.flightassignment.leg.overlap.message", flightAssignment);
 			super.state(hasPilot, "duty", "acme.validation.flightassignment.duty.pilot.message", flightAssignment);
 			super.state(hasCopilot, "duty", "acme.validation.flightassignment.duty.copilot.message", flightAssignment);
 		}

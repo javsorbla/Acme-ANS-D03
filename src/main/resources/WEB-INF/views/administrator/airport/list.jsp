@@ -6,8 +6,9 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
-	<acme:list-column code ="administrator.airport.list.label.name" path ="name" width ="20%"/>
-	<acme:list-column code ="administrator.airport.list.label.iataCode" path ="iataCode" width ="20%"/>
+	<acme:list-column code ="administrator.airport.list.label.name" path ="name" width ="25%"/>
+	<acme:list-column code ="administrator.airport.list.label.iataCode" path ="iataCode" width ="25%"/>
+	<acme:list-column code ="administrator.airport.list.label.city" path ="city" width ="25%"/>
 	<acme:list-column code ="administrator.airport.list.label.operationalScope" path ="operationalScope" width =""/>
 	<acme:list-payload path="payload"/>	
 </acme:list>

@@ -16,7 +16,10 @@ public class TechnicianInvolvesController extends AbstractGuiController<Technici
 	//Internal state --------------------------------------------------------------
 
 	@Autowired
-	private TechnicianInvolvesCreateService createService;
+	private TechnicianInvolvesCreateService	createService;
+
+	@Autowired
+	private TechnicianInvolvesDeleteService	deleteService;
 
 	//Constructors ----------------------------------------------------------------
 
@@ -24,6 +27,7 @@ public class TechnicianInvolvesController extends AbstractGuiController<Technici
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("create", this.createService);
+		super.addBasicCommand("delete", this.deleteService);
 	}
 
 }

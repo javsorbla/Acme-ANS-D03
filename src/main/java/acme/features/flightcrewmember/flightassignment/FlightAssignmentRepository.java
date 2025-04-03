@@ -2,6 +2,7 @@
 package acme.features.flightcrewmember.flightassignment;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
@@ -43,8 +44,8 @@ public interface FlightAssignmentRepository extends AbstractRepository {
 	@Query("SELECT fcm FROM FlightCrewMember fcm WHERE fcm.id = :flightCrewMemberId")
 	FlightCrewMember findFlightCrewMemberById(int flightCrewMemberId);
 
-	@Query("SELECT fa.flightAssignmentLeg FROM FlightAssignment fa WHERE fa.flightAssignmentCrewMember.id = :flightCrewMemberId ORDER BY fa.flightAssignmentLeg.departure ASC")
-	List<Leg> findLegsByMemberId(int flightCrewMemberId);
+	@Query("SELECT fa.flightAssignmentLeg FROM FlightAssignment fa WHERE (fa.flightAssignmentLeg.departure < :arrival AND fa.flightAssignmentLeg.arrival > :departure) AND fa.flightAssignmentLeg.id <> :legId AND fa.flightAssignmentCrewMember.id = :flightCrewMemberId")
+	List<Leg> findSimultaneousLegsByMemberId(Date departure, Date arrival, int legId, int flightCrewMemberId);
 
 	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.flightAssignmentLeg = :flightAssignmentLeg and fa.duty = :duty")
 	Collection<FlightAssignment> findFlightAssignmentByLegAndDuty(Leg flightAssignmentLeg, Duty duty);

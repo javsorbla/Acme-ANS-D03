@@ -1,20 +1,20 @@
 key,name,pictureUrl,averageDwellTime,promoCode,discountAmount
 # base entity
-service-01,"Servicio de comida","http://servicioacmeans.com/comida",089.25,"ABCD-25",EUR 50.00
+service-01,"Servicio de comida","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"ABCD-25",EUR 50.00
 # name - standard variations
-service-02,"Lorem ipsum dolor sit amet","http://servicioacmeans.com/comida",089.25,"AAAA-25",EUR 50.00
-service-03,"L","http://servicioacmeans.com/comida",089.25,"BBBB-25",EUR 50.00
-service-04,"Lo","http://servicioacmeans.com/comida",089.25,"CCCC-25",EUR 50.00
-service-05,"Lorem ipsum dolor sit amet. consectetur adipiscin","http://servicioacmeans.com/comida",089.25,"DDDD-25",EUR 50.00
-service-06,"Lorem ipsum dolor sit amet. consectetur adipiscing","http://servicioacmeans.com/comida",089.25,"EEEE-25",EUR 50.00
+service-02,"Lorem ipsum dolor sit amet","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"AAAA-25",EUR 50.00
+service-03,"L","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"BBBB-25",EUR 50.00
+service-04,"Lo","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"CCCC-25",EUR 50.00
+service-05,"Lorem ipsum dolor sit amet. consectetur adipiscin","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"DDDD-25",EUR 50.00
+service-06,"Lorem ipsum dolor sit amet. consectetur adipiscing","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"EEEE-25",EUR 50.00
 # name - no singular values
-service-07,"โลเร็ม อิปซัม","http://servicioacmeans.com/comida",089.25,"FFFF-25",EUR 50.00
-service-08,"لوريم إيبسوم","http://servicioacmeans.com/comida",089.25,"GGGG-25",EUR 50.00
-service-09,"洛伦·伊普森","http://servicioacmeans.com/comida",089.25,"HHHH-25",EUR 50.00
-service-10,"<marquee>Hacked</marquee>","http://servicioacmeans.com/comida",089.25,"IIII-25",EUR 50.00
-service-11,"<script>alert(‘Hacked!’);</script>","http://servicioacmeans.com/comida",089.25,"JJJJ-25",EUR 50.00
-service-12,"'' or 'A' = 'A ","http://servicioacmeans.com/comida",089.25,"KKKK-25",EUR 50.00
-# email - standard variations
+service-07,"โลเร็ม อิปซัม","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"FFFF-25",EUR 50.00
+service-08,"لوريم إيبسوم","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"GGGG-25",EUR 50.00
+service-09,"洛伦·伊普森","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"HHHH-25",EUR 50.00
+service-10,"<marquee>Hacked</marquee>","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"IIII-25",EUR 50.00
+service-11,"<script>alert(‘Hacked!’);</script>","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"JJJJ-25",EUR 50.00
+service-12,"'' or 'A' = 'A ","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"KKKK-25",EUR 50.00
+# pictureUrl - standard variations
 service-13,"Servicio de comida","http://lorem.com/ipsum",089.25,"LLLL-25",EUR 50.00
 service-14,"Servicio de comida","ftp://a",089.25,"MMMM-25",EUR 50.00
 service-15,"Servicio de comida","ftp://a.b",089.25,"NNNN-25",EUR 50.00
@@ -34,19 +34,23 @@ service-28,"Servicio de comida","http://example.org/a/b",089.25,"ABBB-25",EUR 50
 service-29,"Servicio de comida","http://example.org/a/b?",089.25,"ACCC-25",EUR 50.00
 service-30,"Servicio de comida","http://example.org/a/b?a&b",089.25,"ADDD-25",EUR 50.00
 # averageDwellTime - standard variations
-service-31,"Servicio de comida","http://servicioacmeans.com/comida",050.00,"AEEE-25",EUR 50.00
-service-32,"Servicio de comida","http://servicioacmeans.com/comida",001.00,"AFFF-25",EUR 50.00
-service-33,"Servicio de comida","http://servicioacmeans.com/comida",001.01,"AGGG-25",EUR 50.00
-service-34,"Servicio de comida","http://servicioacmeans.com/comida",099.99,"AHHH-25",EUR 50.00
-service-35,"Servicio de comida","http://servicioacmeans.com/comida",100.00,"AIII-25",EUR 50.00
+service-31,"Servicio de comida","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",050.00,"AEEE-25",EUR 50.00
+service-32,"Servicio de comida","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",001.00,"AFFF-25",EUR 50.00
+service-33,"Servicio de comida","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",001.01,"AGGG-25",EUR 50.00
+service-34,"Servicio de comida","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",099.99,"AHHH-25",EUR 50.00
+service-35,"Servicio de comida","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",100.00,"AIII-25",EUR 50.00
 # promoCode - standard variations
-service-36,"Servicio de comida","http://servicioacmeans.com/comida",089.25,"AHGY-25",EUR 50.00
-service-37,"Servicio de comida","http://servicioacmeans.com/comida",089.25,"ZZZZ-25",EUR 50.00
-service-38,"Servicio de comida","http://servicioacmeans.com/comida",089.25,"ZXYW-25",EUR 50.00
-service-39,"Servicio de comida","http://servicioacmeans.com/comida",089.25,"TEST-25",EUR 50.00
+service-36,"Servicio de comida","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"AHGY-25",EUR 50.00
+service-37,"Servicio de comida","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"ZZZZ-25",EUR 50.00
+service-38,"Servicio de comida","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"ZXYW-25",EUR 50.00
+service-39,"Servicio de comida","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"TEST-25",EUR 50.00
 # discountAmount - standard variations
-service-40,"Servicio de comida","http://servicioacmeans.com/comida",089.25,"AXSD-25",EUR 50.00
-service-41,"Servicio de comida","http://servicioacmeans.com/comida",089.25,"ABGH-25",EUR 00.00
-service-42,"Servicio de comida","http://servicioacmeans.com/comida",089.25,"ZXDS-25",EUR 00.01
-service-43,"Servicio de comida","http://servicioacmeans.com/comida",089.25,"ZAAA-25",EUR 99.99
-service-44,"Servicio de comida","http://servicioacmeans.com/comida",089.25,"ZNNN-25",EUR 100.00
+service-40,"Servicio de comida","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"AXSD-25",EUR 50.00
+service-41,"Servicio de comida","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"ABGH-25",EUR 00.00
+service-42,"Servicio de comida","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"ZXDS-25",EUR 00.01
+service-43,"Servicio de comida","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"ZAAA-25",EUR 99.99
+service-44,"Servicio de comida","https://s03.s3c.es/imag/_v0/770x420/a/e/d/770-420-comida-avion-istock.jpg",089.25,"ZNNN-25",EUR 100.00
+# otros servicios con imágenes distintas para requisito 14 grupal
+service-45,"Desplazamineto personal","https://come2indonesia.com/wp-content/uploads/2021/07/airport-fast-track-vip-service-0.jpg",089.25,"ZNMI-25",EUR 100.00
+service-46,"Transporte maletas","https://www.hispaviacion.es/wp-content/uploads/2016/06/Las-aerol%C3%ADneas-pierden-menos-maletas.jpg",089.25,"ZNMU-25",EUR 100.00
+service-47,"Asistencia a personas con movilidad reducida","https://www.escuelasuperioraeronautica.com/storage/2018/01/pmr1.jpg",089.25,"ZNMM-25",EUR 100.00

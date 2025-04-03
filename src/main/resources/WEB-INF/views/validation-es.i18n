@@ -57,6 +57,7 @@ acme.validation.booking.last.nibble.message = Últimos 4 digitos de la tarjeta d
 acme.validation.booking.passport.number.message = Número de pasaporte incorrecto
 acme.validation.booking.publish-no-passengers = No puede publicar esta reserva debido a que no hay ningún pasajero asociado
 acme.validation.booking.publish-passengers-not-published = No puede publicar esta reserva debido a que hay pasajeros no publicados asociados 
+acme.validation.booking.delete-no-passenger = Debes elegir un pasajero
 
 acme.validation.iata.code.message = Código IATA inválido
 

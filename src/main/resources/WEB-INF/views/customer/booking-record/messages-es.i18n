@@ -1,6 +1,7 @@
-customer.booking-record.form.title = Añade un pasajero a la reserva
+customer.booking-record.form.title = Pasajeros de la reserva
 
 customer.bookingRecord.list.label.booking = Reserva
 customer.bookingRecord.list.label.passenger = Pasajero
 customer.passenger.form.button.create = Crear nuevo pasajero
 customer.bookingRecord.form.button.create = Añadir a la reserva
+customer.bookingRecord.form.button.delete = Eliminar pasajero asociado

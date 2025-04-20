@@ -49,5 +49,5 @@ flight-29,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"Lorem ipsum dolor sit
 # manager - no singular values
 
 # airline - standard variations
-flight-30,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false,manager-02,airline-02
+flight-30,"Lorem ipsum dolor sit ame",false,EUR 500000.00,"Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false,manager-01,airline-02
 # airline - no singular values

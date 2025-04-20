@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
@@ -57,7 +58,13 @@ public class AirlineManagerLegUpdateService extends AbstractGuiService<AirlineMa
 
 	@Override
 	public void validate(final Leg leg) {
-		;
+		boolean legIsFuture;
+
+		if (leg.getDeparture() != null) { //Solo hace falta validar el departure, ya que arrival es posterior
+			legIsFuture = MomentHelper.isPresentOrFuture(leg.getDeparture());
+			super.state(legIsFuture, "departure", "acme.validation.leg.past-departure.message");
+
+		}
 	}
 
 	@Override

@@ -62,7 +62,14 @@ public class AirlineManagerLegPublishService extends AbstractGuiService<AirlineM
 		int flightId;
 		boolean notOverlapping;//No solopada con el resto de legs
 		boolean aircraftNotUsed; //Avión no usado en otro leg concurrentemente
-		// boolean activeAircraft // Avión en estado activo
+		boolean legIsFuture;
+
+		if (leg.getDeparture() != null) { //Solo hace falta validar el departure, ya que arrival es posterior
+			legIsFuture = MomentHelper.isPresentOrFuture(leg.getDeparture());
+			super.state(legIsFuture, "departure", "acme.validation.leg.past-departure.message");
+
+		}
+
 		Collection<Leg> flightLegs;
 		flightId = leg.getFlight().getId();
 		flightLegs = this.repository.findAllLegsByFlightId(flightId);

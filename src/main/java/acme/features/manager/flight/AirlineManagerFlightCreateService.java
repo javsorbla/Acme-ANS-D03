@@ -41,7 +41,7 @@ public class AirlineManagerFlightCreateService extends AbstractGuiService<Airlin
 
 	@Override
 	public void bind(final Flight flight) {
-		super.bindObject(flight, "tag", "requiresSelfTransfer", "cost", "description", "airline");
+		super.bindObject(flight, "tag", "cost", "description", "airline");
 	}
 
 	@Override

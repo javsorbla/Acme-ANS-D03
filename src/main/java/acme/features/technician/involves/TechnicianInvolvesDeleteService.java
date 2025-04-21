@@ -29,7 +29,7 @@ public class TechnicianInvolvesDeleteService extends AbstractGuiService<Technici
 		int technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
 		int maintenanceRecordId = super.getRequest().getData("maintenanceRecordId", int.class);
 		MaintenanceRecord maintenanceRecord = this.repository.findMaintenanceRecordById(maintenanceRecordId);
-		super.getResponse().setAuthorised(technicianId == maintenanceRecord.getTechnician().getId());
+		super.getResponse().setAuthorised(technicianId == maintenanceRecord.getTechnician().getId() && maintenanceRecord.getPublished() == false);
 	}
 
 	@Override
@@ -50,7 +50,10 @@ public class TechnicianInvolvesDeleteService extends AbstractGuiService<Technici
 
 	@Override
 	public void validate(final Involves involves) {
-
+		Task task;
+		task = super.getRequest().getData("task", Task.class);
+		if (!this.getBuffer().getErrors().hasErrors("task"))
+			super.state(task != null, "task", "acme.validation.technician.involves.noTask.message");
 	}
 
 	@Override

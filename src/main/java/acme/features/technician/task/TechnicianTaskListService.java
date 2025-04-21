@@ -43,7 +43,7 @@ public class TechnicianTaskListService extends AbstractGuiService<Technician, Ta
 	public void unbind(final Task task) {
 		Dataset dataset;
 
-		dataset = super.unbindObject(task, "type", "priority");
+		dataset = super.unbindObject(task, "type", "priority", "published");
 
 		super.addPayload(dataset, task, "type");
 

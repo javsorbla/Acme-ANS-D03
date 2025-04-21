@@ -50,7 +50,10 @@ public class TechnicianInvolvesDeleteService extends AbstractGuiService<Technici
 
 	@Override
 	public void validate(final Involves involves) {
-
+		Task task;
+		task = super.getRequest().getData("task", Task.class);
+		if (!this.getBuffer().getErrors().hasErrors("task"))
+			super.state(task != null, "task", "acme.validation.technician.involves.noTask.message");
 	}
 
 	@Override

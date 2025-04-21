@@ -46,16 +46,16 @@ public class TechnicianTaskCreateService extends AbstractGuiService<Technician, 
 	@Override
 	public void validate(final Task task) {
 		if (!this.getBuffer().getErrors().hasErrors("type"))
-			super.state(task.getType() != null, "type", "acme.validation.technician.task.noType.message", task);
+			super.state(task.getType() != null, "type", "acme.validation.technician.task.noType.message");
 
 		if (!this.getBuffer().getErrors().hasErrors("description") && task.getDescription() != null)
-			super.state(task.getDescription().length() <= 255, "description", "acme.validation.technician.task.description.message", task);
+			super.state(task.getDescription().length() <= 255, "description", "acme.validation.technician.task.description.message");
 
 		if (!this.getBuffer().getErrors().hasErrors("priority") && task.getPriority() != null)
-			super.state(0 <= task.getPriority() && task.getPriority() <= 10, "priority", "acme.validation.technician.task.priority.message", task);
+			super.state(0 <= task.getPriority() && task.getPriority() <= 10, "priority", "acme.validation.technician.task.priority.message");
 
 		if (!this.getBuffer().getErrors().hasErrors("estimatedDuration") && task.getEstimatedDuration() != null)
-			super.state(0 <= task.getEstimatedDuration() && task.getEstimatedDuration() <= 1000, "estimatedDuration", "acme.validation.technician.task.estimatedDuration.message", task);
+			super.state(0 <= task.getEstimatedDuration() && task.getEstimatedDuration() <= 1000, "estimatedDuration", "acme.validation.technician.task.estimatedDuration.message");
 	}
 
 	@Override

@@ -62,19 +62,19 @@ public class TechnicianMaintenanceRecordUpdateService extends AbstractGuiService
 	public void validate(final MaintenanceRecord maintenanceRecord) {
 
 		if (!this.getBuffer().getErrors().hasErrors("status"))
-			super.state(maintenanceRecord.getStatus() != null, "status", "acme.validation.technician.maintenance-record.noStatus.message", maintenanceRecord);
+			super.state(maintenanceRecord.getStatus() != null, "status", "acme.validation.technician.maintenance-record.noStatus.message");
 
 		if (!this.getBuffer().getErrors().hasErrors("nextInspectionDate") && maintenanceRecord.getNextInspectionDate() != null)
-			super.state(maintenanceRecord.getNextInspectionDate().compareTo(maintenanceRecord.getMoment()) > 0, "nextInspectionDate", "acme.validation.technician.maintenance-record.nextInspectionDate.message", maintenanceRecord);
+			super.state(maintenanceRecord.getNextInspectionDate().compareTo(maintenanceRecord.getMoment()) > 0, "nextInspectionDate", "acme.validation.technician.maintenance-record.nextInspectionDate.message");
 
 		if (!this.getBuffer().getErrors().hasErrors("estimatedCost") && maintenanceRecord.getEstimatedCost() != null)
-			super.state(0.00 <= maintenanceRecord.getEstimatedCost().getAmount() && maintenanceRecord.getEstimatedCost().getAmount() <= 1000000.00, "estimatedCost", "acme.validation.technician.maintenance-record.estimatedCost.message", maintenanceRecord);
+			super.state(0.00 <= maintenanceRecord.getEstimatedCost().getAmount() && maintenanceRecord.getEstimatedCost().getAmount() <= 1000000.00, "estimatedCost", "acme.validation.technician.maintenance-record.estimatedCost.message");
 
 		if (!this.getBuffer().getErrors().hasErrors("notes") && maintenanceRecord.getNotes() != null)
-			super.state(maintenanceRecord.getNotes().length() <= 255, "notes", "acme.validation.technician.maintenance-record.notes", maintenanceRecord);
+			super.state(maintenanceRecord.getNotes().length() <= 255, "notes", "acme.validation.technician.maintenance-record.notes");
 
 		if (!this.getBuffer().getErrors().hasErrors("aircraft") && maintenanceRecord.getAircraft() != null)
-			super.state(this.repository.findAllAircrafts().contains(maintenanceRecord.getAircraft()), "aircraft", "acme.validation.technician.maintenance-record.aircraft.message", maintenanceRecord);
+			super.state(this.repository.findAllAircrafts().contains(maintenanceRecord.getAircraft()), "aircraft", "acme.validation.technician.maintenance-record.aircraft.message");
 	}
 
 	@Override

@@ -46,6 +46,8 @@ acme.validation.technician.task.noType.message = No se ha seleccionado ningún t
 acme.validation.technician.task.description.message =  La longitud máxima de la descripción es de 255 caractéres
 acme.validation.technician.task.priority.message = La prioridad debe ser mayor o igual a 0, y menor o igual a 10
 acme.validation.technician.task.estimatedDuration.message = La duración estimada debe ser mayor o igual a 0, y menor o igual a 1000
+acme.validation.technician.involves.noTask.message = No puede ser nulo
+
 
 acme.validation.assistanceagent.identifier.message = Código incorrecto
 acme.validation.assistanceagent.employeeCode.duplicated.message = Codigo de empleado duplicado
